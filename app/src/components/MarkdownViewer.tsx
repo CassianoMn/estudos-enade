@@ -6,11 +6,13 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
 export type ReaderFontSize = "sm" | "md" | "lg";
+export type MarkdownVariant = "reader" | "question" | "compact";
 
 interface MarkdownViewerProps {
   content: string;
   areaId?: string;
   fontSize?: ReaderFontSize;
+  variant?: MarkdownVariant;
 }
 
 function slugifyHeading(text: string): string {
@@ -45,13 +47,21 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   content,
   areaId,
   fontSize = "md",
+  variant = "reader",
 }) => {
+  const variantClass = variant === "reader" ? `reader-${fontSize}` : `variant-${variant}`;
+
   return (
-    <div className={`markdown-body reader-${fontSize}`}>
+    <div className={`markdown-body ${variantClass}`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[rehypeKatex]}
         components={{
+          table: ({ children, ...props }) => (
+            <div className="my-4 overflow-x-auto">
+              <table {...props}>{children}</table>
+            </div>
+          ),
           h2: ({ children, ...props }) => {
             const headingText = extractText(children);
             const id = areaId

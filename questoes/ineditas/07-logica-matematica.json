@@ -43,7 +43,11 @@
     "explanation": "Pela equivalência da condicional, (p ∧ q) → r ⇔ ~(p ∧ q) ∨ r. Aplicando a negação e a Lei de De Morgan, tem-se ~((p ∧ q) → r) ⇔ (p ∧ q) ∧ ~r, ou seja: o antecedente ocorre (o usuário está autenticado e possui perfil de gestor) e o consequente falha (não pode aprovar a solicitação).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Negação da Condicional", "Leis de De Morgan", "Formalização Proposicional"]
+    "topics": [
+      "Negação da Condicional",
+      "Leis de De Morgan",
+      "Formalização Proposicional"
+    ]
   },
   {
     "id": "lm-inedita-02",
@@ -57,7 +61,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Uma equipe de segurança da informação definiu três variáveis proposicionais para analisar alertas em um firewall de borda:\n\n• p: o pacote tem origem externa;\n• q: o pacote destina-se à porta 443;\n• r: o certificado TLS é válido.\n\nA regra composta de liberação de tráfego S é modelada pela fórmula:\n\nS = (p → q) ∧ (~q ∨ r)\n\nConsiderando a ordem padrão das valorações (VVV, VVF, VFV, VFF, FVV, FVF, FFV, FFF) para (p, q, r), assinale a opção que indica corretamente a coluna final dos valores lógicos de S na tabela-verdade.",
+    "stem": "Uma equipe de segurança da informação definiu três variáveis proposicionais para analisar alertas em um firewall de borda:\n\n- p: o pacote tem origem externa;\n- q: o pacote destina-se à porta 443;\n- r: o certificado TLS é válido.\n\nA regra composta de liberação de tráfego S é modelada pela fórmula:\n\nS = (p → q) ∧ (~q ∨ r)\n\nConsiderando a ordem padrão das valorações (VVV, VVF, VFV, VFF, FVV, FVF, FFV, FFF) para (p, q, r), assinale a opção que indica corretamente a coluna final dos valores lógicos de S na tabela-verdade.",
     "options": [
       {
         "letter": "A",
@@ -89,7 +93,11 @@
     "explanation": "Para S = (p → q) ∧ (~q ∨ r), a condicional p → q só é F quando p = V e q = F (linhas 3 e 4: VFV e VFF). Já ~q ∨ r só é F quando q = V e r = F (linhas 2 e 6: VVF e FVF). Portanto, S resulta em F nas linhas 2, 3, 4 e 6, e em V nas linhas 1, 5, 7 e 8: V, F, F, F, V, F, V, V.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Tabelas-Verdade", "Conectivos Lógicos", "Precedência de Conectivos"]
+    "topics": [
+      "Tabelas-Verdade",
+      "Conectivos Lógicos",
+      "Precedência de Conectivos"
+    ]
   },
   {
     "id": "lm-inedita-03",
@@ -103,7 +111,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "No estudo do cálculo proposicional, a classificação de fórmulas em tautologias, contradições ou contingências e a relação entre proposições associadas à condicional são fundamentais para a verificação formal de especificações de software.\n\nConsiderando proposições simples quaisquer p e q, avalie as afirmações a seguir.\n\nI. A fórmula (p ∧ ~q) ↔ ~(p → q) é uma tautologia.\nII. A proposição (~p → ~q) é logicamente equivalente à proposição (p → q).\nIII. Se p → q é verdadeira, então sua contrapositiva ~q → ~p é necessariamente verdadeira.\nIV. A fórmula (p → q) ∧ (p ∧ ~q) é uma contingência, pois depende dos valores de p e q.\n\nÉ correto apenas o que se afirma em",
+    "stem": "No estudo do cálculo proposicional, a classificação de fórmulas em tautologias, contradições ou contingências e a relação entre proposições associadas à condicional são fundamentais para a verificação formal de especificações de software.\n\nConsiderando proposições simples quaisquer p e q, avalie as afirmações a seguir.\n\nI. A fórmula (p ∧ ~q) ↔ ~(p → q) é uma tautologia.\n\nII. A proposição (~p → ~q) é logicamente equivalente à proposição (p → q).\n\nIII. Se p → q é verdadeira, então sua contrapositiva ~q → ~p é necessariamente verdadeira.\n\nIV. A fórmula (p → q) ∧ (p ∧ ~q) é uma contingência, pois depende dos valores de p e q.\n\nÉ correto apenas o que se afirma em",
     "options": [
       {
         "letter": "A",
@@ -135,7 +143,11 @@
     "explanation": "I é verdadeira: ~(p → q) ⇔ p ∧ ~q, portanto (p ∧ ~q) ↔ ~(p → q) é sempre V (tautologia). II é falsa: ~p → ~q é a proposição contrária, equivalente à recíproca q → p, não à direta p → q. III é verdadeira: toda condicional é equivalente à sua contrapositiva ~q → ~p. IV é falsa: como p ∧ ~q é a negação de p → q, a conjunção (p → q) ∧ (p ∧ ~q) é uma contradição.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Tautologias, Contradições e Contingências", "Equivalência Lógica", "Proposições Associadas à Condicional"]
+    "topics": [
+      "Tautologias, Contradições e Contingências",
+      "Equivalência Lógica",
+      "Proposições Associadas à Condicional"
+    ]
   },
   {
     "id": "lm-inedita-04",
@@ -149,7 +161,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Solucionadores SAT modernos exigem que fórmulas lógicas de verificação de circuitos e restrições de sistemas sejam convertidas para a Forma Normal Conjuntiva (FNC).\n\nConsidere a proposição composta P(p, q, r) = (p ∨ q) → (r ∧ ~p).\n\nCom base nas propriedades da álgebra das proposições e nas regras de construção de formas normais, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. A proposição P(p, q, r) é logicamente equivalente à expressão ~p ∧ (~q ∨ r), que se encontra na Forma Normal Conjuntiva (FNC).\n\nPORQUE\n\nII. Na Forma Normal Conjuntiva, o conectivo de negação (~) incide exclusivamente sobre letras proposicionais, não há dupla negação e o conectivo de conjunção (∧) não tem alcance sobre o conectivo de disjunção (∨).\n\nA respeito dessas asserções, assinale a opção correta.",
+    "stem": "Solucionadores SAT modernos exigem que fórmulas lógicas de verificação de circuitos e restrições de sistemas sejam convertidas para a Forma Normal Conjuntiva (FNC).\n\nConsidere a proposição composta P(p, q, r) = (p ∨ q) → (r ∧ ~p).\n\nCom base nas propriedades da álgebra das proposições e nas regras de construção de formas normais, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. A proposição P(p, q, r) é logicamente equivalente à expressão ~p ∧ (~q ∨ r), que se encontra na Forma Normal Conjuntiva (FNC).\n\n**PORQUE**\n\nII. Na Forma Normal Conjuntiva, o conectivo de negação (~) incide exclusivamente sobre letras proposicionais, não há dupla negação e o conectivo de conjunção (∧) não tem alcance sobre o conectivo de disjunção (∨).\n\nA respeito dessas asserções, assinale a opção correta.",
     "options": [
       {
         "letter": "A",
@@ -181,7 +193,11 @@
     "explanation": "Transformando P = (p ∨ q) → (r ∧ ~p): eliminamos a condicional obtendo ~(p ∨ q) ∨ (r ∧ ~p); por De Morgan e comutatividade, (~p ∧ ~q) ∨ (~p ∧ r); colocando ~p em evidência pela distributividade, obtemos ~p ∧ (~q ∨ r), que é uma conjunção de duas cláusulas (~p) e (~q ∨ r) — portanto está na FNC (Asserção I verdadeira). A Asserção II é falsa porque troca a regra 3 da FNC (∨ não tem alcance sobre ∧) pela regra da FND (∧ não tem alcance sobre ∨).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Forma Normal Conjuntiva (FNC)", "Forma Normal Disjuntiva (FND)", "Álgebra das Proposições"]
+    "topics": [
+      "Forma Normal Conjuntiva (FNC)",
+      "Forma Normal Disjuntiva (FND)",
+      "Álgebra das Proposições"
+    ]
   },
   {
     "id": "lm-inedita-05",
@@ -195,7 +211,7 @@
     "type": "objetiva",
     "difficulty": "dificil",
     "annulled": false,
-    "stem": "Durante a investigação de um incidente em um servidor de aplicação, o analista obteve quatro fatos formalizados como premissas de um argumento:\n\nP1: p → (q ∧ r)\nP2: ~r ∨ s\nP3: ~s\nP4: t → p\n\nem que:\n• p: o serviço de autenticação reiniciou;\n• q: o cache de sessão foi limpo;\n• r: o log de auditoria foi rotacionado;\n• s: o backup noturno foi concluído;\n• t: houve atualização de kernel.\n\nConsiderando as regras de inferência e equivalência da lógica proposicional, qual conclusão pode ser deduzida validamente a partir dessas quatro premissas?",
+    "stem": "Durante a investigação de um incidente em um servidor de aplicação, o analista obteve quatro fatos formalizados como premissas de um argumento:\n\nP1: p → (q ∧ r)\n\nP2: ~r ∨ s\n\nP3: ~s\n\nP4: t → p\n\nem que:\n\n- p: o serviço de autenticação reiniciou;\n- q: o cache de sessão foi limpo;\n- r: o log de auditoria foi rotacionado;\n- s: o backup noturno foi concluído;\n- t: houve atualização de kernel.\n\nConsiderando as regras de inferência e equivalência da lógica proposicional, qual conclusão pode ser deduzida validamente a partir dessas quatro premissas?",
     "options": [
       {
         "letter": "A",
@@ -227,7 +243,11 @@
     "explanation": "Dedução passo a passo: (1) P2: ~r ∨ s; P3: ~s ⇒ ~r (Silogismo Disjuntivo); (2) ~r ⇒ ~q ∨ ~r (Adição) ⇔ ~(q ∧ r) (De Morgan); (3) P1: p → (q ∧ r) e ~(q ∧ r) ⇒ ~p (Modus Tollens); (4) P4: t → p e ~p ⇒ ~t (Modus Tollens); (5) De ~t e ~r, por Conjunção, obtém-se ~t ∧ ~r.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Regras de Inferência", "Regras de Equivalência", "Validade de Argumentos"]
+    "topics": [
+      "Regras de Inferência",
+      "Regras de Equivalência",
+      "Validade de Argumentos"
+    ]
   },
   {
     "id": "lm-inedita-06",
@@ -241,7 +261,7 @@
     "type": "objetiva",
     "difficulty": "dificil",
     "annulled": false,
-    "stem": "O método do Tableau Semântico constitui um procedimento de refutação em árvore para verificar se uma fórmula H é um teorema ou se uma conclusão Q é consequência lógica de um conjunto de premissas.\n\nSobre a aplicação das regras de decomposição (R1 a R9), heurísticas e critérios de encerramento de um tableau semântico, avalie as afirmações a seguir.\n\nI. Para provar a validade de um argumento P₁, P₂, ..., Pₙ ⊢ Q por tableau semântico, inicia-se a árvore com a negação da condicional associada ~((P₁ ∧ P₂ ∧ ... ∧ Pₙ) → Q), buscando fechar todos os ramos.\nII. As regras de decomposição para ~(A → B) e ~(A ∨ B) são regras do tipo α (lineares), pois não provocam bifurcação na árvore.\nIII. Como heurística de eficiência, recomenda-se aplicar primeiro as regras que bifurcam (tipo β) antes das regras lineares (tipo α), para detectar contradições mais rapidamente.\nIV. Se, após exaurir todas as regras aplicáveis, restar ao menos um ramo aberto sem contradições, conclui-se que o argumento testado é inválido e esse ramo fornece um contraexemplo.\n\nÉ correto apenas o que se afirma em",
+    "stem": "O método do Tableau Semântico constitui um procedimento de refutação em árvore para verificar se uma fórmula H é um teorema ou se uma conclusão Q é consequência lógica de um conjunto de premissas.\n\nSobre a aplicação das regras de decomposição (R1 a R9), heurísticas e critérios de encerramento de um tableau semântico, avalie as afirmações a seguir.\n\nI. Para provar a validade de um argumento P₁, P₂, ..., Pₙ ⊢ Q por tableau semântico, inicia-se a árvore com a negação da condicional associada ~((P₁ ∧ P₂ ∧ ... ∧ Pₙ) → Q), buscando fechar todos os ramos.\n\nII. As regras de decomposição para ~(A → B) e ~(A ∨ B) são regras do tipo α (lineares), pois não provocam bifurcação na árvore.\n\nIII. Como heurística de eficiência, recomenda-se aplicar primeiro as regras que bifurcam (tipo β) antes das regras lineares (tipo α), para detectar contradições mais rapidamente.\n\nIV. Se, após exaurir todas as regras aplicáveis, restar ao menos um ramo aberto sem contradições, conclui-se que o argumento testado é inválido e esse ramo fornece um contraexemplo.\n\nÉ correto apenas o que se afirma em",
     "options": [
       {
         "letter": "A",
@@ -273,7 +293,11 @@
     "explanation": "As afirmações I, II e IV estão corretas: o tableau é um método de refutação que nega o argumento (I); ~(A → B) (R8) e ~(A ∨ B) (R7) são regras lineares tipo α (II); e a existência de um ramo aberto saturado comprova invalidade por contraexemplo (IV). A afirmação III é incorreta porque a heurística manda adiar a bifurcação (aplicar α antes de β).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Tableau Semântico", "Heurística de Decomposição", "Ramo Aberto e Fechado"]
+    "topics": [
+      "Tableau Semântico",
+      "Heurística de Decomposição",
+      "Ramo Aberto e Fechado"
+    ]
   },
   {
     "id": "lm-inedita-07",
@@ -319,7 +343,11 @@
     "explanation": "Pelo Teorema da Redução do Número de Conectivos, os conjuntos {~, ∨}, {~, ∧} e {~, →} são funcionalmente completos, ao passo que ∧, ∨ e → não podem ser expressos em termos de {~, ↔}. Ademais, pela definição de negação disjunta (NAND), p ↑ p ⇔ ~p ∨ ~p ⇔ ~p.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Redução de Conectivos", "Conectivos de Scheffer", "Método Dedutivo"]
+    "topics": [
+      "Redução de Conectivos",
+      "Conectivos de Scheffer",
+      "Método Dedutivo"
+    ]
   },
   {
     "id": "lm-inedita-08",
@@ -333,7 +361,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Um sistema acadêmico utiliza Lógica de Predicados e Programação Lógica (Prolog) para validar matrículas e pré-requisitos curriculares. Considere a afirmação de controle:\n\n\"Todo estudante matriculado em Compiladores concluiu Algoritmos.\"\n\nAdotando M(x) = \"x está matriculado em Compiladores\" e C(x) = \"x concluiu Algoritmos\", além da base de conhecimento em Prolog abaixo:\n\nconcluiu(ana, algoritmos).\nconcluiu(bruno, algoritmos).\nmatriculado(ana, compiladores).\nmatriculado(carlos, compiladores).\n\nAssinale a alternativa correta quanto à negação lógica da sentença quantificada e à resposta do motor Prolog para a consulta de verificação de irregularidade.",
+    "stem": "Um sistema acadêmico utiliza Lógica de Predicados e Programação Lógica (Prolog) para validar matrículas e pré-requisitos curriculares. Considere a afirmação de controle:\n\n\"Todo estudante matriculado em Compiladores concluiu Algoritmos.\"\n\nAdotando M(x) = \"x está matriculado em Compiladores\" e C(x) = \"x concluiu Algoritmos\", além da base de conhecimento em Prolog abaixo:\n\nconcluiu(ana, algoritmos).\n\nconcluiu(bruno, algoritmos).\n\nmatriculado(ana, compiladores).\n\nmatriculado(carlos, compiladores).\n\nAssinale a alternativa correta quanto à negação lógica da sentença quantificada e à resposta do motor Prolog para a consulta de verificação de irregularidade.",
     "options": [
       {
         "letter": "A",
@@ -365,7 +393,11 @@
     "explanation": "Formalmente, a regra é ∀x (M(x) → C(x)). Sua negação é ~(∀x (M(x) → C(x))) ⇔ ∃x ~(M(x) → C(x)) ⇔ ∃x (M(x) ∧ ~C(x)) (existe algum estudante matriculado em Compiladores que não concluiu Algoritmos). Na base Prolog, apenas carlos satisfaz matriculado(X, compiladores) sem satisfazer concluiu(X, algoritmos).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Lógica de Predicados", "Negação de Quantificadores", "Programação Lógica (Prolog)"]
+    "topics": [
+      "Lógica de Predicados",
+      "Negação de Quantificadores",
+      "Programação Lógica (Prolog)"
+    ]
   },
   {
     "id": "lm-inedita-09",
@@ -379,13 +411,17 @@
     "type": "discursiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Uma equipe de engenharia de software especificou as seguintes regras para o módulo de auditoria de uma API:\n\n• Premissa 1: Se a requisição é administrativa ou vem de rede externa, então o token JWT é validado e o registro de auditoria é gravado.\n• Premissa 2: Se o alerta crítico é disparado, então o registro de auditoria não é gravado.\n\nConsidere as proposições atômicas: p = \"a requisição é administrativa\", q = \"a requisição vem de rede externa\", r = \"o token JWT é validado\", s = \"o registro de auditoria é gravado\" e t = \"o alerta crítico é disparado\".\n\nCom base nessas informações, faça o que se pede.\na) Formalize as Premissas 1 e 2 e a conclusão \"Se a requisição é administrativa, então o alerta crítico não é disparado\", escrevendo o argumento completo com o símbolo ⊢. (valor: 4,0 pontos)\nb) Demonstre formalmente a validade do argumento utilizando o artifício da Dedução da Condicional (Simplificação da Conclusão) e as regras de inferência/equivalência, justificando cada passo numerado. (valor: 6,0 pontos)",
+    "stem": "Uma equipe de engenharia de software especificou as seguintes regras para o módulo de auditoria de uma API:\n\n- Premissa 1: Se a requisição é administrativa ou vem de rede externa, então o token JWT é validado e o registro de auditoria é gravado.\n- Premissa 2: Se o alerta crítico é disparado, então o registro de auditoria não é gravado.\n\nConsidere as proposições atômicas: p = \"a requisição é administrativa\", q = \"a requisição vem de rede externa\", r = \"o token JWT é validado\", s = \"o registro de auditoria é gravado\" e t = \"o alerta crítico é disparado\".\n\nCom base nessas informações, faça o que se pede.\n\na) Formalize as Premissas 1 e 2 e a conclusão \"Se a requisição é administrativa, então o alerta crítico não é disparado\", escrevendo o argumento completo com o símbolo ⊢. (valor: 4,0 pontos)\n\nb) Demonstre formalmente a validade do argumento utilizando o artifício da Dedução da Condicional (Simplificação da Conclusão) e as regras de inferência/equivalência, justificando cada passo numerado. (valor: 6,0 pontos)",
     "options": [],
     "correctAnswer": null,
     "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
-    "discursiveRubric": "a) Formalização (4,0 pontos):\n- Premissa 1: (p ∨ q) → (r ∧ s) (1,5 ponto)\n- Premissa 2: t → ~s (1,0 ponto)\n- Conclusão: p → ~t (1,0 ponto)\n- Argumento completo: (p ∨ q) → (r ∧ s), t → ~s ⊢ p → ~t (0,5 ponto)\n\nb) Demonstração formal pela Dedução da Condicional (6,0 pontos):\nPela Dedução da Condicional (Exportação-Importação), incorpora-se o antecedente p como premissa adicional para deduzir ~t:\n1. (p ∨ q) → (r ∧ s)   [Premissa]\n2. t → ~s               [Premissa]\n3. p                    [Premissa adicional — Dedução da Condicional]\n4. p ∨ q                [3 — Adição (AD)]\n5. r ∧ s                [1, 4 — Modus Ponens (MP)]\n6. s                    [5 — Simplificação (SIMP)]\n7. ~~s                  [6 — Dupla Negação (DN)]\n8. ~t                   [2, 7 — Modus Tollens (MT)]\nCritério: 1,5 pt pela aplicação correta da Dedução da Condicional e 4,5 pts pela sequência lógica correta com justificativa explícita das regras (AD, MP, SIMP, DN/MT).",
+    "discursiveRubric": "a) Formalização (4,0 pontos):\n\n- Premissa 1: (p ∨ q) → (r ∧ s) (1,5 ponto)\n- Premissa 2: t → ~s (1,0 ponto)\n- Conclusão: p → ~t (1,0 ponto)\n- Argumento completo: (p ∨ q) → (r ∧ s), t → ~s ⊢ p → ~t (0,5 ponto)\n\nb) Demonstração formal pela Dedução da Condicional (6,0 pontos):\n\nPela Dedução da Condicional (Exportação-Importação), incorpora-se o antecedente p como premissa adicional para deduzir ~t:\n\n1. (p ∨ q) → (r ∧ s)   [Premissa]\n2. t → ~s               [Premissa]\n3. p                    [Premissa adicional — Dedução da Condicional]\n4. p ∨ q                [3 — Adição (AD)]\n5. r ∧ s                [1, 4 — Modus Ponens (MP)]\n6. s                    [5 — Simplificação (SIMP)]\n7. ~~s                  [6 — Dupla Negação (DN)]\n8. ~t                   [2, 7 — Modus Tollens (MT)]\n\nCritério: 1,5 pt pela aplicação correta da Dedução da Condicional e 4,5 pts pela sequência lógica correta com justificativa explícita das regras (AD, MP, SIMP, DN/MT).",
     "imageUrls": [],
-    "topics": ["Formalização Proposicional", "Dedução da Condicional", "Regras de Inferência"]
+    "topics": [
+      "Formalização Proposicional",
+      "Dedução da Condicional",
+      "Regras de Inferência"
+    ]
   },
   {
     "id": "lm-inedita-10",
@@ -399,12 +435,16 @@
     "type": "discursiva",
     "difficulty": "dificil",
     "annulled": false,
-    "stem": "Um engenheiro de requisitos propôs o seguinte raciocínio para validar o comportamento de um sistema distribuído:\n\n\"Se o serviço de fila está ativo, então o sistema responde em até 200 ms. Se o banco de dados possui réplica, então o sistema responde em até 200 ms. Verificou-se que o sistema responde em até 200 ms. Logo, o serviço de fila está ativo ou o banco de dados possui réplica.\"\n\nConsidere p = \"o serviço de fila está ativo\", q = \"o sistema responde em até 200 ms\" e r = \"o banco de dados possui réplica\".\n\nCom base no método do Tableau Semântico, faça o que se pede.\na) Formalize o argumento e monte o Tableau Semântico correspondente à sua verificação de validade, indicando claramente a regra aplicada (R1 a R9) em cada passo e classificando cada ramo ao final (aberto ou fechado). (valor: 6,0 pontos)\nb) Informe se o argumento é válido ou inválido (sofisma) e, caso seja inválido, extraia diretamente de um ramo aberto do tableau uma valoração completa para (p, q, r) que sirva como contraexemplo. (valor: 4,0 pontos)",
+    "stem": "Um engenheiro de requisitos propôs o seguinte raciocínio para validar o comportamento de um sistema distribuído:\n\n\"Se o serviço de fila está ativo, então o sistema responde em até 200 ms. Se o banco de dados possui réplica, então o sistema responde em até 200 ms. Verificou-se que o sistema responde em até 200 ms. Logo, o serviço de fila está ativo ou o banco de dados possui réplica.\"\n\nConsidere p = \"o serviço de fila está ativo\", q = \"o sistema responde em até 200 ms\" e r = \"o banco de dados possui réplica\".\n\nCom base no método do Tableau Semântico, faça o que se pede.\n\na) Formalize o argumento e monte o Tableau Semântico correspondente à sua verificação de validade, indicando claramente a regra aplicada (R1 a R9) em cada passo e classificando cada ramo ao final (aberto ou fechado). (valor: 6,0 pontos)\n\nb) Informe se o argumento é válido ou inválido (sofisma) e, caso seja inválido, extraia diretamente de um ramo aberto do tableau uma valoração completa para (p, q, r) que sirva como contraexemplo. (valor: 4,0 pontos)",
     "options": [],
     "correctAnswer": null,
     "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
-    "discursiveRubric": "a) Formalização e Construção do Tableau Semântico (6,0 pontos):\nArgumento: p → q, r → q, q ⊢ p ∨ r. (1,0 ponto)\nFórmula de refutação na raiz: ~(((p → q) ∧ (r → q) ∧ q) → (p ∨ r))\nPasso 1: R8 aplica-se à negação da condicional → adiciona (p → q) ∧ (r → q) ∧ q e ~(p ∨ r). (1,0 ponto)\nPasso 2: R1 e R7 (adiando bifurcação, tipo α) → extrai (p → q), (r → q), q, ~p, ~r no tronco principal. (1,5 ponto)\nPasso 3: R3 em (p → q) → bifurca em ~p e q. O ramo esquerdo (~p) mantém-se consistente (~p, ~r, q); aplica-se R3 em (r → q) gerando ~r (consistente) e q (consistente). No ramo direito de (p → q) (q), também não há contradição. (2,5 pontos)\n\nb) Diagnóstico e Contraexemplo (4,0 pontos):\n- Classificação: O tableau permanece ABERTO (existem ramos abertos saturados sem par complementar B e ~B); portanto, o argumento é INVÁLIDO (sofisma / falácia da afirmação do consequente). (2,0 pontos)\n- Contraexemplo extraído do ramo aberto contendo {q, ~p, ~r}: V(p) = F, V(q) = V, V(r) = F. Com essa valoração, todas as premissas são verdadeiras (F→V = V, F→V = V, q = V), mas a conclusão p ∨ r é F ∨ F = F. (2,0 pontos)",
+    "discursiveRubric": "a) Formalização e Construção do Tableau Semântico (6,0 pontos):\n\nArgumento: p → q, r → q, q ⊢ p ∨ r. (1,0 ponto)\n\nFórmula de refutação na raiz: ~(((p → q) ∧ (r → q) ∧ q) → (p ∨ r))\n\nPasso 1: R8 aplica-se à negação da condicional → adiciona (p → q) ∧ (r → q) ∧ q e ~(p ∨ r). (1,0 ponto)\n\nPasso 2: R1 e R7 (adiando bifurcação, tipo α) → extrai (p → q), (r → q), q, ~p, ~r no tronco principal. (1,5 ponto)\n\nPasso 3: R3 em (p → q) → bifurca em ~p e q. O ramo esquerdo (~p) mantém-se consistente (~p, ~r, q); aplica-se R3 em (r → q) gerando ~r (consistente) e q (consistente). No ramo direito de (p → q) (q), também não há contradição. (2,5 pontos)\n\nb) Diagnóstico e Contraexemplo (4,0 pontos):\n\n- Classificação: O tableau permanece ABERTO (existem ramos abertos saturados sem par complementar B e ~B); portanto, o argumento é INVÁLIDO (sofisma / falácia da afirmação do consequente). (2,0 pontos)\n- Contraexemplo extraído do ramo aberto contendo {q, ~p, ~r}: V(p) = F, V(q) = V, V(r) = F. Com essa valoração, todas as premissas são verdadeiras (F→V = V, F→V = V, q = V), mas a conclusão p ∨ r é F ∨ F = F. (2,0 pontos)",
     "imageUrls": [],
-    "topics": ["Tableau Semântico", "Sofismas", "Contraexemplo em Ramos Abertos"]
+    "topics": [
+      "Tableau Semântico",
+      "Sofismas",
+      "Contraexemplo em Ramos Abertos"
+    ]
   }
 ]

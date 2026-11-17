@@ -43,7 +43,11 @@
     "explanation": "Convertendo 11,625₁₀: parte inteira 11 = 8 + 2 + 1 = 1011₂; parte fracionária 0,625 = 0,5 + 0,125 = 2⁻¹ + 2⁻³ = 0,101₂. Em complemento de 2 com n = 8 bits, a faixa representável é [−2⁷, +(2⁷ − 1)] = [−128, +127]. A soma +95 + 50 = +145 excede +127, provocando overflow (01011111₂ + 00110010₂ = 10010001₂).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Sistemas de Numeração", "Binário Fracionário", "Complemento de 2 e Overflow"]
+    "topics": [
+      "Sistemas de Numeração",
+      "Binário Fracionário",
+      "Complemento de 2 e Overflow"
+    ]
   },
   {
     "id": "oac-inedita-02",
@@ -89,7 +93,11 @@
     "explanation": "Decompondo os 32 bits: Sinal S = 1 → (−1)¹ = −1. Expoente E = 10000010₂ = 130₁₀ → expoente real = 130 − 127 = 3. Mantissa F = 101000...₂ → 1·2⁻¹ + 0·2⁻² + 1·2⁻³ = 0,5 + 0,125 = 0,625. Com o bit implícito, a significanda vale 1,625. Portanto, V = −1 × 1,625 × 2³ = −13,0.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Ponto Flutuante", "Padrão IEEE 754", "Aritmética Computacional"]
+    "topics": [
+      "Ponto Flutuante",
+      "Padrão IEEE 754",
+      "Aritmética Computacional"
+    ]
   },
   {
     "id": "oac-inedita-03",
@@ -135,7 +143,11 @@
     "explanation": "Aplicando a Lei de De Morgan e absorção booleana: Y = (A · B)' + A · B' = A' + B' + A · B' = A' + B'·(1 + A) = A' + B' = (A · B)', que é exatamente a função de uma porta NAND. Como não há realimentação de estado nem elementos de memória (latches/flip-flops), trata-se de um circuito combinacional.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Álgebra Booleana", "Portas Lógicas", "Circuitos Combinacionais e Sequenciais"]
+    "topics": [
+      "Álgebra Booleana",
+      "Portas Lógicas",
+      "Circuitos Combinacionais e Sequenciais"
+    ]
   },
   {
     "id": "oac-inedita-04",
@@ -149,7 +161,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "O modelo de arquitetura de Von Neumann e a filosofia RISC (exemplificada pelo processador MIPS de 32 bits) moldaram o projeto dos processadores modernos.\n\nSobre as características da arquitetura de Von Neumann, organização MIPS, ordenação de bytes (endianness) e paradigma RISC vs. CISC, avalie as afirmações a seguir.\n\nI. Na arquitetura de Von Neumann, instruções e dados compartilham a mesma memória principal, podendo ocasionar o gargalo de barramento entre CPU e memória.\nII. Em um processador MIPS clássico, as instruções têm tamanho fixo de 32 bits, o banco possui 32 registradores de 32 bits e as operações aritméticas seguem o modelo load/store com 3 operandos.\nIII. Um processador Little-Endian armazena o byte mais significativo (MSB) de uma palavra no menor endereço de memória, enquanto o Big-Endian armazena o byte menos significativo (LSB) no menor endereço.\nIV. Arquiteturas RISC privilegiam instruções simples de tamanho fixo para facilitar a decodificação e o pipeline, enquanto arquiteturas CISC possuem instruções complexas de tamanho variável.\n\nÉ correto apenas o que se afirma em",
+    "stem": "O modelo de arquitetura de Von Neumann e a filosofia RISC (exemplificada pelo processador MIPS de 32 bits) moldaram o projeto dos processadores modernos.\n\nSobre as características da arquitetura de Von Neumann, organização MIPS, ordenação de bytes (endianness) e paradigma RISC vs. CISC, avalie as afirmações a seguir.\n\nI. Na arquitetura de Von Neumann, instruções e dados compartilham a mesma memória principal, podendo ocasionar o gargalo de barramento entre CPU e memória.\n\nII. Em um processador MIPS clássico, as instruções têm tamanho fixo de 32 bits, o banco possui 32 registradores de 32 bits e as operações aritméticas seguem o modelo load/store com 3 operandos.\n\nIII. Um processador Little-Endian armazena o byte mais significativo (MSB) de uma palavra no menor endereço de memória, enquanto o Big-Endian armazena o byte menos significativo (LSB) no menor endereço.\n\nIV. Arquiteturas RISC privilegiam instruções simples de tamanho fixo para facilitar a decodificação e o pipeline, enquanto arquiteturas CISC possuem instruções complexas de tamanho variável.\n\nÉ correto apenas o que se afirma em",
     "options": [
       {
         "letter": "A",
@@ -181,7 +193,11 @@
     "explanation": "I é verdadeira (memória única para instruções e dados gera o gargalo de Von Neumann). II é verdadeira (MIPS: instruções fixas de 32 bits, 32 registradores de 32 bits, 3 operandos e acesso à memória restrito a load/store). III é falsa porque inverte as definições: em Big-Endian o byte mais significativo fica no endereço mais baixo; em Little-Endian, o byte menos significativo fica no endereço mais baixo. IV é verdadeira.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Arquitetura de Von Neumann", "MIPS e Endianness", "RISC vs. CISC"]
+    "topics": [
+      "Arquitetura de Von Neumann",
+      "MIPS e Endianness",
+      "RISC vs. CISC"
+    ]
   },
   {
     "id": "oac-inedita-05",
@@ -227,7 +243,11 @@
     "explanation": "Entre as instruções 1 (lw) e 2 (add) existe uma dependência RAW do tipo load-use: lw obtém $t1 apenas no fim de MEM, enquanto add precisa dele no início de EX, exigindo 1 stall (bolha) + forwarding de MEM/WB para EX. Entre 2 (add) e 3 (sub), $t2 é produzido no estágio EX de add e imediatamente encaminhado por forwarding (EX/MEM → EX) para sub, sem nenhum stall. A instrução 4 (beq) introduz risco de controle.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Pipeline", "Riscos de Dados, Controle e Estruturais", "Forwarding e Stalls"]
+    "topics": [
+      "Pipeline",
+      "Riscos de Dados, Controle e Estruturais",
+      "Forwarding e Stalls"
+    ]
   },
   {
     "id": "oac-inedita-06",
@@ -273,7 +293,11 @@
     "explanation": "Cálculo dos campos: (1) Offset = log₂(64 bytes) = 6 bits; (2) Número de linhas na cache = 64 KB / 64 B = (64 × 1024) / 64 = 1 024 linhas; (3) Como há 4 vias por conjunto, Número de conjuntos = 1 024 / 4 = 256 = 2⁸ → Índice = 8 bits; (4) Tag = 32 − 8 − 6 = 18 bits. Quanto às políticas, em Write-Back os dados são gravados apenas na cache durante os acertos de escrita e propagados à memória principal somente na substituição do bloco.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Memória Cache", "Mapeamento Associativo por Conjunto", "Políticas de Escrita e Faltas"]
+    "topics": [
+      "Memória Cache",
+      "Mapeamento Associativo por Conjunto",
+      "Políticas de Escrita e Faltas"
+    ]
   },
   {
     "id": "oac-inedita-07",
@@ -319,7 +343,11 @@
     "explanation": "Comparando os níveis RAID com 4 discos de 2 TB (8 TB brutos): RAID 0 não tem redundância (8 TB úteis, 0 falhas toleradas); RAID 1 usa espelhamento (50% útil); RAID 3 usa paridade por bit acessando todos os discos juntos; RAID 4 usa paridade por bloco em disco dedicado (gargalo na escrita); RAID 5 distribui a paridade por bloco entre os 4 discos (6 TB úteis, tolera 1 falha); RAID 6 emprega dupla redundância P + Q (4 TB úteis, tolera 2 falhas simultâneas).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Armazenamento", "Níveis RAID", "Tolerância a Falhas"]
+    "topics": [
+      "Armazenamento",
+      "Níveis RAID",
+      "Tolerância a Falhas"
+    ]
   },
   {
     "id": "oac-inedita-08",
@@ -365,7 +393,11 @@
     "explanation": "Taxa de requisições: 10 800 / 3 600 s = 3 req/s. Vazão do disco: 3 req/s × 5 I/O/req = 15 operações de I/O por segundo. Utilização média do disco (Lei da Utilização U = X · S): U = 15 I/O/s × 0,012 s/I/O = 0,18 = 18%. Para transferir blocos diretamente entre E/S e RAM sem envolver a CPU palavra a palavra, utiliza-se DMA (Acesso Direto à Memória).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Métricas de Desempenho", "Utilização e Throughput", "Entrada e Saída (DMA, Interrupções, Polling)"]
+    "topics": [
+      "Métricas de Desempenho",
+      "Utilização e Throughput",
+      "Entrada e Saída (DMA, Interrupções, Polling)"
+    ]
   },
   {
     "id": "oac-inedita-09",
@@ -379,13 +411,17 @@
     "type": "discursiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Considere um processador MIPS com pipeline de 5 estágios (IF, ID, EX, MEM, WB), em que o banco de registradores permite escrita na primeira metade do ciclo e leitura na segunda metade. Analise a sequência de instruções abaixo:\n\nI1: add $s0, $t0, $t1\nI2: sub $t2, $s0, $t3\nI3: lw  $s1, 4($s0)\nI4: or  $t4, $s1, $t5\n\nCom base no funcionamento do pipeline e nas técnicas de mitigação de riscos (hazards), faça o que se pede nos itens a seguir.\na) Identifique todas as dependências de dados RAW (Read After Write) existentes no código acima, especificando quais pares de instruções e registradores estão envolvidos. (valor: 4,0 pontos)\nb) Explique por que a técnica de forwarding (adiantamento) elimina completamente os stalls entre I1 e I2, mas NÃO evita a inserção de 1 stall (bolha) entre I3 e I4, indicando quantos ciclos totais serão gastos para executar as 4 instruções com forwarding habilitado. (valor: 6,0 pontos)",
+    "stem": "Considere um processador MIPS com pipeline de 5 estágios (IF, ID, EX, MEM, WB), em que o banco de registradores permite escrita na primeira metade do ciclo e leitura na segunda metade. Analise a sequência de instruções abaixo:\n\nI1: add $s0, $t0, $t1\n\nI2: sub $t2, $s0, $t3\n\nI3: lw  $s1, 4($s0)\n\nI4: or  $t4, $s1, $t5\n\nCom base no funcionamento do pipeline e nas técnicas de mitigação de riscos (hazards), faça o que se pede nos itens a seguir.\n\na) Identifique todas as dependências de dados RAW (Read After Write) existentes no código acima, especificando quais pares de instruções e registradores estão envolvidos. (valor: 4,0 pontos)\n\nb) Explique por que a técnica de forwarding (adiantamento) elimina completamente os stalls entre I1 e I2, mas NÃO evita a inserção de 1 stall (bolha) entre I3 e I4, indicando quantos ciclos totais serão gastos para executar as 4 instruções com forwarding habilitado. (valor: 6,0 pontos)",
     "options": [],
     "correctAnswer": null,
     "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
-    "discursiveRubric": "a) Identificação das dependências RAW (4,0 pontos):\n- Dependência 1: I1 → I2 sobre o registrador $s0 (I1 escreve $s0; I2 lê $s0). (1,5 ponto)\n- Dependência 2: I1 → I3 sobre o registrador $s0 (I1 escreve $s0 no ciclo 5 [1ª metade] e I3 lê $s0 no ciclo 4 [ID] → depende de I1; caso haja forwarding ou escrita/leitura simultânea). (1,0 ponto)\n- Dependência 3: I3 → I4 sobre o registrador $s1 (I3 carrega $s1 da memória; I4 lê $s1 imediatamente depois — load-use hazard). (1,5 ponto)\n\nb) Análise de Forwarding, Stall e Contagem de Ciclos (6,0 pontos):\n- Entre I1 e I2 (2,0 pontos): I1 (add) calcula o novo valor de $s0 ao final do estágio EX (ciclo 3). I2 (sub) precisa desse valor no início de seu estágio EX (ciclo 4). Como o resultado já foi produzido pela ULA em EX/MEM, o forwarding envia-o diretamente para a entrada da ULA de I2 sem necessidade de stall (e o mesmo ocorre de MEM/WB de I1 para EX de I3 no ciclo 5).\n- Entre I3 e I4 (2,0 pontos): I3 (lw) só obtém o dado da memória ao final do estágio MEM. I4 (or) precisaria desse dado no início de seu estágio EX no ciclo imediatamente seguinte (o que exigiria retornar no tempo). Portanto, o hardware insere obrigatoriamente 1 ciclo de stall (bolha) entre I3 e I4, para então aplicar forwarding de MEM/WB para EX.\n- Contagem total de ciclos (2,0 pontos): Sem stalls, 4 instruções em pipeline de 5 estágios levariam 5 + (4 − 1) = 8 ciclos. Com 1 stall obrigatório pelo load-use entre I3 e I4, a sequência conclui em 8 + 1 = 9 ciclos de clock.",
+    "discursiveRubric": "a) Identificação das dependências RAW (4,0 pontos):\n\n- Dependência 1: I1 → I2 sobre o registrador $s0 (I1 escreve $s0; I2 lê $s0). (1,5 ponto)\n- Dependência 2: I1 → I3 sobre o registrador $s0 (I1 escreve $s0 no ciclo 5 [1ª metade] e I3 lê $s0 no ciclo 4 [ID] → depende de I1; caso haja forwarding ou escrita/leitura simultânea). (1,0 ponto)\n- Dependência 3: I3 → I4 sobre o registrador $s1 (I3 carrega $s1 da memória; I4 lê $s1 imediatamente depois — load-use hazard). (1,5 ponto)\n\nb) Análise de Forwarding, Stall e Contagem de Ciclos (6,0 pontos):\n\n- Entre I1 e I2 (2,0 pontos): I1 (add) calcula o novo valor de $s0 ao final do estágio EX (ciclo 3). I2 (sub) precisa desse valor no início de seu estágio EX (ciclo 4). Como o resultado já foi produzido pela ULA em EX/MEM, o forwarding envia-o diretamente para a entrada da ULA de I2 sem necessidade de stall (e o mesmo ocorre de MEM/WB de I1 para EX de I3 no ciclo 5).\n- Entre I3 e I4 (2,0 pontos): I3 (lw) só obtém o dado da memória ao final do estágio MEM. I4 (or) precisaria desse dado no início de seu estágio EX no ciclo imediatamente seguinte (o que exigiria retornar no tempo). Portanto, o hardware insere obrigatoriamente 1 ciclo de stall (bolha) entre I3 e I4, para então aplicar forwarding de MEM/WB para EX.\n- Contagem total de ciclos (2,0 pontos): Sem stalls, 4 instruções em pipeline de 5 estágios levariam 5 + (4 − 1) = 8 ciclos. Com 1 stall obrigatório pelo load-use entre I3 e I4, a sequência conclui em 8 + 1 = 9 ciclos de clock.",
     "imageUrls": [],
-    "topics": ["Pipeline MIPS", "Riscos de Dados (RAW)", "Forwarding e Stalls"]
+    "topics": [
+      "Pipeline MIPS",
+      "Riscos de Dados (RAW)",
+      "Forwarding e Stalls"
+    ]
   },
   {
     "id": "oac-inedita-10",
@@ -399,12 +435,16 @@
     "type": "discursiva",
     "difficulty": "dificil",
     "annulled": false,
-    "stem": "Uma equipe de arquitetura está projetando o subsistema de memória e acelerando o módulo crítico de processamento de uma estação de trabalho de 32 bits (endereçamento a byte).\n\nCom base nos conceitos de hierarquia de memória, mapeamento de cache e avaliação de desempenho (Lei de Amdahl), responda aos itens a seguir.\na) A estação terá uma cache L1 de 32 KB com blocos de 32 bytes e mapeamento associativo por conjunto de 8 vias (8-way set-associative). Calcule, passo a passo, o número total de linhas, o número de conjuntos e a quantidade de bits destinada aos campos Offset, Índice e Tag em um endereço físico de 32 bits. (valor: 5,0 pontos)\nb) Em um benchmark padrão, 60% do tempo de execução original de um programa ocorre em operações de multiplicação matricial. Se um coprodutor vetorial acelerar exclusivamente essas operações em 4×, mantendo o restante do programa inalterado, calcule o Speedup global obtido pela Lei de Amdahl e explique o limite assintótico de ganho caso a aceleração do coprodutor tendesse ao infinito. (valor: 5,0 pontos)",
+    "stem": "Uma equipe de arquitetura está projetando o subsistema de memória e acelerando o módulo crítico de processamento de uma estação de trabalho de 32 bits (endereçamento a byte).\n\nCom base nos conceitos de hierarquia de memória, mapeamento de cache e avaliação de desempenho (Lei de Amdahl), responda aos itens a seguir.\n\na) A estação terá uma cache L1 de 32 KB com blocos de 32 bytes e mapeamento associativo por conjunto de 8 vias (8-way set-associative). Calcule, passo a passo, o número total de linhas, o número de conjuntos e a quantidade de bits destinada aos campos Offset, Índice e Tag em um endereço físico de 32 bits. (valor: 5,0 pontos)\n\nb) Em um benchmark padrão, 60% do tempo de execução original de um programa ocorre em operações de multiplicação matricial. Se um coprodutor vetorial acelerar exclusivamente essas operações em 4×, mantendo o restante do programa inalterado, calcule o Speedup global obtido pela Lei de Amdahl e explique o limite assintótico de ganho caso a aceleração do coprodutor tendesse ao infinito. (valor: 5,0 pontos)",
     "options": [],
     "correctAnswer": null,
     "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
-    "discursiveRubric": "a) Dimensionamento da Cache L1 (5,0 pontos):\n- Número de linhas: 32 KB / 32 B = 32 768 / 32 = 1 024 linhas (2¹⁰). (1,0 ponto)\n- Número de conjuntos (8-way): 1 024 / 8 = 128 conjuntos (2⁷). (1,0 ponto)\n- Bits de Offset: log₂(32) = 5 bits. (1,0 ponto)\n- Bits de Índice (Set): log₂(128) = 7 bits. (1,0 ponto)\n- Bits de Tag: 32 − (7 + 5) = 20 bits. (1,0 ponto)\n\nb) Lei de Amdahl e Limite Assintótico (5,0 pontos):\n- Fórmula: Speedup = 1 / [(1 − f) + (f / S)], com f = 0,60 e S = 4. (1,0 ponto)\n- Cálculo: Speedup = 1 / [(1 − 0,60) + (0,60 / 4)] = 1 / (0,40 + 0,15) = 1 / 0,55 = 20 / 11 ≈ 1,82×. (2,0 pontos)\n- Limite assintótico (S → ∞): o termo f / S → 0, logo o Speedup máximo teórico é limitado pela fração não otimizada: Speedup_máx = 1 / (1 − 0,60) = 1 / 0,40 = 2,5×. Explicação conceitual clara de que a parte sequencial/não acelerada impõe o teto de desempenho. (2,0 pontos)",
+    "discursiveRubric": "a) Dimensionamento da Cache L1 (5,0 pontos):\n\n- Número de linhas: 32 KB / 32 B = 32 768 / 32 = 1 024 linhas (2¹⁰). (1,0 ponto)\n- Número de conjuntos (8-way): 1 024 / 8 = 128 conjuntos (2⁷). (1,0 ponto)\n- Bits de Offset: log₂(32) = 5 bits. (1,0 ponto)\n- Bits de Índice (Set): log₂(128) = 7 bits. (1,0 ponto)\n- Bits de Tag: 32 − (7 + 5) = 20 bits. (1,0 ponto)\n\nb) Lei de Amdahl e Limite Assintótico (5,0 pontos):\n\n- Fórmula: Speedup = 1 / [(1 − f) + (f / S)], com f = 0,60 e S = 4. (1,0 ponto)\n- Cálculo: Speedup = 1 / [(1 − 0,60) + (0,60 / 4)] = 1 / (0,40 + 0,15) = 1 / 0,55 = 20 / 11 ≈ 1,82×. (2,0 pontos)\n- Limite assintótico (S → ∞): o termo f / S → 0, logo o Speedup máximo teórico é limitado pela fração não otimizada: Speedup_máx = 1 / (1 − 0,60) = 1 / 0,40 = 2,5×. Explicação conceitual clara de que a parte sequencial/não acelerada impõe o teto de desempenho. (2,0 pontos)",
     "imageUrls": [],
-    "topics": ["Memória Cache", "Mapeamento Associativo por Conjunto", "Lei de Amdahl"]
+    "topics": [
+      "Memória Cache",
+      "Mapeamento Associativo por Conjunto",
+      "Lei de Amdahl"
+    ]
   }
 ]

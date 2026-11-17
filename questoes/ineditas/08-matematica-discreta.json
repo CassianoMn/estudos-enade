@@ -11,7 +11,7 @@
     "type": "objetiva",
     "difficulty": "facil",
     "annulled": false,
-    "stem": "Em um levantamento técnico realizado com 120 estudantes de Sistemas de Informação sobre o domínio de linguagens de programação e consulta, obtiveram-se os seguintes dados:\n\n• 60 dominam Python;\n• 50 dominam Java;\n• 45 dominam SQL;\n• 22 dominam Python e Java;\n• 18 dominam Python e SQL;\n• 14 dominam Java e SQL;\n• 8 dominam as três tecnologias simultaneamente.\n\nConsiderando o Princípio da Inclusão-Exclusão, o número de estudantes que dominam exatamente uma dessas tecnologias e o número de estudantes que não dominam nenhuma delas são, respectivamente,",
+    "stem": "Em um levantamento técnico realizado com 120 estudantes de Sistemas de Informação sobre o domínio de linguagens de programação e consulta, obtiveram-se os seguintes dados:\n\n- 60 dominam Python;\n- 50 dominam Java;\n- 45 dominam SQL;\n- 22 dominam Python e Java;\n- 18 dominam Python e SQL;\n- 14 dominam Java e SQL;\n- 8 dominam as três tecnologias simultaneamente.\n\nConsiderando o Princípio da Inclusão-Exclusão, o número de estudantes que dominam exatamente uma dessas tecnologias e o número de estudantes que não dominam nenhuma delas são, respectivamente,",
     "options": [
       {
         "letter": "A",
@@ -43,7 +43,11 @@
     "explanation": "Preenchendo o Diagrama de Venn de dentro para fora: 8 dominam as três; apenas Python e Java = 22 − 8 = 14; apenas Python e SQL = 18 − 8 = 10; apenas Java e SQL = 14 − 8 = 6. Logo, apenas Python = 60 − (14 + 10 + 8) = 28; apenas Java = 50 − (14 + 6 + 8) = 22; apenas SQL = 45 − (10 + 6 + 8) = 21. Somando apenas uma: 28 + 22 + 21 = 71. A união é 71 + 14 + 10 + 6 + 8 = 109, restando 120 − 109 = 11 que não dominam nenhuma.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Teoria dos Conjuntos", "Princípio da Inclusão-Exclusão", "Diagrama de Venn"]
+    "topics": [
+      "Teoria dos Conjuntos",
+      "Princípio da Inclusão-Exclusão",
+      "Diagrama de Venn"
+    ]
   },
   {
     "id": "md-inedita-02",
@@ -57,7 +61,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Considere o conjunto A = {1, 2, 3, 4} e as relações binárias definidas sobre A × A:\n\n• R₁ = {(x, y) ∈ A × A ∣ x divide y}\n• R₂ = {(x, y) ∈ A × A ∣ x ≡ y (mod 2)}\n• R₃ = {(1, 2), (2, 3), (3, 4), (4, 1)}\n\nAcerca das propriedades dessas relações e do conceito formal de função de A em A, avalie as afirmações a seguir.\n\nI. A relação R₁ é uma relação de ordem parcial sobre A, pois é reflexiva, antissimétrica e transitiva.\nII. A relação R₂ é uma relação de equivalência sobre A, particionando A nas classes {1, 3} e {2, 4}.\nIII. A relação R₃ é uma função bijetora de A em A.\nIV. Na matriz booleana de R₁, a diagonal principal contém zeros nos elementos em que x é primo.\n\nÉ correto apenas o que se afirma em",
+    "stem": "Considere o conjunto A = {1, 2, 3, 4} e as relações binárias definidas sobre A × A:\n\n- R₁ = {(x, y) ∈ A × A ∣ x divide y}\n- R₂ = {(x, y) ∈ A × A ∣ x ≡ y (mod 2)}\n- R₃ = {(1, 2), (2, 3), (3, 4), (4, 1)}\n\nAcerca das propriedades dessas relações e do conceito formal de função de A em A, avalie as afirmações a seguir.\n\nI. A relação R₁ é uma relação de ordem parcial sobre A, pois é reflexiva, antissimétrica e transitiva.\n\nII. A relação R₂ é uma relação de equivalência sobre A, particionando A nas classes {1, 3} e {2, 4}.\n\nIII. A relação R₃ é uma função bijetora de A em A.\n\nIV. Na matriz booleana de R₁, a diagonal principal contém zeros nos elementos em que x é primo.\n\nÉ correto apenas o que se afirma em",
     "options": [
       {
         "letter": "A",
@@ -89,7 +93,11 @@
     "explanation": "R₁ (divisibilidade em inteiros positivos) é reflexiva, antissimétrica e transitiva, caracterizando uma ordem parcial (I verdadeira) e sua matriz tem 1 em toda a diagonal principal (IV falsa). R₂ (mesma paridade) é reflexiva, simétrica e transitiva, sendo uma relação de equivalência com classes {1, 3} e {2, 4} (II verdadeira). R₃ = {(1,2), (2,3), (3,4), (4,1)} mapeia cada elemento de A a um único elemento distinto de A, formando uma bijeção (III verdadeira).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Relações Binárias", "Ordem Parcial e Equivalência", "Funções Bijetoras"]
+    "topics": [
+      "Relações Binárias",
+      "Ordem Parcial e Equivalência",
+      "Funções Bijetoras"
+    ]
   },
   {
     "id": "md-inedita-03",
@@ -103,7 +111,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Na análise de algoritmos recursivos, a indução matemática é empregada para provar fórmulas fechadas de relações de recorrência. Considere um algoritmo que resolve um problema de tamanho n ≥ 1 por meio da recorrência:\n\nT(1) = 1\nT(n) = 2·T(n − 1) + 3, para n ≥ 2\n\nUm estudante conjecturou a fórmula fechada T(n) = 2^(n+1) − 3 para todo n ≥ 1 e iniciou a demonstração por indução.\n\nSobre a validade dessa fórmula e o desenvolvimento correto do passo indutivo, assinale a alternativa correta.",
+    "stem": "Na análise de algoritmos recursivos, a indução matemática é empregada para provar fórmulas fechadas de relações de recorrência. Considere um algoritmo que resolve um problema de tamanho n ≥ 1 por meio da recorrência:\n\nT(1) = 1\n\nT(n) = 2·T(n − 1) + 3, para n ≥ 2\n\nUm estudante conjecturou a fórmula fechada T(n) = 2^(n+1) − 3 para todo n ≥ 1 e iniciou a demonstração por indução.\n\nSobre a validade dessa fórmula e o desenvolvimento correto do passo indutivo, assinale a alternativa correta.",
     "options": [
       {
         "letter": "A",
@@ -135,7 +143,11 @@
     "explanation": "Verificando o caso base (n = 1): 2^(1+1) − 3 = 4 − 3 = 1 = T(1). Pela Hipótese de Indução, supõe-se T(k) = 2^(k+1) − 3 para k ≥ 1. No passo indutivo: T(k + 1) = 2·T(k) + 3 = 2·(2^(k+1) − 3) + 3 = 2^(k+2) − 6 + 3 = 2^((k+1)+1) − 3. Logo, a fórmula é verdadeira para todo n ≥ 1.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Indução Matemática", "Relações de Recorrência", "Análise de Algoritmos"]
+    "topics": [
+      "Indução Matemática",
+      "Relações de Recorrência",
+      "Análise de Algoritmos"
+    ]
   },
   {
     "id": "md-inedita-04",
@@ -181,7 +193,11 @@
     "explanation": "Como a ordem de escolha dos membros no comitê não importa, aplicamos combinações simples somando os cenários disjuntos que atendem às restrições (≥ 2 back-end e ≥ 1 front-end, totalizando 4 membros): Caso 1 (2B, 2F) = C(6,2) · C(5,2) = 15 · 10 = 150; Caso 2 (3B, 1F) = C(6,3) · C(5,1) = 20 · 5 = 100. Total = 150 + 100 = 250.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Análise Combinatória", "Combinação Simples", "Princípio Aditivo e Multiplicativo"]
+    "topics": [
+      "Análise Combinatória",
+      "Combinação Simples",
+      "Princípio Aditivo e Multiplicativo"
+    ]
   },
   {
     "id": "md-inedita-05",
@@ -227,7 +243,11 @@
     "explanation": "Trata-se de probabilidade condicional: P(Crítico ou Alto | Nuvem) = |{(Crítico ∪ Alto) ∩ Nuvem}| / |Nuvem| = (24 + 36) / 100 = 60 / 100 = 60%.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Probabilidade Discreta", "Probabilidade Condicional", "Tabelas de Contingência"]
+    "topics": [
+      "Probabilidade Discreta",
+      "Probabilidade Condicional",
+      "Tabelas de Contingência"
+    ]
   },
   {
     "id": "md-inedita-06",
@@ -273,7 +293,11 @@
     "explanation": "Modelando como 7x + 11y = 250, temos 7x ≡ 250 ≡ 8 (mod 11). Multiplicando ambos os lados por 8 (inverso modular de 7 mod 11, pois 7·8 = 56 ≡ 1 mod 11), obtemos x ≡ 64 ≡ 9 (mod 11). Assim, x = 9 + 11t e y = (250 − 7(9 + 11t))/11 = 17 − 7t. Como x ≥ 1 ⇒ t ≥ 0 e y ≥ 1 ⇒ 17 − 7t ≥ 1 ⇒ t ≤ 2, os valores válidos são t = 0 → (9, 17), t = 1 → (20, 10) e t = 2 → (31, 3).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Equações Diofantinas Lineares", "Aritmética Modular", "Inverso Modular"]
+    "topics": [
+      "Equações Diofantinas Lineares",
+      "Aritmética Modular",
+      "Inverso Modular"
+    ]
   },
   {
     "id": "md-inedita-07",
@@ -287,7 +311,7 @@
     "type": "objetiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Uma rede de comunicação entre cinco datacenters é modelada por um grafo simples não direcionado G = (V, E), em que V = {A, B, C, D, E} e o conjunto de enlaces diretos é E = {{A, B}, {A, C}, {B, C}, {B, D}, {C, D}, {D, E}}.\n\nCom base na Teoria dos Grafos, avalie as afirmações a seguir.\n\nI. Os vértices A e D são adjacentes em G.\nII. A soma dos graus (valências) de todos os vértices de G é igual a 12.\nIII. O vértice D possui grau 3 e é incidente às arestas {B, D}, {C, D} e {D, E}.\nIV. O grafo G admite um ciclo euleriano que percorre todas as arestas exatamente uma vez e retorna ao vértice inicial.\n\nÉ correto apenas o que se afirma em",
+    "stem": "Uma rede de comunicação entre cinco datacenters é modelada por um grafo simples não direcionado G = (V, E), em que V = {A, B, C, D, E} e o conjunto de enlaces diretos é E = {{A, B}, {A, C}, {B, C}, {B, D}, {C, D}, {D, E}}.\n\nCom base na Teoria dos Grafos, avalie as afirmações a seguir.\n\nI. Os vértices A e D são adjacentes em G.\n\nII. A soma dos graus (valências) de todos os vértices de G é igual a 12.\n\nIII. O vértice D possui grau 3 e é incidente às arestas {B, D}, {C, D} e {D, E}.\n\nIV. O grafo G admite um ciclo euleriano que percorre todas as arestas exatamente uma vez e retorna ao vértice inicial.\n\nÉ correto apenas o que se afirma em",
     "options": [
       {
         "letter": "A",
@@ -319,7 +343,11 @@
     "explanation": "Os graus dos vértices são: deg(A) = 2, deg(B) = 3, deg(C) = 3, deg(D) = 3 e deg(E) = 1. A soma é 2 + 3 + 3 + 3 + 1 = 12 = 2|E| (II verdadeira). D incide em {B,D}, {C,D} e {D,E}, tendo grau 3 (III verdadeira). Não há aresta {A, D}, logo A e D não são adjacentes (I falsa). Como há 4 vértices de grau ímpar (B, C, D, E), não existe nem ciclo nem caminho euleriano (IV falsa).",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Teoria dos Grafos", "Adjacência, Incidência e Grau", "Ciclo Euleriano"]
+    "topics": [
+      "Teoria dos Grafos",
+      "Adjacência, Incidência e Grau",
+      "Ciclo Euleriano"
+    ]
   },
   {
     "id": "md-inedita-08",
@@ -333,7 +361,7 @@
     "type": "objetiva",
     "difficulty": "dificil",
     "annulled": false,
-    "stem": "No desenvolvimento de um sistema de roteamento para redes com 5 000 vértices e topologia em árvore (grafo conexo e acíclico), um engenheiro precisa escolher a estrutura de dados para representar o grafo em memória.\n\nConsiderando as propriedades das árvores e das representações computacionais de grafos, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Para representar essa rede em memória visando economia de espaço e eficiência ao percorrer os vizinhos de cada vértice, a lista de adjacência é preferível à matriz de adjacência.\n\nPORQUE\n\nII. Toda árvore com |V| vértices possui exatamente |V| − 1 arestas, configurando um grafo esparso cujo armazenamento por lista de adjacência consome espaço O(|V|), enquanto a matriz de adjacência exige espaço O(|V|²).\n\nA respeito dessas asserções, assinale a opção correta.",
+    "stem": "No desenvolvimento de um sistema de roteamento para redes com 5 000 vértices e topologia em árvore (grafo conexo e acíclico), um engenheiro precisa escolher a estrutura de dados para representar o grafo em memória.\n\nConsiderando as propriedades das árvores e das representações computacionais de grafos, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Para representar essa rede em memória visando economia de espaço e eficiência ao percorrer os vizinhos de cada vértice, a lista de adjacência é preferível à matriz de adjacência.\n\n**PORQUE**\n\nII. Toda árvore com |V| vértices possui exatamente |V| − 1 arestas, configurando um grafo esparso cujo armazenamento por lista de adjacência consome espaço O(|V|), enquanto a matriz de adjacência exige espaço O(|V|²).\n\nA respeito dessas asserções, assinale a opção correta.",
     "options": [
       {
         "letter": "A",
@@ -365,7 +393,11 @@
     "explanation": "Toda árvore com n vértices é um grafo conexo acíclico com exatamente n − 1 arestas. Para n = 5 000, há apenas 4 999 arestas — um grafo fortemente esparso. A lista de adjacência usa memória O(|V| + |E|) = O(|V|) e itera apenas sobre os vizinhos existentes em O(deg(v)), enquanto a matriz de adjacência requer O(|V|²) de espaço (~25 milhões de células) e O(|V|) para listar os vizinhos de um vértice.",
     "discursiveRubric": null,
     "imageUrls": [],
-    "topics": ["Árvores", "Representação de Grafos", "Complexidade Espacial"]
+    "topics": [
+      "Árvores",
+      "Representação de Grafos",
+      "Complexidade Espacial"
+    ]
   },
   {
     "id": "md-inedita-09",
@@ -379,13 +411,17 @@
     "type": "discursiva",
     "difficulty": "media",
     "annulled": false,
-    "stem": "Em protocolos de escalonamento e criptografia assimétrica baseados em aritmética inteira, frequentemente é necessário calcular coeficientes inteiros de combinações lineares e resolver equações diofantinas.\n\nConsiderando os conceitos de divisibilidade, Máximo Divisor Comum (MDC) e Algoritmo de Euclides Estendido, faça o que se pede nos itens a seguir.\na) Utilizando o Algoritmo de Euclides Estendido, determine d = mdc(378, 132) e encontre um par de inteiros (x, y) que satisfaça a Identidade de Bézout 378x + 132y = d, apresentando todas as divisões sucessivas e a substituição reversa. (valor: 5,0 pontos)\nb) Uma fábrica de hardware monta kits usando placas do tipo A (R$ 70,00 cada) e módulos do tipo B (R$ 90,00 cada), tendo faturado exatamente R$ 1.000,00 em um pedido em que foram vendidos ao menos 1 item de cada tipo. Modele o problema como uma equação diofantina linear simplificada (7x + 9y = 100) e determine todas as soluções inteiras positivas possíveis (x, y). (valor: 5,0 pontos)",
+    "stem": "Em protocolos de escalonamento e criptografia assimétrica baseados em aritmética inteira, frequentemente é necessário calcular coeficientes inteiros de combinações lineares e resolver equações diofantinas.\n\nConsiderando os conceitos de divisibilidade, Máximo Divisor Comum (MDC) e Algoritmo de Euclides Estendido, faça o que se pede nos itens a seguir.\n\na) Utilizando o Algoritmo de Euclides Estendido, determine d = mdc(378, 132) e encontre um par de inteiros (x, y) que satisfaça a Identidade de Bézout 378x + 132y = d, apresentando todas as divisões sucessivas e a substituição reversa. (valor: 5,0 pontos)\n\nb) Uma fábrica de hardware monta kits usando placas do tipo A (R$ 70,00 cada) e módulos do tipo B (R$ 90,00 cada), tendo faturado exatamente R$ 1.000,00 em um pedido em que foram vendidos ao menos 1 item de cada tipo. Modele o problema como uma equação diofantina linear simplificada (7x + 9y = 100) e determine todas as soluções inteiras positivas possíveis (x, y). (valor: 5,0 pontos)",
     "options": [],
     "correctAnswer": null,
     "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
-    "discursiveRubric": "a) Algoritmo de Euclides Estendido para mdc(378, 132) (5,0 pontos):\nDivisões sucessivas (2,0 pontos):\n- 378 = 2 · 132 + 114  ⇒  114 = 378 − 2 · 132\n- 132 = 1 · 114 + 18   ⇒  18 = 132 − 1 · 114\n- 114 = 6 · 18 + 6     ⇒  6 = 114 − 6 · 18\n- 18 = 3 · 6 + 0       ⇒  Logo, d = mdc(378, 132) = 6.\nSubstituição reversa (3,0 pontos):\n- 6 = 114 − 6 · (132 − 114) = 7 · 114 − 6 · 132\n- 6 = 7 · (378 − 2 · 132) − 6 · 132 = 7 · 378 − 20 · 132\n- Conferência: 378·7 + 132·(−20) = 2646 − 2640 = 6. Portanto, x = 7 e y = −20 (ou qualquer par da forma x = 7 + 22k, y = −20 − 63k).\n\nb) Equação Diofantina 7x + 9y = 100 com x ≥ 1, y ≥ 1 (5,0 pontos):\n- mdc(7, 9) = 1 | 100 (existe solução). Como 7·(4) + 9·(−3) = 1, uma solução particular para 100 é x' = 400, y' = −300 (ou diretamente x₀ = 4, y₀ = 8, pois 7·4 + 9·8 = 28 + 72 = 100). (2,0 pontos)\n- Solução geral a partir de (4, 8): x = 4 + 9t e y = 8 − 7t, t ∈ ℤ. (1,5 ponto)\n- Restrições x ≥ 1 e y ≥ 1: 4 + 9t ≥ 1 ⇒ t ≥ 0; e 8 − 7t ≥ 1 ⇒ t ≤ 1. (0,5 ponto)\n- Soluções válidas: para t = 0 → (4, 8); para t = 1 → (13, 1). Resposta final: (4 placas A, 8 módulos B) ou (13 placas A, 1 módulo B). (1,0 ponto)",
+    "discursiveRubric": "a) Algoritmo de Euclides Estendido para mdc(378, 132) (5,0 pontos):\n\nDivisões sucessivas (2,0 pontos):\n\n- 378 = 2 · 132 + 114  ⇒  114 = 378 − 2 · 132\n- 132 = 1 · 114 + 18   ⇒  18 = 132 − 1 · 114\n- 114 = 6 · 18 + 6     ⇒  6 = 114 − 6 · 18\n- 18 = 3 · 6 + 0       ⇒  Logo, d = mdc(378, 132) = 6.\n\nSubstituição reversa (3,0 pontos):\n\n- 6 = 114 − 6 · (132 − 114) = 7 · 114 − 6 · 132\n- 6 = 7 · (378 − 2 · 132) − 6 · 132 = 7 · 378 − 20 · 132\n- Conferência: 378·7 + 132·(−20) = 2646 − 2640 = 6. Portanto, x = 7 e y = −20 (ou qualquer par da forma x = 7 + 22k, y = −20 − 63k).\n\nb) Equação Diofantina 7x + 9y = 100 com x ≥ 1, y ≥ 1 (5,0 pontos):\n\n- mdc(7, 9) = 1 | 100 (existe solução). Como 7·(4) + 9·(−3) = 1, uma solução particular para 100 é x' = 400, y' = −300 (ou diretamente x₀ = 4, y₀ = 8, pois 7·4 + 9·8 = 28 + 72 = 100). (2,0 pontos)\n- Solução geral a partir de (4, 8): x = 4 + 9t e y = 8 − 7t, t ∈ ℤ. (1,5 ponto)\n- Restrições x ≥ 1 e y ≥ 1: 4 + 9t ≥ 1 ⇒ t ≥ 0; e 8 − 7t ≥ 1 ⇒ t ≤ 1. (0,5 ponto)\n- Soluções válidas: para t = 0 → (4, 8); para t = 1 → (13, 1). Resposta final: (4 placas A, 8 módulos B) ou (13 placas A, 1 módulo B). (1,0 ponto)",
     "imageUrls": [],
-    "topics": ["Algoritmo de Euclides Estendido", "Identidade de Bézout", "Equações Diofantinas Lineares"]
+    "topics": [
+      "Algoritmo de Euclides Estendido",
+      "Identidade de Bézout",
+      "Equações Diofantinas Lineares"
+    ]
   },
   {
     "id": "md-inedita-10",
@@ -399,12 +435,16 @@
     "type": "discursiva",
     "difficulty": "dificil",
     "annulled": false,
-    "stem": "Considere uma rede hierárquica de sensores ambientais modelada como uma árvore enraizada T = (V, E), isto é, um grafo conexo e acíclico com n = |V| ≥ 1 vértices.\n\nCom base nos fundamentos de Indução Matemática e Teoria dos Grafos, faça o que se pede nos itens a seguir.\na) Demonstre, por Indução Matemática (forte ou fraca sobre o número de vértices n), que toda árvore com n ≥ 1 vértices possui exatamente n − 1 arestas. (valor: 6,0 pontos)\nb) Um projeto prevê interligar 18 sensores de forma que exista exatamente um único caminho simples entre qualquer par de sensores, garantindo custo mínimo sem redundância cíclica. Determine quantos cabos de ligação (arestas) serão necessários e qual será a soma dos graus de todos os sensores nessa topologia, justificando com base nos teoremas da Teoria dos Grafos. (valor: 4,0 pontos)",
+    "stem": "Considere uma rede hierárquica de sensores ambientais modelada como uma árvore enraizada T = (V, E), isto é, um grafo conexo e acíclico com n = |V| ≥ 1 vértices.\n\nCom base nos fundamentos de Indução Matemática e Teoria dos Grafos, faça o que se pede nos itens a seguir.\n\na) Demonstre, por Indução Matemática (forte ou fraca sobre o número de vértices n), que toda árvore com n ≥ 1 vértices possui exatamente n − 1 arestas. (valor: 6,0 pontos)\n\nb) Um projeto prevê interligar 18 sensores de forma que exista exatamente um único caminho simples entre qualquer par de sensores, garantindo custo mínimo sem redundância cíclica. Determine quantos cabos de ligação (arestas) serão necessários e qual será a soma dos graus de todos os sensores nessa topologia, justificando com base nos teoremas da Teoria dos Grafos. (valor: 4,0 pontos)",
     "options": [],
     "correctAnswer": null,
     "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
-    "discursiveRubric": "a) Demonstração por Indução Matemática (6,0 pontos):\n- Caso base (n = 1): Uma árvore com 1 único vértice e sem laços (acíclica) possui 0 arestas; como n − 1 = 1 − 1 = 0, a propriedade vale para n = 1. (1,5 ponto)\n- Hipótese de Indução (HI): Suponha (indução forte) que toda árvore com m vértices (1 ≤ m ≤ k) possua exatamente m − 1 arestas (ou, na indução fraca usando existência de folha, toda árvore com k vértices possua k − 1 arestas). (1,5 ponto)\n- Passo indutivo (n = k + 1 ≥ 2): Considere uma árvore T com k + 1 vértices. Como T é finita, conexa e acíclica com k + 1 ≥ 2 vértices, T possui ao menos uma folha (vértice v de grau 1) — ou, alternativamente, removendo uma aresta e = {u, w}, T divide-se em duas subárvores conexas e acíclicas T₁ e T₂ com n₁ e n₂ vértices (n₁ + n₂ = k + 1, 1 ≤ n₁, n₂ ≤ k). Pela HI, |E(T₁)| = n₁ − 1 e |E(T₂)| = n₂ − 1. Somando a aresta removida: |E(T)| = (n₁ − 1) + (n₂ − 1) + 1 = (n₁ + n₂) − 1 = (k + 1) − 1 = k. (3,0 pontos)\n\nb) Aplicação à rede de 18 sensores (4,0 pontos):\n- Um grafo conexo em que existe um único caminho simples entre qualquer par de vértices é, por definição, uma árvore (se houvesse ciclo, haveria ao menos dois caminhos). (1,0 ponto)\n- Número de cabos (arestas): |E| = n − 1 = 18 − 1 = 17 cabos. (1,5 ponto)\n- Soma dos graus: Pelo Teorema do Aperto de Mãos, ∑deg(v) = 2 · |E| = 2 · 17 = 34. (1,5 ponto)",
+    "discursiveRubric": "a) Demonstração por Indução Matemática (6,0 pontos):\n\n- Caso base (n = 1): Uma árvore com 1 único vértice e sem laços (acíclica) possui 0 arestas; como n − 1 = 1 − 1 = 0, a propriedade vale para n = 1. (1,5 ponto)\n- Hipótese de Indução (HI): Suponha (indução forte) que toda árvore com m vértices (1 ≤ m ≤ k) possua exatamente m − 1 arestas (ou, na indução fraca usando existência de folha, toda árvore com k vértices possua k − 1 arestas). (1,5 ponto)\n- Passo indutivo (n = k + 1 ≥ 2): Considere uma árvore T com k + 1 vértices. Como T é finita, conexa e acíclica com k + 1 ≥ 2 vértices, T possui ao menos uma folha (vértice v de grau 1) — ou, alternativamente, removendo uma aresta e = {u, w}, T divide-se em duas subárvores conexas e acíclicas T₁ e T₂ com n₁ e n₂ vértices (n₁ + n₂ = k + 1, 1 ≤ n₁, n₂ ≤ k). Pela HI, |E(T₁)| = n₁ − 1 e |E(T₂)| = n₂ − 1. Somando a aresta removida: |E(T)| = (n₁ − 1) + (n₂ − 1) + 1 = (n₁ + n₂) − 1 = (k + 1) − 1 = k. (3,0 pontos)\n\nb) Aplicação à rede de 18 sensores (4,0 pontos):\n\n- Um grafo conexo em que existe um único caminho simples entre qualquer par de vértices é, por definição, uma árvore (se houvesse ciclo, haveria ao menos dois caminhos). (1,0 ponto)\n- Número de cabos (arestas): |E| = n − 1 = 18 − 1 = 17 cabos. (1,5 ponto)\n- Soma dos graus: Pelo Teorema do Aperto de Mãos, ∑deg(v) = 2 · |E| = 2 · 17 = 34. (1,5 ponto)",
     "imageUrls": [],
-    "topics": ["Indução Matemática", "Árvores", "Teorema do Aperto de Mãos"]
+    "topics": [
+      "Indução Matemática",
+      "Árvores",
+      "Teorema do Aperto de Mãos"
+    ]
   }
 ]

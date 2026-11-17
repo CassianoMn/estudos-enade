@@ -78,6 +78,58 @@
   font-size: 1.09375rem;
 }
 
+.markdown-body.variant-question {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.markdown-body.variant-compact {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.markdown-body.variant-question p,
+.markdown-body.variant-question ul,
+.markdown-body.variant-question ol,
+.markdown-body.variant-compact p,
+.markdown-body.variant-compact ul,
+.markdown-body.variant-compact ol {
+  color: var(--text-primary);
+}
+
+.markdown-body.variant-question p,
+.markdown-body.variant-question ul,
+.markdown-body.variant-question ol {
+  @apply mb-3.5;
+}
+
+.markdown-body.variant-compact p,
+.markdown-body.variant-compact ul,
+.markdown-body.variant-compact ol {
+  @apply mb-2.5;
+}
+
+.markdown-body.variant-question > :last-child,
+.markdown-body.variant-compact > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body.variant-question table,
+.markdown-body.variant-compact table {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8125rem;
+}
+
+.markdown-body.variant-question pre,
+.markdown-body.variant-compact pre {
+  @apply my-3.5 p-3.5 text-[13px];
+}
+
+.markdown-body.variant-compact pre {
+  @apply my-2 p-3 text-xs;
+}
+
 .markdown-body h1 {
   @apply text-xl font-semibold tracking-tight pb-3 mb-5 border-b border-[var(--border-subtle)] text-[var(--text-primary)];
 }
@@ -127,7 +179,7 @@
 }
 
 .markdown-body table {
-  @apply w-full border-collapse my-5 text-sm border border-[var(--border-subtle)] rounded-lg overflow-hidden;
+  @apply w-full border-collapse my-0 text-sm border border-[var(--border-subtle)] rounded-lg overflow-hidden;
 }
 
 .markdown-body th {

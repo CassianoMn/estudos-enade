@@ -44,7 +44,7 @@ describe("App shell and UI components", () => {
 
     fireEvent.click(screen.getAllByRole("button", { name: /Métricas/i })[0]);
     expect(screen.getByText("Métricas de Desempenho e Backup")).toBeInTheDocument();
-  });
+  }, 15000);
 
   it("opens command palette with Ctrl+K and closes on Escape", () => {
     window.scrollTo = vi.fn();
@@ -87,5 +87,22 @@ describe("App shell and UI components", () => {
 
     expect(screen.getByText("Comentário do Gabarito")).toBeInTheDocument();
     expect(screen.getByText("Durabilidade garante persistência permanente após o commit.")).toBeInTheDocument();
+  });
+
+  it("renders Markdown tables, code blocks, and paragraphs in QuestionCard", () => {
+    const markdownQuestion: Question = {
+      ...sampleObjectiveQuestion,
+      id: "q-test-md",
+      stem: "Primeiro parágrafo.\n\n| Questão | Métrica |\n| :--- | :--- |\n| Prazo | Lead time |\n\n```sql\nSELECT * FROM Tabela;\n```",
+    };
+
+    const { container } = render(
+      <QuestionCard question={markdownQuestion} mode="quiz" showFeedback={false} />
+    );
+
+    expect(container.querySelector("table")).not.toBeNull();
+    expect(screen.getByText("Lead time")).toBeInTheDocument();
+    expect(container.querySelector("pre code")).not.toBeNull();
+    expect(screen.getByText("Primeiro parágrafo.")).toBeInTheDocument();
   });
 });

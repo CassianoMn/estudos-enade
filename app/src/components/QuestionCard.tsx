@@ -10,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 import type { OptionLetter, Question } from "../types/enade";
+import { MarkdownViewer } from "./MarkdownViewer";
 import { Button } from "./ui/Button";
 import { Tag } from "./ui/Tag";
 
@@ -143,8 +144,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           {question.label}
         </div>
 
-        <div className="mb-6 whitespace-pre-wrap text-[15px] leading-relaxed text-[var(--text-primary)]">
-          {question.stem}
+        <div className="mb-6">
+          <MarkdownViewer content={question.stem} variant="question" />
         </div>
 
         {question.imageUrls.length > 0 && (
@@ -215,13 +216,11 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                       {opt.letter}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm leading-relaxed text-[var(--text-primary)]">
-                        {opt.text}
-                      </p>
+                      <MarkdownViewer content={opt.text} variant="compact" />
                       {isRevealed && opt.explanation && (
-                        <p className="mt-2 border-t border-[var(--border-subtle)] pt-2 text-xs leading-relaxed text-[var(--text-secondary)]">
-                          {opt.explanation}
-                        </p>
+                        <div className="mt-2 border-t border-[var(--border-subtle)] pt-2">
+                          <MarkdownViewer content={opt.explanation} variant="compact" />
+                        </div>
                       )}
                     </div>
                     {isRevealed && isCorrect && (
@@ -290,9 +289,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-800 dark:text-emerald-300">
                   Padrão de Resposta Oficial / Rubrica
                 </h4>
-                <div className="whitespace-pre-wrap text-sm leading-relaxed text-[var(--text-primary)]">
-                  {question.discursiveRubric}
-                </div>
+                <MarkdownViewer content={question.discursiveRubric} variant="compact" />
 
                 {onSetDiscursiveScore && mode !== "simulado-active" && (
                   <div className="mt-4 border-t border-emerald-200/70 pt-3 dark:border-emerald-800/60">
@@ -343,9 +340,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 </Button>
               )}
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-              {question.explanation}
-            </p>
+            <div className="mt-2">
+              <MarkdownViewer content={question.explanation} variant="compact" />
+            </div>
           </div>
         )}
       </div>
