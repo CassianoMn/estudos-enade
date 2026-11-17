@@ -2,54 +2,151 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --bg-canvas: #fafafa;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f4f4f5;
+  --bg-hover: #f4f4f5;
+  --border-subtle: #e4e4e7;
+  --border-strong: #d4d4d8;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --accent-border: #bfdbfe;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.dark {
+  --bg-canvas: #0b0c0e;
+  --bg-surface: #121417;
+  --bg-subtle: #181b20;
+  --bg-hover: #1e2228;
+  --border-subtle: #23272f;
+  --border-strong: #323742;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-soft: rgba(37, 99, 235, 0.14);
+  --accent-border: rgba(59, 130, 246, 0.35);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+
   body {
-    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  code,
+  kbd,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono);
   }
 }
 
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tipografia editorial para leitura das apostilas */
+.markdown-body {
+  color: var(--text-primary);
+  line-height: 1.72;
+}
+
+.markdown-body.reader-sm {
+  font-size: 0.9375rem;
+}
+
+.markdown-body.reader-md {
+  font-size: 1rem;
+}
+
+.markdown-body.reader-lg {
+  font-size: 1.09375rem;
+}
+
 .markdown-body h1 {
-  @apply text-2xl font-bold text-slate-900 dark:text-white mb-4 pb-2 border-b border-slate-200 dark:border-slate-800;
+  @apply text-xl font-semibold tracking-tight pb-3 mb-5 border-b border-[var(--border-subtle)] text-[var(--text-primary)];
 }
+
 .markdown-body h2 {
-  @apply text-xl font-bold text-blue-900 dark:text-blue-300 mt-8 mb-3 pb-1.5 border-b border-slate-200 dark:border-slate-800 scroll-mt-20;
+  @apply text-lg font-semibold tracking-tight mt-9 mb-3 pb-1.5 border-b border-[var(--border-subtle)] text-[var(--text-primary)] scroll-mt-20;
 }
+
 .markdown-body h3 {
-  @apply text-lg font-semibold text-slate-800 dark:text-slate-200 mt-5 mb-2;
+  @apply text-base font-semibold mt-6 mb-2 text-[var(--text-primary)];
 }
+
 .markdown-body p {
-  @apply text-slate-700 dark:text-slate-300 leading-relaxed mb-3;
+  @apply mb-4 text-[var(--text-secondary)];
 }
+
+.markdown-body strong {
+  @apply font-semibold text-[var(--text-primary)];
+}
+
 .markdown-body ul {
-  @apply list-disc pl-6 mb-4 space-y-1.5 text-slate-700 dark:text-slate-300;
+  @apply list-disc pl-5 mb-4 space-y-1.5 text-[var(--text-secondary)];
 }
+
 .markdown-body ol {
-  @apply list-decimal pl-6 mb-4 space-y-1.5 text-slate-700 dark:text-slate-300;
+  @apply list-decimal pl-5 mb-4 space-y-1.5 text-[var(--text-secondary)];
 }
+
 .markdown-body blockquote {
-  @apply my-4 px-4 py-3 rounded-lg border-l-4 border-blue-500 bg-blue-50/80 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100;
+  @apply my-5 px-4 py-3 rounded-md border-l-2 border-blue-600 dark:border-blue-400 bg-[var(--bg-subtle)] text-[var(--text-secondary)];
 }
+
+.markdown-body blockquote p:last-child {
+  @apply mb-0;
+}
+
 .markdown-body code {
-  @apply font-mono text-[0.875em] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200;
+  @apply font-mono text-[0.85em] px-1.5 py-0.5 rounded border border-[var(--border-subtle)] bg-[var(--bg-subtle)] text-[var(--text-primary)];
 }
+
 .markdown-body pre {
-  @apply my-4 p-4 rounded-xl bg-slate-900 text-slate-100 overflow-x-auto text-sm leading-relaxed border border-slate-800;
+  @apply my-5 p-4 rounded-lg bg-zinc-950 text-zinc-100 overflow-x-auto text-[13px] leading-relaxed border border-zinc-800;
 }
+
 .markdown-body pre code {
-  @apply bg-transparent p-0 text-inherit;
+  @apply bg-transparent border-0 p-0 text-inherit;
 }
+
 .markdown-body table {
-  @apply w-full border-collapse my-4 text-sm overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700;
+  @apply w-full border-collapse my-5 text-sm border border-[var(--border-subtle)] rounded-lg overflow-hidden;
 }
+
 .markdown-body th {
-  @apply bg-slate-800 text-white font-semibold px-3 py-2 text-left border border-slate-700;
+  @apply bg-[var(--bg-subtle)] text-[var(--text-primary)] font-semibold px-3 py-2 text-left border-b border-r border-[var(--border-subtle)] last:border-r-0;
 }
+
 .markdown-body td {
-  @apply px-3 py-2 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 align-top;
+  @apply px-3 py-2 border-b border-r border-[var(--border-subtle)] last:border-r-0 text-[var(--text-secondary)] align-top;
 }
-.markdown-body tr:nth-child(even) td {
-  @apply bg-slate-50 dark:bg-slate-900/50;
+
+.markdown-body tr:last-child td {
+  @apply border-b-0;
+}
+
+.markdown-body hr {
+  @apply my-7 border-[var(--border-subtle)];
+}
+
+.markdown-body a {
+  @apply text-blue-600 dark:text-blue-400 underline decoration-blue-600/30 underline-offset-2 hover:decoration-blue-600;
 }

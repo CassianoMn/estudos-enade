@@ -1,15 +1,11 @@
 import React, { useRef, useState } from "react";
-import {
-  BarChart3,
-  Download,
-  Eye,
-  RotateCcw,
-  Trash2,
-  Upload,
-} from "lucide-react";
+import { Download, Eye, RotateCcw, Trash2, Upload } from "lucide-react";
 import type { ApostilaArea, Question, StudyProgress } from "../types/enade";
 import { computeAreaMetrics, formatDuration } from "../utils/scoring";
 import { exportProgressJson, parseImportedProgressJson } from "../store/progressStore";
+import { Button } from "../components/ui/Button";
+import { Tag } from "../components/ui/Tag";
+import { ConfirmDialog } from "../components/ui/ConfirmDialog";
 
 interface MetricasPageProps {
   areas: ApostilaArea[];
@@ -31,8 +27,10 @@ export const MetricasPage: React.FC<MetricasPageProps> = ({
   onReviewSimulado,
 }) => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [feedbackMsg, setFeedbackMsg] = useState<{ kind: "ok" | "err"; text: string } | null>(null);
-  const [confirmReset, setConfirmReset] = useState(false);
+  const [feedbackMsg, setFeedbackMsg] = useState<{ kind: "ok" | "err"; text: string } | null>(
+    null
+  );
+  const [confirmResetOpen, setConfirmResetOpen] = useState(false);
 
   const metrics = computeAreaMetrics(areas, questions, progress);
 
@@ -45,7 +43,7 @@ export const MetricasPage: React.FC<MetricasPageProps> = ({
     a.download = `progresso-enade-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
-    setFeedbackMsg({ kind: "ok", text: "Backup exportado com sucesso!" });
+    setFeedbackMsg({ kind: "ok", text: "Backup exportado em JSON." });
   };
 
   const handleImportFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,7 +53,7 @@ export const MetricasPage: React.FC<MetricasPageProps> = ({
       const text = await file.text();
       const parsed = parseImportedProgressJson(text);
       onImportProgress(parsed);
-      setFeedbackMsg({ kind: "ok", text: "Progresso importado e restaurado com sucesso!" });
+      setFeedbackMsg({ kind: "ok", text: "Progresso restaurado com sucesso." });
     } catch (err) {
       setFeedbackMsg({
         kind: "err",
@@ -68,195 +66,208 @@ export const MetricasPage: React.FC<MetricasPageProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Backup e Salvamento de Progresso */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-          <div>
-            <h1 className="text-xl font-bold text-slate-900 dark:text-white">
-              Métricas de Desempenho & Salvamento de Progresso
-            </h1>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Seu progresso é salvo automaticamente no navegador. Exporte um arquivo JSON sempre que
-              quiser transferir seus estudos para outro computador.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={handleExport}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 px-3.5 py-2 text-xs font-semibold text-white hover:bg-blue-500"
-            >
-              <Download className="h-4 w-4" /> Exportar JSON
-            </button>
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
-            >
-              <Upload className="h-4 w-4" /> Importar JSON
-            </button>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="application/json,.json"
-              onChange={handleImportFile}
-              className="hidden"
-            />
-            {!confirmReset ? (
-              <button
-                type="button"
-                onClick={() => setConfirmReset(true)}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-rose-200 px-3.5 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:border-rose-900 dark:text-rose-400"
-              >
-                <Trash2 className="h-4 w-4" /> Resetar Tudo
-              </button>
-            ) : (
-              <div className="flex items-center gap-2 rounded-xl border border-rose-300 bg-rose-50 px-3 py-1.5 text-xs">
-                <span className="font-semibold text-rose-800">Apagar progresso?</span>
-                <button
-                  type="button"
-                  onClick={() => {
-                    onResetProgress();
-                    setConfirmReset(false);
-                    setFeedbackMsg({ kind: "ok", text: "Progresso reiniciado." });
-                  }}
-                  className="rounded bg-rose-600 px-2 py-1 font-bold text-white"
-                >
-                  Confirmar
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setConfirmReset(false)}
-                  className="rounded bg-slate-200 px-2 py-1 font-semibold text-slate-800"
-                >
-                  Cancelar
-                </button>
-              </div>
-            )}
-          </div>
+      {/* Cabeçalho e ações de backup */}
+      <div className="flex flex-col justify-between gap-4 border-b border-[var(--border-subtle)] pb-5 sm:flex-row sm:items-end">
+        <div>
+          <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
+            Diagnóstico & Dados Locais
+          </span>
+          <h1 className="mt-1 text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+            Métricas de Desempenho e Backup
+          </h1>
+          <p className="mt-1 text-xs text-[var(--text-secondary)]">
+            Todo o progresso é salvo localmente no navegador. Exporte um arquivo JSON para
+            transferir para outro dispositivo.
+          </p>
         </div>
 
-        {feedbackMsg && (
-          <div
-            className={`mt-4 rounded-xl px-4 py-2.5 text-xs font-semibold ${
-              feedbackMsg.kind === "ok"
-                ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300"
-                : "bg-rose-50 text-rose-800 dark:bg-rose-950/50 dark:text-rose-300"
-            }`}
+        <div className="flex flex-wrap items-center gap-2">
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={handleExport}
+            leftIcon={<Download className="h-3.5 w-3.5" aria-hidden="true" />}
           >
-            {feedbackMsg.text}
-          </div>
-        )}
+            Exportar JSON
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => fileInputRef.current?.click()}
+            leftIcon={<Upload className="h-3.5 w-3.5" aria-hidden="true" />}
+          >
+            Importar JSON
+          </Button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="application/json,.json"
+            onChange={handleImportFile}
+            className="hidden"
+          />
+          <Button
+            variant="danger"
+            size="sm"
+            onClick={() => setConfirmResetOpen(true)}
+            leftIcon={<Trash2 className="h-3.5 w-3.5" aria-hidden="true" />}
+          >
+            Resetar
+          </Button>
+        </div>
       </div>
 
-      {/* Tabela por Área */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-        <div className="mb-4 flex items-center gap-2">
-          <BarChart3 className="h-5 w-5 text-blue-600" />
-          <h2 className="text-base font-bold text-slate-900 dark:text-white">
+      {feedbackMsg && (
+        <div
+          role="status"
+          className={`rounded-lg border px-4 py-2.5 text-xs font-medium ${
+            feedbackMsg.kind === "ok"
+              ? "border-emerald-200 bg-emerald-50/70 text-emerald-800 dark:border-emerald-800/70 dark:bg-emerald-950/30 dark:text-emerald-300"
+              : "border-rose-200 bg-rose-50/70 text-rose-800 dark:border-rose-800/70 dark:bg-rose-950/30 dark:text-rose-300"
+          }`}
+        >
+          {feedbackMsg.text}
+        </div>
+      )}
+
+      {/* Matriz por Área */}
+      <section className="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+        <div className="border-b border-[var(--border-subtle)] px-4 py-3">
+          <h2 className="text-sm font-semibold text-[var(--text-primary)]">
             Matriz de Desempenho por Área
           </h2>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left text-sm">
+          <table className="w-full border-collapse text-left text-xs">
             <thead>
-              <tr className="border-b border-slate-200 text-xs uppercase text-slate-500 dark:border-slate-800">
-                <th className="py-2.5 pr-4">Área de Conhecimento</th>
+              <tr className="border-b border-[var(--border-subtle)] bg-[var(--bg-subtle)] text-[11px] font-medium uppercase tracking-wider text-[var(--text-muted)]">
+                <th className="px-4 py-2.5">Área de Conhecimento</th>
                 <th className="px-3 py-2.5">Apostila</th>
                 <th className="px-3 py-2.5">Respondidas</th>
-                <th className="px-3 py-2.5">Acertos</th>
+                <th className="px-3 py-2.5">Aproveitamento</th>
                 <th className="px-3 py-2.5">Tempo Médio</th>
-                <th className="py-2.5 pl-3 text-right">Ação</th>
+                <th className="px-4 py-2.5 text-right">Ação</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+            <tbody className="divide-y divide-[var(--border-subtle)]">
               {metrics.map((m) => (
-                <tr key={m.areaId} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
-                  <td className="py-3 pr-4 font-semibold text-slate-800 dark:text-slate-100">
+                <tr key={m.areaId} className="transition-colors hover:bg-[var(--bg-hover)]">
+                  <td className="px-4 py-2.5 font-medium text-[var(--text-primary)]">
                     {m.areaName}
                   </td>
-                  <td className="px-3 py-3 text-xs text-slate-600 dark:text-slate-400">
-                    {m.topicsCompleted}/{m.topicsTotal} módulos
+                  <td className="px-3 py-2.5 font-mono text-[var(--text-secondary)] tabular-nums">
+                    {m.topicsCompleted}/{m.topicsTotal}
                   </td>
-                  <td className="px-3 py-3 text-xs text-slate-600 dark:text-slate-400">
+                  <td className="px-3 py-2.5 font-mono text-[var(--text-secondary)] tabular-nums">
                     {m.answeredUnique}/{m.totalInBank}
                   </td>
-                  <td className="px-3 py-3">
-                    <span
-                      className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-bold ${
+                  <td className="px-3 py-2.5">
+                    <Tag
+                      tone={
                         m.answeredUnique === 0
-                          ? "bg-slate-100 text-slate-500 dark:bg-slate-800"
+                          ? "neutral"
                           : m.accuracyPercent >= 70
-                          ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300"
+                          ? "success"
                           : m.accuracyPercent >= 50
-                          ? "bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300"
-                          : "bg-rose-100 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300"
-                      }`}
+                          ? "warning"
+                          : "danger"
+                      }
+                      mono
                     >
                       {m.answeredUnique > 0 ? `${m.accuracyPercent}%` : "—"}
-                    </span>
+                    </Tag>
                   </td>
-                  <td className="px-3 py-3 text-xs text-slate-600 dark:text-slate-400">
+                  <td className="px-3 py-2.5 font-mono text-[var(--text-secondary)] tabular-nums">
                     {m.avgTimeSeconds > 0 ? formatDuration(m.avgTimeSeconds) : "—"}
                   </td>
-                  <td className="py-3 pl-3 text-right">
-                    <button
-                      type="button"
+                  <td className="px-4 py-2.5 text-right">
+                    <Button
+                      variant="secondary"
+                      size="xs"
                       onClick={() => onTrainArea(m.areaId)}
-                      className="inline-flex items-center gap-1 rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700 hover:bg-blue-600 hover:text-white dark:bg-slate-800 dark:text-slate-200"
+                      leftIcon={<RotateCcw className="h-3 w-3" aria-hidden="true" />}
                     >
-                      <RotateCcw className="h-3 w-3" /> Treinar
-                    </button>
+                      Treinar
+                    </Button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
+      </section>
 
       {/* Histórico de Simulados */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-        <h2 className="mb-4 text-base font-bold text-slate-900 dark:text-white">
-          Histórico de Simulados Realizados ({progress.simulados.length})
-        </h2>
+      <section className="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+        <div className="flex items-center justify-between border-b border-[var(--border-subtle)] px-4 py-3">
+          <h2 className="text-sm font-semibold text-[var(--text-primary)]">
+            Histórico de Simulados
+          </h2>
+          <span className="font-mono text-xs text-[var(--text-muted)] tabular-nums">
+            {progress.simulados.length} registro(s)
+          </span>
+        </div>
+
         {progress.simulados.length === 0 ? (
-          <p className="text-sm text-slate-500">
+          <div className="px-4 py-8 text-center text-xs text-[var(--text-muted)]">
             Nenhum simulado concluído até o momento.
-          </p>
+          </div>
         ) : (
-          <div className="space-y-3">
+          <div className="divide-y divide-[var(--border-subtle)]">
             {progress.simulados.map((sim) => (
               <div
                 key={sim.id}
-                className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-200 p-4 dark:border-slate-800"
+                className="flex flex-wrap items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-[var(--bg-hover)]"
               >
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white">{sim.title}</p>
-                  <p className="text-xs text-slate-500">
-                    {new Date(sim.finishedAt).toLocaleString("pt-BR")} • Duração:{" "}
-                    {formatDuration(sim.elapsedSeconds)} • {sim.correctCount}/{sim.totalQuestions}{" "}
+                  <p className="text-sm font-medium text-[var(--text-primary)]">{sim.title}</p>
+                  <p className="mt-0.5 font-mono text-[11px] text-[var(--text-muted)] tabular-nums">
+                    {new Date(sim.finishedAt).toLocaleString("pt-BR")} ·{" "}
+                    {formatDuration(sim.elapsedSeconds)} · {sim.correctCount}/{sim.totalQuestions}{" "}
                     acertos
                   </p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="rounded-xl bg-blue-50 px-3 py-1.5 text-sm font-extrabold text-blue-700 dark:bg-blue-950/60 dark:text-blue-300">
-                    {sim.scorePercent}%
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => onReviewSimulado(sim.id)}
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200"
+                <div className="flex items-center gap-2.5">
+                  <Tag
+                    tone={
+                      sim.scorePercent >= 70
+                        ? "success"
+                        : sim.scorePercent >= 50
+                        ? "warning"
+                        : "danger"
+                    }
+                    mono
                   >
-                    <Eye className="h-3.5 w-3.5" /> Revisar Gabarito
-                  </button>
+                    {sim.scorePercent}%
+                  </Tag>
+                  <Button
+                    variant="secondary"
+                    size="xs"
+                    onClick={() => onReviewSimulado(sim.id)}
+                    leftIcon={<Eye className="h-3.5 w-3.5" aria-hidden="true" />}
+                  >
+                    Revisar gabarito
+                  </Button>
                 </div>
               </div>
             ))}
           </div>
         )}
-      </div>
+      </section>
+
+      <ConfirmDialog
+        open={confirmResetOpen}
+        title="Apagar todo o progresso?"
+        description="Essa ação remove seu histórico de questões resolvidas, módulos concluídos, favoritos e simulados salvos neste navegador. Recomendamos exportar um backup JSON antes."
+        confirmLabel="Apagar Tudo"
+        destructive
+        onConfirm={() => {
+          onResetProgress();
+          setConfirmResetOpen(false);
+          setFeedbackMsg({ kind: "ok", text: "Progresso reiniciado." });
+        }}
+        onCancel={() => setConfirmResetOpen(false)}
+      />
     </div>
   );
 };

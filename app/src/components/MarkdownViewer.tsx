@@ -5,9 +5,12 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
+export type ReaderFontSize = "sm" | "md" | "lg";
+
 interface MarkdownViewerProps {
   content: string;
   areaId?: string;
+  fontSize?: ReaderFontSize;
 }
 
 function slugifyHeading(text: string): string {
@@ -38,9 +41,13 @@ function extractText(children: React.ReactNode): string {
   return "";
 }
 
-export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ content, areaId }) => {
+export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
+  content,
+  areaId,
+  fontSize = "md",
+}) => {
   return (
-    <div className="markdown-body">
+    <div className={`markdown-body reader-${fontSize}`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[rehypeKatex]}

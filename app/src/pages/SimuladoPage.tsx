@@ -1,8 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 import {
-  AlertTriangle,
-  Award,
-  CheckCircle2,
   ChevronLeft,
   ChevronRight,
   Clock,
@@ -26,6 +23,9 @@ import {
   isSimuladoAnswerCorrect,
 } from "../utils/scoring";
 import { QuestionCard } from "../components/QuestionCard";
+import { Button } from "../components/ui/Button";
+import { Tag } from "../components/ui/Tag";
+import { ConfirmDialog } from "../components/ui/ConfirmDialog";
 
 interface SimuladoPageProps {
   questions: Question[];
@@ -40,11 +40,20 @@ interface SimuladoPageProps {
   onOpenApostila: (areaId: string) => void;
 }
 
+const OPTION_LETTERS: OptionLetter[] = ["A", "B", "C", "D", "E"];
+
+function isTypingTarget(target: EventTarget | null): boolean {
+  if (!(target instanceof HTMLElement)) return false;
+  const tag = target.tagName;
+  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target.isContentEditable;
+}
+
 const MODE_CARDS: Array<{
   mode: SimuladoMode;
   title: string;
   subtitle: string;
   badge: string;
+  tone: "accent" | "success" | "neutral";
   duration: string;
   questionsInfo: string;
 }> = [
@@ -52,40 +61,45 @@ const MODE_CARDS: Array<{
     mode: "oficial-2021",
     title: "ENADE Oficial 2021",
     subtitle: "Prova completa de Sistemas de Informação aplicada pelo INEP em 2021.",
-    badge: "Oficial INEP",
-    duration: "4h 00min",
+    badge: "INEP 2021",
+    tone: "accent",
+    duration: "04:00:00",
     questionsInfo: "40 questões (FG + CE)",
   },
   {
     mode: "oficial-2017",
     title: "ENADE Oficial 2017",
     subtitle: "Prova completa de Sistemas de Informação aplicada pelo INEP em 2017.",
-    badge: "Oficial INEP",
-    duration: "4h 00min",
+    badge: "INEP 2017",
+    tone: "accent",
+    duration: "04:00:00",
     questionsInfo: "40 questões (FG + CE)",
   },
   {
     mode: "oficial-2014",
     title: "ENADE Oficial 2014",
     subtitle: "Prova completa de Sistemas de Informação aplicada pelo INEP em 2014.",
-    badge: "Oficial INEP",
-    duration: "4h 00min",
+    badge: "INEP 2014",
+    tone: "accent",
+    duration: "04:00:00",
     questionsInfo: "40 questões (FG + CE)",
   },
   {
     mode: "inedito-completo",
     title: "Simulado Inédito Completo",
     subtitle: "40 questões inéditas balanceadas no padrão ENADE (8 FG + 32 Específicas).",
-    badge: "Inédito 2026",
-    duration: "4h 00min",
+    badge: "INÉDITO",
+    tone: "success",
+    duration: "04:00:00",
     questionsInfo: "40 questões inéditas",
   },
   {
     mode: "simulado-rapido",
     title: "Simulado Rápido",
-    subtitle: "Treino cronometrado enxuto misturando provas oficiais e inéditas.",
-    badge: "Treino Ágil",
-    duration: "1h 30min",
+    subtitle: "Treino cronometrado enxuto combinando provas oficiais e questões inéditas.",
+    badge: "TREINO ÁGIL",
+    tone: "neutral",
+    duration: "01:30:00",
     questionsInfo: "15 questões",
   },
 ];
@@ -102,7 +116,8 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
   onToggleFavorite,
   onOpenApostila,
 }) => {
-  const [confirmFinish, setConfirmFinish] = useState(false);
+  const [confirmFinishOpen, setConfirmFinishOpen] = useState(false);
+  const [confirmAbandonOpen, setConfirmAbandonOpen] = useState(false);
   const [reviewRecord, setReviewRecord] = useState<SimuladoRecord | null>(null);
   const [reviewIndex, setReviewIndex] = useState(0);
 
@@ -122,7 +137,6 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
 
   const active = progress.activeSimulado;
 
-  // Cronômetro regressivo com atualização funcional (sem sobrescrever respostas)
   useEffect(() => {
     if (!active?.id) return;
     const timer = window.setInterval(() => {
@@ -132,13 +146,75 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active?.id]);
 
-  // Entrega automática quando o tempo zera
   useEffect(() => {
     if (active && active.remainingSeconds <= 0) {
       handleSubmitActive(active);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active?.remainingSeconds]);
+
+  // Atalhos de teclado durante prova ativa ou revisão
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey || isTypingTarget(e.target)) return;
+      if (confirmFinishOpen || confirmAbandonOpen) return;
+
+      if (active) {
+        const simQuestions = active.questionIds
+          .map((id) => questionsById.get(id))
+          .filter((q): q is Question => Boolean(q));
+        const activeQ = simQuestions[active.currentIndex];
+        if (!activeQ) return;
+
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          onUpdateActive({
+            ...active,
+            currentIndex: Math.max(0, active.currentIndex - 1),
+          });
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          onUpdateActive({
+            ...active,
+            currentIndex: Math.min(simQuestions.length - 1, active.currentIndex + 1),
+          });
+        } else if (activeQ.type === "objetiva") {
+          const upper = e.key.toUpperCase() as OptionLetter;
+          const numIdx = Number(e.key) - 1;
+          const chosen = OPTION_LETTERS.includes(upper)
+            ? upper
+            : numIdx >= 0 && numIdx < OPTION_LETTERS.length
+            ? OPTION_LETTERS[numIdx]
+            : null;
+          if (chosen) {
+            e.preventDefault();
+            onUpdateActive({
+              ...active,
+              answers: {
+                ...active.answers,
+                [activeQ.id]: {
+                  ...active.answers[activeQ.id],
+                  selectedOption: chosen,
+                },
+              },
+            });
+          }
+        }
+      } else if (reviewRecord) {
+        const len = reviewRecord.questionIds.length;
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          setReviewIndex((i) => Math.max(0, i - 1));
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          setReviewIndex((i) => Math.min(len - 1, i + 1));
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  });
 
   const startSimulado = (mode: SimuladoMode) => {
     const built = buildSimuladoQuestions(mode, questions);
@@ -155,7 +231,8 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     };
     setReviewRecord(null);
     onClearReviewRecord();
-    setConfirmFinish(false);
+    setConfirmFinishOpen(false);
+    setConfirmAbandonOpen(false);
     onUpdateActive(nextActive);
   };
 
@@ -180,7 +257,9 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     const attempts: QuestionAttempt[] = simQuestions
       .filter((q) => {
         const ans = snapshot.answers[q.id];
-        return q.type === "objetiva" ? Boolean(ans?.selectedOption) : Boolean(ans?.discursiveDraft?.trim());
+        return q.type === "objetiva"
+          ? Boolean(ans?.selectedOption)
+          : Boolean(ans?.discursiveDraft?.trim());
       })
       .map((q) => {
         const ans = snapshot.answers[q.id];
@@ -198,7 +277,7 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
         };
       });
 
-    setConfirmFinish(false);
+    setConfirmFinishOpen(false);
     setReviewRecord(record);
     setReviewIndex(0);
     onFinishSimulado(record, attempts);
@@ -234,51 +313,50 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
 
     return (
       <div className="space-y-6">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
-                <Award className="h-3.5 w-3.5" /> Resultado do Simulado
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-5">
+          <div>
+            <div className="flex items-center gap-2">
+              <Tag tone="success">CONCLUÍDO</Tag>
+              <span className="text-xs text-[var(--text-muted)] tabular-nums">
+                {new Date(reviewRecord.finishedAt).toLocaleString("pt-BR")} · Tempo:{" "}
+                {formatDuration(reviewRecord.elapsedSeconds)}
               </span>
-              <h1 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">
-                {reviewRecord.title}
-              </h1>
-              <p className="mt-1 text-xs text-slate-500">
-                Concluído em {new Date(reviewRecord.finishedAt).toLocaleString("pt-BR")} • Tempo
-                utilizado: {formatDuration(reviewRecord.elapsedSeconds)}
-              </p>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <div className="text-3xl font-extrabold text-blue-600 dark:text-blue-400">
-                  {reviewRecord.scorePercent}%
-                </div>
-                <div className="text-xs text-slate-500">
-                  {reviewRecord.correctCount}/{reviewRecord.totalQuestions} acertos
-                </div>
+            <h1 className="mt-1.5 text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+              {reviewRecord.title}
+            </h1>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="text-right tabular-nums">
+              <div className="font-mono text-2xl font-semibold text-[var(--text-primary)]">
+                {reviewRecord.scorePercent}%
               </div>
-              <button
-                type="button"
-                onClick={() => {
-                  setReviewRecord(null);
-                  onClearReviewRecord();
-                }}
-                className="rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
-              >
-                Voltar aos Modos
-              </button>
+              <div className="text-xs text-[var(--text-muted)]">
+                {reviewRecord.correctCount}/{reviewRecord.totalQuestions} acertos
+              </div>
             </div>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => {
+                setReviewRecord(null);
+                onClearReviewRecord();
+              }}
+            >
+              Voltar aos modos
+            </Button>
           </div>
         </div>
 
         {activeQ && (
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-            <div className="lg:col-span-4 xl:col-span-3">
-              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                <h2 className="mb-3 text-xs font-bold uppercase tracking-wide text-slate-500">
-                  Gabarito da Prova
+            <aside className="lg:col-span-4 xl:col-span-3">
+              <div className="sticky top-6 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-4">
+                <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+                  Gabarito ({simQuestions.length})
                 </h2>
-                <div className="grid grid-cols-5 gap-2">
+                <div className="grid grid-cols-5 gap-1.5">
                   {simQuestions.map((q, idx) => {
                     const ans = reviewRecord.answers[q.id];
                     const ok = isSimuladoAnswerCorrect(q, ans);
@@ -287,12 +365,14 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
                         key={q.id}
                         type="button"
                         onClick={() => setReviewIndex(idx)}
-                        className={`rounded-lg py-2 text-xs font-bold transition ${
-                          idx === reviewIndex ? "ring-2 ring-blue-600 ring-offset-1" : ""
+                        className={`rounded-md border py-1.5 font-mono text-xs font-medium tabular-nums transition-colors focus-visible:outline-2 focus-visible:outline-blue-600 ${
+                          idx === reviewIndex
+                            ? "ring-2 ring-blue-600 ring-offset-1 ring-offset-[var(--bg-surface)]"
+                            : ""
                         } ${
                           ok
-                            ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300"
-                            : "bg-rose-100 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300"
+                            ? "border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-800/70 dark:bg-emerald-950/40 dark:text-emerald-300"
+                            : "border-rose-200 bg-rose-50 text-rose-800 dark:border-rose-800/70 dark:bg-rose-950/40 dark:text-rose-300"
                         }`}
                       >
                         {idx + 1}
@@ -301,30 +381,34 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
                   })}
                 </div>
               </div>
-            </div>
+            </aside>
 
             <div className="space-y-4 lg:col-span-8 xl:col-span-9">
-              <div className="flex items-center justify-between text-sm">
-                <span className="font-semibold text-slate-600 dark:text-slate-300">
-                  Revisão {reviewIndex + 1} de {simQuestions.length}
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-medium text-[var(--text-secondary)] tabular-nums">
+                  Revisão {reviewIndex + 1} / {simQuestions.length}
                 </span>
                 <div className="flex gap-2">
-                  <button
-                    type="button"
+                  <Button
+                    variant="secondary"
+                    size="sm"
                     disabled={reviewIndex === 0}
                     onClick={() => setReviewIndex((i) => Math.max(0, i - 1))}
-                    className="inline-flex items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900"
+                    leftIcon={<ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />}
                   >
-                    <ChevronLeft className="h-4 w-4" /> Anterior
-                  </button>
-                  <button
-                    type="button"
+                    Anterior
+                  </Button>
+                  <Button
+                    variant="primary"
+                    size="sm"
                     disabled={reviewIndex >= simQuestions.length - 1}
-                    onClick={() => setReviewIndex((i) => Math.min(simQuestions.length - 1, i + 1))}
-                    className="inline-flex items-center gap-1 rounded-xl bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white disabled:opacity-40"
+                    onClick={() =>
+                      setReviewIndex((i) => Math.min(simQuestions.length - 1, i + 1))
+                    }
+                    rightIcon={<ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />}
                   >
-                    Próxima <ChevronRight className="h-4 w-4" />
-                  </button>
+                    Próxima
+                  </Button>
                 </div>
               </div>
 
@@ -333,9 +417,13 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
                 mode="simulado-review"
                 selectedOption={reviewRecord.answers[activeQ.id]?.selectedOption ?? null}
                 discursiveDraft={reviewRecord.answers[activeQ.id]?.discursiveDraft ?? ""}
-                discursiveSelfScore={reviewRecord.answers[activeQ.id]?.discursiveSelfScore ?? null}
+                discursiveSelfScore={
+                  reviewRecord.answers[activeQ.id]?.discursiveSelfScore ?? null
+                }
                 isFavorite={Boolean(progress.favorites[activeQ.id])}
-                onSetDiscursiveScore={(score) => handleUpdateReviewDiscursive(activeQ.id, score)}
+                onSetDiscursiveScore={(score) =>
+                  handleUpdateReviewDiscursive(activeQ.id, score)
+                }
                 onToggleFavorite={() => onToggleFavorite(activeQ.id)}
                 onOpenApostila={onOpenApostila}
               />
@@ -346,7 +434,7 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     );
   }
 
-  // Tela 2: Simulado em andamento
+  // Tela 2: Simulado em andamento (Modo Foco)
   if (active) {
     const simQuestions = active.questionIds
       .map((id) => questionsById.get(id))
@@ -354,11 +442,17 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     const activeQ = simQuestions[active.currentIndex] ?? simQuestions[0];
     const answeredCount = simQuestions.filter((q) => {
       const a = active.answers[q.id];
-      return q.type === "objetiva" ? Boolean(a?.selectedOption) : Boolean(a?.discursiveDraft?.trim());
+      return q.type === "objetiva"
+        ? Boolean(a?.selectedOption)
+        : Boolean(a?.discursiveDraft?.trim());
     }).length;
+    const unansweredCount = simQuestions.length - answeredCount;
     const isLowTime = active.remainingSeconds < 15 * 60;
 
-    const updateAnswer = (qId: string, patch: Partial<{ selectedOption: OptionLetter; discursiveDraft: string; flagged: boolean }>) => {
+    const updateAnswer = (
+      qId: string,
+      patch: Partial<{ selectedOption: OptionLetter; discursiveDraft: string; flagged: boolean }>
+    ) => {
       onUpdateActive({
         ...active,
         answers: {
@@ -373,68 +467,52 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
 
     return (
       <div className="space-y-5">
-        {/* Barra de controle e cronômetro */}
-        <div className="sticky top-16 z-20 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/95">
-          <div>
-            <h1 className="text-base font-bold text-slate-900 dark:text-white">{active.title}</h1>
-            <p className="text-xs text-slate-500">
-              {answeredCount} de {simQuestions.length} respondidas • Salvamento automático ativo
+        {/* Barra de controle da prova */}
+        <header className="sticky top-2 z-20 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]/95 px-4 py-3 backdrop-blur">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2">
+              <Tag tone="accent">MODO PROVA</Tag>
+              <h1 className="truncate text-sm font-semibold text-[var(--text-primary)]">
+                {active.title}
+              </h1>
+            </div>
+            <p className="mt-0.5 font-mono text-[11px] text-[var(--text-muted)] tabular-nums">
+              {answeredCount}/{simQuestions.length} respondidas · salvamento automático
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <div
-              className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-2 font-mono text-sm font-bold ${
+              className={`inline-flex h-8 items-center gap-2 rounded-md border px-3 font-mono text-xs font-semibold tabular-nums ${
                 isLowTime
-                  ? "bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300"
-                  : "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-100"
+                  ? "border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-800 dark:bg-rose-950/50 dark:text-rose-300"
+                  : "border-[var(--border-subtle)] bg-[var(--bg-subtle)] text-[var(--text-primary)]"
               }`}
+              aria-label={`Tempo restante: ${formatDuration(active.remainingSeconds)}`}
             >
-              <Clock className="h-4 w-4" />
+              <Clock className="h-3.5 w-3.5" aria-hidden="true" />
               {formatDuration(active.remainingSeconds)}
             </div>
 
-            {!confirmFinish ? (
-              <button
-                type="button"
-                onClick={() => setConfirmFinish(true)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500"
-              >
-                <Send className="h-3.5 w-3.5" /> Entregar Simulado
-              </button>
-            ) : (
-              <div className="flex items-center gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3 py-1.5 dark:border-amber-700 dark:bg-amber-950/40">
-                <AlertTriangle className="h-4 w-4 text-amber-600" />
-                <span className="text-xs font-semibold text-amber-900 dark:text-amber-200">
-                  Confirmar entrega?
-                </span>
-                <button
-                  type="button"
-                  onClick={() => handleSubmitActive(active)}
-                  className="rounded-lg bg-emerald-600 px-2.5 py-1 text-xs font-bold text-white"
-                >
-                  Sim
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setConfirmFinish(false)}
-                  className="rounded-lg bg-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-800"
-                >
-                  Não
-                </button>
-              </div>
-            )}
+            <Button
+              variant="accent"
+              size="sm"
+              onClick={() => setConfirmFinishOpen(true)}
+              leftIcon={<Send className="h-3.5 w-3.5" aria-hidden="true" />}
+            >
+              Entregar Prova
+            </Button>
           </div>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           {/* Cartão de respostas lateral */}
           <aside className="lg:col-span-4 xl:col-span-3">
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <h2 className="mb-3 text-xs font-bold uppercase tracking-wide text-slate-500">
+            <div className="sticky top-20 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-4">
+              <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
                 Cartão de Questões
               </h2>
-              <div className="grid grid-cols-5 gap-2">
+              <div className="grid grid-cols-5 gap-1.5">
                 {simQuestions.map((q, idx) => {
                   const ans = active.answers[q.id];
                   const isAnswered =
@@ -449,57 +527,75 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
                       key={q.id}
                       type="button"
                       onClick={() => onUpdateActive({ ...active, currentIndex: idx })}
-                      className={`relative rounded-lg py-2 text-xs font-bold transition ${
-                        isCurrent ? "ring-2 ring-blue-600 ring-offset-1" : ""
+                      className={`relative rounded-md border py-1.5 font-mono text-xs font-medium tabular-nums transition-colors focus-visible:outline-2 focus-visible:outline-blue-600 ${
+                        isCurrent
+                          ? "ring-2 ring-blue-600 ring-offset-1 ring-offset-[var(--bg-surface)]"
+                          : ""
                       } ${
                         isFlagged
-                          ? "bg-amber-100 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200"
+                          ? "border-amber-300 bg-amber-50 text-amber-900 dark:border-amber-700/70 dark:bg-amber-950/50 dark:text-amber-200"
                           : isAnswered
-                          ? "bg-blue-600 text-white"
-                          : "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300"
+                          ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950"
+                          : "border-[var(--border-subtle)] bg-[var(--bg-subtle)] text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]"
                       }`}
                     >
                       {idx + 1}
                       {isFlagged && (
-                        <Flag className="absolute top-0.5 right-0.5 h-2.5 w-2.5 text-amber-600" />
+                        <Flag
+                          className="absolute top-0.5 right-0.5 h-2 w-2 text-amber-600 dark:text-amber-400"
+                          aria-hidden="true"
+                        />
                       )}
                     </button>
                   );
                 })}
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-3 border-t border-slate-100 pt-3 text-[11px] text-slate-500 dark:border-slate-800">
-                <span className="inline-flex items-center gap-1">
-                  <span className="h-2.5 w-2.5 rounded bg-blue-600" /> Respondida
+              <div className="mt-4 flex flex-wrap gap-3 border-t border-[var(--border-subtle)] pt-3 text-[11px] text-[var(--text-muted)]">
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-sm bg-zinc-900 dark:bg-zinc-100" />{" "}
+                  Respondida
                 </span>
-                <span className="inline-flex items-center gap-1">
-                  <span className="h-2.5 w-2.5 rounded bg-amber-300" /> Revisar
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-sm border border-amber-400 bg-amber-100 dark:bg-amber-900" />{" "}
+                  Revisar
                 </span>
-                <span className="inline-flex items-center gap-1">
-                  <span className="h-2.5 w-2.5 rounded bg-slate-200 dark:bg-slate-700" /> Em branco
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-sm border border-[var(--border-subtle)] bg-[var(--bg-subtle)]" />{" "}
+                  Aberta
                 </span>
               </div>
 
-              <button
-                type="button"
-                onClick={() => onUpdateActive(null)}
-                className="mt-4 w-full rounded-xl border border-rose-200 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:border-rose-900 dark:text-rose-400 dark:hover:bg-rose-950/30"
-              >
-                Abandonar Simulado
-              </button>
+              <div className="mt-4 border-t border-[var(--border-subtle)] pt-3">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => setConfirmAbandonOpen(true)}
+                >
+                  Abandonar Simulado
+                </Button>
+              </div>
             </div>
           </aside>
 
           {/* Questão atual */}
           {activeQ && (
             <div className="space-y-4 lg:col-span-8 xl:col-span-9">
-              <div className="flex items-center justify-between text-sm">
-                <span className="font-semibold text-slate-600 dark:text-slate-300">
-                  Questão {active.currentIndex + 1} de {simQuestions.length}
-                </span>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-xs font-medium text-[var(--text-primary)] tabular-nums">
+                    Questão {active.currentIndex + 1} / {simQuestions.length}
+                  </span>
+                  <span className="hidden text-[11px] text-[var(--text-muted)] sm:inline">
+                    <kbd className="font-mono">A–E</kbd> marcar ·{" "}
+                    <kbd className="font-mono">←/→</kbd> navegar
+                  </span>
+                </div>
                 <div className="flex gap-2">
-                  <button
-                    type="button"
+                  <Button
+                    variant="secondary"
+                    size="sm"
                     disabled={active.currentIndex === 0}
                     onClick={() =>
                       onUpdateActive({
@@ -507,23 +603,27 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
                         currentIndex: Math.max(0, active.currentIndex - 1),
                       })
                     }
-                    className="inline-flex items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900"
+                    leftIcon={<ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />}
                   >
-                    <ChevronLeft className="h-4 w-4" /> Anterior
-                  </button>
-                  <button
-                    type="button"
+                    Anterior
+                  </Button>
+                  <Button
+                    variant="primary"
+                    size="sm"
                     disabled={active.currentIndex >= simQuestions.length - 1}
                     onClick={() =>
                       onUpdateActive({
                         ...active,
-                        currentIndex: Math.min(simQuestions.length - 1, active.currentIndex + 1),
+                        currentIndex: Math.min(
+                          simQuestions.length - 1,
+                          active.currentIndex + 1
+                        ),
                       })
                     }
-                    className="inline-flex items-center gap-1 rounded-xl bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white disabled:opacity-40"
+                    rightIcon={<ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />}
                   >
-                    Próxima <ChevronRight className="h-4 w-4" />
-                  </button>
+                    Próxima
+                  </Button>
                 </div>
               </div>
 
@@ -539,13 +639,41 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
                   updateAnswer(activeQ.id, { discursiveDraft: val })
                 }
                 onToggleFlag={() =>
-                  updateAnswer(activeQ.id, { flagged: !active.answers[activeQ.id]?.flagged })
+                  updateAnswer(activeQ.id, {
+                    flagged: !active.answers[activeQ.id]?.flagged,
+                  })
                 }
                 onToggleFavorite={() => onToggleFavorite(activeQ.id)}
               />
             </div>
           )}
         </div>
+
+        <ConfirmDialog
+          open={confirmFinishOpen}
+          title="Entregar simulado?"
+          description={
+            unansweredCount > 0
+              ? `Você respondeu ${answeredCount} de ${simQuestions.length} questões (${unansweredCount} em branco). Ao entregar, o gabarito comentado será liberado e o resultado salvo no histórico.`
+              : `Todas as ${simQuestions.length} questões foram respondidas. Deseja finalizar e corrigir a prova agora?`
+          }
+          confirmLabel="Entregar e Corrigir"
+          onConfirm={() => handleSubmitActive(active)}
+          onCancel={() => setConfirmFinishOpen(false)}
+        />
+
+        <ConfirmDialog
+          open={confirmAbandonOpen}
+          title="Abandonar simulado em andamento?"
+          description="As respostas marcadas nesta tentativa serão descartadas e não entrarão nas suas métricas."
+          confirmLabel="Abandonar"
+          destructive
+          onConfirm={() => {
+            setConfirmAbandonOpen(false);
+            onUpdateActive(null);
+          }}
+          onCancel={() => setConfirmAbandonOpen(false)}
+        />
       </div>
     );
   }
@@ -553,13 +681,16 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
   // Tela 3: Escolha de modo do simulado
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+      <div className="border-b border-[var(--border-subtle)] pb-4">
+        <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
+          Ambiente de Prova
+        </span>
+        <h1 className="mt-1 text-xl font-semibold tracking-tight text-[var(--text-primary)]">
           Simulados Cronometrados ENADE
         </h1>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-          Reproduza as condições reais da prova (4 horas, gabarito revelado somente após a entrega)
-          ou faça um treino rápido cronometrado. Seu andamento é salvo automaticamente.
+        <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
+          Reproduza as condições oficiais de prova (4 horas, gabarito liberado apenas após a
+          entrega) ou realize um treino rápido. O andamento é salvo automaticamente.
         </p>
       </div>
 
@@ -567,34 +698,37 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
         {MODE_CARDS.map((card) => (
           <div
             key={card.mode}
-            className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900"
+            className="flex flex-col justify-between rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 transition-colors hover:border-[var(--border-strong)]"
           >
             <div>
-              <span className="inline-flex rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:bg-blue-950/60 dark:text-blue-300">
-                {card.badge}
-              </span>
-              <h2 className="mt-3 text-lg font-bold text-slate-900 dark:text-white">{card.title}</h2>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <div className="flex items-center justify-between gap-2">
+                <Tag tone={card.tone} mono>
+                  {card.badge}
+                </Tag>
+                <span className="font-mono text-[11px] text-[var(--text-muted)] tabular-nums">
+                  {card.duration}
+                </span>
+              </div>
+              <h2 className="mt-3 text-base font-semibold text-[var(--text-primary)]">
+                {card.title}
+              </h2>
+              <p className="mt-1.5 text-xs leading-relaxed text-[var(--text-secondary)]">
                 {card.subtitle}
               </p>
             </div>
 
-            <div className="mt-5 border-t border-slate-100 pt-4 dark:border-slate-800">
-              <div className="mb-3 flex items-center justify-between text-xs font-medium text-slate-500">
-                <span className="inline-flex items-center gap-1">
-                  <Clock className="h-3.5 w-3.5" /> {card.duration}
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <CheckCircle2 className="h-3.5 w-3.5" /> {card.questionsInfo}
-                </span>
-              </div>
-              <button
-                type="button"
+            <div className="mt-5 flex items-center justify-between gap-3 border-t border-[var(--border-subtle)] pt-3.5">
+              <span className="text-xs text-[var(--text-muted)] tabular-nums">
+                {card.questionsInfo}
+              </span>
+              <Button
+                variant="primary"
+                size="sm"
                 onClick={() => startSimulado(card.mode)}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500"
+                leftIcon={<Play className="h-3.5 w-3.5" aria-hidden="true" />}
               >
-                <Play className="h-4 w-4" /> Iniciar Simulado
-              </button>
+                Iniciar
+              </Button>
             </div>
           </div>
         ))}

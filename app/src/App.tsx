@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {
+  ArrowLeft,
   BarChart3,
   BookOpen,
   Clock,
-  GraduationCap,
   LayoutDashboard,
   ListChecks,
   Moon,
+  PanelLeftClose,
+  PanelLeftOpen,
+  Search,
   Sun,
 } from "lucide-react";
 import apostilasRaw from "./data/apostilas-bundle.json";
@@ -28,20 +31,22 @@ import {
   touchStudyDate,
   updateActiveSimulado,
 } from "./store/progressStore";
+import { computeStudyStreak, formatDuration } from "./utils/scoring";
 import { DashboardPage } from "./pages/DashboardPage";
 import { ApostilasPage } from "./pages/ApostilasPage";
 import { QuizPage } from "./pages/QuizPage";
 import { SimuladoPage } from "./pages/SimuladoPage";
 import { MetricasPage } from "./pages/MetricasPage";
-
-type AppTab = "dashboard" | "apostilas" | "quiz" | "simulado" | "metricas";
+import { CommandPalette, type NavTab } from "./components/ui/CommandPalette";
 
 const apostilasBundle = apostilasRaw as ApostilasBundle;
 const questionBundle = questionsRaw as QuestionBankBundle;
 
 export const App: React.FC = () => {
   const [progress, setProgress] = useState<StudyProgress>(() => loadProgress());
-  const [activeTab, setActiveTab] = useState<AppTab>("dashboard");
+  const [activeTab, setActiveTab] = useState<NavTab>("dashboard");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [commandOpen, setCommandOpen] = useState(false);
   const [selectedAreaId, setSelectedAreaId] = useState<string>(
     () => progress.lastReadAreaId || apostilasBundle.areas[0]?.areaId || "00-formacao-geral"
   );
@@ -61,7 +66,18 @@ export const App: React.FC = () => {
     }
   }, [progress.theme]);
 
-  const handleNavigate = (tab: AppTab, opts?: { areaId?: string }) => {
+  useEffect(() => {
+    const handleGlobalKey = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setCommandOpen((v) => !v);
+      }
+    };
+    window.addEventListener("keydown", handleGlobalKey);
+    return () => window.removeEventListener("keydown", handleGlobalKey);
+  }, []);
+
+  const handleNavigate = (tab: NavTab, opts?: { areaId?: string }) => {
     if (tab === "apostilas" && opts?.areaId) {
       setSelectedAreaId(opts.areaId);
       setProgress((prev) => ({ ...prev, lastReadAreaId: opts.areaId! }));
@@ -130,78 +146,357 @@ export const App: React.FC = () => {
     }));
   };
 
-  const navItems: Array<{ id: AppTab; label: string; icon: React.ReactNode }> = [
-    { id: "dashboard", label: "Início", icon: <LayoutDashboard className="h-4 w-4" /> },
-    { id: "apostilas", label: "Apostilas", icon: <BookOpen className="h-4 w-4" /> },
-    { id: "quiz", label: "Quiz por Áreas", icon: <ListChecks className="h-4 w-4" /> },
-    { id: "simulado", label: "Simulado", icon: <Clock className="h-4 w-4" /> },
-    { id: "metricas", label: "Métricas", icon: <BarChart3 className="h-4 w-4" /> },
+  const toggleTheme = () => {
+    setProgress((prev) => ({
+      ...prev,
+      theme: prev.theme === "dark" ? "light" : "dark",
+    }));
+  };
+
+  const isFocusMode = activeTab === "simulado" && Boolean(progress.activeSimulado);
+  const streak = computeStudyStreak(progress.studyDates);
+  const answeredCount = Object.keys(progress.attemptsByQuestion).length;
+
+  const navItems: Array<{ id: NavTab; label: string; shortLabel: string; icon: React.ReactNode }> = [
+    {
+      id: "dashboard",
+      label: "Visão Geral",
+      shortLabel: "Início",
+      icon: <LayoutDashboard className="h-4 w-4 shrink-0" aria-hidden="true" />,
+    },
+    {
+      id: "apostilas",
+      label: "Apostilas",
+      shortLabel: "Apostilas",
+      icon: <BookOpen className="h-4 w-4 shrink-0" aria-hidden="true" />,
+    },
+    {
+      id: "quiz",
+      label: "Quiz por Áreas",
+      shortLabel: "Quiz",
+      icon: <ListChecks className="h-4 w-4 shrink-0" aria-hidden="true" />,
+    },
+    {
+      id: "simulado",
+      label: "Simulado",
+      shortLabel: "Simulado",
+      icon: <Clock className="h-4 w-4 shrink-0" aria-hidden="true" />,
+    },
+    {
+      id: "metricas",
+      label: "Métricas",
+      shortLabel: "Métricas",
+      icon: <BarChart3 className="h-4 w-4 shrink-0" aria-hidden="true" />,
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100">
-      {/* Navbar superior */}
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-900/90">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <button
-            type="button"
-            onClick={() => handleNavigate("dashboard")}
-            className="flex items-center gap-2.5 text-left"
-          >
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm">
-              <GraduationCap className="h-5 w-5" />
-            </div>
-            <div>
-              <div className="text-sm font-extrabold tracking-tight text-slate-900 dark:text-white">
-                EstudosEnade
-              </div>
-              <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
-                Sistemas de Informação
-              </div>
-            </div>
-          </button>
-
-          <nav className="hidden items-center gap-1 md:flex">
-            {navItems.map((item) => {
-              const active = activeTab === item.id;
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => handleNavigate(item.id)}
-                  className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-semibold transition ${
-                    active
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-                  }`}
-                >
-                  {item.icon}
-                  {item.label}
-                  {item.id === "simulado" && progress.activeSimulado && (
-                    <span className="ml-1 h-2 w-2 rounded-full bg-amber-400" />
-                  )}
-                </button>
-              );
-            })}
-          </nav>
-
-          <button
-            type="button"
-            onClick={() =>
-              setProgress((prev) => ({
-                ...prev,
-                theme: prev.theme === "dark" ? "light" : "dark",
-              }))
-            }
-            className="rounded-xl border border-slate-200 p-2 text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
-            title="Alternar tema claro/escuro"
-          >
-            {progress.theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </button>
+    <div className="min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)]">
+      {/* Modo foco automático durante simulado ativo */}
+      {isFocusMode && (
+        <div className="border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] px-4 py-2 sm:px-6">
+          <div className="mx-auto flex max-w-6xl items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={() => handleNavigate("dashboard")}
+              className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus-visible:outline-2 focus-visible:outline-blue-600"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
+              Sair do modo foco (progresso salvo)
+            </button>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Alternar tema claro ou escuro"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border-subtle)] px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+            >
+              {progress.theme === "dark" ? (
+                <>
+                  <Sun className="h-3.5 w-3.5" aria-hidden="true" /> Claro
+                </>
+              ) : (
+                <>
+                  <Moon className="h-3.5 w-3.5" aria-hidden="true" /> Escuro
+                </>
+              )}
+            </button>
+          </div>
         </div>
+      )}
 
-        {/* Navegação móvel */}
-        <div className="flex items-center gap-1 overflow-x-auto border-t border-slate-100 px-3 py-2 md:hidden dark:border-slate-800">
+      <div className={isFocusMode ? "" : "md:flex md:min-h-screen"}>
+        {/* Sidebar esquerda colapsável (Desktop) */}
+        {!isFocusMode && (
+          <aside
+            aria-label="Menu principal"
+            className={`hidden shrink-0 border-r border-[var(--border-subtle)] bg-[var(--bg-surface)] transition-[width] duration-150 md:sticky md:top-0 md:flex md:h-screen md:flex-col ${
+              sidebarCollapsed ? "md:w-[60px]" : "md:w-60"
+            }`}
+          >
+            {/* Marca + Botão colapsar */}
+            <div
+              className={`flex h-13 items-center border-b border-[var(--border-subtle)] px-3 ${
+                sidebarCollapsed ? "justify-center" : "justify-between"
+              }`}
+            >
+              {!sidebarCollapsed && (
+                <button
+                  type="button"
+                  onClick={() => handleNavigate("dashboard")}
+                  className="flex min-w-0 items-center gap-2.5 text-left focus-visible:outline-2 focus-visible:outline-blue-600"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[var(--border-strong)] bg-zinc-900 font-mono text-[11px] font-semibold text-white dark:bg-zinc-100 dark:text-zinc-950">
+                    SI
+                  </span>
+                  <div className="min-w-0">
+                    <div className="truncate text-xs font-semibold tracking-tight text-[var(--text-primary)]">
+                      EstudosEnade
+                    </div>
+                    <div className="truncate text-[10px] text-[var(--text-muted)]">
+                      Sistemas de Informação
+                    </div>
+                  </div>
+                </button>
+              )}
+
+              <button
+                type="button"
+                onClick={() => setSidebarCollapsed((c) => !c)}
+                aria-label={sidebarCollapsed ? "Expandir barra lateral" : "Recolher barra lateral"}
+                title={sidebarCollapsed ? "Expandir barra lateral" : "Recolher barra lateral"}
+                className="rounded-md p-1.5 text-[var(--text-muted)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus-visible:outline-2 focus-visible:outline-blue-600"
+              >
+                {sidebarCollapsed ? (
+                  <PanelLeftOpen className="h-4 w-4" aria-hidden="true" />
+                ) : (
+                  <PanelLeftClose className="h-4 w-4" aria-hidden="true" />
+                )}
+              </button>
+            </div>
+
+            {/* Atalho Busca Rápida */}
+            <div className="p-2.5">
+              <button
+                type="button"
+                onClick={() => setCommandOpen(true)}
+                title="Busca rápida (Ctrl+K)"
+                className={`flex w-full items-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-canvas)] text-xs text-[var(--text-muted)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)] focus-visible:outline-2 focus-visible:outline-blue-600 ${
+                  sidebarCollapsed ? "justify-center p-2" : "justify-between px-2.5 py-1.5"
+                }`}
+              >
+                <span className="inline-flex items-center gap-2">
+                  <Search className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                  {!sidebarCollapsed && <span>Buscar...</span>}
+                </span>
+                {!sidebarCollapsed && (
+                  <kbd className="rounded border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-1 font-mono text-[10px]">
+                    ⌘K
+                  </kbd>
+                )}
+              </button>
+            </div>
+
+            {/* Navegação */}
+            <nav className="flex-1 space-y-0.5 px-2.5 py-1" aria-label="Seções do sistema">
+              {navItems.map((item) => {
+                const active = activeTab === item.id;
+                const hasRunningSimulado =
+                  item.id === "simulado" && Boolean(progress.activeSimulado);
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => handleNavigate(item.id)}
+                    aria-current={active ? "page" : undefined}
+                    title={sidebarCollapsed ? item.label : undefined}
+                    className={`flex w-full items-center rounded-md text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-blue-600 ${
+                      sidebarCollapsed
+                        ? "justify-center px-2 py-2"
+                        : "justify-between px-2.5 py-2"
+                    } ${
+                      active
+                        ? "bg-[var(--bg-subtle)] text-[var(--text-primary)] font-semibold"
+                        : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+                    }`}
+                  >
+                    <span className="flex min-w-0 items-center gap-2.5">
+                      <span className={active ? "text-blue-600 dark:text-blue-400" : ""}>
+                        {item.icon}
+                      </span>
+                      {!sidebarCollapsed && <span className="truncate">{item.label}</span>}
+                    </span>
+
+                    {hasRunningSimulado && !sidebarCollapsed && (
+                      <span className="font-mono text-[10px] text-amber-600 dark:text-amber-400 tabular-nums">
+                        {formatDuration(progress.activeSimulado!.remainingSeconds)}
+                      </span>
+                    )}
+                    {hasRunningSimulado && sidebarCollapsed && (
+                      <span className="sr-only">Simulado em andamento</span>
+                    )}
+                  </button>
+                );
+              })}
+            </nav>
+
+            {/* Rodapé da Sidebar */}
+            <div className="border-t border-[var(--border-subtle)] p-2.5">
+              {!sidebarCollapsed && (
+                <div className="mb-2 flex items-center justify-between px-2 text-[11px] text-[var(--text-muted)] tabular-nums">
+                  <span>{answeredCount}/270 q.</span>
+                  <span>
+                    {streak} {streak === 1 ? "dia" : "dias"}
+                  </span>
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label="Alternar tema claro ou escuro"
+                title={
+                  progress.theme === "dark" ? "Mudar para tema claro" : "Mudar para tema escuro"
+                }
+                className={`flex w-full items-center rounded-md px-2.5 py-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus-visible:outline-2 focus-visible:outline-blue-600 ${
+                  sidebarCollapsed ? "justify-center" : "gap-2.5"
+                }`}
+              >
+                {progress.theme === "dark" ? (
+                  <Sun className="h-4 w-4 shrink-0" aria-hidden="true" />
+                ) : (
+                  <Moon className="h-4 w-4 shrink-0" aria-hidden="true" />
+                )}
+                {!sidebarCollapsed && (
+                  <span>{progress.theme === "dark" ? "Tema claro" : "Tema escuro"}</span>
+                )}
+              </button>
+            </div>
+          </aside>
+        )}
+
+        {/* Topbar compacta mobile */}
+        {!isFocusMode && (
+          <header className="sticky top-0 z-30 flex items-center justify-between border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]/95 px-4 py-2.5 backdrop-blur md:hidden">
+            <button
+              type="button"
+              onClick={() => handleNavigate("dashboard")}
+              className="flex items-center gap-2 text-left"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-900 font-mono text-[11px] font-semibold text-white dark:bg-zinc-100 dark:text-zinc-950">
+                SI
+              </span>
+              <span className="text-sm font-semibold tracking-tight text-[var(--text-primary)]">
+                EstudosEnade
+              </span>
+            </button>
+
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => setCommandOpen(true)}
+                aria-label="Abrir busca rápida"
+                className="rounded-md border border-[var(--border-subtle)] p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]"
+              >
+                <Search className="h-4 w-4" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label="Alternar tema claro ou escuro"
+                className="rounded-md border border-[var(--border-subtle)] p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]"
+              >
+                {progress.theme === "dark" ? (
+                  <Sun className="h-4 w-4" aria-hidden="true" />
+                ) : (
+                  <Moon className="h-4 w-4" aria-hidden="true" />
+                )}
+              </button>
+            </div>
+          </header>
+        )}
+
+        {/* Área principal de conteúdo */}
+        <main
+          className={`min-w-0 flex-1 ${
+            isFocusMode
+              ? "mx-auto max-w-6xl px-4 py-6 sm:px-6"
+              : "mx-auto max-w-6xl px-4 py-6 pb-24 sm:px-6 md:px-8 md:py-7 md:pb-10"
+          }`}
+        >
+          {activeTab === "dashboard" && (
+            <DashboardPage
+              areas={apostilasBundle.areas}
+              questions={questionBundle.questions}
+              progress={progress}
+              onNavigate={handleNavigate}
+              onOpenCommandPalette={() => setCommandOpen(true)}
+            />
+          )}
+
+          {activeTab === "apostilas" && (
+            <ApostilasPage
+              areas={apostilasBundle.areas}
+              selectedAreaId={selectedAreaId}
+              progress={progress}
+              onSelectArea={(areaId) => {
+                setSelectedAreaId(areaId);
+                setProgress((prev) => ({ ...prev, lastReadAreaId: areaId }));
+              }}
+              onToggleTopic={handleToggleTopic}
+              onPracticeArea={(areaId) => handleNavigate("quiz", { areaId })}
+            />
+          )}
+
+          {activeTab === "quiz" && (
+            <QuizPage
+              areas={apostilasBundle.areas}
+              questions={questionBundle.questions}
+              progress={progress}
+              initialAreaFilter={quizInitialArea}
+              onRecordAttempt={handleRecordAttempt}
+              onToggleFavorite={handleToggleFavorite}
+              onOpenApostila={(areaId) => handleNavigate("apostilas", { areaId })}
+            />
+          )}
+
+          {activeTab === "simulado" && (
+            <SimuladoPage
+              questions={questionBundle.questions}
+              progress={progress}
+              selectedReviewRecordId={reviewSimuladoId}
+              onClearReviewRecord={() => setReviewSimuladoId(null)}
+              onUpdateActive={handleUpdateActiveSimulado}
+              onTickTimer={handleTickSimulado}
+              onFinishSimulado={handleFinishSimulado}
+              onUpdateHistoricalSimulado={handleUpdateHistoricalSimulado}
+              onToggleFavorite={handleToggleFavorite}
+              onOpenApostila={(areaId) => handleNavigate("apostilas", { areaId })}
+            />
+          )}
+
+          {activeTab === "metricas" && (
+            <MetricasPage
+              areas={apostilasBundle.areas}
+              questions={questionBundle.questions}
+              progress={progress}
+              onImportProgress={(imported) => setProgress(imported)}
+              onResetProgress={() => setProgress(createInitialProgress())}
+              onTrainArea={(areaId) => handleNavigate("quiz", { areaId })}
+              onReviewSimulado={(simId) => {
+                setReviewSimuladoId(simId);
+                handleNavigate("simulado");
+              }}
+            />
+          )}
+        </main>
+      </div>
+
+      {/* Barra inferior mobile */}
+      {!isFocusMode && (
+        <nav
+          aria-label="Navegação inferior"
+          className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t border-[var(--border-subtle)] bg-[var(--bg-surface)]/95 backdrop-blur md:hidden"
+        >
           {navItems.map((item) => {
             const active = activeTab === item.id;
             return (
@@ -209,87 +504,30 @@ export const App: React.FC = () => {
                 key={item.id}
                 type="button"
                 onClick={() => handleNavigate(item.id)}
-                className={`inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold ${
+                aria-current={active ? "page" : undefined}
+                className={`relative flex flex-col items-center justify-center gap-0.5 py-2 text-[10px] font-medium transition-colors ${
                   active
-                    ? "bg-blue-600 text-white"
-                    : "text-slate-600 dark:text-slate-300"
+                    ? "text-blue-600 dark:text-blue-400"
+                    : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                 }`}
               >
                 {item.icon}
-                {item.label}
+                <span className="truncate">{item.shortLabel}</span>
+                {item.id === "simulado" && progress.activeSimulado && (
+                  <span className="absolute top-1.5 right-4 h-1.5 w-1.5 rounded-full bg-amber-500" />
+                )}
               </button>
             );
           })}
-        </div>
-      </header>
+        </nav>
+      )}
 
-      {/* Conteúdo principal */}
-      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        {activeTab === "dashboard" && (
-          <DashboardPage
-            areas={apostilasBundle.areas}
-            questions={questionBundle.questions}
-            progress={progress}
-            onNavigate={handleNavigate}
-          />
-        )}
-
-        {activeTab === "apostilas" && (
-          <ApostilasPage
-            areas={apostilasBundle.areas}
-            selectedAreaId={selectedAreaId}
-            progress={progress}
-            onSelectArea={(areaId) => {
-              setSelectedAreaId(areaId);
-              setProgress((prev) => ({ ...prev, lastReadAreaId: areaId }));
-            }}
-            onToggleTopic={handleToggleTopic}
-            onPracticeArea={(areaId) => handleNavigate("quiz", { areaId })}
-          />
-        )}
-
-        {activeTab === "quiz" && (
-          <QuizPage
-            areas={apostilasBundle.areas}
-            questions={questionBundle.questions}
-            progress={progress}
-            initialAreaFilter={quizInitialArea}
-            onRecordAttempt={handleRecordAttempt}
-            onToggleFavorite={handleToggleFavorite}
-            onOpenApostila={(areaId) => handleNavigate("apostilas", { areaId })}
-          />
-        )}
-
-        {activeTab === "simulado" && (
-          <SimuladoPage
-            questions={questionBundle.questions}
-            progress={progress}
-            selectedReviewRecordId={reviewSimuladoId}
-            onClearReviewRecord={() => setReviewSimuladoId(null)}
-            onUpdateActive={handleUpdateActiveSimulado}
-            onTickTimer={handleTickSimulado}
-            onFinishSimulado={handleFinishSimulado}
-            onUpdateHistoricalSimulado={handleUpdateHistoricalSimulado}
-            onToggleFavorite={handleToggleFavorite}
-            onOpenApostila={(areaId) => handleNavigate("apostilas", { areaId })}
-          />
-        )}
-
-        {activeTab === "metricas" && (
-          <MetricasPage
-            areas={apostilasBundle.areas}
-            questions={questionBundle.questions}
-            progress={progress}
-            onImportProgress={(imported) => setProgress(imported)}
-            onResetProgress={() => setProgress(createInitialProgress())}
-            onTrainArea={(areaId) => handleNavigate("quiz", { areaId })}
-            onReviewSimulado={(simId) => {
-              setReviewSimuladoId(simId);
-              handleNavigate("simulado");
-            }}
-          />
-        )}
-      </main>
+      <CommandPalette
+        open={commandOpen}
+        areas={apostilasBundle.areas}
+        onClose={() => setCommandOpen(false)}
+        onNavigate={handleNavigate}
+      />
     </div>
   );
 };

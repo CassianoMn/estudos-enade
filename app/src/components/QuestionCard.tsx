@@ -3,12 +3,15 @@ import {
   AlertTriangle,
   Bookmark,
   BookOpen,
-  CheckCircle2,
+  Check,
+  Eye,
+  EyeOff,
   Flag,
-  HelpCircle,
-  XCircle,
+  X,
 } from "lucide-react";
 import type { OptionLetter, Question } from "../types/enade";
+import { Button } from "./ui/Button";
+import { Tag } from "./ui/Tag";
 
 interface QuestionCardProps {
   question: Question;
@@ -31,6 +34,12 @@ function resolveAssetUrl(url: string): string {
   return url.startsWith("/") ? `.${url}` : url;
 }
 
+const DIFFICULTY_LABEL: Record<string, string> = {
+  facil: "Fácil",
+  media: "Média",
+  dificil: "Difícil",
+};
+
 export const QuestionCard: React.FC<QuestionCardProps> = ({
   question,
   mode,
@@ -49,269 +58,303 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 }) => {
   const [revealRubric, setRevealRubric] = useState(mode === "simulado-review");
   const isRevealed = mode === "simulado-review" || (mode === "quiz" && showFeedback);
+  const optionsLocked = mode === "simulado-review" || (mode === "quiz" && showFeedback);
 
-  const difficultyLabel: Record<string, string> = {
-    facil: "Fácil",
-    media: "Média",
-    dificil: "Difícil",
-  };
+  const estimatedLines = discursiveDraft
+    ? Math.max(
+        discursiveDraft.split("\n").length,
+        Math.ceil(discursiveDraft.length / 82)
+      )
+    : 0;
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-6">
-      {/* Cabeçalho com metadados */}
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 dark:border-slate-800">
-        <div className="flex flex-wrap items-center gap-2">
-          <span
-            className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-              question.source === "oficial"
-                ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300"
-                : "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300"
-            }`}
-          >
-            {question.source === "oficial" ? `Oficial ${question.year}` : "Inédita ENADE"}
+    <article className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+      {/* Barra superior de metadados */}
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border-subtle)] px-5 py-3">
+        <div className="flex flex-wrap items-center gap-2 text-xs">
+          <Tag tone={question.source === "oficial" ? "accent" : "success"} mono>
+            {question.source === "oficial" ? `INEP ${question.year}` : "INÉDITA"}
+          </Tag>
+          <span className="font-medium text-[var(--text-primary)]">{question.areaName}</span>
+          <span className="text-[var(--text-muted)]" aria-hidden="true">
+            ·
           </span>
-          <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-            {question.areaName}
-          </span>
-          <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+          <span className="text-[var(--text-secondary)]">
             {question.type === "discursiva" ? "Discursiva" : "Objetiva"}
           </span>
-          <span className="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">
-            {difficultyLabel[question.difficulty] ?? question.difficulty}
+          <span className="text-[var(--text-muted)]" aria-hidden="true">
+            ·
+          </span>
+          <span className="text-[var(--text-muted)]">
+            {DIFFICULTY_LABEL[question.difficulty] ?? question.difficulty}
           </span>
           {question.annulled && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/60 dark:text-rose-300">
-              <AlertTriangle className="h-3.5 w-3.5" /> Anulada pelo INEP
-            </span>
+            <Tag tone="danger">
+              <AlertTriangle className="h-3 w-3" aria-hidden="true" />
+              Anulada
+            </Tag>
           )}
         </div>
 
         <div className="flex items-center gap-1.5">
           {onToggleFlag && mode === "simulado-active" && (
-            <button
-              type="button"
+            <Button
+              variant={flagged ? "secondary" : "ghost"}
+              size="xs"
               onClick={onToggleFlag}
-              className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1 text-xs font-medium transition ${
+              aria-pressed={flagged}
+              className={
                 flagged
-                  ? "border-amber-400 bg-amber-50 text-amber-800 dark:border-amber-600 dark:bg-amber-950/50 dark:text-amber-300"
-                  : "border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
-              }`}
+                  ? "border-amber-300 bg-amber-50 text-amber-800 hover:bg-amber-100 dark:border-amber-700/70 dark:bg-amber-950/40 dark:text-amber-300"
+                  : ""
+              }
+              leftIcon={<Flag className="h-3.5 w-3.5" aria-hidden="true" />}
               title="Marcar para revisar antes de entregar"
             >
-              <Flag className="h-3.5 w-3.5" />
               {flagged ? "Marcada" : "Revisar"}
-            </button>
+            </Button>
           )}
           {onToggleFavorite && (
-            <button
-              type="button"
+            <Button
+              variant={isFavorite ? "secondary" : "ghost"}
+              size="xs"
               onClick={onToggleFavorite}
-              className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1 text-xs font-medium transition ${
+              aria-pressed={isFavorite}
+              className={
                 isFavorite
-                  ? "border-blue-400 bg-blue-50 text-blue-700 dark:border-blue-600 dark:bg-blue-950/50 dark:text-blue-300"
-                  : "border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
-              }`}
-              title="Salvar questão nos favoritos"
+                  ? "border-blue-300 bg-blue-50 text-blue-700 hover:bg-blue-100 dark:border-blue-800/70 dark:bg-blue-950/40 dark:text-blue-300"
+                  : ""
+              }
+              leftIcon={
+                <Bookmark
+                  className={`h-3.5 w-3.5 ${isFavorite ? "fill-current" : ""}`}
+                  aria-hidden="true"
+                />
+              }
+              title="Favoritar questão (atalho F)"
             >
-              <Bookmark className="h-3.5 w-3.5" />
-              {isFavorite ? "Favorita" : "Favoritar"}
-            </button>
+              {isFavorite ? "Salva" : "Salvar"}
+            </Button>
           )}
         </div>
       </div>
 
-      {/* Título / Identificador */}
-      <div className="mb-2 text-xs font-semibold tracking-wide text-slate-400 uppercase dark:text-slate-500">
-        {question.label}
-      </div>
-
-      {/* Enunciado */}
-      <div className="mb-5 whitespace-pre-wrap text-[15px] leading-relaxed text-slate-800 dark:text-slate-200">
-        {question.stem}
-      </div>
-
-      {/* Imagens / Diagramas da prova original */}
-      {question.imageUrls.length > 0 && (
-        <div className="mb-5 space-y-3">
-          {question.imageUrls.map((url) => (
-            <div
-              key={url}
-              className="overflow-hidden rounded-xl border border-slate-200 bg-white p-2 dark:border-slate-700"
-            >
-              <img
-                src={resolveAssetUrl(url)}
-                alt={`Figura referente a ${question.label}`}
-                className="mx-auto max-h-[540px] w-auto object-contain"
-                loading="lazy"
-              />
-              <p className="mt-1.5 text-center text-xs text-slate-500">
-                Página original da prova com diagrama/figura de apoio
-              </p>
-            </div>
-          ))}
+      {/* Corpo da questão */}
+      <div className="p-5 sm:p-6">
+        <div className="mb-2 font-mono text-[11px] font-medium uppercase tracking-wider text-[var(--text-muted)]">
+          {question.label}
         </div>
-      )}
 
-      {/* Alternativas (Objetivas) */}
-      {question.type === "objetiva" && (
-        <div className="space-y-2.5">
-          {question.options.map((opt) => {
-            const isSelected = selectedOption === opt.letter;
-            const isCorrect = question.correctAnswer === opt.letter;
+        <div className="mb-6 whitespace-pre-wrap text-[15px] leading-relaxed text-[var(--text-primary)]">
+          {question.stem}
+        </div>
 
-            let cardStyle =
-              "border-slate-200 bg-white hover:border-blue-300 hover:bg-blue-50/40 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-700 dark:hover:bg-slate-800/80";
-            let badgeStyle =
-              "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300";
-
-            if (isRevealed) {
-              if (isCorrect) {
-                cardStyle =
-                  "border-emerald-500 bg-emerald-50/70 dark:border-emerald-600 dark:bg-emerald-950/30";
-                badgeStyle = "bg-emerald-600 text-white";
-              } else if (isSelected && !isCorrect) {
-                cardStyle =
-                  "border-rose-400 bg-rose-50/70 dark:border-rose-600 dark:bg-rose-950/30";
-                badgeStyle = "bg-rose-600 text-white";
-              } else {
-                cardStyle =
-                  "border-slate-200 bg-slate-50/50 opacity-85 dark:border-slate-800 dark:bg-slate-900/50";
-              }
-            } else if (isSelected) {
-              cardStyle =
-                "border-blue-600 bg-blue-50/70 ring-1 ring-blue-600/20 dark:border-blue-500 dark:bg-blue-950/40";
-              badgeStyle = "bg-blue-600 text-white";
-            }
-
-            return (
-              <button
-                key={opt.letter}
-                type="button"
-                disabled={mode === "simulado-review" || (mode === "quiz" && showFeedback)}
-                onClick={() => onSelectOption?.(opt.letter)}
-                className={`w-full rounded-xl border p-3.5 text-left transition ${cardStyle}`}
+        {/* Imagens / Diagramas da prova original */}
+        {question.imageUrls.length > 0 && (
+          <div className="mb-6 space-y-3">
+            {question.imageUrls.map((url) => (
+              <figure
+                key={url}
+                className="overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-white p-3"
               >
-                <div className="flex items-start gap-3">
-                  <span
-                    className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs font-bold ${badgeStyle}`}
-                  >
-                    {opt.letter}
-                  </span>
-                  <div className="flex-1">
-                    <p className="text-sm leading-relaxed text-slate-800 dark:text-slate-200">
-                      {opt.text}
-                    </p>
-                    {isRevealed && opt.explanation && (
-                      <p className="mt-2 border-t border-slate-200/70 pt-1.5 text-xs leading-relaxed text-slate-600 dark:border-slate-700/70 dark:text-slate-400">
-                        {opt.explanation}
+                <img
+                  src={resolveAssetUrl(url)}
+                  alt={`Figura referente a ${question.label}`}
+                  className="mx-auto max-h-[540px] w-auto object-contain"
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-center text-[11px] text-zinc-500">
+                  Recorte da prova original com figura de apoio
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
+
+        {/* Alternativas (Objetivas) */}
+        {question.type === "objetiva" && (
+          <div className="space-y-2" role="radiogroup" aria-label="Alternativas da questão">
+            {question.options.map((opt) => {
+              const isSelected = selectedOption === opt.letter;
+              const isCorrect = question.correctAnswer === opt.letter;
+
+              let rowClass =
+                "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-strong)] hover:bg-[var(--bg-hover)]";
+              let keyClass =
+                "border-[var(--border-subtle)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]";
+
+              if (isRevealed) {
+                if (isCorrect) {
+                  rowClass =
+                    "border-emerald-500/70 bg-emerald-50/50 dark:border-emerald-600/70 dark:bg-emerald-950/25";
+                  keyClass = "border-emerald-600 bg-emerald-600 text-white";
+                } else if (isSelected && !isCorrect) {
+                  rowClass =
+                    "border-rose-400/80 bg-rose-50/50 dark:border-rose-600/70 dark:bg-rose-950/25";
+                  keyClass = "border-rose-600 bg-rose-600 text-white";
+                } else {
+                  rowClass =
+                    "border-[var(--border-subtle)] bg-[var(--bg-surface)] opacity-70";
+                }
+              } else if (isSelected) {
+                rowClass =
+                  "border-blue-600 bg-[var(--accent-soft)] dark:border-blue-500";
+                keyClass = "border-blue-600 bg-blue-600 text-white";
+              }
+
+              return (
+                <button
+                  key={opt.letter}
+                  type="button"
+                  role="radio"
+                  aria-checked={isSelected}
+                  disabled={optionsLocked}
+                  onClick={() => onSelectOption?.(opt.letter)}
+                  className={`group w-full rounded-lg border px-3.5 py-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:cursor-default ${rowClass}`}
+                >
+                  <div className="flex items-start gap-3">
+                    <span
+                      className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded border font-mono text-xs font-semibold transition-colors ${keyClass}`}
+                    >
+                      {opt.letter}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm leading-relaxed text-[var(--text-primary)]">
+                        {opt.text}
                       </p>
+                      {isRevealed && opt.explanation && (
+                        <p className="mt-2 border-t border-[var(--border-subtle)] pt-2 text-xs leading-relaxed text-[var(--text-secondary)]">
+                          {opt.explanation}
+                        </p>
+                      )}
+                    </div>
+                    {isRevealed && isCorrect && (
+                      <Check
+                        className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400"
+                        aria-label="Alternativa correta"
+                      />
+                    )}
+                    {isRevealed && isSelected && !isCorrect && (
+                      <X
+                        className="mt-0.5 h-4 w-4 shrink-0 text-rose-600 dark:text-rose-400"
+                        aria-label="Alternativa incorreta"
+                      />
                     )}
                   </div>
-                  {isRevealed && isCorrect && (
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" />
-                  )}
-                  {isRevealed && isSelected && !isCorrect && (
-                    <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-600 dark:text-rose-400" />
-                  )}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Área de resposta (Discursivas) */}
-      {question.type === "discursiva" && (
-        <div className="space-y-4">
-          <div>
-            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-              Sua Resposta (Rascunho / Treino — limite sugerido 15 linhas no ENADE)
-            </label>
-            <textarea
-              rows={6}
-              value={discursiveDraft}
-              disabled={mode === "simulado-review"}
-              onChange={(e) => onChangeDiscursiveDraft?.(e.target.value)}
-              placeholder="Estruture sua resposta abordando todos os itens solicitados no enunciado..."
-              className="w-full rounded-xl border border-slate-300 bg-slate-50 p-3 text-sm text-slate-800 focus:border-blue-500 focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
-            />
+                </button>
+              );
+            })}
           </div>
+        )}
 
-          {mode === "quiz" && (
-            <button
-              type="button"
-              onClick={() => setRevealRubric((v) => !v)}
-              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
-            >
-              <HelpCircle className="h-4 w-4" />
-              {revealRubric ? "Ocultar Espelho Oficial" : "Ver Espelho / Padrão de Resposta"}
-            </button>
-          )}
-
-          {(revealRubric || isRevealed) && question.discursiveRubric && (
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4 dark:border-emerald-900 dark:bg-emerald-950/30">
-              <h4 className="mb-2 text-sm font-bold text-emerald-900 dark:text-emerald-300">
-                Padrão de Resposta / Critérios de Correção
-              </h4>
-              <div className="whitespace-pre-wrap text-sm leading-relaxed text-emerald-950 dark:text-emerald-100">
-                {question.discursiveRubric}
+        {/* Área de resposta (Discursivas) */}
+        {question.type === "discursiva" && (
+          <div className="space-y-4">
+            <div>
+              <div className="mb-1.5 flex items-center justify-between gap-2">
+                <label
+                  htmlFor={`discursive-${question.id}`}
+                  className="text-xs font-medium text-[var(--text-secondary)]"
+                >
+                  Sua resposta discursiva
+                </label>
+                <span className="font-mono text-[11px] text-[var(--text-muted)] tabular-nums">
+                  ~{estimatedLines}/15 linhas · {discursiveDraft.length} chars
+                </span>
               </div>
-
-              {onSetDiscursiveScore && mode !== "simulado-active" && (
-                <div className="mt-4 border-t border-emerald-200 pt-3 dark:border-emerald-800">
-                  <p className="mb-2 text-xs font-semibold text-emerald-900 dark:text-emerald-300">
-                    Autoavaliação (registra nas métricas):
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      { val: 0 as const, label: "Não atendi (0%)" },
-                      { val: 0.5 as const, label: "Parcialmente (50%)" },
-                      { val: 1 as const, label: "Atendi totalmente (100%)" },
-                    ].map((btn) => (
-                      <button
-                        key={btn.val}
-                        type="button"
-                        onClick={() => onSetDiscursiveScore(btn.val)}
-                        className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
-                          discursiveSelfScore === btn.val
-                            ? "border-emerald-600 bg-emerald-600 text-white"
-                            : "border-emerald-300 bg-white text-emerald-900 hover:bg-emerald-100 dark:border-emerald-700 dark:bg-slate-900 dark:text-emerald-200"
-                        }`}
-                      >
-                        {btn.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <textarea
+                id={`discursive-${question.id}`}
+                rows={6}
+                value={discursiveDraft}
+                disabled={mode === "simulado-review"}
+                onChange={(e) => onChangeDiscursiveDraft?.(e.target.value)}
+                placeholder="Estruture sua resposta de forma objetiva cobrindo cada item pedido no enunciado..."
+                className="w-full rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-canvas)] p-3 text-sm leading-relaxed text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-blue-600 focus:bg-[var(--bg-surface)] focus:outline-none disabled:opacity-75"
+              />
             </div>
-          )}
-        </div>
-      )}
 
-      {/* Explicação / Resumo + Atalho para Apostila */}
-      {isRevealed && question.type === "objetiva" && (
-        <div className="mt-5 rounded-xl border border-blue-200 bg-blue-50/70 p-4 dark:border-blue-900 dark:bg-blue-950/30">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h4 className="text-sm font-bold text-blue-900 dark:text-blue-200">
-              Comentário / Gabarito
-            </h4>
-            {onOpenApostila && (
-              <button
-                type="button"
-                onClick={() => onOpenApostila(question.areaId)}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-500"
+            {mode === "quiz" && (
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => setRevealRubric((v) => !v)}
+                leftIcon={
+                  revealRubric ? (
+                    <EyeOff className="h-3.5 w-3.5" aria-hidden="true" />
+                  ) : (
+                    <Eye className="h-3.5 w-3.5" aria-hidden="true" />
+                  )
+                }
               >
-                <BookOpen className="h-3.5 w-3.5" />
-                Revisar Apostila de {question.areaName}
-              </button>
+                {revealRubric ? "Ocultar padrão de resposta" : "Ver padrão de resposta"}
+              </Button>
+            )}
+
+            {(revealRubric || isRevealed) && question.discursiveRubric && (
+              <div className="rounded-lg border border-emerald-200/80 bg-emerald-50/40 p-4 dark:border-emerald-900/70 dark:bg-emerald-950/20">
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-800 dark:text-emerald-300">
+                  Padrão de Resposta Oficial / Rubrica
+                </h4>
+                <div className="whitespace-pre-wrap text-sm leading-relaxed text-[var(--text-primary)]">
+                  {question.discursiveRubric}
+                </div>
+
+                {onSetDiscursiveScore && mode !== "simulado-active" && (
+                  <div className="mt-4 border-t border-emerald-200/70 pt-3 dark:border-emerald-800/60">
+                    <p className="mb-2 text-xs font-medium text-[var(--text-secondary)]">
+                      Autoavaliação (contabiliza nas métricas):
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        { val: 0 as const, label: "Não atendi (0%)" },
+                        { val: 0.5 as const, label: "Parcial (50%)" },
+                        { val: 1 as const, label: "Completo (100%)" },
+                      ].map((btn) => {
+                        const selected = discursiveSelfScore === btn.val;
+                        return (
+                          <Button
+                            key={btn.val}
+                            variant={selected ? "primary" : "secondary"}
+                            size="xs"
+                            aria-pressed={selected}
+                            onClick={() => onSetDiscursiveScore(btn.val)}
+                          >
+                            {btn.label}
+                          </Button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
           </div>
-          <p className="mt-1.5 text-sm leading-relaxed text-blue-950 dark:text-blue-100">
-            {question.explanation}
-          </p>
-        </div>
-      )}
-    </div>
+        )}
+
+        {/* Comentário / Gabarito */}
+        {isRevealed && question.type === "objetiva" && (
+          <div className="mt-5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-subtle)] p-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-[var(--text-primary)]">
+                Comentário do Gabarito
+              </h4>
+              {onOpenApostila && (
+                <Button
+                  variant="secondary"
+                  size="xs"
+                  onClick={() => onOpenApostila(question.areaId)}
+                  leftIcon={<BookOpen className="h-3.5 w-3.5" aria-hidden="true" />}
+                >
+                  Revisar {question.areaName}
+                </Button>
+              )}
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+              {question.explanation}
+            </p>
+          </div>
+        )}
+      </div>
+    </article>
   );
 };
