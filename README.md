@@ -12,6 +12,10 @@ Ecossistema completo de preparação para o **ENADE (Sistemas de Informação)**
   - Quiz por áreas com filtros por fonte, tipo, status e feedback imediato.
   - Métricas de desempenho por área, histórico de simulados e backup/restauração em JSON (`localStorage`).
 
+## Link para acessar:
+
+https://cassianomn.github.io/estudos-enade/
+
 ## Estrutura do Projeto
 
 ```text
