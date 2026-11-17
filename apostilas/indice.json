@@ -1,0 +1,782 @@
+{
+  "areas": [
+    {
+      "areaId": "00-formacao-geral",
+      "title": "Formação Geral (ENADE)",
+      "shortTitle": "Formação Geral",
+      "component": "formacao_geral",
+      "hasDriveMaterial": false,
+      "sourceFiles": [
+        "Provas Oficiais ENADE 2014, 2017 e 2021 (D1–D2 e Q01–Q08)"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 18,
+      "wordCount": 3174,
+      "topics": [
+        {
+          "id": "00-formacao-geral__modulo-1-estrutura-da-prova-de-formacao-geral-e-tipologia-de-questoes-inep",
+          "title": "Módulo 1: Estrutura da Prova de Formação Geral e Tipologia de Questões (INEP)"
+        },
+        {
+          "id": "00-formacao-geral__modulo-2-cidadania-direitos-humanos-diversidade-e-inclusao-social",
+          "title": "Módulo 2: Cidadania, Direitos Humanos, Diversidade e Inclusão Social"
+        },
+        {
+          "id": "00-formacao-geral__modulo-3-sustentabilidade-meio-ambiente-urbanizacao-e-mobilidade",
+          "title": "Módulo 3: Sustentabilidade, Meio Ambiente, Urbanização e Mobilidade"
+        },
+        {
+          "id": "00-formacao-geral__modulo-4-mundo-do-trabalho-tecnologia-midia-e-sociedade-digital",
+          "title": "Módulo 4: Mundo do Trabalho, Tecnologia, Mídia e Sociedade Digital"
+        },
+        {
+          "id": "00-formacao-geral__modulo-5-saude-publica-cultura-patrimonio-e-etica-cientifica",
+          "title": "Módulo 5: Saúde Pública, Cultura, Patrimônio e Ética Científica"
+        },
+        {
+          "id": "00-formacao-geral__modulo-6-guia-pratico-para-as-questoes-discursivas-d1-e-d2-e-sintese-de-provas",
+          "title": "Módulo 6: Guia Prático para as Questões Discursivas (D1 e D2) e Síntese de Provas"
+        }
+      ],
+      "markdownPath": "apostilas/00-formacao-geral/apostila.md",
+      "pdfPath": "apostilas/00-formacao-geral/apostila.pdf",
+      "pdfBytes": 218144
+    },
+    {
+      "areaId": "01-banco-de-dados",
+      "title": "Banco de Dados",
+      "shortTitle": "Banco de Dados",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "01. Banco de Dados - Parte Teórica e Modelagem (01 a 07)",
+        "02. Banco de Dados - SQL (03 a 11)",
+        "03. Banco de Dados - Questões (Questoes 01 + Respostas)"
+      ],
+      "videoRefs": [
+        {
+          "label": "Enade 2017 Q11 — DER",
+          "exam": "2017 Q11"
+        },
+        {
+          "label": "Enade 2014 Q30 — Chaves e Dependências",
+          "exam": "2014 Q30"
+        }
+      ],
+      "estimatedMinutes": 29,
+      "wordCount": 5271,
+      "topics": [
+        {
+          "id": "01-banco-de-dados__modulo-1-conceitos-basicos-arquitetura-de-sgbds-e-projeto-de-banco-de-dados",
+          "title": "Módulo 1: Conceitos Básicos, Arquitetura de SGBDs e Projeto de Banco de Dados"
+        },
+        {
+          "id": "01-banco-de-dados__modulo-2-modelagem-conceitual-mer-der-e-mapeamento-para-o-modelo-relacional",
+          "title": "Módulo 2: Modelagem Conceitual (MER/DER) e Mapeamento para o Modelo Relacional"
+        },
+        {
+          "id": "01-banco-de-dados__modulo-3-normalizacao-de-dados-1fn-2fn-3fn-e-fnbc-e-dependencias-funcionais",
+          "title": "Módulo 3: Normalização de Dados (1FN, 2FN, 3FN e FNBC) e Dependências Funcionais"
+        },
+        {
+          "id": "01-banco-de-dados__modulo-4-algebra-relacional",
+          "title": "Módulo 4: Álgebra Relacional"
+        },
+        {
+          "id": "01-banco-de-dados__modulo-5-linguagem-sql-ddl-integridade-e-manipulacao-basica-dml-dql",
+          "title": "Módulo 5: Linguagem SQL — DDL, Integridade e Manipulação Básica (DML/DQL)"
+        },
+        {
+          "id": "01-banco-de-dados__modulo-6-linguagem-sql-avancada-juncoes-agregacao-subconsultas-e-case",
+          "title": "Módulo 6: Linguagem SQL Avançada — Junções, Agregação, Subconsultas e `CASE`"
+        },
+        {
+          "id": "01-banco-de-dados__modulo-7-visoes-indices-transacoes-acid-e-caderno-comentado-de-questoes",
+          "title": "Módulo 7: Visões, Índices, Transações ACID e Caderno Comentado de Questões"
+        }
+      ],
+      "markdownPath": "apostilas/01-banco-de-dados/apostila.md",
+      "pdfPath": "apostilas/01-banco-de-dados/apostila.pdf",
+      "pdfBytes": 651611
+    },
+    {
+      "areaId": "02-engenharia-de-software",
+      "title": "Engenharia de Software",
+      "shortTitle": "Eng. de Software",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "Engenharia de Software para o ENADE.ppt"
+      ],
+      "videoRefs": [
+        {
+          "label": "Enade 2021 Q09 — Diagrama de Classes",
+          "exam": "2021 Q09"
+        },
+        {
+          "label": "Enade 2021 Q32 — Diagrama de Sequência",
+          "exam": "2021 Q32"
+        },
+        {
+          "label": "Enade 2017 Q09 — Requisitos",
+          "exam": "2017 Q09"
+        },
+        {
+          "label": "Enade 2017 Q17 — Processos de Software",
+          "exam": "2017 Q17"
+        },
+        {
+          "label": "Enade 2017 Q21 — Processos de Negócio",
+          "exam": "2017 Q21"
+        }
+      ],
+      "estimatedMinutes": 31,
+      "wordCount": 5504,
+      "topics": [
+        {
+          "id": "02-engenharia-de-software__modulo-1-fundamentos-e-processos-de-software",
+          "title": "Módulo 1: Fundamentos e Processos de Software"
+        },
+        {
+          "id": "02-engenharia-de-software__modulo-2-modelagem-de-negocios-e-notacao-bpmn",
+          "title": "Módulo 2: Modelagem de Negócios e Notação BPMN"
+        },
+        {
+          "id": "02-engenharia-de-software__modulo-3-engenharia-de-requisitos",
+          "title": "Módulo 3: Engenharia de Requisitos"
+        },
+        {
+          "id": "02-engenharia-de-software__modulo-4-analise-projeto-e-modelagem-com-uml",
+          "title": "Módulo 4: Análise, Projeto e Modelagem com UML"
+        },
+        {
+          "id": "02-engenharia-de-software__modulo-5-arquitetura-de-software-principios-solid-e-padroes-de-projeto",
+          "title": "Módulo 5: Arquitetura de Software, Princípios SOLID e Padrões de Projeto"
+        },
+        {
+          "id": "02-engenharia-de-software__modulo-6-verificacao-validacao-testes-e-manutencao-de-software",
+          "title": "Módulo 6: Verificação, Validação, Testes e Manutenção de Software"
+        },
+        {
+          "id": "02-engenharia-de-software__modulo-7-qualidade-de-software-metricas-maturidade-e-gerencia-de-configuracao",
+          "title": "Módulo 7: Qualidade de Software, Métricas, Maturidade e Gerência de Configuração"
+        }
+      ],
+      "markdownPath": "apostilas/02-engenharia-de-software/apostila.md",
+      "pdfPath": "apostilas/02-engenharia-de-software/apostila.pdf",
+      "pdfBytes": 523248
+    },
+    {
+      "areaId": "03-estrutura-de-dados",
+      "title": "Estrutura de Dados e Algoritmos",
+      "shortTitle": "Estrutura de Dados",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "ENADE - ESTUDOS - ESTRUTURA DE DADOS - Prof. Alcides.pdf"
+      ],
+      "videoRefs": [
+        {
+          "label": "Enade 2014 Q03 — Busca Binária",
+          "exam": "2014 D03"
+        },
+        {
+          "label": "Enade 2014 Q09 — Arrays e Matrizes",
+          "exam": "2014 Q09"
+        }
+      ],
+      "estimatedMinutes": 25,
+      "wordCount": 4422,
+      "topics": [
+        {
+          "id": "03-estrutura-de-dados__modulo-1-analise-de-complexidade-de-algoritmos-e-notacao-big-o",
+          "title": "Módulo 1: Análise de Complexidade de Algoritmos e Notação Big-O"
+        },
+        {
+          "id": "03-estrutura-de-dados__modulo-2-vetores-matrizes-e-tipos-abstratos-de-dados-tads",
+          "title": "Módulo 2: Vetores, Matrizes e Tipos Abstratos de Dados (TADs)"
+        },
+        {
+          "id": "03-estrutura-de-dados__modulo-3-listas-lineares-pilhas-e-filas",
+          "title": "Módulo 3: Listas Lineares, Pilhas e Filas"
+        },
+        {
+          "id": "03-estrutura-de-dados__modulo-4-recursividade-e-algoritmos-de-busca",
+          "title": "Módulo 4: Recursividade e Algoritmos de Busca"
+        },
+        {
+          "id": "03-estrutura-de-dados__modulo-5-algoritmos-de-ordenacao",
+          "title": "Módulo 5: Algoritmos de Ordenação"
+        },
+        {
+          "id": "03-estrutura-de-dados__modulo-6-arvores-binarias-arvores-de-busca-abb-e-arvores-avl",
+          "title": "Módulo 6: Árvores Binárias, Árvores de Busca (ABB) e Árvores AVL"
+        },
+        {
+          "id": "03-estrutura-de-dados__modulo-7-tabelas-hash-espalhamento-dispersao",
+          "title": "Módulo 7: Tabelas Hash (Espalhamento / Dispersão)"
+        },
+        {
+          "id": "03-estrutura-de-dados__modulo-8-grafos-caminhamentos-bfs-dfs-e-caminho-minimo",
+          "title": "Módulo 8: Grafos, Caminhamentos (BFS/DFS) e Caminho Mínimo"
+        }
+      ],
+      "markdownPath": "apostilas/03-estrutura-de-dados/apostila.md",
+      "pdfPath": "apostilas/03-estrutura-de-dados/apostila.pdf",
+      "pdfBytes": 663549
+    },
+    {
+      "areaId": "04-gerencia-de-projetos",
+      "title": "Gerência de Projetos",
+      "shortTitle": "Gerência de Projetos",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "enadeMethanias.pdf",
+        "AtualizaçõesMethanias_ENADE.pdf",
+        "Pmbok 8.pdf"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 24,
+      "wordCount": 4293,
+      "topics": [
+        {
+          "id": "04-gerencia-de-projetos__modulo-1-fundamentos-de-projetos-estruturas-organizacionais-e-ciclo-de-vida",
+          "title": "Módulo 1: Fundamentos de Projetos, Estruturas Organizacionais e Ciclo de Vida"
+        },
+        {
+          "id": "04-gerencia-de-projetos__modulo-2-evolucao-do-pmbok-6-7-e-8-edicoes",
+          "title": "Módulo 2: Evolução do PMBOK (6ª, 7ª e 8ª Edições)"
+        },
+        {
+          "id": "04-gerencia-de-projetos__modulo-3-escopo-eap-wbs-cronograma-rede-pdm-caminho-critico-e-pert",
+          "title": "Módulo 3: Escopo, EAP/WBS, Cronograma, Rede (PDM), Caminho Crítico e PERT"
+        },
+        {
+          "id": "04-gerencia-de-projetos__modulo-4-custos-financas-e-gerenciamento-de-valor-agregado-evm",
+          "title": "Módulo 4: Custos, Finanças e Gerenciamento de Valor Agregado (EVM)"
+        },
+        {
+          "id": "04-gerencia-de-projetos__modulo-5-qualidade-riscos-comunicacoes-conflitos-e-aquisicoes",
+          "title": "Módulo 5: Qualidade, Riscos, Comunicações, Conflitos e Aquisições"
+        },
+        {
+          "id": "04-gerencia-de-projetos__modulo-6-governanca-de-ti-e-alinhamento-estrategico-cobit-2019-itil-5-e-cmmi-aim",
+          "title": "Módulo 6: Governança de TI e Alinhamento Estratégico (COBIT 2019, ITIL 5 e CMMI AIM)"
+        },
+        {
+          "id": "04-gerencia-de-projetos__modulo-7-gestao-agil-e-hibrida-de-projetos",
+          "title": "Módulo 7: Gestão Ágil e Híbrida de Projetos"
+        },
+        {
+          "id": "04-gerencia-de-projetos__modulo-8-resumo-estrategico-e-checklist-de-revisao-enade",
+          "title": "Módulo 8: Resumo Estratégico e Checklist de Revisão ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/04-gerencia-de-projetos/apostila.md",
+      "pdfPath": "apostilas/04-gerencia-de-projetos/apostila.pdf",
+      "pdfBytes": 483351
+    },
+    {
+      "areaId": "05-inteligencia-artificial",
+      "title": "Inteligência Artificial",
+      "shortTitle": "Inteligência Artificial",
+      "component": "especifico",
+      "hasDriveMaterial": false,
+      "sourceFiles": [
+        "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 19,
+      "wordCount": 3475,
+      "topics": [
+        {
+          "id": "05-inteligencia-artificial__modulo-1-fundamentos-da-ia-e-agentes-inteligentes",
+          "title": "Módulo 1: Fundamentos da IA e Agentes Inteligentes"
+        },
+        {
+          "id": "05-inteligencia-artificial__modulo-2-resolucao-de-problemas-por-busca-busca-cega-e-heuristica",
+          "title": "Módulo 2: Resolução de Problemas por Busca (Busca Cega e Heurística)"
+        },
+        {
+          "id": "05-inteligencia-artificial__modulo-3-jogos-e-busca-adversarial-minimax-e-poda-alfa-beta",
+          "title": "Módulo 3: Jogos e Busca Adversarial (Minimax e Poda Alfa-Beta)"
+        },
+        {
+          "id": "05-inteligencia-artificial__modulo-4-representacao-do-conhecimento-logica-e-incerteza",
+          "title": "Módulo 4: Representação do Conhecimento, Lógica e Incerteza"
+        },
+        {
+          "id": "05-inteligencia-artificial__modulo-5-aprendizado-de-maquina-machine-learning",
+          "title": "Módulo 5: Aprendizado de Máquina (*Machine Learning*)"
+        },
+        {
+          "id": "05-inteligencia-artificial__modulo-6-redes-neurais-artificiais-deep-learning-e-ia-generativa",
+          "title": "Módulo 6: Redes Neurais Artificiais, Deep Learning e IA Generativa"
+        },
+        {
+          "id": "05-inteligencia-artificial__modulo-7-etica-explicabilidade-xai-e-governanca-em-ia",
+          "title": "Módulo 7: Ética, Explicabilidade (XAI) e Governança em IA"
+        },
+        {
+          "id": "05-inteligencia-artificial__modulo-8-resumo-estrategico-e-checklist-de-revisao-enade",
+          "title": "Módulo 8: Resumo Estratégico e Checklist de Revisão ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/05-inteligencia-artificial/apostila.md",
+      "pdfPath": "apostilas/05-inteligencia-artificial/apostila.pdf",
+      "pdfBytes": 476692
+    },
+    {
+      "areaId": "06-interacao-humano-computador",
+      "title": "Interação Humano-Computador",
+      "shortTitle": "IHC / UX",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "IHC - Prof Raphael - Parte 01.pdf",
+        "IHC - Prof Raphael - Parte 02.pdf"
+      ],
+      "videoRefs": [
+        {
+          "label": "Enade 2017 Q16 — UX Design",
+          "exam": "2017 Q16"
+        }
+      ],
+      "estimatedMinutes": 19,
+      "wordCount": 3422,
+      "topics": [
+        {
+          "id": "06-interacao-humano-computador__modulo-1-fundamentos-de-ihc-interface-interacao-affordance-e-comunicabilidade",
+          "title": "Módulo 1: Fundamentos de IHC — Interface, Interação, *Affordance* e Comunicabilidade"
+        },
+        {
+          "id": "06-interacao-humano-computador__modulo-2-fatores-humanos-e-cognitivos-na-interacao",
+          "title": "Módulo 2: Fatores Humanos e Cognitivos na Interação"
+        },
+        {
+          "id": "06-interacao-humano-computador__modulo-3-qualidade-em-ihc-usabilidade-ux-e-regras-de-ouro",
+          "title": "Módulo 3: Qualidade em IHC — Usabilidade, UX e Regras de Ouro"
+        },
+        {
+          "id": "06-interacao-humano-computador__modulo-4-as-10-heuristicas-de-usabilidade-de-jakob-nielsen",
+          "title": "Módulo 4: As 10 Heurísticas de Usabilidade de Jakob Nielsen"
+        },
+        {
+          "id": "06-interacao-humano-computador__modulo-5-acessibilidade-digital-legislacao-e-diretrizes-wcag",
+          "title": "Módulo 5: Acessibilidade Digital, Legislação e Diretrizes WCAG"
+        },
+        {
+          "id": "06-interacao-humano-computador__modulo-6-design-centrado-no-usuario-dcu-prototipacao-e-metodos-ageis",
+          "title": "Módulo 6: Design Centrado no Usuário (DCU), Prototipação e Métodos Ágeis"
+        },
+        {
+          "id": "06-interacao-humano-computador__modulo-7-avaliacao-em-ihc-avaliacao-heuristica-e-testes-de-usabilidade",
+          "title": "Módulo 7: Avaliação em IHC — Avaliação Heurística e Testes de Usabilidade"
+        },
+        {
+          "id": "06-interacao-humano-computador__modulo-8-resumo-estrategico-e-checklist-de-revisao-enade",
+          "title": "Módulo 8: Resumo Estratégico e Checklist de Revisão ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/06-interacao-humano-computador/apostila.md",
+      "pdfPath": "apostilas/06-interacao-humano-computador/apostila.pdf",
+      "pdfBytes": 352308
+    },
+    {
+      "areaId": "07-logica-matematica",
+      "title": "Lógica Matemática",
+      "shortTitle": "Lógica Matemática",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "LM - NA01 a NA13 (14 notas de aula + 2 folhas-resumo)"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 22,
+      "wordCount": 3951,
+      "topics": [
+        {
+          "id": "07-logica-matematica__modulo-1-fundamentos-da-logica-proposicional-e-conectivos",
+          "title": "Módulo 1: Fundamentos da Lógica Proposicional e Conectivos"
+        },
+        {
+          "id": "07-logica-matematica__modulo-2-tabelas-verdade-precedencia-e-classificacao-de-formulas",
+          "title": "Módulo 2: Tabelas-Verdade, Precedência e Classificação de Fórmulas"
+        },
+        {
+          "id": "07-logica-matematica__modulo-3-implicacao-logica-equivalencia-logica-e-conectivos-de-scheffer",
+          "title": "Módulo 3: Implicação Lógica, Equivalência Lógica e Conectivos de Scheffer"
+        },
+        {
+          "id": "07-logica-matematica__modulo-4-algebra-das-proposicoes-metodo-dedutivo-e-formas-normais",
+          "title": "Módulo 4: Álgebra das Proposições, Método Dedutivo e Formas Normais"
+        },
+        {
+          "id": "07-logica-matematica__modulo-5-argumentos-regras-de-inferencia-e-simplificacao-da-conclusao",
+          "title": "Módulo 5: Argumentos, Regras de Inferência e Simplificação da Conclusão"
+        },
+        {
+          "id": "07-logica-matematica__modulo-6-validade-por-regras-de-equivalencia-e-tableau-semantico",
+          "title": "Módulo 6: Validade por Regras de Equivalência e Tableau Semântico"
+        },
+        {
+          "id": "07-logica-matematica__modulo-7-introducao-a-logica-de-predicados-e-programacao-logica",
+          "title": "Módulo 7: Introdução à Lógica de Predicados e Programação Lógica"
+        }
+      ],
+      "markdownPath": "apostilas/07-logica-matematica/apostila.md",
+      "pdfPath": "apostilas/07-logica-matematica/apostila.pdf",
+      "pdfBytes": 789847
+    },
+    {
+      "areaId": "08-matematica-discreta",
+      "title": "Matemática Discreta",
+      "shortTitle": "Mat. Discreta",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "MD_exercicio_enade.pdf",
+        "Base Teórica ENADE SI"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 19,
+      "wordCount": 3377,
+      "topics": [
+        {
+          "id": "08-matematica-discreta__modulo-1-teoria-dos-conjuntos-e-principio-da-inclusao-exclusao",
+          "title": "Módulo 1: Teoria dos Conjuntos e Princípio da Inclusão-Exclusão"
+        },
+        {
+          "id": "08-matematica-discreta__modulo-2-relacoes-binarias-matrizes-e-funcoes",
+          "title": "Módulo 2: Relações Binárias, Matrizes e Funções"
+        },
+        {
+          "id": "08-matematica-discreta__modulo-3-inducao-matematica-e-recorrencias",
+          "title": "Módulo 3: Indução Matemática e Recorrências"
+        },
+        {
+          "id": "08-matematica-discreta__modulo-4-analise-combinatoria-e-probabilidade-discreta",
+          "title": "Módulo 4: Análise Combinatória e Probabilidade Discreta"
+        },
+        {
+          "id": "08-matematica-discreta__modulo-5-divisibilidade-mdc-mmc-e-aritmetica-modular",
+          "title": "Módulo 5: Divisibilidade, MDC, MMC e Aritmética Modular"
+        },
+        {
+          "id": "08-matematica-discreta__modulo-6-teoria-dos-grafos",
+          "title": "Módulo 6: Teoria dos Grafos"
+        },
+        {
+          "id": "08-matematica-discreta__modulo-7-caderno-de-exercicios-comentados-md-exercicio-enade-pdf",
+          "title": "Módulo 7: Caderno de Exercícios Comentados (`MD_exercicio_enade.pdf`)"
+        }
+      ],
+      "markdownPath": "apostilas/08-matematica-discreta/apostila.md",
+      "pdfPath": "apostilas/08-matematica-discreta/apostila.pdf",
+      "pdfBytes": 734651
+    },
+    {
+      "areaId": "09-oac",
+      "title": "Organização e Arquitetura de Computadores",
+      "shortTitle": "OAC",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "2026 -Enade - OAC.pdf"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 19,
+      "wordCount": 3485,
+      "topics": [
+        {
+          "id": "09-oac__modulo-1-sistemas-de-numeracao-aritmetica-binaria-e-ponto-flutuante",
+          "title": "Módulo 1: Sistemas de Numeração, Aritmética Binária e Ponto Flutuante"
+        },
+        {
+          "id": "09-oac__modulo-2-algebra-booleana-portas-logicas-e-circuitos-digitais",
+          "title": "Módulo 2: Álgebra Booleana, Portas Lógicas e Circuitos Digitais"
+        },
+        {
+          "id": "09-oac__modulo-3-arquitetura-de-von-neumann-linguagem-de-maquina-e-risc-vs-cisc",
+          "title": "Módulo 3: Arquitetura de Von Neumann, Linguagem de Máquina e RISC vs. CISC"
+        },
+        {
+          "id": "09-oac__modulo-4-ciclo-de-instrucao-execucao-multiciclo-e-pipeline",
+          "title": "Módulo 4: Ciclo de Instrução, Execução Multiciclo e Pipeline"
+        },
+        {
+          "id": "09-oac__modulo-5-hierarquia-de-memoria-e-memoria-cache",
+          "title": "Módulo 5: Hierarquia de Memória e Memória Cache"
+        },
+        {
+          "id": "09-oac__modulo-6-armazenamento-raid-barramentos-e-entrada-saida",
+          "title": "Módulo 6: Armazenamento (RAID), Barramentos e Entrada/Saída"
+        },
+        {
+          "id": "09-oac__modulo-7-metricas-de-desempenho-escalabilidade-e-clusters-foco-enade",
+          "title": "Módulo 7: Métricas de Desempenho, Escalabilidade e Clusters (Foco ENADE)"
+        }
+      ],
+      "markdownPath": "apostilas/09-oac/apostila.md",
+      "pdfPath": "apostilas/09-oac/apostila.pdf",
+      "pdfBytes": 599066
+    },
+    {
+      "areaId": "10-redes-de-computadores",
+      "title": "Redes de Computadores",
+      "shortTitle": "Redes",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "Enade-Redes.docx"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 21,
+      "wordCount": 3721,
+      "topics": [
+        {
+          "id": "10-redes-de-computadores__modulo-1-arquiteturas-de-redes-modelos-osi-e-tcp-ip",
+          "title": "Módulo 1: Arquiteturas de Redes — Modelos OSI e TCP/IP"
+        },
+        {
+          "id": "10-redes-de-computadores__modulo-2-camada-fisica-enlace-de-dados-e-ethernet-ieee-802-3",
+          "title": "Módulo 2: Camada Física, Enlace de Dados e Ethernet (IEEE 802.3)"
+        },
+        {
+          "id": "10-redes-de-computadores__modulo-3-camada-de-rede-ipv4-sub-redes-cidr-nat-napt-e-ipv6",
+          "title": "Módulo 3: Camada de Rede — IPv4, Sub-redes CIDR, NAT/NAPT e IPv6"
+        },
+        {
+          "id": "10-redes-de-computadores__modulo-4-roteamento-intra-as-e-inter-as-na-internet",
+          "title": "Módulo 4: Roteamento Intra-AS e Inter-AS na Internet"
+        },
+        {
+          "id": "10-redes-de-computadores__modulo-5-camada-de-transporte-tcp-vs-udp",
+          "title": "Módulo 5: Camada de Transporte — TCP vs. UDP"
+        },
+        {
+          "id": "10-redes-de-computadores__modulo-6-protocolos-da-camada-de-aplicacao",
+          "title": "Módulo 6: Protocolos da Camada de Aplicação"
+        },
+        {
+          "id": "10-redes-de-computadores__modulo-7-seguranca-de-redes-criptografia-firewalls-e-vpns",
+          "title": "Módulo 7: Segurança de Redes, Criptografia, Firewalls e VPNs"
+        },
+        {
+          "id": "10-redes-de-computadores__resumo-estrategico-para-o-enade",
+          "title": "Resumo Estratégico para o ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/10-redes-de-computadores/apostila.md",
+      "pdfPath": "apostilas/10-redes-de-computadores/apostila.pdf",
+      "pdfBytes": 438622
+    },
+    {
+      "areaId": "11-sistemas-de-apoio-a-decisao",
+      "title": "Sistemas de Apoio à Decisão",
+      "shortTitle": "SAD / BI",
+      "component": "especifico",
+      "hasDriveMaterial": false,
+      "sourceFiles": [
+        "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 14,
+      "wordCount": 2475,
+      "topics": [
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__modulo-1-piramide-decisoria-tipos-de-decisao-e-oltp-vs-olap",
+          "title": "Módulo 1: Pirâmide Decisória, Tipos de Decisão e OLTP vs. OLAP"
+        },
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__modulo-2-data-warehouse-modelagem-dimensional-e-operacoes-olap",
+          "title": "Módulo 2: Data Warehouse, Modelagem Dimensional e Operações OLAP"
+        },
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__modulo-3-etl-elt-e-governanca-de-dados",
+          "title": "Módulo 3: ETL, ELT e Governança de Dados"
+        },
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__modulo-4-business-intelligence-bi-kpis-e-gestao-estrategica",
+          "title": "Módulo 4: Business Intelligence (BI), KPIs e Gestão Estratégica"
+        },
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__modulo-5-kdd-e-mineracao-de-dados-data-mining",
+          "title": "Módulo 5: KDD e Mineração de Dados (*Data Mining*)"
+        },
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__modulo-6-big-data-e-ecossistema-analitico-distribuido",
+          "title": "Módulo 6: Big Data e Ecossistema Analítico Distribuído"
+        },
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__modulo-7-pesquisa-operacional-aplicada-a-tomada-de-decisao",
+          "title": "Módulo 7: Pesquisa Operacional Aplicada à Tomada de Decisão"
+        },
+        {
+          "id": "11-sistemas-de-apoio-a-decisao__resumo-estrategico-para-o-enade",
+          "title": "Resumo Estratégico para o ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/11-sistemas-de-apoio-a-decisao/apostila.md",
+      "pdfPath": "apostilas/11-sistemas-de-apoio-a-decisao/apostila.pdf",
+      "pdfBytes": 360707
+    },
+    {
+      "areaId": "12-sistemas-de-informacao",
+      "title": "Sistemas de Informação",
+      "shortTitle": "Sistemas de Info.",
+      "component": "especifico",
+      "hasDriveMaterial": false,
+      "sourceFiles": [
+        "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+      ],
+      "videoRefs": [],
+      "estimatedMinutes": 13,
+      "wordCount": 2338,
+      "topics": [
+        {
+          "id": "12-sistemas-de-informacao__modulo-1-teoria-geral-de-sistemas-tgs-e-conceito-de-si",
+          "title": "Módulo 1: Teoria Geral de Sistemas (TGS) e Conceito de SI"
+        },
+        {
+          "id": "12-sistemas-de-informacao__modulo-2-classificacao-dos-sistemas-de-informacao-nas-organizacoes",
+          "title": "Módulo 2: Classificação dos Sistemas de Informação nas Organizações"
+        },
+        {
+          "id": "12-sistemas-de-informacao__modulo-3-sistemas-integrados-erp-crm-e-scm",
+          "title": "Módulo 3: Sistemas Integrados — ERP, CRM e SCM"
+        },
+        {
+          "id": "12-sistemas-de-informacao__modulo-4-gestao-de-processos-de-negocio-bpm-bpmn-e-bpms",
+          "title": "Módulo 4: Gestão de Processos de Negócio (BPM, BPMN e BPMS)"
+        },
+        {
+          "id": "12-sistemas-de-informacao__modulo-5-gestao-do-conhecimento-e-inteligencia-organizacional",
+          "title": "Módulo 5: Gestão do Conhecimento e Inteligência Organizacional"
+        },
+        {
+          "id": "12-sistemas-de-informacao__modulo-6-governanca-de-ti-e-gestao-de-servicos-cobit-iso-38500-itil",
+          "title": "Módulo 6: Governança de TI e Gestão de Serviços (COBIT, ISO 38500, ITIL)"
+        },
+        {
+          "id": "12-sistemas-de-informacao__modulo-7-seguranca-da-informacao-iso-27001-27002-lgpd-ti-verde-e-cidades-inteligentes",
+          "title": "Módulo 7: Segurança da Informação (ISO 27001/27002), LGPD, TI Verde e Cidades Inteligentes"
+        },
+        {
+          "id": "12-sistemas-de-informacao__resumo-estrategico-para-o-enade",
+          "title": "Resumo Estratégico para o ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/12-sistemas-de-informacao/apostila.md",
+      "pdfPath": "apostilas/12-sistemas-de-informacao/apostila.pdf",
+      "pdfBytes": 265745
+    },
+    {
+      "areaId": "13-sistemas-distribuidos",
+      "title": "Sistemas Distribuídos",
+      "shortTitle": "Sist. Distribuídos",
+      "component": "especifico",
+      "hasDriveMaterial": false,
+      "sourceFiles": [
+        "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+      ],
+      "videoRefs": [
+        {
+          "label": "Enade 2021 Q16 — Computação em Nuvem (IaaS/PaaS/SaaS)",
+          "exam": "2021 Q16"
+        }
+      ],
+      "estimatedMinutes": 12,
+      "wordCount": 2184,
+      "topics": [
+        {
+          "id": "13-sistemas-distribuidos__modulo-1-fundamentos-e-transparencias-de-sistemas-distribuidos",
+          "title": "Módulo 1: Fundamentos e Transparências de Sistemas Distribuídos"
+        },
+        {
+          "id": "13-sistemas-distribuidos__modulo-2-comunicacao-em-sistemas-distribuidos",
+          "title": "Módulo 2: Comunicação em Sistemas Distribuídos"
+        },
+        {
+          "id": "13-sistemas-distribuidos__modulo-3-arquiteturas-distribuidas-cliente-servidor-p2p-grid-e-microsservicos",
+          "title": "Módulo 3: Arquiteturas Distribuídas — Cliente-Servidor, P2P, Grid e Microsserviços"
+        },
+        {
+          "id": "13-sistemas-distribuidos__modulo-4-sincronizacao-de-tempo-relogios-logicos-e-exclusao-mutua",
+          "title": "Módulo 4: Sincronização de Tempo, Relógios Lógicos e Exclusão Mútua"
+        },
+        {
+          "id": "13-sistemas-distribuidos__modulo-5-replicacao-teorema-cap-consenso-e-tolerancia-a-falhas",
+          "title": "Módulo 5: Replicação, Teorema CAP, Consenso e Tolerância a Falhas"
+        },
+        {
+          "id": "13-sistemas-distribuidos__modulo-6-computacao-em-nuvem-cloud-computing",
+          "title": "Módulo 6: Computação em Nuvem (*Cloud Computing*)"
+        },
+        {
+          "id": "13-sistemas-distribuidos__resumo-estrategico-para-o-enade",
+          "title": "Resumo Estratégico para o ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/13-sistemas-distribuidos/apostila.md",
+      "pdfPath": "apostilas/13-sistemas-distribuidos/apostila.pdf",
+      "pdfBytes": 313120
+    },
+    {
+      "areaId": "14-sistemas-operacionais",
+      "title": "Sistemas Operacionais",
+      "shortTitle": "Sist. Operacionais",
+      "component": "especifico",
+      "hasDriveMaterial": true,
+      "sourceFiles": [
+        "2026 -Enade - SO.pdf"
+      ],
+      "videoRefs": [
+        {
+          "label": "Enade 2021 Q11 — Virtualização e VMs",
+          "exam": "2021 Q11"
+        }
+      ],
+      "estimatedMinutes": 20,
+      "wordCount": 3528,
+      "topics": [
+        {
+          "id": "14-sistemas-operacionais__modulo-1-arquitetura-de-so-chamadas-de-sistema-processos-e-threads",
+          "title": "Módulo 1: Arquitetura de SO, Chamadas de Sistema, Processos e Threads"
+        },
+        {
+          "id": "14-sistemas-operacionais__modulo-2-escalonamento-de-cpu",
+          "title": "Módulo 2: Escalonamento de CPU"
+        },
+        {
+          "id": "14-sistemas-operacionais__modulo-3-sincronizacao-de-processos-e-deadlocks",
+          "title": "Módulo 3: Sincronização de Processos e Deadlocks"
+        },
+        {
+          "id": "14-sistemas-operacionais__modulo-4-gerencia-de-memoria-e-memoria-virtual",
+          "title": "Módulo 4: Gerência de Memória e Memória Virtual"
+        },
+        {
+          "id": "14-sistemas-operacionais__modulo-5-gerencia-de-entrada-saida-e-s-e-armazenamento",
+          "title": "Módulo 5: Gerência de Entrada/Saída (E/S) e Armazenamento"
+        },
+        {
+          "id": "14-sistemas-operacionais__modulo-6-sistemas-de-arquivos",
+          "title": "Módulo 6: Sistemas de Arquivos"
+        },
+        {
+          "id": "14-sistemas-operacionais__modulo-7-virtualizacao-maquinas-virtuais-e-conteineres",
+          "title": "Módulo 7: Virtualização, Máquinas Virtuais e Contêineres"
+        },
+        {
+          "id": "14-sistemas-operacionais__resumo-estrategico-para-o-enade",
+          "title": "Resumo Estratégico para o ENADE"
+        }
+      ],
+      "markdownPath": "apostilas/14-sistemas-operacionais/apostila.md",
+      "pdfPath": "apostilas/14-sistemas-operacionais/apostila.pdf",
+      "pdfBytes": 505742
+    }
+  ]
+}

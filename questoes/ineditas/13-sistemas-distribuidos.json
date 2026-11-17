@@ -1,0 +1,443 @@
+[
+  {
+    "id": "sd-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Em um sistema distribuído corporativo composto por servidores Linux x86 e nós ARM interligados por uma rede heterogênea, usuários acessam arquivos remotos por nomes lógicos sem saber em qual servidor físico os dados residem, podendo inclusive ter seus objetos movidos entre servidores durante a execução sem interrupção da sessão e sem perda de serviço caso um nó secundário caia.\n\nConsiderando os graus de transparência definidos para sistemas distribuídos (ISO/ODP), assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A transparência de acesso oculta exclusivamente a queda de servidores físicos, garantindo failover automático entre réplicas.",
+        "explanation": "Incorreta. A ocultação de quedas e recuperações de nós ou enlaces corresponde à transparência de falha, e não à de acesso."
+      },
+      {
+        "letter": "B",
+        "text": "A transparência de localização permite mover um recurso enquanto ele está ativamente em uso sem interromper os clientes conectados.",
+        "explanation": "Incorreta. Mover um recurso enquanto está em uso (como live migration de VMs) é transparência de relocação; transparência de localização oculta onde o recurso está fisicamente."
+      },
+      {
+        "letter": "C",
+        "text": "A transparência de acesso oculta diferenças na representação dos dados (como ordenação de bytes) e na forma de invocação entre arquiteturas distintas, enquanto a transparência de replicação oculta a existência de múltiplas cópias do recurso.",
+        "explanation": "Correta. Transparência de acesso uniformiza o acesso entre plataformas heterogêneas, e transparência de replicação esconde que existem múltiplas cópias dos dados ou serviços."
+      },
+      {
+        "letter": "D",
+        "text": "A transparência de concorrência impede que dois usuários leiam o mesmo recurso em réplicas diferentes, obrigando execução sequencial global de todas as requisições.",
+        "explanation": "Incorreta. Transparência de concorrência permite que múltiplos processos compartilhem recursos simultaneamente sem interferência inconsistente."
+      },
+      {
+        "letter": "E",
+        "text": "A transparência de falha garante que nenhum pacote será perdido na rede física, eliminando a necessidade de timeouts e retransmissões.",
+        "explanation": "Incorreta. A transparência de falha mascara ou recupera falhas parciais aos olhos do usuário por meio de redundância/retentativas, mas não impede fisicamente falhas de hardware ou rede."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Os graus de transparência em sistemas distribuídos ocultam a distribuição: Acesso (diferenças de representação e modo de acesso), Localização (onde o recurso está), Migração (movimento sem alterar identificador), Relocação (movimento durante o uso ativo), Replicação (múltiplas cópias), Concorrência (uso simultâneo isolado) e Falha (ocultação de quedas e recuperação).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Fundamentos de Sistemas Distribuídos",
+      "Transparências"
+    ]
+  },
+  {
+    "id": "sd-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma equipe projeta a comunicação entre serviços de uma plataforma bancária: o módulo de consulta pública para parceiros externos precisa de ampla interoperabilidade Web sem estado; a comunicação interna de alta frequência entre serviços de antifraude exige baixa sobrecarga de serialização e streaming bidirecional; e o envio de notificações fiscais deve tolerar picos de tráfego com desacoplamento temporal.\n\nConsiderando os paradigmas de comunicação em sistemas distribuídos, assinale a opção que associa corretamente cada requisito à tecnologia mais adequada.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "REST/JSON sobre HTTP para parceiros externos; gRPC (Protobuf sobre HTTP/2) para comunicação interna de alta eficiência; e mensageria assíncrona (MOM/filas) para notificações fiscais.",
+        "explanation": "Correta. REST oferece interoperabilidade Web stateless; gRPC combina serialização binária compacta (Protocol Buffers) com multiplexação e streaming do HTTP/2; e brokers de mensageria (RabbitMQ/Kafka) desacoplam produtores e consumidores absorvendo picos."
+      },
+      {
+        "letter": "B",
+        "text": "gRPC para parceiros Web públicos via navegador sem proxy; mensageria assíncrona para respostas síncronas imediatas de antifraude; e Sockets UDP brutos para notificações fiscais.",
+        "explanation": "Incorreta. Navegadores não consomem gRPC nativo diretamente sem gRPC-Web/proxy, mensageria é assíncrona (não ideal para chamada síncrona bloqueante) e UDP bruto não garante entrega confiável de notificações fiscais."
+      },
+      {
+        "letter": "C",
+        "text": "Java RMI para parceiros externos em múltiplas linguagens; REST/XML para alta eficiência binária; e RPC síncrono para desacoplamento temporal.",
+        "explanation": "Incorreta. Java RMI é fortemente acoplado à JVM, XML é verboso e RPC síncrono exige disponibilidade simultânea de cliente e servidor."
+      },
+      {
+        "letter": "D",
+        "text": "Mensageria assíncrona com semântica at-most-once para garantir que nenhuma notificação fiscal seja perdida em falhas de rede.",
+        "explanation": "Incorreta. Na semântica at-most-once não há retransmissão, logo mensagens podem ser perdidas; para evitar perda usa-se at-least-once com consumidores idempotentes."
+      },
+      {
+        "letter": "E",
+        "text": "REST sobre UDP para parceiros externos e gRPC sobre HTTP/1.0 para streaming bidirecional.",
+        "explanation": "Incorreta. REST opera tipicamente sobre HTTP/TCP e o gRPC exige HTTP/2 para suportar multiplexação e streaming bidirecional."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "REST (HTTP + JSON) privilegia interoperabilidade Web stateless; gRPC utiliza Protocol Buffers (binário) sobre HTTP/2 para baixa latência e streaming; e Middleware Orientado a Mensagens (MOM) provê comunicação assíncrona resiliente a picos e indisponibilidades temporárias.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Comunicação em Sistemas Distribuídos",
+      "REST, gRPC e Mensageria"
+    ]
+  },
+  {
+    "id": "sd-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma organização multinacional mantém três tipos de repositórios distribuídos: (1) distribuição global de manuais imutáveis apenas para leitura por milhares de estações; (2) edição colaborativa concorrente de planilhas financeiras acessadas simultaneamente por todas as filiais; e (3) processamento científico em Grid Computing.\n\nConsiderando as arquiteturas distribuídas aplicáveis a esses cenários, avalie as afirmações a seguir.\n\nI. Para o cenário (1) de distribuição massiva somente leitura, uma arquitetura Peer-to-Peer (P2P) com tabela hash distribuída (DHT) reduz o gargalo de banda nos servidores centrais e provê transparência de localização e migração.\nII. Para o cenário (2) de edição concorrente simultânea, permitir que clientes modifiquem cópias em cache local de forma independente sem protocolo de coerência ou controle primário melhora o desempenho sem comprometer a consistência.\nIII. Na arquitetura em quatro camadas do Grid Computing (Rede, Recursos, Middleware e Ferramentas/Aplicações), a camada de Middleware é responsável pela interconectividade e coordenação da troca de informações entre os membros do grid.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação III também está correta."
+      },
+      {
+        "letter": "B",
+        "text": "II, apenas.",
+        "explanation": "Incorreta, pois cache local sem coerência em escritas concorrentes gera divergência e compromete gravemente a consistência."
+      },
+      {
+        "letter": "C",
+        "text": "I e III, apenas.",
+        "explanation": "Correta. Redes P2P/DHT são ideais para distribuição massiva somente leitura (I) e, no Grid Computing, o Middleware coordena a comunicação e integração entre os membros heterogêneos (III). O item II é falso porque atualizações concorrentes em caches locais desconectados causam inconsistência."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois II está errada e I está certa."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois o item II viola os princípios básicos de consistência de dados."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "P2P com DHT distribui cargas de leitura global com transparência de localização/migração (item I correto). Em escritas concorrentes globais, caches locais sem protocolo de coerência ou cópia primária levam a conflitos e perda de dados (item II falso). No Grid Computing, a camada Middleware garante interconectividade lógica e comunicação entre os nós (item III correto).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Arquiteturas Distribuídas",
+      "P2P/DHT e Grid Computing",
+      "Replicação e Consistência"
+    ]
+  },
+  {
+    "id": "sd-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Três processos distribuídos P1, P2 e P3 utilizam Relógios Lógicos de Lamport para ordenar causalmente seus eventos, todos inicializados com valor lógico zero (C1 = 0, C2 = 0, C3 = 0). A seguinte sequência de eventos ocorre no sistema:\n\n1. P1 executa um evento interno e1.\n2. P1 envia uma mensagem m1 para P2.\n3. P2 executa dois eventos internos consecutivos (e2 e e3) antes de receber m1.\n4. P2 recebe a mensagem m1.\n5. P2 envia uma mensagem m2 para P3.\n6. P3 executa um evento interno e4 e, em seguida, recebe a mensagem m2.\n\nConsiderando a regra de atualização de Lamport (incremento de 1 antes de evento interno/envio, e C_j = max(C_j, t) + 1 no recebimento de mensagem com timestamp t), os valores dos relógios ao final dessa sequência em (C1, C2, C3) são, respectivamente,",
+    "options": [
+      {
+        "letter": "A",
+        "text": "(2, 3, 4)",
+        "explanation": "Incorreta. Ao receber m1 (t=2) após dois eventos internos (C2=2), P2 vai para max(2,2)+1 = 3 e ao enviar m2 passa para C2 = 4; logo P3 ao receber m2 vai para 5."
+      },
+      {
+        "letter": "B",
+        "text": "(2, 4, 5)",
+        "explanation": "Correta. Rastreando passo a passo: e1→C1=1; envio(m1)→C1=2 (t=2). Em P2: e2→C2=1; e3→C2=2; receb(m1)→C2=max(2,2)+1=3; envio(m2)→C2=4 (t=4). Em P3: e4→C3=1; receb(m2)→C3=max(1,4)+1=5. Resultado final: C1=2, C2=4, C3=5."
+      },
+      {
+        "letter": "C",
+        "text": "(2, 4, 4)",
+        "explanation": "Incorreta. No recebimento de m2 (t=4), P3 calcula max(1, 4) + 1 = 5, e não 4."
+      },
+      {
+        "letter": "D",
+        "text": "(1, 3, 5)",
+        "explanation": "Incorreta. O evento de envio de m1 também incrementa C1 antes da transmissão, elevando C1 para 2."
+      },
+      {
+        "letter": "E",
+        "text": "(2, 5, 6)",
+        "explanation": "Incorreta. Ao receber m1 com t=2 quando C2=2, max(2, 2) + 1 resulta em 3 (e não 4), portanto o envio seguinte resulta em C2=4."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Passo a passo: P1: e1 (C1=1), envio de m1 (C1=2, envia t=2). P2: e2 (C2=1), e3 (C2=2), recebimento de m1 (C2 = max(2, 2) + 1 = 3), envio de m2 (C2=4, envia t=4). P3: e4 (C3=1), recebimento de m2 (C3 = max(1, 4) + 1 = 5). Logo, (C1, C2, C3) = (2, 4, 5).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Sincronização",
+      "Relógios Lógicos de Lamport"
+    ]
+  },
+  {
+    "id": "sd-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em um cluster com N nós que compartilham acesso exclusivo a um dispositivo crítico sem memória compartilhada, um sistema distribuído precisa coordenar a entrada na seção crítica e, caso um nó líder falhe, eleger rapidamente um novo coordenador.\n\nA respeito dos algoritmos de exclusão mútua distribuída e eleição de líder, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "No algoritmo centralizado de exclusão mútua, cada entrada e saída da seção crítica exige exatamente 2(N - 1) mensagens em multicast, não havendo ponto único de falha.",
+        "explanation": "Incorreta. A descrição de 2(N - 1) mensagens em multicast sem coordenador refere-se ao algoritmo distribuído de Ricart-Agrawala; o algoritmo centralizado usa 3 mensagens (Request, Grant, Release) e possui ponto único de falha no coordenador."
+      },
+      {
+        "letter": "B",
+        "text": "No algoritmo distribuído de Ricart-Agrawala, um processo só entra na seção crítica após receber permissão (OK) de todos os demais N - 1 processos; porém, se um único processo falhar e deixar de responder, todo o grupo pode ficar bloqueado.",
+        "explanation": "Correta. Ricart-Agrawala elimina o coordenador central usando timestamps de Lamport e exige resposta OK de todos os pares (2*(N-1) mensagens), mas é vulnerável à falha silenciosa de qualquer nó que não responda."
+      },
+      {
+        "letter": "C",
+        "text": "No algoritmo de exclusão mútua baseado em anel lógico (Token Ring), todos os nós entram simultaneamente na seção crítica sempre que o token completa uma volta.",
+        "explanation": "Incorreta. Apenas o nó que detém o token único naquele instante pode entrar na seção crítica."
+      },
+      {
+        "letter": "D",
+        "text": "No algoritmo de eleição Bully (Valentão), o processo que detecta a falha do coordenador envia mensagens de eleição exclusivamente aos processos de identificador numérico menor que o seu.",
+        "explanation": "Incorreta. No algoritmo Bully, o processo envia ELECTION apenas aos processos com ID maior que o seu; se ninguém responder, ele mesmo se declara coordenador."
+      },
+      {
+        "letter": "E",
+        "text": "Relógios lógicos de Lamport escalares garantem por si sós identificar se dois eventos quaisquer em nós diferentes são causalmente independentes (concorrentes).",
+        "explanation": "Incorreta. Em relógios de Lamport vale a implicação a → b ⇒ C(a) < C(b), mas a recíproca não vale (C(a) < C(b) não garante causalidade); para detectar concorrência exata usam-se Relógios Vetoriais."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No algoritmo de Ricart-Agrawala, o solicitante envia Request(t, id) a todos os N-1 nós e aguarda N-1 mensagens OK antes de entrar na seção crítica (total de 2*(N-1) mensagens). Embora descentralizado, a falha de qualquer nó que não responda impede o progresso sem mecanismos adicionais de detecção de falha.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Exclusão Mútua Distribuída",
+      "Algoritmos de Eleição"
+    ]
+  },
+  {
+    "id": "sd-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Um banco de dados NoSQL distribuído armazena cada registro com fator de replicação N = 7 réplicas espalhadas em diferentes zonas de disponibilidade. A equipe de arquitetura configurou o quórum de escrita como W = 4 e deseja escolher o menor quórum de leitura R que garanta consistência forte por interseção de quóruns (assegurando que toda leitura consulte ao menos uma réplica com a versão mais recente escrita).\n\nConsiderando a regra de quórum (R + W > N) e o Teorema CAP, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O menor quórum de leitura R necessário é 3, e o sistema comporta-se como AP ao rejeitar escritas durante partições de rede.",
+        "explanation": "Incorreta. Se R = 3 e W = 4, R + W = 7, que não é estritamente maior que N = 7 (os conjuntos de 3 e 4 réplicas podem ser disjuntos!). Além disso, rejeitar operações durante partições para preservar consistência caracteriza um sistema CP, e não AP."
+      },
+      {
+        "letter": "B",
+        "text": "O menor quórum de leitura R necessário é 4; e, sob o Teorema CAP, um sistema distribuído que recusa escritas ou leituras em um lado particionado da rede para não retornar dados obsoletos prioriza Consistência em detrimento da Disponibilidade (sistema CP).",
+        "explanation": "Correta. Para R + W > N com N = 7 e W = 4, temos R + 4 > 7 ⇒ R >= 4 (4 + 4 = 8 > 7, garantindo ao menos 1 réplica em comum). Pelo Teorema CAP, diante de uma partição (P), optar por recusar requisições inconsistentes caracteriza escolha CP."
+      },
+      {
+        "letter": "C",
+        "text": "O menor quórum de leitura R necessário é 5, pois W deve ser sempre menor que R em sistemas com consistência forte.",
+        "explanation": "Incorreta. Não há exigência de W < R; R = 4 já garante interseção com W = 4 (4 + 4 = 8 > 7)."
+      },
+      {
+        "letter": "D",
+        "text": "Pelo Teorema CAP, basta replicar os dados em 7 nós para que o sistema garanta simultaneamente Consistência Linearizável (C), Disponibilidade Total (A) e Tolerância a Partições (P) durante qualquer falha de rede.",
+        "explanation": "Incorreta. O Teorema CAP prova justamente que, na ocorrência de uma partição de rede (P), não é possível garantir simultaneamente C e A."
+      },
+      {
+        "letter": "E",
+        "text": "O menor quórum de leitura R necessário é 1, pois R = 1 com W = 4 já impede qualquer leitura desatualizada em 7 réplicas.",
+        "explanation": "Incorreta. Com R = 1 e W = 4 (1 + 4 = 5 <= 7), a leitura pode consultar exatamente uma das 3 réplicas que ainda não recebeu a escrita."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A condição de interseção de quóruns é R + W > N (com W > N/2 para evitar conflito entre duas escritas). Para N = 7 e W = 4 (4 > 3,5), o menor inteiro R tal que R + 4 > 7 é R = 4. No Teorema CAP, durante uma partição (P), sistemas CP sacrificam disponibilidade (recusam responder no lado isolado) para manter consistência.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Teorema CAP",
+      "Replicação e Quórum"
+    ]
+  },
+  {
+    "id": "sd-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em arquiteturas críticas que utilizam replicação de máquina de estados e protocolos de consenso distribuído, é necessário dimensionar o número mínimo de nós em função do modelo de falhas tolerado pelo sistema.\n\nConsidere que um sistema precisa continuar operando corretamente e atingindo consenso mesmo diante da ocorrência simultânea de f = 2 nós falhos. Assinale a opção que indica corretamente os números mínimos de nós necessários para tolerar 2 falhas por parada (crash-stop, como no Raft/Paxos) e 2 falhas bizantinas (como no PBFT), respectivamente.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4 nós para falhas por parada e 6 nós para falhas bizantinas.",
+        "explanation": "Incorreta. Com 4 nós, se 2 pararem, restam apenas 2 (metade, sem maioria estrita); e para bizantinas 3f + 1 resulta em 7."
+      },
+      {
+        "letter": "B",
+        "text": "5 nós para falhas por parada e 7 nós para falhas bizantinas.",
+        "explanation": "Correta. Protocolos de consenso para falhas não bizantinas (crash-stop/crash-recovery, como Raft e Paxos) exigem N >= 2f + 1 = 2(2) + 1 = 5 nós. Para falhas bizantinas (nós maliciosos/arbitrários), o limite clássico de Lamport/PBFT exige N >= 3f + 1 = 3(2) + 1 = 7 nós."
+      },
+      {
+        "letter": "C",
+        "text": "3 nós para falhas por parada e 5 nós para falhas bizantinas.",
+        "explanation": "Incorreta. 3 nós toleram no máximo f = 1 falha por parada, e 5 nós não toleram nem 2 falhas bizantinas."
+      },
+      {
+        "letter": "D",
+        "text": "5 nós para falhas por parada e 5 nós para falhas bizantinas.",
+        "explanation": "Incorreta. Falhas bizantinas exigem quórum maior (3f + 1 = 7) porque nós comprometidos podem mentir e enviar mensagens contraditórias a pares diferentes."
+      },
+      {
+        "letter": "E",
+        "text": "6 nós para falhas por parada e 9 nós para falhas bizantinas.",
+        "explanation": "Incorreta, pois supera os mínimos teóricos 2f + 1 = 5 e 3f + 1 = 7."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No consenso distribuído: para tolerar f falhas por parada/omissão sem comportamento malicioso (Raft, Paxos), exige-se maioria simples, logo N = 2f + 1 (para f = 2, N = 5). Para tolerar f falhas bizantinas (nós que enviam respostas arbitrárias ou conflitantes), são necessários N = 3f + 1 nós (para f = 2, N = 7).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Consenso Distribuído",
+      "Tolerância a Falhas e Falhas Bizantinas"
+    ]
+  },
+  {
+    "id": "sd-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "A computação em nuvem fornece recursos computacionais virtualizados sob demanda pela rede, com elasticidade rápida e modelo de pagamento por uso regido por SLAs, organizados tipicamente nos modelos IaaS (Infraestrutura como Serviço), PaaS (Plataforma como Serviço) e SaaS (Software como Serviço).\n\nConsiderando a adequação desses modelos a diferentes perfis organizacionais, avalie as afirmações a seguir.\n\nI. O modelo IaaS é indicado para empresas em crescimento ou com demandas altamente oscilantes (como lojas virtuais em datas sazonais), pois permite provisionar e desalocar infraestrutura virtualizada rapidamente sem imobilizar capital em servidores físicos.\nII. O modelo PaaS é recomendado para organizações que possuem equipe própria de desenvolvedores e desejam implantar aplicações sem administrar diretamente sistema operacional, patches e servidores.\nIII. O modelo SaaS e o IaaS público podem enfrentar restrições quando há impedimentos legais ou regulatórios quanto à guarda ou terceirização externa de dados sensíveis, como ocorre em determinados órgãos públicos.\nIV. O modelo SaaS é voltado prioritariamente a grandes empresas que desejam adquirir permanentemente licenças tradicionais em massa para instalar e operar o software em servidores locais próprios.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e IV.",
+        "explanation": "Incorreta, pois IV contraria o conceito de SaaS (software acessado como serviço em nuvem por assinatura/uso, e não compra de licenças locais)."
+      },
+      {
+        "letter": "B",
+        "text": "II e III.",
+        "explanation": "Incorreta, pois I também está correta."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Correta. IaaS atende demandas oscilantes e expansão ágil (I), PaaS libera times próprios de desenvolvedores da gestão de infraestrutura/SO (II), e serviços públicos em nuvem externa sofrem limitações quando há restrição legal sobre localização/terceirização de dados (III). O item IV descreve licenciamento on-premises tradicional, não SaaS."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta, pois IV está errada."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta, pois IV é falsa."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "IaaS fornece VMs/redes/storage sob demanda (ideal para picos sazonais); PaaS entrega ambiente pronto de runtime/deploy para equipes próprias de desenvolvimento; SaaS entrega software pronto via Internet sob assinatura (não compra de licenças perpétuas locais); e nuvens públicas sofrem restrições quando legislações exigem soberania local ou vedam terceirização externa dos dados.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Computação em Nuvem",
+      "IaaS, PaaS e SaaS"
+    ]
+  },
+  {
+    "id": "sd-inedita-09",
+    "label": "Inédita 2026 • Questão 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma plataforma de comércio eletrônico migrou sua arquitetura monolítica para microsserviços independentes: Pedidos, Pagamentos, Estoque e Notificações. Inicialmente, o serviço de Pedidos realizava chamadas HTTP/REST síncronas em cadeia para todos os demais serviços. Em dias de grande promoção, uma lentidão no serviço de Notificações e no gateway de Pagamentos provocava esgotamento de threads e queda em cascata no serviço de Pedidos, além de cobranças duplicadas quando retentativas ocorriam após timeouts.\n\nConsiderando os padrões arquiteturais e de comunicação em sistemas distribuídos, responda ao que se pede:\n\na) Explique como a adoção de mensageria assíncrona (por meio de um broker de filas/tópicos) e a implementação de idempotência nos consumidores resolvem o acoplamento em picos de tráfego e evitam cobranças duplicadas sob semântica at-least-once. (valor: 5,0 pontos)\nb) Explique como os padrões Circuit Breaker e Saga contribuem para evitar falhas em cascata e manter a consistência eventual entre os microsserviços de Pedidos, Pagamentos e Estoque sem recorrer a bloqueios distribuídos tradicionais (2PC). (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com a rubrica verificando a explicação do desacoplamento temporal da mensageria, papel da chave de idempotência na entrega at-least-once, funcionamento do Circuit Breaker (estados aberto/fechado/meio-aberto) e transações compensatórias no padrão Saga.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve explicar que:\n- A mensageria assíncrona (RabbitMQ/Kafka) desacopla produtor e consumidores no tempo: o serviço de Pedidos publica eventos/mensagens em filas ou tópicos e libera recursos imediatamente, permitindo que Estoque e Notificações consumam no próprio ritmo sem derrubar Pedidos durante picos (2,5 pts);\n- Como brokers confiáveis adotam comumente semântica at-least-once (podendo reentregar uma mensagem após timeout/falha), o serviço de Pagamentos deve ser idempotente, associando um identificador único da transação (idempotency key) a um registro já processado para impedir que reprocessamentos gerem cobranças duplicadas (2,5 pts).\n\nb) (5,0 pontos) O respondente deve explicar que:\n- O padrão Circuit Breaker monitora falhas/timeouts nas chamadas a serviços remotos (como gateway de Pagamentos); ao atingir um limiar, abre o circuito e falha rapidamente (fail-fast / fallback) sem acumular threads presas, evitando falhas em cascata e testando periodicamente a recuperação (estado meio-aberto) (2,5 pts);\n- O padrão Saga coordena transações de negócio entre múltiplos microsserviços (Pedidos → Pagamento → Estoque) por meio de uma sequência de transações locais e eventos (coreografia ou orquestração); caso uma etapa falhe (ex.: estoque insuficiente), executam-se ações compensatórias (ex.: estornar pagamento e cancelar pedido), garantindo consistência eventual sem travar bancos distribuídos com 2PC (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "Microsserviços",
+      "Mensageria Assíncrona e Idempotência",
+      "Circuit Breaker e Padrão Saga"
+    ]
+  },
+  {
+    "id": "sd-inedita-10",
+    "label": "Inédita 2026 • Questão 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "13-sistemas-distribuidos",
+    "areaName": "Sistemas Distribuídos",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma empresa de tecnologia ligada ao setor público opera dois sistemas críticos: (Módulo A) um portal de venda de ingressos para grandes eventos culturais, com picos de acesso concentrados em poucas horas por mês; e (Módulo B) uma base de registros fiscais sigilosos sujeita a normas legais que proíbem armazenar esses dados em infraestrutura compartilhada ou terceirizada fora do controle físico da instituição.\n\nConsiderando os modelos de computação em nuvem, estratégias de replicação e o Teorema CAP, faça o que se pede:\n\na) Proponha e justifique o modelo de implantação em nuvem (pública, privada ou híbrida) e os modelos de serviço (IaaS, PaaS ou SaaS) mais adequados para atender conjuntamente aos módulos A e B. (valor: 5,0 pontos)\nb) Para o banco de dados de reservas de assentos do Módulo A, que recebe escritas concorrentes de múltiplos usuários para evitar venda dupla de um mesmo assento, justifique a escolha entre sistema CP ou AP (Teorema CAP) e explique como a replicação baseada em cópia primária ou passiva (primária-backup) apoia a consistência e a tolerância a falhas. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Verifique na rubrica se justificou nuvem híbrida (pública IaaS/PaaS para elasticidade do Módulo A e privada para conformidade legal do Módulo B) e se fundamentou corretamente CP + replicação com cópia primária / primária-backup para evitar dupla venda de assentos.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve propor e justificar:\n- Modelo de implantação: Nuvem Híbrida, combinando Nuvem Pública para o Módulo A (aproveitando elasticidade rápida e pagamento por uso nos picos sazonais de venda de ingressos sem manter servidores ociosos) e Nuvem Privada on-premises para o Módulo B (atendendo às restrições legais de soberania, sigilo e não terceirização dos dados fiscais) (2,5 pts);\n- Modelos de serviço: no Módulo A, IaaS (se a equipe precisa controlar SO/infraestrutura escalável) ou PaaS (se a equipe própria de desenvolvedores quiser focar apenas no código da aplicação com autoescalonamento gerenciado); no Módulo B, infraestrutura privada dedicada (nuvem privada) sem uso de SaaS/IaaS público para os dados restritos (2,5 pts).\n\nb) (5,0 pontos) O respondente deve justificar:\n- Escolha CP no Teorema CAP: para evitar venda duplicada do mesmo assento durante uma partição de rede, a Consistência forte (C) deve prevalecer sobre a Disponibilidade (A) — é preferível recusar temporariamente reservas em um nó isolado do que permitir conflitos de assentos vendidos duas vezes (2,5 pts);\n- Replicação por cópia primária / primária-backup (passiva): centralizar as atualizações de cada partição/evento em um nó primário serializa as escritas concorrentes garantindo consistência, enquanto as réplicas backup recebem atualizações para escalar leituras de mapa de assentos e assumir via failover em caso de falha do primário (tolerância a falhas) (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "Computação em Nuvem (Híbrida, IaaS/PaaS)",
+      "Teorema CAP",
+      "Replicação e Tolerância a Falhas"
+    ]
+  }
+]

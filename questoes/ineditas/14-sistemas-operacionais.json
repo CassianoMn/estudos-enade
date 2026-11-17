@@ -1,0 +1,441 @@
+[
+  {
+    "id": "so-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Em um sistema operacional multiprogramável moderno, múltiplos processos alternam-se no uso da CPU e interagem com dispositivos de entrada e saída (E/S). Para proteger o hardware e os demais processos, a arquitetura separa a execução em modo usuário e modo núcleo, controlando o ciclo de vida de cada processo por meio de estados (Pronto, Executando e Bloqueado) e de seu Bloco de Controle de Processo (BCP).\n\nConsiderando o gerenciamento de processos e chamadas de sistema, avalie as afirmações a seguir.\n\nI. Quando um processo em execução solicita uma leitura em disco e precisa aguardar os dados, a transição do estado Executando para o estado Bloqueado é realizada diretamente pelo algoritmo de escalonamento de CPU por expiração de quantum.\nII. As transições entre os estados Pronto e Executando (em ambos os sentidos) são causadas diretamente pela atuação do escalonador de processos.\nIII. Para que um programa em modo usuário solicite serviços privilegiados ao kernel — como abrir arquivos ou criar processos filhos — ele executa uma chamada de sistema (system call), alternando temporariamente para o modo núcleo.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a transição Executando → Bloqueado ocorre por solicitação de E/S ou espera do próprio processo, não por expiração de quantum."
+      },
+      {
+        "letter": "B",
+        "text": "III, apenas.",
+        "explanation": "Incorreta, pois a afirmação II também está correta."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Incorreta, pois I é falsa."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Correta. O escalonador causa apenas as transições Pronto → Executando (despacho) e Executando → Pronto (preempção/quantum), enquanto chamadas de sistema alternam o processador do modo usuário para o modo núcleo."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois I atribui incorretamente a transição Executando → Bloqueado ao escalonador por quantum."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "No modelo de três estados, o escalonador de CPU controla exclusivamente as transições Pronto → Executando (seleção do processo) e Executando → Pronto (preempção por fim de quantum ou prioridade). O bloqueio (Executando → Bloqueado) decorre de requisição de E/S ou espera por evento do próprio processo. Chamadas de sistema usam trap para alternar do modo usuário para o modo núcleo.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Processos e Estados",
+      "Chamadas de Sistema"
+    ]
+  },
+  {
+    "id": "so-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma equipe está paralelizando um módulo de processamento de imagens usando programação multithread em um servidor multicore. Após perfilar o código, verificou-se que 80% do tempo de execução original em 1 núcleo corresponde a trechos paralelizáveis e os 20% restantes são estritamente sequenciais. Além disso, deseja-se que uma thread bloqueada em operação de E/S não paralise as demais threads do processo e que elas possam executar simultaneamente em múltiplos núcleos.\n\nCom base na Lei de Amdahl e nos modelos de mapeamento de threads, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Ao escalar de 1 para 4 núcleos, o speedup máximo teórico pela Lei de Amdahl será de 2,5 vezes, devendo-se adotar o modelo de threads Um-para-Um (ou Muitos-para-Muitos).",
+        "explanation": "Correta. Pela Lei de Amdahl: Speedup(4) = 1 / (S + (1 - S)/N) = 1 / (0,20 + 0,80/4) = 1 / (0,20 + 0,20) = 1 / 0,40 = 2,5. Para evitar que uma thread bloqueie todo o processo e explorar múltiplos núcleos, utiliza-se mapeamento Um-para-Um (ou Muitos-para-Muitos), nunca Muitos-para-Um."
+      },
+      {
+        "letter": "B",
+        "text": "Ao escalar de 1 para 4 núcleos, o speedup máximo teórico pela Lei de Amdahl será de 4,0 vezes, utilizando o modelo de threads Muitos-para-Um.",
+        "explanation": "Incorreta. A fração sequencial de 20% impede speedup linear de 4,0x, e o modelo Muitos-para-Um trava todo o processo quando uma thread bloqueia em E/S e não aproveita múltiplos núcleos."
+      },
+      {
+        "letter": "C",
+        "text": "Ao escalar de 1 para 4 núcleos, o speedup máximo teórico pela Lei de Amdahl será de 3,2 vezes, pois threads de um mesmo processo possuem espaços de endereçamento e heaps isolados.",
+        "explanation": "Incorreta. O cálculo correto resulta em 2,5, e threads do mesmo processo compartilham código, dados globais e heap (possuindo apenas pilha e registradores próprios)."
+      },
+      {
+        "letter": "D",
+        "text": "Ao escalar de 1 para 4 núcleos, o speedup máximo teórico pela Lei de Amdahl será de 2,5 vezes, devendo-se adotar o modelo Muitos-para-Um para maximizar o uso dos 4 cores.",
+        "explanation": "Incorreta. O modelo Muitos-para-Um mapeia todas as threads de usuário para uma única thread de kernel, impedindo paralelismo real entre múltiplos cores."
+      },
+      {
+        "letter": "E",
+        "text": "Ao escalar para infinitos núcleos, o speedup máximo teórico desta aplicação poderá crescer ilimitadamente acima de 5,0 vezes.",
+        "explanation": "Incorreta. Com fração sequencial S = 0,20, o limite teórico quando N → ∞ é 1 / 0,20 = 5,0 vezes."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Aplicando a Lei de Amdahl com S = 0,20 e N = 4: Speedup(4) = 1 / (0,20 + 0,80 / 4) = 1 / 0,40 = 2,5. No modelo Muitos-para-Um, uma chamada bloqueante bloqueia todo o processo e não há paralelismo em múltiplos núcleos; portanto, requer-se Um-para-Um (padrão Linux/Windows) ou Muitos-para-Muitos.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Threads e Modelos de Mapeamento",
+      "Lei de Amdahl"
+    ]
+  },
+  {
+    "id": "so-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Considere três processos computacionais P1, P2 e P3 que chegam à fila de prontos simultaneamente no instante t = 0, nessa exata ordem (P1, depois P2, depois P3), sem realizar operações de E/S. Os tempos totais de execução em CPU (bursts) são: P1 = 10 ms, P2 = 4 ms e P3 = 2 ms.\n\nDesprezando o tempo de troca de contexto, calcule o tempo médio de espera na fila de prontos sob os algoritmos Round-Robin (com quantum = 4 ms) e SJF (Shortest Job First não preemptivo), respectivamente.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "6,0 ms no Round-Robin e 2,67 ms no SJF.",
+        "explanation": "Correta. No Round-Robin (q = 4): P1 [0..4] (resta 6), P2 [4..8] (termina), P3 [8..10] (termina), P1 [10..16] (termina). Esperas = Turnaround - Burst: P1 = 16 - 10 = 6 ms; P2 = 8 - 4 = 4 ms; P3 = 10 - 2 = 8 ms → média = (6 + 4 + 8)/3 = 6,0 ms. No SJF (P3 → P2 → P1): esperas 0, 2 e 6 ms → média = 8/3 ≈ 2,67 ms."
+      },
+      {
+        "letter": "B",
+        "text": "8,0 ms no Round-Robin e 2,67 ms no SJF.",
+        "explanation": "Incorreta. 8,0 ms corresponde ao tempo médio de espera do algoritmo FCFS (0, 10 e 14 ms), e não do Round-Robin."
+      },
+      {
+        "letter": "C",
+        "text": "6,0 ms no Round-Robin e 8,0 ms no SJF.",
+        "explanation": "Incorreta. 8,0 ms é o tempo médio de espera no FCFS; no SJF executa-se do menor ao maior burst (P3, P2, P1), resultando em 2,67 ms."
+      },
+      {
+        "letter": "D",
+        "text": "11,33 ms no Round-Robin e 5,33 ms no SJF.",
+        "explanation": "Incorreta. 11,33 ms ((16 + 8 + 10)/3) e 5,33 ms ((2 + 6 + 16)/3 = 8,0 — nem isso) confundem turnaround médio com tempo de espera médio."
+      },
+      {
+        "letter": "E",
+        "text": "4,0 ms no Round-Robin e 2,0 ms no SJF.",
+        "explanation": "Incorreta, pois desconsidera as esperas acumuladas na fila circular e após a conclusão parcial."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "No Round-Robin (quantum = 4 ms): [0..4] P1; [4..8] P2 (conclui); [8..10] P3 (conclui em 2 ms); [10..16] P1 (conclui os 6 ms restantes). Tempos de espera: P1 = 16 - 10 = 6 ms; P2 = 8 - 4 = 4 ms; P3 = 10 - 2 = 8 ms → média = 18 / 3 = 6,0 ms. No SJF não preemptivo, a ordem é P3 (2), P2 (4), P1 (10), com esperas 0, 2 e 6 ms → média = 8 / 3 ≈ 2,67 ms.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Escalonamento de CPU",
+      "Round-Robin e SJF"
+    ]
+  },
+  {
+    "id": "so-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Em um sistema operacional que utiliza o Algoritmo do Banqueiro para evitar deadlocks, quatro processos (P0, P1, P2 e P3) competem por três tipos de recursos (A, B e C). No instante T0, o vetor de recursos disponíveis é Disponível = (1, 1, 0), e as matrizes de Alocação atual e Demanda Máxima são:\n\n• P0: Alocação (1, 0, 1) | Máximo (3, 2, 1)\n• P1: Alocação (2, 1, 0) | Máximo (3, 2, 0)\n• P2: Alocação (0, 1, 2) | Máximo (2, 2, 2)\n• P3: Alocação (1, 1, 0) | Máximo (4, 3, 2)\n\nCom base nesses dados e nas condições de ocorrência de deadlock, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O sistema encontra-se em estado inseguro (deadlock inevitável), pois nenhum processo pode ser atendido com Disponível = (1, 1, 0).",
+        "explanation": "Incorreta. Calculando Necessário = Máximo - Alocação, P1 precisa de (1, 1, 0), que é exatamente menor ou igual a Disponível = (1, 1, 0)."
+      },
+      {
+        "letter": "B",
+        "text": "O sistema encontra-se em estado seguro, sendo <P1, P2, P0, P3> uma sequência segura válida.",
+        "explanation": "Correta. Necessário: P0=(2,2,0), P1=(1,1,0), P2=(2,1,0), P3=(3,2,2). Com Disponível=(1,1,0), apenas P1 pode executar, liberando (2,1,0) e elevando Disponível para (3,2,0). Em seguida P2=(2,1,0) executa e libera (0,1,2), elevando Disponível para (3,3,2). Depois P0=(2,2,0) executa (Disponível=(4,3,3)) e por fim P3=(3,2,2) executa. Logo, o estado é seguro."
+      },
+      {
+        "letter": "C",
+        "text": "O sistema encontra-se em estado seguro, sendo <P0, P1, P2, P3> e <P1, P3, P2, P0> sequências seguras válidas.",
+        "explanation": "Incorreta. P0 precisa de (2, 2, 0) e não pode iniciar antes de P1; e P3 precisa de 2 unidades de C, não podendo executar antes de P2."
+      },
+      {
+        "letter": "D",
+        "text": "O deadlock ocorrerá obrigatoriamente mesmo que haja apenas exclusão mútua e posse e espera, independentemente de existir espera circular ou não preempção.",
+        "explanation": "Incorreta. O deadlock só ocorre quando todas as quatro condições de Coffman (exclusão mútua, posse e espera, não preempção e espera circular) estão presentes simultaneamente."
+      },
+      {
+        "letter": "E",
+        "text": "O vetor Necessário do processo P3 é (5, 4, 2), impedindo sua conclusão em qualquer ordem de execução.",
+        "explanation": "Incorreta. Necessário = Máximo - Alocação (e não soma!). Para P3: (4, 3, 2) - (1, 1, 0) = (3, 2, 2)."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No Algoritmo do Banqueiro, Necessário = Máximo - Alocação: P0=(2,2,0), P1=(1,1,0), P2=(2,1,0), P3=(3,2,2). Partindo de Disponível=(1,1,0): P1 executa → Disponível=(3,2,0); P2 executa → Disponível=(3,3,2); P0 executa → Disponível=(4,3,3); P3 executa → Disponível=(5,4,3). A existência da sequência segura <P1, P2, P0, P3> prova que o sistema está em estado seguro.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Deadlock",
+      "Algoritmo do Banqueiro"
+    ]
+  },
+  {
+    "id": "so-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em um sistema operacional com memória virtual paginada, um processo possui exatamente 3 molduras (frames) de memória física alocadas e inicialmente vazias. Durante a execução, o processo gera a seguinte sequência de referências a páginas virtuais:\n\n1, 2, 3, 1, 4, 1\n\nConsiderando os algoritmos de substituição de páginas FIFO (First-In, First-Out) e LRU (Least Recently Used), o número total de faltas de página (page faults) ocorridas com FIFO e com LRU é, respectivamente,",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4 no FIFO e 5 no LRU.",
+        "explanation": "Incorreta, pois inverte os resultados dos dois algoritmos."
+      },
+      {
+        "letter": "B",
+        "text": "5 no FIFO e 4 no LRU.",
+        "explanation": "Correta. No FIFO: 1(F), 2(F), 3(F) → [1,2,3]; 1(hit); 4(F, remove a mais antiga que é 1) → [2,3,4]; 1(F, remove 2) → 5 faltas. No LRU: 1(F), 2(F), 3(F); 1(hit, atualiza recência de 1, tornando 2 a menos recentemente usada); 4(F, remove 2) → [3,1,4]; 1(hit!) → 4 faltas."
+      },
+      {
+        "letter": "C",
+        "text": "5 no FIFO e 5 no LRU.",
+        "explanation": "Incorreta. No LRU, o acesso hit à página 1 na 4ª referência renova sua recência, fazendo com que a página 2 seja substituída ao chegar a 4, preservando a página 1 para o último acesso."
+      },
+      {
+        "letter": "D",
+        "text": "6 no FIFO e 4 no LRU.",
+        "explanation": "Incorreta. Na 4ª referência (página 1), a página 1 já está na memória física, logo não ocorre page fault no FIFO."
+      },
+      {
+        "letter": "E",
+        "text": "4 no FIFO e 4 no LRU.",
+        "explanation": "Incorreta. O FIFO não renova a posição da página 1 em um hit e, portanto, remove a página 1 quando a página 4 chega, causando uma falta extra na última referência."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Com 3 molduras inicialmente vazias para a sequência (1, 2, 3, 1, 4, 1): FIFO sofre faltas em 1, 2, 3, hit em 1, falta em 4 (sai 1, a primeira a entrar) e falta em 1 (sai 2) = 5 page faults. LRU sofre faltas em 1, 2, 3, hit em 1 (ordem de uso vira 2, 3, 1), falta em 4 (sai 2, a menos usada recentemente → ficam 3, 1, 4) e hit em 1 = 4 page faults.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Memória Virtual",
+      "Substituição de Páginas (FIFO e LRU)"
+    ]
+  },
+  {
+    "id": "so-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Um disco rígido magnético (HDD) possui cilindros numerados de 0 a 199. Em um determinado instante, a cabeça de leitura/escrita encontra-se posicionada no cilindro 50, deslocando-se inicialmente em direção ao cilindro 0, e a fila de requisições pendentes por ordem de chegada é:\n\n82, 170, 43, 140, 24\n\nConsiderando o movimento total da cabeça (em número de cilindros percorridos) para os algoritmos de escalonamento de disco FCFS, SSTF e SCAN (elevador), bem como o escalonamento em SSDs, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O movimento total é de 460 cilindros no FCFS, 172 cilindros no SSTF e 220 cilindros no SCAN; em SSDs, adota-se tipicamente FCFS por não haver partes móveis.",
+        "explanation": "Correta. FCFS: |50-82|+|82-170|+|170-43|+|43-140|+|140-24| = 32+88+127+97+116 = 460. SSTF: 50→43(7)→24(19)→82(58)→140(58)→170(30) = 172. SCAN (indo ao 0 e voltando até 170): (50-0) + (170-0) = 220. SSDs não possuem seek mecânico nem latência rotacional, usando FCFS."
+      },
+      {
+        "letter": "B",
+        "text": "O movimento total é de 460 cilindros no FCFS, 220 cilindros no SSTF e 172 cilindros no SCAN; em SSDs, adota-se obrigatoriamente o SCAN para reduzir latência rotacional.",
+        "explanation": "Incorreta. Inverte os resultados de SSTF (172) e SCAN (220), e SSDs não têm latência rotacional."
+      },
+      {
+        "letter": "C",
+        "text": "O movimento total é de 172 cilindros no FCFS, 172 cilindros no SSTF e 196 cilindros no SCAN.",
+        "explanation": "Incorreta. No FCFS as requisições são atendidas exatamente na ordem de chegada (82, 170, 43, 140, 24), totalizando 460 cilindros."
+      },
+      {
+        "letter": "D",
+        "text": "O movimento total é de 460 cilindros no FCFS, 172 cilindros no SSTF e 196 cilindros no SCAN, pois o SCAN para no cilindro 24 sem tocar a extremidade 0.",
+        "explanation": "Incorreta. O algoritmo que inverte na requisição mais extrema (24) sem tocar a extremidade física 0 é o LOOK; o SCAN clássico vai até a extremidade 0 (50 + 170 = 220)."
+      },
+      {
+        "letter": "E",
+        "text": "O algoritmo SSTF é imune ao problema de starvation, diferentemente do algoritmo FCFS.",
+        "explanation": "Incorreta. O SSTF pode causar starvation em requisições distantes se chegarem continuamente pedidos próximos à posição atual da cabeça; o FCFS é livre de starvation."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cálculos a partir do cilindro 50: (1) FCFS: 32 + 88 + 127 + 97 + 116 = 460 cilindros. (2) SSTF (sempre o mais próximo): 50 → 43 (7) → 24 (19) → 82 (58) → 140 (58) → 170 (30) = 172 cilindros. (3) SCAN (em direção a 0): 50 → 43 → 24 → 0 (50) + 0 → 82 → 140 → 170 (170) = 220 cilindros (já o LOOK percorreria 26 + 146 = 172). Em SSDs não há braço mecânico nem rotação, adotando-se FCFS.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Escalonamento de Disco",
+      "Armazenamento Secundário (HDD e SSD)"
+    ]
+  },
+  {
+    "id": "so-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "O subsistema de Entrada/Saída (E/S) e o Sistema de Arquivos são responsáveis por abstrair controladores de hardware e organizar blocos em volumes persistentes de forma íntegra e eficiente.\n\nA respeito das técnicas de comunicação de E/S e dos métodos de alocação de arquivos em disco, avalie as afirmações a seguir.\n\nI. O Acesso Direto à Memória (DMA) permite que um controlador transfira blocos inteiros de dados entre um dispositivo de E/S e a memória principal sem exigir que a CPU copie cada byte, interrompendo a CPU apenas ao término da transferência.\nII. Na alocação de arquivos por lista ligada simples (sem tabela FAT em memória), o acesso aleatório a um bloco intermediário de um arquivo grande é extremamente lento, pois exige percorrer os ponteiros sequencialmente desde o primeiro bloco.\nIII. A alocação por i-nodes (adotada em sistemas UNIX/Linux) exige que toda a tabela de alocação de blocos do disco inteiro permaneça carregada na memória RAM permanentemente, mesmo para arquivos fechados.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação II também está correta."
+      },
+      {
+        "letter": "B",
+        "text": "III, apenas.",
+        "explanation": "Incorreta. A necessidade de manter toda a tabela de blocos do volume na RAM é uma desvantagem da tabela FAT, não dos i-nodes (um i-node só é carregado na memória quando o respectivo arquivo é aberto)."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. O DMA libera a CPU durante transferências de blocos (I) e a lista ligada pura penaliza severamente o acesso aleatório por exigir travessia sequencial de ponteiros (II). Já os i-nodes ficam na memória apenas enquanto os arquivos estão abertos (III é falsa)."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois III atribui característica da FAT aos i-nodes."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois III é falsa."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O controlador DMA transfere blocos diretamente entre dispositivo e RAM liberando a CPU até a interrupção final. Na alocação por lista ligada, eliminar fragmentação externa custa o acesso aleatório lento (sequencial por ponteiros). No esquema de i-nodes, apenas os i-nodes dos arquivos abertos ocupam RAM (ao contrário da FAT, cuja tabela inteira reside em memória).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Entrada e Saída (DMA)",
+      "Sistemas de Arquivos e Alocação"
+    ]
+  },
+  {
+    "id": "so-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma empresa decidiu consolidar seus sistemas legados Windows e Linux, atualmente espalhados em dezenas de servidores físicos subutilizados, para um ambiente virtualizado com hipervisor do Tipo 2 (hospedado sobre um sistema operacional anfitrião), além de avaliar o uso futuro de contêineres para novos microsserviços Linux.\n\nConsiderando as características de virtualização por máquinas virtuais (VMs) e contêineres, avalie as afirmações a seguir.\n\nI. No modelo com hipervisor Tipo 2, o monitor de máquina virtual executa como um processo do sistema operacional hospedeiro, permitindo manter os sistemas operacionais visitantes originais e simplificando backup e recuperação por meio de snapshots.\nII. Em um ambiente com hipervisor Tipo 2, caso um malware comprometa o sistema operacional hospedeiro, os sistemas operacionais visitantes estarão completamente imunes por não compartilharem hardware físico.\nIII. Ao contrário das máquinas virtuais tradicionais, os contêineres compartilham o mesmo kernel do sistema operacional hospedeiro, oferecendo menor consumo de memória e inicialização mais rápida.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação III também está correta."
+      },
+      {
+        "letter": "B",
+        "text": "II, apenas.",
+        "explanation": "Incorreta. Um malware no SO hospedeiro controla o processo do hipervisor Tipo 2 e pode comprometer os sistemas visitantes."
+      },
+      {
+        "letter": "C",
+        "text": "I e III, apenas.",
+        "explanation": "Correta. O hipervisor Tipo 2 roda como processo do SO hospedeiro mantendo SOs visitantes e agilizando recuperação (I), e contêineres compartilham o kernel do host com menor overhead (III). O item II é falso porque o comprometimento do SO hospedeiro ameaça os visitantes."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois II é falsa e I é verdadeira."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois II é falsa."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Em hipervisores Tipo 2 (hosted), o VMM é um processo do SO hospedeiro, preservando os SOs convidados e facilitando restauração via imagens/snapshots, porém ficando exposto a falhas/malwares do SO hospedeiro. Contêineres isolam processos em espaço de usuário (namespaces/cgroups) compartilhando o kernel único do host, o que os torna mais leves que VMs.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Virtualização",
+      "Hipervisores e Contêineres"
+    ]
+  },
+  {
+    "id": "so-inedita-09",
+    "label": "Inédita 2026 • Questão 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em um servidor de processamento concorrente, duas threads (Produtor e Consumidor) compartilham um buffer circular e uma variável inteira `contador` que armazena a quantidade atual de itens no buffer. Sem mecanismos de sincronização, constatou-se que após milhares de produções e consumos simultâneos o valor de `contador` tornava-se inconsistente. Além disso, o sistema operacional desse servidor precisa equilibrar o atendimento entre tarefas interativas de usuários e processos em lote de baixa prioridade.\n\nConsiderando os conceitos de sincronização e escalonamento de CPU, responda:\n\na) Explique o que é condição de corrida (race condition) e seção crítica no exemplo da variável `contador`, indicando os três requisitos formais de uma solução correta e como semáforos (`wait()`/`signal()`) ou mutexes resolvem o problema. (valor: 5,0 pontos)\nb) Compare os algoritmos de escalonamento Round-Robin e Por Prioridades, explicando o impacto da escolha de um quantum muito pequeno ou muito grande no Round-Robin e como a técnica de envelhecimento (aging) previne starvation no escalonamento por prioridades. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Verifique na rubrica se foram explicadas a intercalação de leitura-modificação-escrita em `contador`, os 3 requisitos da seção crítica (exclusão mútua, progresso e espera limitada), uso de semáforo/mutex, trade-off do quantum no RR e aging contra starvation.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve explicar que:\n- Condição de corrida ocorre quando múltiplas threads acessam e modificam `contador` concorrentemente (ex.: `contador++` e `contador--` decompostos em leitura de memória, soma/subtração em registrador e escrita) e o resultado final depende da ordem imprevisível de intercalação; o trecho de código que manipula `contador` e o buffer é a seção crítica (2,0 pts);\n- Uma solução válida deve atender a três requisitos: exclusão mútua (apenas uma thread na seção crítica por vez), progresso (escolha não pode ser adiada indefinidamente por threads fora da seção crítica) e espera limitada (limite para entradas de outras threads, evitando starvation) (1,5 pt);\n- Semáforos (operações atômicas wait/P e signal/V) ou mutexes (acquire/release) garantem que apenas uma thread acesse a seção crítica por vez, bloqueando concorrentes na fila sem espera ocupada até a liberação (1,5 pt).\n\nb) (5,0 pontos) O respondente deve explicar que:\n- No Round-Robin, cada processo recebe uma fatia fixa (quantum) em fila circular: um quantum muito pequeno reduz o tempo de resposta, mas gera excesso de trocas de contexto (overhead do dispatcher e invalidação de cache); um quantum muito grande degrada o comportamento do Round-Robin aproximando-o do FCFS e piorando o tempo de resposta interativo (2,5 pts);\n- No escalonamento por prioridades, processos de maior prioridade sempre executam primeiro, o que pode causar starvation (inanição) em processos de baixa prioridade se chegarem continuamente tarefas prioritárias; a técnica de envelhecimento (aging) aumenta gradualmente a prioridade de processos que aguardam há muito tempo na fila de prontos, garantindo que venham a executar (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "Sincronização e Seção Crítica",
+      "Escalonamento de CPU (Round-Robin e Prioridades)"
+    ]
+  },
+  {
+    "id": "so-inedita-10",
+    "label": "Inédita 2026 • Questão 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "14-sistemas-operacionais",
+    "areaName": "Sistemas Operacionais",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma instituição hospitalar pretende modernizar seu data center local. Hoje, cada aplicação roda em um servidor físico dedicado, com baixa taxa de utilização de CPU, backups lentos e armazenamento compartilhado heterogêneo para arquivos médicos (imagens DICOM) e bancos de dados relacionais.\n\nA equipe de infraestrutura avalia migrar as cargas de trabalho para virtualização (comparando hipervisor Tipo 1, hipervisor Tipo 2 e contêineres) e integrar redes de armazenamento NAS e SAN.\n\nConsiderando a arquitetura de sistemas operacionais, gerência de memória e armazenamento, faça o que se pede:\n\na) Compare Hipervisor Tipo 1 (bare-metal), Hipervisor Tipo 2 (hosted) e Contêineres quanto à arquitetura de execução, isolamento/segurança e consumo de recursos, recomendando a alternativa mais adequada para o servidor de produção do hospital. (valor: 5,0 pontos)\nb) Indique a adequação de uso de NAS (Network Attached Storage) e SAN (Storage Area Network) para os dados do hospital (imagens médicas e bancos de dados relacionais) e explique o mecanismo de Paginação sob demanda com tratamento de Page Fault na memória virtual dos servidores. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com a rubrica verificando a comparação técnica dos três modelos de virtualização (com recomendação coerente para produção), a distinção exata entre NAS (nível de arquivo/não estruturado) e SAN (nível de bloco/estruturado) e o fluxo completo de um Page Fault via MMU e trap ao SO.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve comparar e recomendar:\n- Hipervisor Tipo 1 (bare-metal) executa diretamente sobre o hardware físico, oferecendo máximo desempenho e isolamento forte entre VMs de diferentes SOs; Hipervisor Tipo 2 executa como processo sobre um SO hospedeiro, introduzindo maior overhead e risco caso o SO hospedeiro seja comprometido por malware; Contêineres compartilham o mesmo kernel do SO hospedeiro (isolamento por namespaces/cgroups), sendo extremamente leves e rápidos, mas exigindo compatibilidade de kernel e tendo isolamento menor que VMs completas (3,5 pts);\n- Recomendação: para servidores críticos de produção hospitalar com múltiplos SOs ou exigência de isolamento forte, recomenda-se Hipervisor Tipo 1 (eventualmente combinando contêineres dentro das VMs Linux para microsserviços) (1,5 pt).\n\nb) (5,0 pontos) O respondente deve explicar:\n- NAS (tipicamente via Ethernet) expõe armazenamento em nível lógico de arquivos (servidor de arquivos), sendo adequado para dados não estruturados como imagens médicas DICOM e prontuários digitalizados; SAN (tipicamente via Fibre Channel) expõe armazenamento em nível de bloco bruto como unidade local, oferecendo baixa latência e alto desempenho para os bancos de dados relacionais estruturados (2,5 pts);\n- Na memória virtual paginada, a MMU traduz endereços virtuais em físicos via tabela de páginas. Quando o processo acessa uma página ausente na RAM (bit de validade inválido), o hardware dispara uma trap (Page Fault) para o SO; o SO suspende o processo, localiza a página no armazenamento secundário (swap/disco), escolhe uma moldura livre (ou substitui uma vítima via LRU/etc.), carrega a página via E/S/DMA, atualiza a tabela de páginas e reinicia a instrução que falhou (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "Virtualização e Contêineres",
+      "NAS vs SAN",
+      "Memória Virtual e Page Fault"
+    ]
+  }
+]

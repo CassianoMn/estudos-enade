@@ -1,0 +1,450 @@
+[
+  {
+    "id": "ia-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma startup de logística está desenvolvendo um agente inteligente autônomo para gerenciar o roteamento de drones de entrega em áreas urbanas. Os sensores do drone captam apenas obstáculos próximos e a carga atual da bateria em tempo real (não tendo visão global instantânea de todas as condições climáticas e bloqueios de tráfego aéreo da cidade), e o agente precisa equilibrar dois critérios conflitantes: rapidez na entrega e segurança contra pane elétrica. Considerando a especificação de ambientes de tarefa (PEAS) e as arquiteturas de agentes inteligentes propostas por Russell & Norvig, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Como o ambiente urbano é totalmente observável e estático para o drone, um agente reativo simples baseado apenas em regras se-então sobre a percepção instantânea é suficiente para garantir decisões ótimas.",
+        "explanation": "Incorreta. Os sensores captam apenas dados locais (ambiente parcialmente observável) e condições climáticas/tráfego variam ao longo do tempo (dinâmico), inviabilizando um agente reativo simples sem estado interno."
+      },
+      {
+        "letter": "B",
+        "text": "Na especificação PEAS desse sistema, o consumo máximo permitido de bateria e a pontualidade das entregas correspondem aos Atuadores (A), enquanto as hélices e o módulo de alerta correspondem ao Desempenho (P).",
+        "explanation": "Incorreta. A alternativa inverte P e A: métricas de sucesso (eficiência energética, pontualidade, segurança) compõem a medida de Desempenho (P), enquanto hélices e alertas compõem os Atuadores (A)."
+      },
+      {
+        "letter": "C",
+        "text": "Por atuar em um ambiente parcialmente observável, dinâmico e com trade-offs entre rapidez e segurança, o agente requer manutenção de estado interno (baseado em modelo) e uma função de utilidade para selecionar ações que maximizem o retorno esperado.",
+        "explanation": "Correta. O estado interno (baseado em modelo) permite rastrear aspectos do ambiente não percebidos diretamente pelos sensores no instante atual, e a função de utilidade permite resolver conflitos entre objetivos concorrentes (tempo vs. segurança)."
+      },
+      {
+        "letter": "D",
+        "text": "Um agente baseado em objetivos dispensa qualquer representação de estado ou conhecimento sobre o ambiente, limitando-se a comparar percepções imediatas sem realizar busca ou planejamento.",
+        "explanation": "Incorreta. Agentes baseados em objetivos utilizam justamente o modelo do mundo combinado com metas e algoritmos de busca/planejamento para escolher sequências de ações."
+      },
+      {
+        "letter": "E",
+        "text": "Segundo o conceito de racionalidade em Inteligência Artificial, um agente racional é onisciente e jamais comete erros, mesmo quando o ambiente é estocástico e parcialmente observável.",
+        "explanation": "Incorreta. Racionalidade difere de onisciência: um agente racional escolhe a ação que maximiza o desempenho esperado com base nas percepções e conhecimentos disponíveis até o momento, não garantindo infalibilidade em ambientes estocásticos."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Em ambientes parcialmente observáveis e dinâmicos, um agente reativo simples falha porque não mantém histórico/estado do que está fora do alcance momentâneo dos sensores. Além disso, quando há conflito entre objetivos (rapidez vs. segurança), um agente baseado em utilidade atribui graus de preferência aos estados para maximizar a utilidade esperada.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Agentes Inteligentes",
+      "Especificação PEAS",
+      "Propriedades de Ambientes e Arquiteturas"
+    ]
+  },
+  {
+    "id": "ia-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em problemas de planejamento de rotas e resolução de quebra-cabeças com grandes espaços de estados, a escolha entre estratégias de busca cega (não informada) e busca heurística (informada) impacta diretamente a completude, a otimalidade e o consumo de memória computacional. A respeito das propriedades dos algoritmos de busca, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A busca em profundidade por aprofundamento iterativo (IDS) combina a completude e a otimalidade da busca em largura (para custos unitários) com a complexidade de espaço linear O(b*d) da busca em profundidade.",
+        "explanation": "Correta. A IDS realiza buscas em profundidade limitadas incrementando o limite (0, 1, 2...), mantendo apenas um caminho por vez na memória O(b*d), mas garantindo encontrar a solução mais rasa (completa e ótima para custos uniformes)."
+      },
+      {
+        "letter": "B",
+        "text": "A busca em largura (BFS) destaca-se pelo baixíssimo consumo de memória espacial O(b*m), sendo a opção recomendada quando o fator de ramificação b e a profundidade d são muito elevados.",
+        "explanation": "Incorreta. A BFS armazena todos os nós gerados na fronteira, resultando em complexidade espacial exponencial O(b^d), que costuma esgotar a memória RAM rapidamente."
+      },
+      {
+        "letter": "C",
+        "text": "A busca gulosa de melhor-escolha (f(n) = h(n)) garante sempre encontrar o caminho de menor custo total, desde que a função heurística h(n) seja admissível.",
+        "explanation": "Incorreta. A busca gulosa ignora o custo já percorrido g(n), não sendo ótima (nem completa em espaços com ciclos sem controle de visitados), mesmo com heurística admissível."
+      },
+      {
+        "letter": "D",
+        "text": "Para que o algoritmo A* seja ótimo em uma árvore de busca, a heurística h(n) deve superestimar ligeiramente o custo real h*(n) até o objetivo, acelerando a convergência sem perder a garantia do caminho mínimo.",
+        "explanation": "Incorreta. Superestimar h*(n) viola a condição de admissibilidade (0 <= h(n) <= h*(n)) e pode fazer o A* descartar o caminho ótimo verdadeiro."
+      },
+      {
+        "letter": "E",
+        "text": "Dadas duas heurísticas admissíveis h1 e h2 tais que h2(n) >= h1(n) para todo nó n, o algoritmo A* usando h1 sempre expandirá menos nós do que usando h2.",
+        "explanation": "Incorreta. Se h2(n) >= h1(n) e ambas são admissíveis, h2 domina h1 e é mais informada (mais próxima do custo real), expandindo menos ou igual quantidade de nós que h1."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "O algoritmo de Aprofundamento Iterativo (IDS) é a estratégia de busca cega preferida quando o espaço de estados é amplo e a profundidade da solução é desconhecida, pois atinge completude e otimalidade (com custos unitários por passo) mantendo uso de memória O(b*d), ao contrário da BFS que consome O(b^d). Na busca informada, A* exige h(n) admissível (nunca superestima) para garantir otimalidade.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Busca Cega (BFS, DFS, IDS)",
+      "Busca Heurística (Gulosa e A*)",
+      "Admissibilidade e Dominância"
+    ]
+  },
+  {
+    "id": "ia-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Um robô de armazém precisa se deslocar da estação inicial S até a doca de carregamento G em um grafo direcionado cujas conexões e custos reais c(u, v) são:\n- De S: para A (custo 2) e para B (custo 5)\n- De A: para C (custo 4) e para D (custo 3)\n- De B: para G (custo 4)\n- De C: para G (custo 2)\n- De D: para G (custo 6)\n\nConsidere a função heurística estimada até o objetivo G: h(S) = 7, h(A) = 5, h(B) = 4, h(C) = 2, h(D) = 5 e h(G) = 0.\n\nExecutando o algoritmo A* (f(n) = g(n) + h(n)) e comparando-o com a Busca Gulosa (f(n) = h(n)), avalie as afirmações a seguir:\n\nI. A heurística h(n) fornecida é admissível e consistente para todos os nós e arestas do grafo.\nII. Na execução do A*, após expandir S, o próximo nó escolhido para expansão é A (f = 7), seguido pela expansão de C (f = 8) e, por fim, a seleção de G.\nIII. O algoritmo A* encontra o caminho ótimo S → A → C → G com custo total igual a 8.\nIV. Caso fosse utilizada a Busca Gulosa pura a partir de S, ela expandiria B antes de A por possuir menor h(n), retornando o caminho subótimo S → B → G de custo 9.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II, apenas.",
+        "explanation": "Incorreta. Além de I e II, as afirmações III e IV também são verdadeiras."
+      },
+      {
+        "letter": "B",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta. A heurística também é admissível/consistente (I) e a busca gulosa de fato segue S -> B -> G (IV)."
+      },
+      {
+        "letter": "C",
+        "text": "I, III e IV, apenas.",
+        "explanation": "Incorreta. A afirmação II também descreve exatamente a ordem de expansão do A*."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV, apenas.",
+        "explanation": "Incorreta. A afirmação I é verdadeira: todas as arestas satisfazem h(u) <= c(u,v) + h(v)."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Correta. Todas as quatro afirmações estão matematicamente verificadas: h é consistente, A* expande S -> A(f=7) -> C(f=8) -> G(f=8) com custo 8, enquanto a Gulosa escolhe B(h=4 < h(A)=5) chegando a G por S -> B -> G com custo 9."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Verificando consistência h(u) <= c(u,v) + h(v): S->A (7 <= 2+5), S->B (7 <= 5+4), A->C (5 <= 4+2), A->D (5 <= 3+5), C->G (2 <= 2+0), D->G (5 <= 6+0), B->G (4 <= 4+0). Logo h é consistente e admissível (I correta). Passo a passo do A*: expande S; fronteira tem A(2+5=7) e B(5+4=9). Expande A; fronteira tem C(6+2=8), B(9), D(5+5=10). Expande C; gera G(8+0=8). Expande G e encerra com caminho S->A->C->G de custo 8 (II e III corretas). Já a Busca Gulosa olha apenas h(n): de S, compara h(B)=4 < h(A)=5, expande B e alcança G pelo caminho S->B->G com custo 9 (IV correta).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Algoritmo A*",
+      "Busca Gulosa",
+      "Consistência e Admissibilidade de Heurísticas"
+    ]
+  },
+  {
+    "id": "ia-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em jogos determinísticos de soma zero com informação perfeita, como xadrez ou damas, o algoritmo Minimax e sua otimização por Poda Alfa-Beta são amplamente empregados para tomada de decisão adversarial. A respeito do funcionamento desses algoritmos, avalie as afirmações a seguir:\n\nI. A Poda Alfa-Beta pode alterar o valor da jogada ótima escolhida na raiz em relação ao Minimax padrão caso o fator de ramificação da árvore seja maior que 2.\nII. Durante a busca, o parâmetro alfa (α) representa o melhor valor garantido até o momento para o jogador MAX ao longo do caminho até a raiz, e a poda ocorre quando α >= β.\nIII. A eficiência da Poda Alfa-Beta depende fortemente da ordenação em que os nós filhos são visitados; com ordenação ótima, a profundidade alcançável praticamente dobra no mesmo tempo de processamento.\nIV. Em jogos com árvores muito profundas, combina-se o corte por limite de profundidade com uma função de avaliação heurística estática aplicada às folhas da busca limitada.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. A afirmação I é falsa: a Poda Alfa-Beta retorna exatamente a mesma decisão ótima do Minimax completo, pois só descarta ramos que comprovadamente não afetam o resultado na raiz."
+      },
+      {
+        "letter": "B",
+        "text": "II, III e IV.",
+        "explanation": "Correta. II define corretamente α e a condição de poda (α >= β); III aponta corretamente o ganho de complexidade de O(b^m) para O(b^(m/2)) com boa ordenação; IV descreve o corte de profundidade com função de avaliação heurística."
+      },
+      {
+        "letter": "C",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. A afirmação I é falsa porque a poda alfa-beta preserva a equivalência de resultado com o Minimax."
+      },
+      {
+        "letter": "D",
+        "text": "II e IV, apenas.",
+        "explanation": "Incorreta. A afirmação III também é verdadeira: visitar primeiro os melhores lances maximiza o número de podas."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. I é falsa e IV é verdadeira."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A Poda Alfa-Beta é uma otimização exata do Minimax: ela elimina apenas subárvores que não podem melhorar o valor já garantido para MAX (α) ou MIN (β), mantendo exatamente o mesmo resultado da raiz (I falsa, II verdadeira). Quando os filhos mais promissores são explorados primeiro, a complexidade cai de O(b^m) para cerca de O(b^(m/2)) (III verdadeira). Na prática, usa-se limite de profundidade com função de avaliação heurística (IV verdadeira).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Busca Adversarial",
+      "Algoritmo Minimax",
+      "Poda Alfa-Beta"
+    ]
+  },
+  {
+    "id": "ia-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma equipe de Sistemas de Informação desenvolve dois módulos inteligentes para uma usina hidrelétrica: o Módulo 1 é um sistema especialista que parte de uma hipótese específica de falha no gerador e verifica recursivamente na base de regras quais leituras de sensores precisam ser confirmadas; o Módulo 2 controla o resfriamento de turbinas lidando com termos imprecisos como 'temperatura moderada' e 'vazão alta', atribuindo graus contínuos de pertinência entre 0 e 1 às variáveis linguísticas. Considerando os paradigmas de representação do conhecimento e raciocínio sob incerteza, os módulos 1 e 2 empregam, respectivamente,",
+    "options": [
+      {
+        "letter": "A",
+        "text": "encadeamento para frente (data-driven) e Rede Bayesiana pura.",
+        "explanation": "Incorreta. Partir de uma hipótese/meta para buscar fatos que a comprovem é encadeamento para trás (goal-driven); e graus contínuos de pertinência para vagueza linguística caracterizam Lógica Fuzzy, não Redes Bayesianas."
+      },
+      {
+        "letter": "B",
+        "text": "encadeamento para trás (goal-driven) e Lógica Proposicional clássica.",
+        "explanation": "Incorreta. A Lógica Proposicional clássica admite apenas valores binários (verdadeiro/falso), não graus contínuos entre 0 e 1."
+      },
+      {
+        "letter": "C",
+        "text": "encadeamento para frente (data-driven) e Lógica Fuzzy (difusa).",
+        "explanation": "Incorreta. O Módulo 1 parte da hipótese/objetivo e regride para as premissas/evidências, o que caracteriza encadeamento para trás."
+      },
+      {
+        "letter": "D",
+        "text": "encadeamento para trás (goal-driven) e Lógica Fuzzy (difusa).",
+        "explanation": "Correta. O encadeamento para trás (backward chaining) parte de uma hipótese/meta e verifica submetas/regras que a sustentam; já a Lógica Fuzzy modela imprecisão linguística por funções de pertinência contínuas em [0, 1]."
+      },
+      {
+        "letter": "E",
+        "text": "resolução por refutação em Lógica de Primeira Ordem e Teorema de Bayes discreto.",
+        "explanation": "Incorreta. O enunciado descreve explicitamente raciocínio regressivo a partir de hipótese em sistema especialista e funções de pertinência em [0, 1] para termos vagos, típicos de backward chaining e Lógica Fuzzy."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Em sistemas baseados em regras, o encadeamento para trás (backward chaining) é orientado a objetivos (goal-driven): inicia na hipótese e busca regras cuja conclusão a satisfaça, verificando suas premissas. A Lógica Fuzzy (difusa) trata vagueza linguística ('alta', 'moderada') por meio de graus de pertinência no intervalo [0, 1], diferenciando-se da probabilidade bayesiana que modela incerteza de ocorrência de eventos.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Sistemas Especialistas e Inferência",
+      "Encadeamento para Frente e para Trás",
+      "Lógica Fuzzy"
+    ]
+  },
+  {
+    "id": "ia-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Um banco avaliou um modelo de classificação binária para detecção de fraudes em um conjunto de teste composto por 1.000 transações, das quais 50 eram fraudes reais (classe positiva) e 950 eram legítimas (classe negativa). A matriz de confusão obtida apresentou:\n- Verdadeiros Positivos (VP) = 40\n- Falsos Negativos (FN) = 10\n- Falsos Positivos (FP) = 60\n- Verdadeiros Negativos (VN) = 890\n\nCom base nesses valores e na análise de métricas de Aprendizado de Máquina para bases desbalanceadas, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A acurácia do modelo é de 93,0%, demonstrando que a precisão das predições positivas também é superior a 90%.",
+        "explanation": "Incorreta. Embora a acurácia seja de fato (40 + 890)/1000 = 93,0%, esse valor é inflado pela classe majoritária negativa; a precisão é de apenas 40 / (40 + 60) = 40,0%."
+      },
+      {
+        "letter": "B",
+        "text": "A precisão do modelo é de 80,0% e a revocação (recall) é de 40,0%, indicando que metade das fraudes reais deixou de ser identificada.",
+        "explanation": "Incorreta. Os valores de precisão e revocação estão invertidos: Recall = VP / (VP + FN) = 40 / 50 = 80,0%, enquanto Precisão = VP / (VP + FP) = 40 / 100 = 40,0%."
+      },
+      {
+        "letter": "C",
+        "text": "A precisão do modelo é de 40,0%, a revocação (recall) é de 80,0% e o F1-Score é aproximadamente 53,3%, evidenciando que a acurácia de 93,0% mascara uma taxa elevada de alarmes falsos positivos.",
+        "explanation": "Correta. Precisão = 40/(40+60) = 0,40 (40,0%); Recall = 40/(40+10) = 0,80 (80,0%); F1 = 2 * (0,40 * 0,80) / (0,40 + 0,80) = 0,64 / 1,20 ≈ 0,533 (53,3%). Mesmo capturando 80% das fraudes, 60% dos alertas emitidos são falsos positivos."
+      },
+      {
+        "letter": "D",
+        "text": "O F1-Score é obtido pela média aritmética simples entre precisão e revocação, totalizando exatamente 60,0%.",
+        "explanation": "Incorreta. O F1-Score é a média harmônica (e não aritmética) entre precisão e revocação: 2*P*R/(P+R) ≈ 53,3%, penalizando desequilíbrios extremos entre as duas métricas."
+      },
+      {
+        "letter": "E",
+        "text": "Como o número de Verdadeiros Negativos é alto, o uso de um classificador trivial que previsse 'legítima' para todas as 1.000 transações teria F1-Score de 95,0%.",
+        "explanation": "Incorreta. Um classificador trivial que prevê tudo negativo teria acurácia de 95,0%, mas VP = 0, logo Precisão indefinida/0, Recall = 0% e F1-Score = 0%."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Calculando as métricas a partir da matriz de confusão: Acurácia = (40 + 890) / 1000 = 93,0%; Precisão = VP / (VP + FP) = 40 / (40 + 60) = 40,0%; Recall (Sensibilidade) = VP / (VP + FN) = 40 / (40 + 10) = 80,0%; F1-Score = 2 × (0,40 × 0,80) / (0,40 + 0,80) = 0,64 / 1,20 ≈ 53,3%. Em bases desbalanceadas, a acurácia elevada oculta limitações críticas capturadas por Precisão, Recall e F1-Score.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Matriz de Confusão",
+      "Métricas de Avaliação (Acurácia, Precisão, Recall, F1-Score)",
+      "Bases Desbalanceadas"
+    ]
+  },
+  {
+    "id": "ia-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Ao treinar uma árvore de decisão sem limite de profundidade para prever a evasão escolar em uma universidade, um analista observou 99,5% de acurácia nos dados de treinamento e apenas 64,0% nos dados de teste. Em outra frente do mesmo projeto, a equipe aplicou o algoritmo k-Means sobre registros históricos de acesso ao ambiente virtual de aprendizagem (sem rótulos de classe) para identificar grupos comportamentais de estudantes. A respeito dessas duas situações, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A árvore de decisão sofreu subajuste (underfitting), devendo sua profundidade ser aumentada ainda mais para decorar as exceções dos dados de treino.",
+        "explanation": "Incorreta. Acurácia altíssima no treino (99,5%) e baixa no teste (64,0%) caracteriza sobreajuste (overfitting), e aumentar a profundidade agravaria ainda mais o problema."
+      },
+      {
+        "letter": "B",
+        "text": "O algoritmo k-Means é um método de aprendizado supervisionado que exige rótulos prévios de evasão para ajustar os pesos de um hiperplano separador.",
+        "explanation": "Incorreta. O k-Means é um algoritmo de agrupamento não supervisionado (sem rótulos) baseado na distância aos centroides; quem ajusta hiperplano separador supervisionado é o SVM."
+      },
+      {
+        "letter": "C",
+        "text": "A substituição da árvore única por um comitê Random Forest (bagging) tende a aumentar a variância do modelo, piorando a capacidade de generalização.",
+        "explanation": "Incorreta. O Random Forest combina múltiplas árvores treinadas em amostras bootstrap com seleção aleatória de atributos justamente para reduzir a variância e mitigar o overfitting."
+      },
+      {
+        "letter": "D",
+        "text": "Na validação cruzada k-fold, o modelo é avaliado exclusivamente sobre o mesmo subconjunto usado para ajustar seus parâmetros em cada iteração, eliminando a necessidade de separar dados de validação.",
+        "explanation": "Incorreta. Na validação cruzada k-fold, a base é dividida em k partições; em cada rodada, k-1 partições treinam o modelo e 1 partição distinta é usada para validação."
+      },
+      {
+        "letter": "E",
+        "text": "A árvore de decisão apresentou sobreajuste (overfitting) por alta variância — mitigável com poda, limitação de profundidade ou Random Forest —, enquanto o k-Means foi aplicado corretamente como técnica não supervisionada de agrupamento.",
+        "explanation": "Correta. O grande descompasso entre desempenho de treino (99,5%) e teste (64,0%) indica overfitting, combatido por poda/regularização ou bagging (Random Forest). Já o k-Means é de fato um algoritmo não supervisionado adequado para segmentação sem rótulos."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Desempenho excelente no treino seguido de queda acentuada no teste caracteriza overfitting (alta variância), tratado com poda da árvore, limitação de profundidade, mais dados ou comitês como Random Forest (bagging). Já a segmentação sem rótulos prévios utiliza aprendizado não supervisionado, como o algoritmo k-Means.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Overfitting e Generalização",
+      "Árvores de Decisão e Random Forest",
+      "Aprendizado Não Supervisionado (k-Means)"
+    ]
+  },
+  {
+    "id": "ia-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Sobre a evolução das arquiteturas de Redes Neurais Artificiais, Deep Learning e Sistemas baseados em Grandes Modelos de Linguagem (LLMs), avalie as afirmações a seguir:\n\nI. Um Perceptron de camada única é incapaz de resolver problemas que não sejam linearmente separáveis, como a função lógica XOR.\nII. Redes Perceptron Multicamadas (MLP) superam essa limitação por meio de camadas ocultas com funções de ativação não lineares (como ReLU ou sigmoide), ajustando seus pesos via retropropagação do erro (backpropagation) e gradiente descendente.\nIII. Redes Neurais Convolucionais (CNNs) são especialmente adequadas ao processamento de imagens por explorarem filtros locais com compartilhamento de pesos e camadas de pooling, enquanto arquiteturas Transformer utilizam mecanismos de autoatenção (self-attention) para capturar dependências em sequências.\nIV. Em assistentes corporativos baseados em LLMs, a técnica RAG (Retrieval-Augmented Generation) dispensa a consulta a bases documentais externas e força o retreinamento completo dos pesos do modelo a cada novo documento adicionado.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e IV.",
+        "explanation": "Incorreta. IV é falsa: RAG serve justamente para consultar bases externas atualizadas em tempo de inferência e injetá-las no contexto, evitando retreinamento contínuo e reduzindo alucinações."
+      },
+      {
+        "letter": "B",
+        "text": "I, II e III.",
+        "explanation": "Correta. I aponta a limitação clássica de separabilidade linear do Perceptron (falha no XOR); II explica o papel das camadas ocultas não lineares e do backpropagation no MLP; III resume corretamente os mecanismos de CNNs e Transformers."
+      },
+      {
+        "letter": "C",
+        "text": "II e IV.",
+        "explanation": "Incorreta. I e III são verdadeiras, enquanto IV inverte o propósito do RAG."
+      },
+      {
+        "letter": "D",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. II é verdadeira e IV é falsa."
+      },
+      {
+        "letter": "E",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. I é verdadeira e IV é falsa."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O Perceptron simples traça apenas um hiperplano linear, falhando em problemas não linearmente separáveis como XOR (I correta). O MLP resolve esse limite combinando camadas ocultas com ativações não lineares e treinamento via backpropagation (II correta). CNNs utilizam convolução e pooling para visão computacional, enquanto Transformers empregam autoatenção (III correta). Já o RAG (IV incorreta) recupera documentos externos relevantes para fundamentar a resposta do LLM sem precisar retreinar os pesos do modelo.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Perceptron e MLP",
+      "Backpropagation e Funções de Ativação",
+      "Deep Learning (CNN, Transformer) e RAG"
+    ]
+  },
+  {
+    "id": "ia-inedita-09",
+    "label": "Inédita 2026 • Discursiva 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma rede hospitalar pretende implantar um sistema de apoio à decisão clínica baseado em Aprendizado de Máquina para identificar precocemente pacientes com risco de sepse grave nas próximas 6 horas, a partir de sinais vitais e exames laboratoriais coletados em prontuário eletrônico. Nos dados históricos da instituição, apenas 3% dos atendimentos evoluem para sepse grave, enquanto 97% correspondem a casos negativos. A equipe júnior responsável pelo projeto propôs avaliar os modelos candidatos usando exclusivamente a métrica de acurácia global e treinou uma rede neural profunda com centenas de milhares de parâmetros sobre apenas 1.200 registros, sem separar conjunto de validação.\n\nConsiderando os fundamentos de Aprendizado de Máquina, responda aos itens a seguir.\n\na) Explique por que o uso exclusivo da acurácia global é inadequado para esse problema e indique quais métricas de avaliação devem ser priorizadas pela equipe, justificando a relação entre Falsos Negativos e o contexto clínico. (valor: 5,0 pontos)\nb) Identifique o principal risco de generalização decorrente da estratégia de treinamento proposta (rede muito complexa em base pequena sem conjunto de validação) e apresente três práticas técnicas recomendadas para mitigar esse problema e garantir uma avaliação confiável do modelo. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "a) Como 97% dos casos são negativos, um classificador trivial que previsse sempre 'negativo' alcançaria 97% de acurácia sem detectar nenhum caso de sepse (Recall = 0%). Em triagem clínica de condição fatal, um Falso Negativo (não detectar sepse real) coloca a vida do paciente em risco imediato. Logo, deve-se priorizar Revocação (Recall/Sensibilidade), além de F1-Score, Precisão (para evitar fadiga de alertas por excesso de FPs) e AUC-ROC / Precision-Recall AUC.\nb) O principal risco é o sobreajuste (overfitting), no qual a rede neural com excesso de parâmetros memoriza ruídos dos 1.200 registros e falha ao generalizar para novos pacientes. Práticas recomendadas: (1) utilizar validação cruzada estratificada (k-fold) mantendo um conjunto de teste isolado; (2) aplicar regularização (L1/L2, dropout, early stopping) ou adotar modelos menos propensos a overfitting para dados tabulares pequenos (ex.: Regressão Logística, Random Forest/XGBoost com profundidade controlada); (3) ampliar a base ou aplicar técnicas de balanceamento/ajuste de pesos de classe (class weights) apenas nos folds de treino.",
+    "discursiveRubric": "a) (5,0 pontos)\n- Explicação do paradoxo da acurácia em bases desbalanceadas (97% negativos permitem 97% de acurácia com um modelo trivial que nunca detecta sepse) (2,0 pontos).\n- Indicação das métricas adequadas: Revocação/Sensibilidade (Recall) como prioridade pelo alto custo clínico do Falso Negativo, acompanhada de F1-Score, Precisão (controle de falsos alertas) e/ou AUC (ROC ou PR-AUC) (2,0 pontos).\n- Articulação explícita do impacto do Falso Negativo na segurança do paciente (risco de óbito/atraso no tratamento) (1,0 ponto).\n\nb) (5,0 pontos)\n- Identificação correta do fenômeno de sobreajuste (overfitting / alta variância) gerado pelo descompasso entre alta capacidade do modelo e amostra reduzida sem validação independente (2,0 pontos).\n- Apresentação de três práticas técnicas coerentes (1,0 ponto cada, até 3,0 pontos), tais como: separação treino/validação/teste ou validação cruzada k-fold estratificada; técnicas de regularização (L1/L2, dropout, early stopping); redução de complexidade / escolha de algoritmos adequados a dados tabulares moderados (ex.: árvores regularizadas, regressão logística); coleta de mais dados ou tratamento de desbalanceamento (class weights/reamostragem dentro do treino sem vazamento de dados).",
+    "imageUrls": [],
+    "topics": [
+      "Métricas em Bases Desbalanceadas",
+      "Overfitting e Validação Cruzada",
+      "Aprendizado de Máquina Aplicado à Saúde"
+    ]
+  },
+  {
+    "id": "ia-inedita-10",
+    "label": "Inédita 2026 • Discursiva 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "05-inteligencia-artificial",
+    "areaName": "Inteligência Artificial",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma fintech brasileira lançou duas soluções baseadas em Inteligência Artificial: (1) um modelo 'caixa-preta' de concessão automática de crédito treinado com histórico de aprovações dos últimos 15 anos, que passou a negar sistematicamente crédito a moradores de determinados CEPs periféricos sem apresentar justificativa aos clientes; e (2) um assistente conversacional baseado em Grande Modelo de Linguagem (LLM) para responder a dúvidas contratuais, o qual passou a inventar cláusulas e taxas inexistentes com tom convincente.\n\nConsiderando os princípios de Ética em IA, Explicabilidade (XAI), arquiteturas com RAG e a Lei Geral de Proteção de Dados (LGPD), faça o que se pede.\n\na) Analise o problema da solução (1) sob as perspectivas do viés algorítmico, da Explicabilidade (XAI) e dos direitos previstos na LGPD (como o direito à revisão de decisões automatizadas), propondo duas medidas técnicas de mitigação. (valor: 5,0 pontos)\nb) Identifique o fenômeno ocorrido no assistente (2) e explique tecnicamente como a arquitetura RAG (Retrieval-Augmented Generation) associada a mecanismos de governança (human-in-the-loop e citação de fontes) reduz esse risco em sistemas de informação corporativos. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "a) O histórico de 15 anos carrega vieses sociais e geográficos (proxy de renda/raça pelo CEP), fazendo o modelo reproduzir discriminação (viés algorítmico). Como é caixa-preta, viola transparência e dificulta auditoria. Pela LGPD (Art. 20), o titular tem direito a informações claras sobre os critérios utilizados e à revisão de decisões tomadas unicamente por tratamento automatizado. Medidas: auditoria de equidade (fairness) e remoção/mitigação de atributos sensíveis e proxies como CEP; uso de técnicas de XAI (como SHAP ou LIME) ou modelos intrinsecamente interpretáveis para explicar cada negativa.\nb) O fenômeno é a alucinação (hallucination) em LLMs, decorrente da geração probabilística de tokens sem ancoragem factual atualizada. A arquitetura RAG combina um recuperador semântico (busca em base vetorial/documental oficial dos contratos vigentes) com o gerador (LLM), injetando trechos verificados no prompt para restringir a resposta às fontes recuperadas, com citação explícita de cláusulas e revisão humana (human-in-the-loop) em casos críticos.",
+    "discursiveRubric": "a) (5,0 pontos)\n- Diagnóstico de viés algorítmico / histórico (o uso do CEP atua como variável proxy de vulnerabilidade socioeconômica/discriminação aprendida nos dados históricos) (1,5 ponto).\n- Articulação com Explicabilidade (XAI) e LGPD (direito do titular à explicação dos critérios e à revisão de decisões automatizadas conforme Art. 20 da LGPD) (1,5 ponto).\n- Proposição de duas medidas técnicas válidas de mitigação (ex.: auditoria de fairness por subgrupos, remoção/controle de variáveis proxy, aplicação de SHAP/LIME para explicabilidade local ou adoção de modelos interpretáveis) (2,0 pontos).\n\nb) (5,0 pontos)\n- Identificação correta do fenômeno de alucinação (hallucination) em LLMs e sua causa (predição estatística sem garantia factual) (1,5 ponto).\n- Explicação técnica do fluxo RAG: indexação de documentos oficiais em base vetorial/busca, recuperação dos trechos pertinentes à consulta do usuário e injeção desse contexto no prompt do LLM para fundamentar a resposta (2,0 pontos).\n- Indicação de controles complementares de governança: citação obrigatória de fontes/cláusulas, recusa segura quando não houver evidência na base recuperada e supervisão humana (human-in-the-loop) para decisões de alto impacto (1,5 ponto).",
+    "imageUrls": [],
+    "topics": [
+      "Ética em IA e Viés Algorítmico",
+      "Explicabilidade (XAI) e LGPD",
+      "LLMs, Alucinações e Arquitetura RAG"
+    ]
+  }
+]

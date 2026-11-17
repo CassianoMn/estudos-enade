@@ -1,0 +1,20 @@
+# Materiais brutos baixados (PDFs, PPTs, DOCXs pesados)
+materiais-brutos/
+
+# Python
+scripts/.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node / Vite App
+app/node_modules/
+app/dist/
+app/.vite/
+*.local
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json

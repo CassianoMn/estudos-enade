@@ -1,0 +1,410 @@
+[
+  {
+    "id": "oac-inedita-01",
+    "label": "Inédita ENADE 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "No desenvolvimento de firmware para sistemas embarcados, o projetista frequentemente converte valores decimais fracionários para binário e realiza operações aritméticas em registradores de 8 bits utilizando representação em complemento de 2.\n\nConsiderando a conversão do número decimal 11,625 para binário e a soma em complemento de 2 de 8 bits entre os valores decimais +95 e +50, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "11,625₁₀ = 1011,101₂; a soma +95 + 50 gera overflow, pois ultrapassa o limite máximo positivo de +127 em 8 bits.",
+        "explanation": "Correta. 11₁₀ = 1011₂ e 0,625×2 = 1,25 (1), 0,25×2 = 0,50 (0), 0,50×2 = 1,00 (1) → 0,101₂; logo 11,625₁₀ = 1011,101₂. Em complemento de 2 de 8 bits, a faixa é [−128, +127]; como +95 + 50 = +145 > +127, ocorre overflow."
+      },
+      {
+        "letter": "B",
+        "text": "11,625₁₀ = 1011,110₂; a soma +95 + 50 não gera overflow, pois o limite positivo de 8 bits com sinal é +255.",
+        "explanation": "Incorreta. 0,110₂ corresponde a 0,75, não 0,625; além disso, +255 é o máximo sem sinal (unsigned), não em complemento de 2."
+      },
+      {
+        "letter": "C",
+        "text": "11,625₁₀ = 1101,101₂; a soma +95 + 50 gera overflow, pois o bit de sinal passa a valer 0.",
+        "explanation": "Incorreta. 1101₂ equivale a 13, não 11; e na soma de dois positivos com overflow em complemento de 2, o bit de sinal (MSB) torna-se 1 (resultado aparente negativo)."
+      },
+      {
+        "letter": "D",
+        "text": "11,625₁₀ = 1011,101₂; a soma +95 + 50 não gera overflow em complemento de 2 porque o carry-out final é zero.",
+        "explanation": "Incorreta. Em complemento de 2, +95 (01011111) + +50 (00110010) = 10010001 (−111₁₀), com carry_in = 1 e carry_out = 0 no MSB, caracterizando exatamente overflow."
+      },
+      {
+        "letter": "E",
+        "text": "11,625₁₀ = 1011,011₂; em complemento de 2 de 8 bits existem duas representações para o zero (+0 e −0).",
+        "explanation": "Incorreta. 0,011₂ equivale a 0,375; além disso, o complemento de 2 elimina a duplicidade do zero (ao contrário de sinal-magnitude e complemento de 1)."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Convertendo 11,625₁₀: parte inteira 11 = 8 + 2 + 1 = 1011₂; parte fracionária 0,625 = 0,5 + 0,125 = 2⁻¹ + 2⁻³ = 0,101₂. Em complemento de 2 com n = 8 bits, a faixa representável é [−2⁷, +(2⁷ − 1)] = [−128, +127]. A soma +95 + 50 = +145 excede +127, provocando overflow (01011111₂ + 00110010₂ = 10010001₂).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Sistemas de Numeração", "Binário Fracionário", "Complemento de 2 e Overflow"]
+  },
+  {
+    "id": "oac-inedita-02",
+    "label": "Inédita ENADE 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "O padrão IEEE 754 em precisão simples (32 bits) representa números em ponto flutuante normalizados por meio de 1 bit de sinal (S), 8 bits de expoente com excesso (bias = 127) e 23 bits de fração/mantissa (F), segundo a expressão V = (−1)^S × (1 + F) × 2^(E − 127).\n\nUm analisador de memória capturou a seguinte palavra de 32 bits armazenada em um registrador de ponto flutuante:\n\n1 10000010 10100000000000000000000\n\nQual valor decimal corresponde exatamente a essa representação IEEE 754?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "−5,0",
+        "explanation": "Incorreta. Ignora o bit implícito (1 + F) usando apenas 0,625 × 2³ = −5,0."
+      },
+      {
+        "letter": "B",
+        "text": "−10,5",
+        "explanation": "Incorreta. Resulta de erro na leitura da fração binária (1,01₂ = 1,25 → −1,25 × 8 = −10,0) ou no expoente."
+      },
+      {
+        "letter": "C",
+        "text": "−13,0",
+        "explanation": "Correta. S = 1 (negativo); E = 10000010₂ = 128 + 2 = 130, logo expoente real = 130 − 127 = 3; F = 0,101₂ = 2⁻¹ + 2⁻³ = 0,5 + 0,125 = 0,625. Assim, V = −1 × (1 + 0,625) × 2³ = −1,625 × 8 = −13,0."
+      },
+      {
+        "letter": "D",
+        "text": "+13,0",
+        "explanation": "Incorreta. Desconsidera o bit de sinal S = 1, que torna o número negativo."
+      },
+      {
+        "letter": "E",
+        "text": "−26,0",
+        "explanation": "Incorreta. Corresponde a usar expoente 4 (E − 126) em vez de 130 − 127 = 3."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Decompondo os 32 bits: Sinal S = 1 → (−1)¹ = −1. Expoente E = 10000010₂ = 130₁₀ → expoente real = 130 − 127 = 3. Mantissa F = 101000...₂ → 1·2⁻¹ + 0·2⁻² + 1·2⁻³ = 0,5 + 0,125 = 0,625. Com o bit implícito, a significanda vale 1,625. Portanto, V = −1 × 1,625 × 2³ = −13,0.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Ponto Flutuante", "Padrão IEEE 754", "Aritmética Computacional"]
+  },
+  {
+    "id": "oac-inedita-03",
+    "label": "Inédita ENADE 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "No projeto de sistemas digitais, funções booleanas são implementadas por portas lógicas formando circuitos combinacionais ou sequenciais. Considere a expressão booleana simplificada pela álgebra de Boole e implementada em um módulo de controle:\n\nY = (A · B)' + (A · B')\n\nAcerca da simplificação dessa expressão e da distinção entre circuitos combinacionais e sequenciais, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Y simplifica-se para A' + B' e pertence a um circuito sequencial, pois utiliza duas portas inversoras.",
+        "explanation": "Incorreta. A simplificação para A' + B' está certa, mas o circuito não é sequencial: como não possui elementos de memória nem realimentação de estado, trata-se de um circuito combinacional."
+      },
+      {
+        "letter": "B",
+        "text": "Y simplifica-se para A' + B' e corresponde a uma porta NAND de duas entradas, implementando um circuito puramente combinacional.",
+        "explanation": "Correta. Aplicando De Morgan: (A·B)' + A·B' = A' + B' + A·B' = A' + B'·(1 + A) = A' + B' = (A·B)' (porta NAND). Como a saída Y depende exclusivamente dos valores atuais de A e B, trata-se de um circuito combinacional."
+      },
+      {
+        "letter": "C",
+        "text": "Y simplifica-se para A ⊕ B (XOR) e depende de sinal de clock para atualizar sua saída.",
+        "explanation": "Incorreta. Para A=0, B=0, Y = 1 + 0 = 1, enquanto 0 ⊕ 0 = 0; além disso, circuitos combinacionais não dependem de clock."
+      },
+      {
+        "letter": "D",
+        "text": "Y simplifica-se para A · B' e exemplifica um circuito sequencial do tipo flip-flop D.",
+        "explanation": "Incorreta. A expressão não equivale a A·B' (para A=0, B=0 resulta em 1) e não possui elemento biestável de memória."
+      },
+      {
+        "letter": "E",
+        "text": "Y resulta sempre em 1 (tautologia) para quaisquer valores de A e B.",
+        "explanation": "Incorreta. Quando A = 1 e B = 1, (1·1)' + (1·0) = 0 + 0 = 0."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Aplicando a Lei de De Morgan e absorção booleana: Y = (A · B)' + A · B' = A' + B' + A · B' = A' + B'·(1 + A) = A' + B' = (A · B)', que é exatamente a função de uma porta NAND. Como não há realimentação de estado nem elementos de memória (latches/flip-flops), trata-se de um circuito combinacional.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Álgebra Booleana", "Portas Lógicas", "Circuitos Combinacionais e Sequenciais"]
+  },
+  {
+    "id": "oac-inedita-04",
+    "label": "Inédita ENADE 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "O modelo de arquitetura de Von Neumann e a filosofia RISC (exemplificada pelo processador MIPS de 32 bits) moldaram o projeto dos processadores modernos.\n\nSobre as características da arquitetura de Von Neumann, organização MIPS, ordenação de bytes (endianness) e paradigma RISC vs. CISC, avalie as afirmações a seguir.\n\nI. Na arquitetura de Von Neumann, instruções e dados compartilham a mesma memória principal, podendo ocasionar o gargalo de barramento entre CPU e memória.\nII. Em um processador MIPS clássico, as instruções têm tamanho fixo de 32 bits, o banco possui 32 registradores de 32 bits e as operações aritméticas seguem o modelo load/store com 3 operandos.\nIII. Um processador Little-Endian armazena o byte mais significativo (MSB) de uma palavra no menor endereço de memória, enquanto o Big-Endian armazena o byte menos significativo (LSB) no menor endereço.\nIV. Arquiteturas RISC privilegiam instruções simples de tamanho fixo para facilitar a decodificação e o pipeline, enquanto arquiteturas CISC possuem instruções complexas de tamanho variável.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e III.",
+        "explanation": "Incorreta. A afirmação III inverte os conceitos de Big-Endian e Little-Endian, enquanto II e IV são verdadeiras."
+      },
+      {
+        "letter": "B",
+        "text": "II e IV.",
+        "explanation": "Incorreta. A afirmação I também é verdadeira e descreve exatamente a arquitetura de programa armazenado de Von Neumann."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e IV.",
+        "explanation": "Correta. I descreve corretamente o programa armazenado e o gargalo de Von Neumann; II resume com precisão as características do MIPS; IV contrasta corretamente RISC e CISC. III está invertida: Big-Endian coloca o MSB no menor endereço, e Little-Endian coloca o LSB no menor endereço."
+      },
+      {
+        "letter": "D",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. A afirmação III está invertida e a afirmação II está correta."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta. A afirmação III confunde Big-Endian com Little-Endian."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "I é verdadeira (memória única para instruções e dados gera o gargalo de Von Neumann). II é verdadeira (MIPS: instruções fixas de 32 bits, 32 registradores de 32 bits, 3 operandos e acesso à memória restrito a load/store). III é falsa porque inverte as definições: em Big-Endian o byte mais significativo fica no endereço mais baixo; em Little-Endian, o byte menos significativo fica no endereço mais baixo. IV é verdadeira.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Arquitetura de Von Neumann", "MIPS e Endianness", "RISC vs. CISC"]
+  },
+  {
+    "id": "oac-inedita-05",
+    "label": "Inédita ENADE 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Considere um processador MIPS com pipeline clássico de 5 estágios (IF, ID, EX, MEM, WB) equipado com unidade de forwarding (adiantamento) e unidade de detecção de riscos. O trecho de código a seguir é submetido à execução:\n\n1. lw   $t1, 0($s0)\n2. add  $t2, $t1, $s1\n3. sub  $t3, $t2, $s2\n4. beq  $t3, $zero, L1\n\nConsiderando os três tipos de riscos (hazards) no pipeline, assinale a alternativa correta sobre o comportamento desse trecho durante a execução.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O risco de dados entre as instruções 1 e 2 é eliminado integralmente apenas pelo forwarding, sem necessidade de stall.",
+        "explanation": "Incorreta. Trata-se de um load-use hazard: o valor de $t1 só fica disponível ao final do estágio MEM da instrução lw, tarde demais para o estágio EX da instrução add imediatamente seguinte sem ao menos 1 ciclo de stall."
+      },
+      {
+        "letter": "B",
+        "text": "Entre as instruções 1 e 2 ocorre um load-use hazard que exige 1 ciclo de stall (bolha) mesmo com forwarding; já o risco RAW entre as instruções 2 e 3 é resolvido por forwarding de EX/MEM para EX sem stall.",
+        "explanation": "Correta. Em lw seguido imediatamente de add usando $t1, o dado vem da memória (MEM) após o início de EX de add, exigindo 1 stall seguido de forwarding MEM/WB → EX. Entre add e sub (instruções 2 e 3), o resultado de $t2 sai de EX no ciclo anterior e vai direto por forwarding para a entrada da ULA de sub, sem stall."
+      },
+      {
+        "letter": "C",
+        "text": "A instrução 4 (beq) gera um risco estrutural porque utiliza a ULA no estágio EX após a instrução sub.",
+        "explanation": "Incorreta. Instruções de desvio condicional como beq geram risco de controle (decidir qual o próximo PC antes do término do desvio), e não risco estrutural de ULA entre estágios distintos."
+      },
+      {
+        "letter": "D",
+        "text": "Se a memória principal for única para instruções e dados (sem caches L1 separadas), ocorre risco de controle entre lw na etapa MEM e outra instrução na etapa IF.",
+        "explanation": "Incorreta. Conflito de acesso simultâneo a uma memória única nos estágios MEM e IF caracteriza risco estrutural (hardware), não risco de controle."
+      },
+      {
+        "letter": "E",
+        "text": "O pipeline reduz a latência individual da instrução lw de 5 ciclos para 1 ciclo, além de evitar riscos de dados.",
+        "explanation": "Incorreta. O pipeline aumenta o throughput (instruções concluídas por ciclo), mas não reduz a latência individual da instrução (que continua levando 5 estágios) nem elimina riscos automaticamente."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Entre as instruções 1 (lw) e 2 (add) existe uma dependência RAW do tipo load-use: lw obtém $t1 apenas no fim de MEM, enquanto add precisa dele no início de EX, exigindo 1 stall (bolha) + forwarding de MEM/WB para EX. Entre 2 (add) e 3 (sub), $t2 é produzido no estágio EX de add e imediatamente encaminhado por forwarding (EX/MEM → EX) para sub, sem nenhum stall. A instrução 4 (beq) introduz risco de controle.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Pipeline", "Riscos de Dados, Controle e Estruturais", "Forwarding e Stalls"]
+  },
+  {
+    "id": "oac-inedita-06",
+    "label": "Inédita ENADE 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Um computador com endereçamento de memória física de 32 bits (endereçamento a byte) utiliza uma memória cache L1 de 64 KB organizada com mapeamento associativo por conjunto de 4 vias (4-way set-associative), com blocos de 64 bytes.\n\nConsiderando a decomposição do endereço de 32 bits em [ Tag | Índice | Offset ] e as políticas de gerenciamento de cache, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O endereço divide-se em 16 bits de Tag, 10 bits de Índice e 6 bits de Offset; faltas causadas por competição no mesmo conjunto são chamadas de faltas compulsórias.",
+        "explanation": "Incorreta. 10 bits de índice (1 024 conjuntos) corresponderia ao mapeamento direto, não 4-way; além disso, competição no mesmo conjunto gera falta por conflito, não compulsória."
+      },
+      {
+        "letter": "B",
+        "text": "O endereço divide-se em 18 bits de Tag, 8 bits de Índice e 6 bits de Offset; na política Write-Back, a atualização na memória principal ocorre apenas quando o bloco modificado é substituído.",
+        "explanation": "Correta. Bloco = 64 B = 2⁶ B → Offset = 6 bits. Total de linhas = 64 KB / 64 B = 1 024 linhas. Em 4-way, nº de conjuntos = 1 024 / 4 = 256 = 2⁸ → Índice = 8 bits. Tag = 32 − (8 + 6) = 18 bits. E Write-Back adia a gravação na RAM até a substituição do bloco sujo."
+      },
+      {
+        "letter": "C",
+        "text": "O endereço divide-se em 18 bits de Tag, 8 bits de Índice e 6 bits de Offset; na política Write-Through, o bloco nunca é gravado na memória principal.",
+        "explanation": "Incorreta. A divisão de bits está certa, mas em Write-Through toda escrita atualiza simultaneamente a cache e a memória de nível inferior."
+      },
+      {
+        "letter": "D",
+        "text": "O endereço divide-se em 20 bits de Tag, 6 bits de Índice e 6 bits de Offset; o mapeamento totalmente associativo possui mais faltas por conflito do que o mapeamento direto.",
+        "explanation": "Incorreta. O índice tem 8 bits (256 conjuntos), não 6; e o mapeamento totalmente associativo elimina faltas por conflito."
+      },
+      {
+        "letter": "E",
+        "text": "O endereço divide-se em 18 bits de Tag, 8 bits de Índice e 6 bits de Offset; memórias cache são fabricadas com DRAM por serem mais densas e dispensarem refresh.",
+        "explanation": "Incorreta. Caches são fabricadas com SRAM (estática, muito mais rápida e que dispensa refresh); a DRAM é usada na memória principal e exige refresh."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cálculo dos campos: (1) Offset = log₂(64 bytes) = 6 bits; (2) Número de linhas na cache = 64 KB / 64 B = (64 × 1024) / 64 = 1 024 linhas; (3) Como há 4 vias por conjunto, Número de conjuntos = 1 024 / 4 = 256 = 2⁸ → Índice = 8 bits; (4) Tag = 32 − 8 − 6 = 18 bits. Quanto às políticas, em Write-Back os dados são gravados apenas na cache durante os acertos de escrita e propagados à memória principal somente na substituição do bloco.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Memória Cache", "Mapeamento Associativo por Conjunto", "Políticas de Escrita e Faltas"]
+  },
+  {
+    "id": "oac-inedita-07",
+    "label": "Inédita ENADE 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Um arquiteto de infraestrutura está avaliando arranjos de discos (RAID) para um servidor de banco de dados corporativo composto por 4 discos rígidos idênticos de 2 TB cada. Ele precisa comparar os níveis RAID 0, RAID 1, RAID 4, RAID 5 e RAID 6 em relação à tolerância a falhas e ao aproveitamento de capacidade.\n\nAssinale a alternativa que apresenta uma análise tecnicamente correta desses níveis RAID.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O RAID 0 oferece 8 TB úteis e tolera a falha simultânea de até 1 disco graças ao striping.",
+        "explanation": "Incorreta. O RAID 0 faz striping para maximizar desempenho, mas não possui redundância alguma: se 1 disco falhar, perde-se o arranjo."
+      },
+      {
+        "letter": "B",
+        "text": "O RAID 4 distribui a paridade intercalada por bloco entre todos os discos, eliminando o gargalo do disco único de paridade.",
+        "explanation": "Incorreta. Quem distribui a paridade entre todos os discos é o RAID 5; o RAID 4 concentra toda a paridade em um único disco dedicado."
+      },
+      {
+        "letter": "C",
+        "text": "O RAID 5 oferece 6 TB úteis com 4 discos, utiliza paridade distribuída por bloco e tolera a falha de 1 disco; já o RAID 6 oferece 4 TB úteis usando dupla paridade (P + Q) e tolera até 2 falhas simultâneas.",
+        "explanation": "Correta. Em RAID 5 com N = 4 discos, a capacidade útil é (N − 1) × 2 TB = 6 TB e tolera 1 falha de disco com paridade distribuída. Em RAID 6, a dupla redundância (P + Q) consome o equivalente a 2 discos, restando (N − 2) × 2 TB = 4 TB úteis e suportando até 2 falhas simultâneas."
+      },
+      {
+        "letter": "D",
+        "text": "O RAID 1 utiliza espelhamento e fornece 75% da capacidade bruta dos 4 discos como espaço útil.",
+        "explanation": "Incorreta. O espelhamento duplica todos os dados (usa o dobro de discos), fornecendo apenas 50% de capacidade útil (4 TB no máximo em pares espelhados)."
+      },
+      {
+        "letter": "E",
+        "text": "O RAID 3 realiza acessos independentes a subconjuntos de discos em paralelo, sendo superior ao RAID 5 em múltiplas transações pequenas.",
+        "explanation": "Incorreta. O RAID 3 usa paridade intercalada por bit e envia todas as leituras/escritas para todos os discos do grupo simultaneamente, não permitindo acessos independentes como RAID 4 e 5."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Comparando os níveis RAID com 4 discos de 2 TB (8 TB brutos): RAID 0 não tem redundância (8 TB úteis, 0 falhas toleradas); RAID 1 usa espelhamento (50% útil); RAID 3 usa paridade por bit acessando todos os discos juntos; RAID 4 usa paridade por bloco em disco dedicado (gargalo na escrita); RAID 5 distribui a paridade por bloco entre os 4 discos (6 TB úteis, tolera 1 falha); RAID 6 emprega dupla redundância P + Q (4 TB úteis, tolera 2 falhas simultâneas).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Armazenamento", "Níveis RAID", "Tolerância a Falhas"]
+  },
+  {
+    "id": "oac-inedita-08",
+    "label": "Inédita ENADE 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Um servidor transacional executou 10 800 requisições em 1 hora de pico. Cada requisição realiza, em média, 5 operações de entrada e saída (I/O) no subsistema de disco, sendo que cada operação de I/O consome em média 12 ms.\n\nConsiderando os mecanismos de comunicação de E/S e as métricas de desempenho desse servidor, qual é a vazão média do disco (em operações de I/O por segundo), a utilização média do disco (em %) e o mecanismo de E/S mais adequado para transferir grandes blocos sem manter o processador ocupado na cópia de cada palavra?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3 I/O por segundo; 18% de utilização; Polling.",
+        "explanation": "Incorreta. 3 é a taxa de requisições por segundo (10 800 / 3 600), não de operações de I/O por segundo (3 × 5 = 15 I/O/s); além disso, Polling ocupa a CPU integralmente."
+      },
+      {
+        "letter": "B",
+        "text": "15 I/O por segundo; 18% de utilização; DMA (Direct Memory Access).",
+        "explanation": "Correta. 10 800 req / 3 600 s = 3 req/s; multiplicando por 5 I/O/req = 15 I/O/s. Utilização = 15 × 0,012 s = 0,18 (18%). O DMA permite que o controlador transfira dados diretamente entre dispositivo e memória sem envolver a CPU durante a transferência."
+      },
+      {
+        "letter": "C",
+        "text": "15 I/O por segundo; 36% de utilização; Interrupções por palavra.",
+        "explanation": "Incorreta. 15 × 12 ms = 180 ms por segundo = 18%, não 36%; e interrupções por palavra ainda envolvem a CPU em toda transferência."
+      },
+      {
+        "letter": "D",
+        "text": "18 I/O por segundo; 15% de utilização; DMA (Direct Memory Access).",
+        "explanation": "Incorreta. Os valores de vazão (15 I/O/s) e utilização (18%) estão trocados."
+      },
+      {
+        "letter": "E",
+        "text": "900 I/O por segundo; 18% de utilização; Barramento síncrono sem árbitro.",
+        "explanation": "Incorreta. 900 I/O ocorre por minuto (15 × 60), não por segundo; e DMA requer arbitragem do barramento."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Taxa de requisições: 10 800 / 3 600 s = 3 req/s. Vazão do disco: 3 req/s × 5 I/O/req = 15 operações de I/O por segundo. Utilização média do disco (Lei da Utilização U = X · S): U = 15 I/O/s × 0,012 s/I/O = 0,18 = 18%. Para transferir blocos diretamente entre E/S e RAM sem envolver a CPU palavra a palavra, utiliza-se DMA (Acesso Direto à Memória).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Métricas de Desempenho", "Utilização e Throughput", "Entrada e Saída (DMA, Interrupções, Polling)"]
+  },
+  {
+    "id": "oac-inedita-09",
+    "label": "Inédita ENADE 2026 • Discursiva 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Considere um processador MIPS com pipeline de 5 estágios (IF, ID, EX, MEM, WB), em que o banco de registradores permite escrita na primeira metade do ciclo e leitura na segunda metade. Analise a sequência de instruções abaixo:\n\nI1: add $s0, $t0, $t1\nI2: sub $t2, $s0, $t3\nI3: lw  $s1, 4($s0)\nI4: or  $t4, $s1, $t5\n\nCom base no funcionamento do pipeline e nas técnicas de mitigação de riscos (hazards), faça o que se pede nos itens a seguir.\na) Identifique todas as dependências de dados RAW (Read After Write) existentes no código acima, especificando quais pares de instruções e registradores estão envolvidos. (valor: 4,0 pontos)\nb) Explique por que a técnica de forwarding (adiantamento) elimina completamente os stalls entre I1 e I2, mas NÃO evita a inserção de 1 stall (bolha) entre I3 e I4, indicando quantos ciclos totais serão gastos para executar as 4 instruções com forwarding habilitado. (valor: 6,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
+    "discursiveRubric": "a) Identificação das dependências RAW (4,0 pontos):\n- Dependência 1: I1 → I2 sobre o registrador $s0 (I1 escreve $s0; I2 lê $s0). (1,5 ponto)\n- Dependência 2: I1 → I3 sobre o registrador $s0 (I1 escreve $s0 no ciclo 5 [1ª metade] e I3 lê $s0 no ciclo 4 [ID] → depende de I1; caso haja forwarding ou escrita/leitura simultânea). (1,0 ponto)\n- Dependência 3: I3 → I4 sobre o registrador $s1 (I3 carrega $s1 da memória; I4 lê $s1 imediatamente depois — load-use hazard). (1,5 ponto)\n\nb) Análise de Forwarding, Stall e Contagem de Ciclos (6,0 pontos):\n- Entre I1 e I2 (2,0 pontos): I1 (add) calcula o novo valor de $s0 ao final do estágio EX (ciclo 3). I2 (sub) precisa desse valor no início de seu estágio EX (ciclo 4). Como o resultado já foi produzido pela ULA em EX/MEM, o forwarding envia-o diretamente para a entrada da ULA de I2 sem necessidade de stall (e o mesmo ocorre de MEM/WB de I1 para EX de I3 no ciclo 5).\n- Entre I3 e I4 (2,0 pontos): I3 (lw) só obtém o dado da memória ao final do estágio MEM. I4 (or) precisaria desse dado no início de seu estágio EX no ciclo imediatamente seguinte (o que exigiria retornar no tempo). Portanto, o hardware insere obrigatoriamente 1 ciclo de stall (bolha) entre I3 e I4, para então aplicar forwarding de MEM/WB para EX.\n- Contagem total de ciclos (2,0 pontos): Sem stalls, 4 instruções em pipeline de 5 estágios levariam 5 + (4 − 1) = 8 ciclos. Com 1 stall obrigatório pelo load-use entre I3 e I4, a sequência conclui em 8 + 1 = 9 ciclos de clock.",
+    "imageUrls": [],
+    "topics": ["Pipeline MIPS", "Riscos de Dados (RAW)", "Forwarding e Stalls"]
+  },
+  {
+    "id": "oac-inedita-10",
+    "label": "Inédita ENADE 2026 • Discursiva 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "09-oac",
+    "areaName": "Organização e Arquitetura de Computadores",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma equipe de arquitetura está projetando o subsistema de memória e acelerando o módulo crítico de processamento de uma estação de trabalho de 32 bits (endereçamento a byte).\n\nCom base nos conceitos de hierarquia de memória, mapeamento de cache e avaliação de desempenho (Lei de Amdahl), responda aos itens a seguir.\na) A estação terá uma cache L1 de 32 KB com blocos de 32 bytes e mapeamento associativo por conjunto de 8 vias (8-way set-associative). Calcule, passo a passo, o número total de linhas, o número de conjuntos e a quantidade de bits destinada aos campos Offset, Índice e Tag em um endereço físico de 32 bits. (valor: 5,0 pontos)\nb) Em um benchmark padrão, 60% do tempo de execução original de um programa ocorre em operações de multiplicação matricial. Se um coprodutor vetorial acelerar exclusivamente essas operações em 4×, mantendo o restante do programa inalterado, calcule o Speedup global obtido pela Lei de Amdahl e explique o limite assintótico de ganho caso a aceleração do coprodutor tendesse ao infinito. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
+    "discursiveRubric": "a) Dimensionamento da Cache L1 (5,0 pontos):\n- Número de linhas: 32 KB / 32 B = 32 768 / 32 = 1 024 linhas (2¹⁰). (1,0 ponto)\n- Número de conjuntos (8-way): 1 024 / 8 = 128 conjuntos (2⁷). (1,0 ponto)\n- Bits de Offset: log₂(32) = 5 bits. (1,0 ponto)\n- Bits de Índice (Set): log₂(128) = 7 bits. (1,0 ponto)\n- Bits de Tag: 32 − (7 + 5) = 20 bits. (1,0 ponto)\n\nb) Lei de Amdahl e Limite Assintótico (5,0 pontos):\n- Fórmula: Speedup = 1 / [(1 − f) + (f / S)], com f = 0,60 e S = 4. (1,0 ponto)\n- Cálculo: Speedup = 1 / [(1 − 0,60) + (0,60 / 4)] = 1 / (0,40 + 0,15) = 1 / 0,55 = 20 / 11 ≈ 1,82×. (2,0 pontos)\n- Limite assintótico (S → ∞): o termo f / S → 0, logo o Speedup máximo teórico é limitado pela fração não otimizada: Speedup_máx = 1 / (1 − 0,60) = 1 / 0,40 = 2,5×. Explicação conceitual clara de que a parte sequencial/não acelerada impõe o teto de desempenho. (2,0 pontos)",
+    "imageUrls": [],
+    "topics": ["Memória Cache", "Mapeamento Associativo por Conjunto", "Lei de Amdahl"]
+  }
+]

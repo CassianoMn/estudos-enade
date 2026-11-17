@@ -1,0 +1,450 @@
+[
+  {
+    "id": "bd-inedita-01",
+    "label": "Inédita ENADE 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma instituição financeira decide migrar o armazenamento físico de seu banco de dados relacional para um novo arranjo de discos e reorganizar índices clusterizados e arquivos de log, sem alterar os nomes das tabelas lógicas nem as visões consumidas pelos aplicativos de internet banking. Essa capacidade de evoluir o armazenamento sem reescrever aplicações é um dos objetivos centrais da arquitetura ANSI/X3/SPARC (Arquitetura dos Três Esquemas).\n\nConsiderando a arquitetura de Sistemas Gerenciadores de Banco de Dados (SGBDs), avalie as afirmações a seguir.\n\nI. O esquema interno descreve os detalhes físicos de armazenamento, caminhos de acesso e estruturas de arquivos do banco de dados.\nII. O esquema externo apresenta a descrição global unificada de todas as entidades, relacionamentos e restrições de integridade para toda a organização.\nIII. A independência física de dados permite modificar o esquema interno sem exigir alterações no esquema conceitual ou nos programas de aplicação.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta. A afirmação III também está correta, pois descreve exatamente o conceito de independência física na arquitetura ANSI/SPARC."
+      },
+      {
+        "letter": "B",
+        "text": "I e III, apenas.",
+        "explanation": "Correta. O esquema interno trata da camada física (I) e a independência física protege o esquema conceitual e as aplicações contra alterações no armazenamento físico (III)."
+      },
+      {
+        "letter": "C",
+        "text": "II, apenas.",
+        "explanation": "Incorreta. A afirmação II descreve o esquema conceitual, e não o esquema externo (que corresponde às visões parciais de grupos de usuários)."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta. O item II confunde esquema externo com esquema conceitual."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. A definição apresentada no item II pertence ao nível conceitual, tornando o item falso."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A alternativa B é a correta. Na arquitetura ANSI/SPARC: o esquema interno define o armazenamento físico (item I verdadeiro); o esquema conceitual define a visão lógica global de toda a base (tornando o item II falso, pois atribui isso ao esquema externo); e a independência física garante que mudanças internas não quebrem o nível conceitual nem as aplicações (item III verdadeiro).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Arquitetura ANSI/SPARC",
+      "Independência de Dados",
+      "Conceitos Básicos de SGBDs"
+    ]
+  },
+  {
+    "id": "bd-inedita-02",
+    "label": "Inédita ENADE 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em um sistema acadêmico modelado por meio de um Diagrama Entidade-Relacionamento (DER), definiram-se as seguintes regras de negócio:\n\n- Cada `DOCENTE` (`id_docente`, `nome`, `titulacao`) pode possuir zero ou vários `telefones` (atributo multivalorado) e lecionar em várias `DISCIPLINAS` (`cod_disc`, `nome_disc`), assim como uma `DISCIPLINA` pode ser lecionada por vários `DOCENTES` ao longo dos semestres (`semestre`).\n- Cada `DOCENTE` pode cadastrar zero ou vários `DEPENDENTES` (`num_dep`, `nome_dep`, `parentesco`), modelados como entidade fraca de `DOCENTE`.\n- A entidade `USUARIO` (`id_usuario`, `nome`, `email`) é superclasse das subclasses disjuntas `ALUNO` (`ra`) e `TECNICO` (`siape`), mapeadas pela estratégia de tabela para superclasse e tabelas específicas para subclasses.\n\nCom base nas regras clássicas de mapeamento ER para o Modelo Relacional, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O atributo multivalorado `telefones` deve ser mapeado por meio de três colunas fixas (`tel1`, `tel2`, `tel3`) diretamente na tabela `DOCENTE`.",
+        "explanation": "Incorreta. Atributos multivalorados devem gerar uma nova tabela com chave estrangeira para a entidade proprietária, formando chave primária composta."
+      },
+      {
+        "letter": "B",
+        "text": "A entidade fraca `DEPENDENTE` deve ser mapeada com chave primária simples composta apenas por `num_dep`, sem chave estrangeira para `DOCENTE`.",
+        "explanation": "Incorreta. A entidade fraca depende da chave primária da entidade forte; sua PK é composta por `(id_docente, num_dep)`, sendo `id_docente` também FK."
+      },
+      {
+        "letter": "C",
+        "text": "As tabelas `ALUNO` e `TECNICO` devem replicar integralmente os atributos `nome` e `email` da superclasse `USUARIO`, dispensando qualquer relacionamento com a tabela `USUARIO`.",
+        "explanation": "Incorreta. Na estratégia de tabela para superclasse + tabelas para subclasses, `USUARIO` armazena os atributos comuns (`id_usuario`, `nome`, `email`), enquanto `ALUNO` e `TECNICO` armazenam apenas `id_usuario` (PK/FK) e seus atributos específicos."
+      },
+      {
+        "letter": "D",
+        "text": "O relacionamento muitos-para-muitos entre `DOCENTE` e `DISCIPLINA` gera uma tabela associativa contendo as chaves estrangeiras `id_docente` e `cod_disc` (além de `semestre`), e o atributo multivalorado `telefones` origina uma nova tabela `DOCENTE_TELEFONE(id_docente, telefone)`.",
+        "explanation": "Correta. Relacionamentos N:N exigem tabela associativa com FKs das entidades participantes (e discriminantes como `semestre` na PK composta), e atributos multivalorados são mapeados em relação própria."
+      },
+      {
+        "letter": "E",
+        "text": "Para mapear o relacionamento muitos-para-muitos entre `DOCENTE` e `DISCIPLINA`, basta incluir uma chave estrangeira `cod_disc` na tabela `DOCENTE` e `id_docente` na tabela `DISCIPLINA`.",
+        "explanation": "Incorreta. FKs simples nas entidades originárias suportam apenas cardinalidade 1:N, não N:N, pois violariam a 1FN ao tentar guardar múltiplos valores."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "A alternativa D aplica corretamente as regras de mapeamento ER -> Relacional: relacionamentos N:N tornam-se tabelas associativas (com `id_docente`, `cod_disc` e `semestre`), atributos multivalorados geram uma tabela separada (`DOCENTE_TELEFONE`), entidades fracas recebem a PK da forte na própria PK composta e a estratégia superclasse/subclasse mantém atributos comuns na tabela pai.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Modelo Entidade-Relacionamento",
+      "Mapeamento ER-Relacional",
+      "Entidade Fraca e Especialização"
+    ]
+  },
+  {
+    "id": "bd-inedita-03",
+    "label": "Inédita ENADE 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Considere o esquema DDL simplificado abaixo para um sistema de gestão de projetos:\n\n```sql\nCREATE TABLE Departamento (\n    cod_dep INT PRIMARY KEY,\n    nome_dep VARCHAR(60) NOT NULL UNIQUE\n);\n\nCREATE TABLE Empregado (\n    matricula INT PRIMARY KEY,\n    cpf CHAR(11) NOT NULL UNIQUE,\n    nome VARCHAR(80) NOT NULL,\n    cod_dep INT NULL,\n    CONSTRAINT fk_emp_dep FOREIGN KEY (cod_dep)\n        REFERENCES Departamento (cod_dep)\n        ON DELETE SET NULL\n        ON UPDATE CASCADE\n);\n```\n\nConsiderando as restrições do modelo relacional e o comportamento definido no código SQL, avalie as afirmações a seguir.\n\nI. Caso um departamento seja removido da tabela `Departamento`, os empregados vinculados a ele terão o atributo `cod_dep` atualizado para `NULL`, preservando seus registros na tabela `Empregado`.\nII. Na tabela `Empregado`, tanto `matricula` quanto `cpf` são chaves candidatas, tendo sido `matricula` escolhida como chave primária.\nIII. A restrição `FOREIGN KEY` de `Empregado` impede que qualquer linha seja inserida nessa tabela com `cod_dep` igual a `NULL`.\nIV. Se o valor de `cod_dep` de um departamento existente for alterado na tabela `Departamento`, o SGBD propagará automaticamente o novo valor para as linhas correspondentes em `Empregado`.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, II e IV.",
+        "explanation": "Correta. `ON DELETE SET NULL` zera para `NULL` a FK ao excluir o departamento (I); `matricula` e `cpf` identificam unicamente a tupla (II); e `ON UPDATE CASCADE` propaga alterações de `cod_dep` (IV)."
+      },
+      {
+        "letter": "B",
+        "text": "I e III.",
+        "explanation": "Incorreta. O item III é falso: a coluna `cod_dep` foi declarada como `NULL` e a integridade referencial permite valores `NULL` na chave estrangeira quando a participação é opcional."
+      },
+      {
+        "letter": "C",
+        "text": "II e III.",
+        "explanation": "Incorreta. O item III confunde integridade de entidade (PK não pode ser NULL) com integridade referencial (FK pode ser NULL se a coluna permitir)."
+      },
+      {
+        "letter": "D",
+        "text": "III e IV.",
+        "explanation": "Incorreta. O item III é falso, enquanto I e II são verdadeiros."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta. A inclusão do item III torna esta alternativa incorreta."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A alternativa A é a correta. A integridade referencial exige que uma FK não nula exista na tabela referenciada, mas permite `NULL` quando o relacionamento é opcional (o que invalida o item III). As ações `ON DELETE SET NULL` (I) e `ON UPDATE CASCADE` (IV) e a identificação das chaves candidatas (II) estão perfeitamente descritas.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Modelo Relacional",
+      "Integridade Referencial e Chaves",
+      "SQL DDL"
+    ]
+  },
+  {
+    "id": "bd-inedita-04",
+    "label": "Inédita ENADE 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Considere a relação `Alocacao(id_proj, id_func, horas, nome_proj, id_cliente, razao_social_cliente)`, cuja chave primária é composta por `(id_proj, id_func)`, e sobre a qual valem exatamente as seguintes dependências funcionais (DFs) não triviais:\n\n- `id_proj, id_func -> horas`\n- `id_proj -> nome_proj, id_cliente`\n- `id_cliente -> razao_social_cliente`\n\nPara eliminar todas as anomalias de inserção, remoção e modificação até alcançar a Terceira Forma Normal (3FN), um analista deve decompor `Alocacao`.\n\nAssinale a opção que apresenta corretamente a forma normal inicial da relação `Alocacao` e o conjunto de relações resultante da normalização até a 3FN (com chaves primárias sublinhadas por `#`).",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Está na 2FN; decomposição em `Alocacao(#id_proj, #id_func, horas, nome_proj, id_cliente)` e `Cliente(#id_cliente, razao_social_cliente)`.",
+        "explanation": "Incorreta. `Alocacao` não está na 2FN porque `nome_proj` e `id_cliente` dependem parcialmente de apenas `id_proj`."
+      },
+      {
+        "letter": "B",
+        "text": "Está na 1FN; decomposição em `Alocacao(#id_proj, #id_func, horas)` e `Projeto(#id_proj, nome_proj, id_cliente, razao_social_cliente)`.",
+        "explanation": "Incorreta. Essa decomposição alcança apenas a 2FN, pois `Projeto` ainda mantém a dependência transitiva `id_proj -> id_cliente -> razao_social_cliente`."
+      },
+      {
+        "letter": "C",
+        "text": "Está desnormalizada (fora da 1FN); decomposição em `Alocacao(#id_func, horas)`, `Projeto(#id_proj, nome_proj)` e `Cliente(#id_cliente, razao_social_cliente)`.",
+        "explanation": "Incorreta. Todos os atributos são atômicos (logo já está na 1FN), e a decomposição apresentada perde a associação entre projeto, funcionário e cliente."
+      },
+      {
+        "letter": "D",
+        "text": "Está na 2FN; decomposição em `Alocacao(#id_proj, #id_func, horas)`, `Projeto(#id_proj, nome_proj)` e `Cliente(#id_cliente, razao_social_cliente)`.",
+        "explanation": "Incorreta. Além de errar a forma normal inicial, a remoção de `id_cliente` de `Projeto` perde o relacionamento entre projeto e cliente."
+      },
+      {
+        "letter": "E",
+        "text": "Está na 1FN; decomposição em `Alocacao(#id_proj, #id_func, horas)`, `Projeto(#id_proj, nome_proj, id_cliente)` e `Cliente(#id_cliente, razao_social_cliente)`.",
+        "explanation": "Correta. `Alocacao` está apenas na 1FN (possui DFs parciais a partir de `id_proj` e transitiva via `id_cliente`). Na 2FN separa-se `Projeto`; na 3FN extrai-se `Cliente`, mantendo `id_cliente` como FK em `Projeto`."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "A alternativa E é a correta. Como todos os atributos têm valores atômicos, a tabela original já está na 1FN, mas viola a 2FN porque `nome_proj`, `id_cliente` e `razao_social_cliente` dependem apenas de `id_proj` (parte da PK). Ao extrair `Projeto(#id_proj, nome_proj, id_cliente, razao_social_cliente)`, chega-se à 2FN; em seguida, eliminando a dependência transitiva `id_cliente -> razao_social_cliente`, obtém-se `Projeto(#id_proj, nome_proj, id_cliente)` e `Cliente(#id_cliente, razao_social_cliente)` na 3FN (e também na FNBC, pois todo determinante passa a ser chave candidata).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Normalização (1FN, 2FN, 3FN)",
+      "Dependências Funcionais",
+      "Anomalias de Atualização"
+    ]
+  },
+  {
+    "id": "bd-inedita-05",
+    "label": "Inédita ENADE 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Considere duas relações em um banco de dados de controle de certificações de uma empresa de TI:\n\n- `Certificacao(id_func, id_trilha)`, que registra quais trilhas obrigatórias cada funcionário concluiu.\n- `TrilhaObrigatoria(id_trilha)`, que lista os códigos de todas as trilhas obrigatórias exigidas pela empresa.\n\nO diretor de engenharia solicitou uma expressão em Álgebra Relacional que retorne os identificadores (`id_func`) dos funcionários que concluíram **todas** as trilhas listadas em `TrilhaObrigatoria`.\n\nAssinale a opção que expressa corretamente essa consulta em Álgebra Relacional.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "π id_func (Certificacao ⋈ TrilhaObrigatoria)",
+        "explanation": "Incorreta. A junção natural seguida de projeção retorna funcionários que concluíram pelo menos uma trilha obrigatória, e não todas."
+      },
+      {
+        "letter": "B",
+        "text": "π id_func (Certificacao) - π id_func (TrilhaObrigatoria)",
+        "explanation": "Incorreta. Além de a semântica estar incorreta, as relações projetadas possuem atributos incompatíveis (`id_func` e `id_trilha`), violando a condição de *union compatibility*."
+      },
+      {
+        "letter": "C",
+        "text": "Certificacao ÷ TrilhaObrigatoria",
+        "explanation": "Correta. A operação de Divisão Relacional (`A ÷ B`) retorna exatamente os valores de `id_func` em `Certificacao` que estão associados a todas as tuplas de `id_trilha` presentes em `TrilhaObrigatoria`."
+      },
+      {
+        "letter": "D",
+        "text": "π id_func (σ id_trilha = TrilhaObrigatoria.id_trilha (Certificacao × TrilhaObrigatoria))",
+        "explanation": "Incorreta. O produto cartesiano seguido de seleção por igualdade equivale à junção natural, retornando quem fez ao menos uma trilha."
+      },
+      {
+        "letter": "E",
+        "text": "π id_func (Certificacao) ∩ π id_trilha (TrilhaObrigatoria)",
+        "explanation": "Incorreta. Não há compatibilidade de união entre códigos de funcionários e códigos de trilhas, nem a interseção expressa quantificação universal ('todos')."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A alternativa C é a correta. Consultas com quantificação universal ('todos os itens de B') são resolvidas classicamente pela operação de **Divisão Relacional** (`Certificacao ÷ TrilhaObrigatoria`), que equivale a `π_id_func(Certificacao) - π_id_func((π_id_func(Certificacao) × TrilhaObrigatoria) - Certificacao)`.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Álgebra Relacional",
+      "Divisão Relacional",
+      "Operações de Conjuntos"
+    ]
+  },
+  {
+    "id": "bd-inedita-06",
+    "label": "Inédita ENADE 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Um analista de dados administra as seguintes tabelas de uma plataforma de cursos online:\n\n- `Curso(id_curso, titulo, area)`\n- `Matricula(id_matricula, id_curso, id_aluno, valor_pago)`\n\nO analista precisa gerar um relatório com o título de **cada curso da área de `'Dados'`** e a **quantidade total de matrículas** registradas nele, garantindo que cursos dessa área com **zero matrículas** também apareçam no resultado com contagem `0`.\n\nAssinale a consulta SQL padrão que atende corretamente ao requisito.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "SELECT c.titulo, COUNT(m.id_matricula) AS total FROM Curso c INNER JOIN Matricula m ON c.id_curso = m.id_curso WHERE c.area = 'Dados' GROUP BY c.titulo;",
+        "explanation": "Incorreta. O `INNER JOIN` descarta os cursos que não possuem nenhuma matrícula associada."
+      },
+      {
+        "letter": "B",
+        "text": "SELECT c.titulo, COUNT(*) AS total FROM Curso c LEFT JOIN Matricula m ON c.id_curso = m.id_curso WHERE c.area = 'Dados' GROUP BY c.titulo;",
+        "explanation": "Incorreta. Embora preserve o curso no `LEFT JOIN`, `COUNT(*)` conta a linha resultante preenchida com `NULL` à direita, retornando `1` em vez de `0` para cursos sem matrículas."
+      },
+      {
+        "letter": "C",
+        "text": "SELECT c.titulo, COUNT(m.id_matricula) AS total FROM Curso c RIGHT JOIN Matricula m ON c.id_curso = m.id_curso GROUP BY c.titulo HAVING c.area = 'Dados';",
+        "explanation": "Incorreta. `RIGHT JOIN` prioriza `Matricula` (descartando cursos sem matrícula), além de filtrar `c.area` no `HAVING` sem que `c.area` esteja no `GROUP BY` ou agregada."
+      },
+      {
+        "letter": "D",
+        "text": "SELECT c.titulo, COUNT(m.id_matricula) AS total FROM Curso c LEFT JOIN Matricula m ON c.id_curso = m.id_curso WHERE c.area = 'Dados' GROUP BY c.id_curso, c.titulo;",
+        "explanation": "Correta. O `LEFT JOIN` mantém todos os cursos da área `'Dados'`, e `COUNT(m.id_matricula)` ignora valores `NULL`, retornando `0` quando não há matrículas; agrupar por `(c.id_curso, c.titulo)` evita ainda colisões de títulos homônimos."
+      },
+      {
+        "letter": "E",
+        "text": "SELECT c.titulo, SUM(m.id_matricula) AS total FROM Curso c LEFT JOIN Matricula m ON c.id_curso = m.id_curso WHERE c.area = 'Dados';",
+        "explanation": "Incorreta. Soma identificadores (`SUM`) em vez de contar (`COUNT`), além de omitir a cláusula `GROUP BY` obrigatória."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "A alternativa D é a correta. A combinação de `LEFT JOIN` com `COUNT(coluna_da_tabela_direita)` é o idioma padrão SQL para preservar registros sem correspondência e contabilizá-los como `0` (pois `COUNT(col)` ignora `NULL`, ao contrário de `COUNT(*)` que retornaria `1`).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "SQL Junções (LEFT JOIN)",
+      "Funções de Agregação (COUNT)",
+      "GROUP BY"
+    ]
+  },
+  {
+    "id": "bd-inedita-07",
+    "label": "Inédita ENADE 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Considere as tabelas `Cliente(id_cliente, nome, uf)` e `Pedido(id_pedido, id_cliente, valor, status)` com as seguintes instâncias atuais:\n\n**Cliente**\n| id_cliente | nome | uf |\n| :---: | :--- | :---: |\n| 1 | Ana | SE |\n| 2 | Bruno | BA |\n| 3 | Carla | SP |\n| 4 | Diego | NULL |\n\n**Pedido**\n| id_pedido | id_cliente | valor | status |\n| :---: | :---: | :---: | :--- |\n| 10 | 1 | 300.00 | 'PAGO' |\n| 11 | 2 | 150.00 | 'CANCELADO' |\n| 12 | NULL | 200.00 | 'PAGO' |\n\nObserve as duas consultas SQL abaixo:\n\n**Consulta 1:**\n```sql\nSELECT c.nome\nFROM Cliente c\nWHERE c.id_cliente NOT IN (SELECT p.id_cliente FROM Pedido p);\n```\n\n**Consulta 2:**\n```sql\nSELECT c.nome,\n       CASE\n           WHEN c.uf IN ('SE', 'BA') THEN 'NORDESTE'\n           WHEN c.uf = 'SP' THEN 'SUDESTE'\n       END AS regiao\nFROM Cliente c\nWHERE NOT EXISTS (\n    SELECT 1 FROM Pedido p WHERE p.id_cliente = c.id_cliente\n);\n```\n\nConsiderando a semântica da lógica de três valores (três estados: verdadeiro, falso e desconhecido/`NULL`) do padrão SQL, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A Consulta 1 retorna `Carla` e `Diego`; a Consulta 2 retorna `Carla` (`'SUDESTE'`) e `Diego` (`'SEM REGIAO'`).",
+        "explanation": "Incorreta. Por causa do `NULL` na linha `id_pedido = 12`, `NOT IN` avalia como `UNKNOWN` e a Consulta 1 retorna conjunto vazio; além disso, a Consulta 2 não possui cláusula `ELSE`."
+      },
+      {
+        "letter": "B",
+        "text": "A Consulta 1 retorna zero linhas devido à presença de `NULL` em `Pedido.id_cliente`; a Consulta 2 retorna `Carla` (`'SUDESTE'`) e `Diego` (`NULL`).",
+        "explanation": "Correta. `x NOT IN (1, 2, NULL)` equivale a `x <> 1 AND x <> 2 AND x <> NULL`, que resulta em `UNKNOWN` para todo `x`, retornando zero linhas na Consulta 1. Já `NOT EXISTS` não sofre esse efeito, retornando `Carla` e `Diego` — e como o `CASE` não tem `ELSE`, `Diego` (`uf = NULL`) recebe `NULL` em `regiao`."
+      },
+      {
+        "letter": "C",
+        "text": "A Consulta 1 retorna `Carla` e `Diego`; a Consulta 2 retorna apenas `Carla` (`'SUDESTE'`), pois `NOT EXISTS` descarta `Diego`.",
+        "explanation": "Incorreta. Tanto `NOT IN` foi mal avaliado quanto `NOT EXISTS` (`p.id_cliente = 4` é falso/desconhecido para todas as linhas de `Pedido`, portanto `EXISTS` é falso e `NOT EXISTS` é verdadeiro para `Diego`)."
+      },
+      {
+        "letter": "D",
+        "text": "Ambas as consultas retornam exatamente os mesmos clientes (`Carla` e `Diego`), diferenciando-se apenas pela coluna `regiao`.",
+        "explanation": "Incorreta. `NOT IN` e `NOT EXISTS` não são equivalentes quando a coluna da subconsulta contém valores `NULL`."
+      },
+      {
+        "letter": "E",
+        "text": "A Consulta 1 retorna apenas `Bruno`; a Consulta 2 lança erro de sintaxe por omitir a cláusula `ELSE` no `CASE`.",
+        "explanation": "Incorreta. A cláusula `ELSE` em uma expressão `CASE` é opcional (retornando `NULL` por padrão quando omitida)."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A alternativa B é a correta. Essa é uma armadilha clássica de SQL: `NOT IN` falha (retorna vazio) sempre que a subconsulta devolve ao menos um `NULL`, pois `val <> NULL` avalia para `UNKNOWN`. Por isso, `NOT EXISTS` é a alternativa segura. Adicionalmente, no `Searched CASE`, a ausência de `ELSE` faz o SGBD retornar `NULL` quando nenhuma condição `WHEN` é satisfeita.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "SQL Subconsultas (NOT IN vs NOT EXISTS)",
+      "Expressão CASE",
+      "Tratamento de Valores NULL"
+    ]
+  },
+  {
+    "id": "bd-inedita-08",
+    "label": "Inédita ENADE 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Na administração de SGBDs relacionais em produção, decisões envolvendo visões (*views*), índices e controle transacional impactam diretamente a segurança, o desempenho e a integridade dos dados.\n\nA respeito desses recursos, avalie as afirmações a seguir.\n\nI. Uma visão padrão criada com `CREATE VIEW` armazena uma cópia física independente das tabelas base, ocupando espaço equivalente em disco e não refletindo atualizações futuras nas tabelas originais.\nII. A criação de índices acelera consultas seletivas e junções ao reduzir operações de E/S em disco, porém exige custo adicional de manutenção durante operações de inserção, atualização e remoção.\nIII. A propriedade de Atomicidade das transações garante que, em caso de falha antes do `COMMIT`, um `ROLLBACK` ou aborto da transação desfaz todas as alterações parciais, evitando estado inconsistente.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "II e III, apenas.",
+        "explanation": "Correta. Índices aceleram leitura mas têm custo de escrita (II), e a atomicidade assegura execução 'tudo ou nada' nas transações (III)."
+      },
+      {
+        "letter": "B",
+        "text": "I, apenas.",
+        "explanation": "Incorreta. Uma visão padrão é uma tabela virtual cuja consulta é executada dinamicamente sobre as tabelas base, sem duplicar dados fisicamente."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Incorreta. O item I é falso sobre o funcionamento de visões padrão, enquanto III é verdadeiro."
+      },
+      {
+        "letter": "D",
+        "text": "III, apenas.",
+        "explanation": "Incorreta. O item II também é verdadeiro, pois reflete o compromisso clássico entre ganho de leitura e sobrecarga de escrita nos índices."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. O item I descreve erroneamente o comportamento de uma visão padrão."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A alternativa A é a correta. Uma visão padrão (`CREATE VIEW`) é uma tabela virtual que reflete em tempo real os dados das tabelas base (item I falso). Índices reduzem I/O em leituras, mas precisam ser atualizados em escritas (item II verdadeiro). A Atomicidade garante o princípio 'tudo ou nada' (item III verdadeiro).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Visões (Views)",
+      "Índices e Desempenho",
+      "Transações e Propriedades ACID"
+    ]
+  },
+  {
+    "id": "bd-inedita-09",
+    "label": "Inédita ENADE 2026 • Discursiva 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma clínica médica legada mantém seus registros de atendimentos em uma única relação não normalizada:\n\n`Atendimento_Legado(cod_consulta, cod_exame, data_consulta, id_medico, nome_medico, cod_esp, desc_esp, nome_exame, valor_exame, preparos_exame)`\n\nSabe-se que:\n- Em uma consulta (`cod_consulta`), podem ser solicitados vários exames (`cod_exame`), e um exame pode ser solicitado em várias consultas; logo, a chave primária composta é `(cod_consulta, cod_exame)`.\n- `data_consulta` e `id_medico` dependem apenas de `cod_consulta`.\n- `id_medico` determina `nome_medico` e `cod_esp`, enquanto `cod_esp` determina `desc_esp`.\n- `nome_exame` e `valor_exame` dependem apenas de `cod_exame`.\n- O campo `preparos_exame` armazena uma lista de instruções separadas por vírgula (ex.: `'Jejum 8h, Sem cafeína'`).\n\nCom base na teoria da Normalização, faça o que se pede nos itens a seguir.\n\na) Identifique as violações à 1FN, à 2FN e à 3FN presentes na relação `Atendimento_Legado`, explicitando as dependências funcionais parciais e transitivas envolvidas e um exemplo de anomalia resultante. (valor: 4,0 pontos)\nb) Apresente o esquema lógico relacional resultante da normalização completa até a **Terceira Forma Normal (3FN)**, indicando claramente as chaves primárias (PK) e chaves estrangeiras (FK) de todas as relações. (valor: 6,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão esperado abaixo, verificando se todas as três formas normais (1FN, 2FN e 3FN) foram tratadas e se nenhuma ligação referencial (FK) foi perdida na decomposição.",
+    "discursiveRubric": "Padrão de Resposta Esperado (Valor total: 10,0 pontos):\n\na) Identificação de violações e anomalias (4,0 pontos):\n- Violação à 1FN (1,0 pt): o atributo `preparos_exame` é multivalorado (não atômico), contendo múltiplos valores numa mesma célula.\n- Violação à 2FN (1,0 pt): existem dependências funcionais parciais em relação à chave composta `(cod_consulta, cod_exame)`: `cod_consulta -> data_consulta, id_medico, nome_medico, cod_esp, desc_esp` e `cod_exame -> nome_exame, valor_exame`.\n- Violação à 3FN (1,0 pt): existem dependências funcionais transitivas entre atributos não-chave: `cod_consulta -> id_medico -> (nome_medico, cod_esp)` e `cod_esp -> desc_esp`.\n- Exemplo de anomalia (1,0 pt): anomalia de inserção (não é possível cadastrar um novo médico ou exame sem haver uma consulta), anomalia de modificação (alterar o valor de um exame ou nome de especialidade exige alterar múltiplas linhas) ou anomalia de remoção (excluir a última consulta de uma especialidade apaga sua descrição).\n\nb) Esquema Relacional Normalizado até a 3FN (6,0 pontos):\n1. `Especialidade(#cod_esp, desc_esp)`\n2. `Medico(#id_medico, nome_medico, @cod_esp)` [FK `cod_esp` -> `Especialidade`]\n3. `Consulta(#cod_consulta, data_consulta, @id_medico)` [FK `id_medico` -> `Medico`]\n4. `Exame(#cod_exame, nome_exame, valor_exame)`\n5. `Exame_Preparo(#@cod_exame, #preparo)` [FK `cod_exame` -> `Exame`, resolve a 1FN de `preparos_exame`]\n6. `Consulta_Exame(#@cod_consulta, #@cod_exame)` [PK composta; FKs para `Consulta` e `Exame`]\n*(Obs.: aceita-se também `Preparo(#cod_preparo, desc_preparo)` + `Exame_Preparo(#@cod_exame, #@cod_preparo)` caso o candidato normalize ainda mais os textos de preparo.)*",
+    "imageUrls": [],
+    "topics": [
+      "Normalização (1FN, 2FN, 3FN)",
+      "Dependências Funcionais",
+      "Projeto Lógico Relacional"
+    ]
+  },
+  {
+    "id": "bd-inedita-10",
+    "label": "Inédita ENADE 2026 • Discursiva 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "01-banco-de-dados",
+    "areaName": "Banco de Dados",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Considere o seguinte esquema relacional de um sistema de comércio eletrônico (chaves primárias indicadas por `#` e estrangeiras por `@`):\n\n- `Cliente(#id_cliente, nome, email)`\n- `Produto(#id_produto, nome_produto, estoque, preco_unitario)`\n- `Pedido(#id_pedido, @id_cliente, data_pedido, status)`\n- `ItemPedido(#@id_pedido, #@id_produto, quantidade, preco_aplicado)`\n\nConsiderando esse esquema e os conceitos de SQL e controle transacional, responda aos itens a seguir.\n\na) Escreva uma consulta SQL que liste o `id_cliente`, o `nome` do cliente e o **valor total gasto** apenas pelos clientes cujo gasto acumulado em pedidos com `status = 'CONFIRMADO'` seja **estritamente superior a R$ 1.000,00**, ordenados do maior gasto para o menor. (valor: 5,0 pontos)\nb) Escreva o esboço de um bloco transacional em SQL (`BEGIN TRANSACTION`, `COMMIT` e `ROLLBACK`) que registre a inclusão de 1 item do produto `id_produto = 42` em um novo pedido (para `id_cliente = 7`, `quantidade = 3`) e dê baixa no estoque correspondente, verificando se o estoque resultante não ficou negativo; em seguida, explique o papel das propriedades **Atomicidade** e **Isolamento** nesse processo. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua solução SQL com o padrão de resposta abaixo, checando a sintaxe de junções, a diferença entre `WHERE` e `HAVING`, o controle transacional e a explicação conceitual das propriedades ACID.",
+    "discursiveRubric": "Padrão de Resposta Esperado (Valor total: 10,0 pontos):\n\na) Consulta SQL com JOIN, filtro, agrupamento e ordenação (5,0 pontos):\n```sql\nSELECT c.id_cliente,\n       c.nome,\n       SUM(ip.quantidade * ip.preco_aplicado) AS total_gasto\nFROM Cliente c\nINNER JOIN Pedido p      ON p.id_cliente = c.id_cliente\nINNER JOIN ItemPedido ip ON ip.id_pedido = p.id_pedido\nWHERE p.status = 'CONFIRMADO'\nGROUP BY c.id_cliente, c.nome\nHAVING SUM(ip.quantidade * ip.preco_aplicado) > 1000.00\nORDER BY total_gasto DESC;\n```\nCritérios: junção correta das três tabelas (1,5 pt); filtro `WHERE p.status = 'CONFIRMADO'` (1,0 pt); `GROUP BY c.id_cliente, c.nome` e cálculo `SUM(quantidade * preco_aplicado)` (1,0 pt); uso correto de `HAVING ... > 1000.00` (1,0 pt); `ORDER BY ... DESC` (0,5 pt).\n\nb) Bloco Transacional SQL e propriedades ACID (5,0 pontos):\n1. Bloco transacional (2,5 pts — aceitando variações válidas de dialeto como T-SQL ou PostgreSQL):\n```sql\nBEGIN TRANSACTION;\n    INSERT INTO Pedido (id_pedido, id_cliente, data_pedido, status)\n    VALUES (1001, 7, CURRENT_TIMESTAMP, 'CONFIRMADO');\n\n    INSERT INTO ItemPedido (id_pedido, id_produto, quantidade, preco_aplicado)\n    SELECT 1001, id_produto, 3, preco_unitario FROM Produto WHERE id_produto = 42;\n\n    UPDATE Produto\n    SET estoque = estoque - 3\n    WHERE id_produto = 42 AND estoque >= 3;\n\n    -- Caso nenhuma linha seja atualizada (estoque insuficiente / @@ROWCOUNT = 0):\n    -- ROLLBACK;\n    -- Caso contrário:\nCOMMIT;\n```\n*(Também é válido verificar `SELECT estoque FROM Produto WHERE id_produto = 42` e executar `ROLLBACK` se `estoque < 0` após o `UPDATE` ou antes dele.)*\n\n2. Explicação das propriedades ACID (2,5 pts — 1,25 cada):\n- **Atomicidade:** garante o comportamento 'tudo ou nada'. Se a atualização do estoque falhar por saldo insuficiente ou queda do sistema após inserir `Pedido`, o `ROLLBACK`/abort desfaz todas as inserções anteriores, evitando um pedido confirmado sem baixa de estoque.\n- **Isolamento:** impede que duas transações concorrentes leiam simultaneamente o mesmo estoque (ex.: 3 unidades restantes) e aprovem duas vendas que levariam o estoque a ficar negativo (*condição de corrida* / leitura suja), garantindo serializabilidade ou isolamento adequado durante a execução.",
+    "imageUrls": [],
+    "topics": [
+      "SQL Consultas (JOIN, GROUP BY, HAVING)",
+      "Transações SQL (COMMIT, ROLLBACK)",
+      "Propriedades ACID"
+    ]
+  }
+]

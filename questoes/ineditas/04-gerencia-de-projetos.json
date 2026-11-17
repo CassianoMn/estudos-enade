@@ -1,0 +1,451 @@
+[
+  {
+    "id": "gp-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma empresa de desenvolvimento de software de médio porte está reestruturando sua operação de tecnologia para executar simultaneamente projetos estratégicos de transformação digital sem perder os departamentos especializados de Banco de Dados, Segurança e Arquitetura. Durante a transição, um analista de sistemas alocado a um projeto reclama que recebe ordens conflitantes de seu chefe de departamento e do responsável pelo projeto. Considerando as estruturas organizacionais descritas na literatura de Gerência de Projetos (PMI/PMBOK), assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Em uma organização puramente funcional, o gerente de projetos possui autoridade total sobre o orçamento e direciona diretamente o trabalho cotidiano de todos os membros da equipe.",
+        "explanation": "Incorreta. Na estrutura funcional, o gerente funcional detém a autoridade sobre recursos, orçamento e direcionamento do trabalho; o gerente de projetos tem autoridade baixa ou nula."
+      },
+      {
+        "letter": "B",
+        "text": "Na estrutura matricial, a dupla subordinação entre gerentes funcionais e gerentes de projetos exige maior esforço de gerenciamento de integração, sendo que, em uma estrutura funcional pura, quem direciona o trabalho do colaborador é o gerente funcional.",
+        "explanation": "Correta. A organização matricial combina eixos funcional e por projetos, gerando dupla subordinação e elevada demanda por gerenciamento de integração; já na estrutura funcional, o poder de direcionar trabalho pertence ao gerente funcional."
+      },
+      {
+        "letter": "C",
+        "text": "Em uma estrutura matricial fraca, o facilitador de projetos (expeditor) possui autoridade formal equivalente à de um diretor funcional e toma decisões autônomas sobre alterações de escopo e demissões.",
+        "explanation": "Incorreta. O facilitador de projetos (project expeditor) atua primordialmente como assistente de comunicação e não possui autoridade para tomar decisões autônomas, diferentemente de um gerente de projetos pleno."
+      },
+      {
+        "letter": "D",
+        "text": "Em uma organização projetizada, os membros da equipe mantêm vínculo permanente garantido em seus departamentos originais, eliminando qualquer risco de desmobilização ao término do projeto.",
+        "explanation": "Incorreta. Na organização projetizada, a equipe trabalha dedicada e com lealdade ao projeto, porém uma desvantagem clássica é que, ao encerrar o projeto, os profissionais nem sempre têm um departamento funcional de origem para retornar."
+      },
+      {
+        "letter": "E",
+        "text": "O Termo de Abertura do Projeto (Project Charter) deve ser elaborado e assinado exclusivamente pelo gerente de projetos durante a fase de encerramento, após a aprovação da linha de base de custos.",
+        "explanation": "Incorreta. O Termo de Abertura é criado na fase de Iniciação e emitido/autorizado pelo patrocinador (sponsor), conferindo autoridade ao gerente de projetos antes mesmo da elaboração do orçamento detalhado no Planejamento."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A estrutura matricial (especialmente balanceada e forte) caracteriza-se pela dupla subordinação ao gerente funcional e ao gerente de projetos, o que amplia a necessidade de gerenciamento de integração e gestão de conflitos. Em contraste, na estrutura funcional pura o gerente funcional concentra a autoridade para alocar e direcionar a equipe.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Estruturas Organizacionais",
+      "Papel e Autoridade do Gerente de Projetos",
+      "Iniciação e Termo de Abertura"
+    ]
+  },
+  {
+    "id": "gp-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Um gerente de projetos de Sistemas de Informação acompanha a implantação de um portal corporativo cujo Orçamento no Término (ONT/BAC) aprovado é de R$ 200.000,00 e prazo total de 6 meses. Ao final do 3º mês, o cronograma previa que 50% do trabalho estaria concluído. Contudo, a medição física das entregas mostrou que apenas 40% do trabalho foi efetivamente realizado, enquanto o departamento financeiro registrou um gasto acumulado de R$ 100.000,00. Considerando os conceitos de Gerenciamento de Valor Agregado (EVM) e assumindo que a eficiência de custos observada até o momento se manterá até o final (variação típica), qual é o diagnóstico correto do projeto no 3º mês?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O projeto está no orçamento (VC = R$ 0,00) e atrasado (IDP = 0,80), com Estimativa no Término (ENT) igual a R$ 200.000,00.",
+        "explanation": "Incorreta. Comparar apenas o gasto previsto (R$ 100.000) com o Custo Real (R$ 100.000) ignora o Valor Agregado. Como VA = R$ 80.000 e CR = R$ 100.000, há estouro de custos (VC = -R$ 20.000)."
+      },
+      {
+        "letter": "B",
+        "text": "O projeto apresenta Variação de Custo (VC) de -R$ 20.000,00, IDC = 1,25 e Estimativa no Término (ENT) de R$ 160.000,00.",
+        "explanation": "Incorreta. O IDC foi invertido (CR/VA em vez de VA/CR). A fórmula correta é IDC = VA / CR = 80.000 / 100.000 = 0,80."
+      },
+      {
+        "letter": "C",
+        "text": "O projeto apresenta Variação de Prazo (VPr) de +R$ 20.000,00, IDP = 1,25 e Estimativa para Terminar (EPT) de R$ 120.000,00.",
+        "explanation": "Incorreta. Como 40% foi executado frente a 50% planejados, o projeto está atrasado: VPr = VA - VP = 80.000 - 100.000 = -R$ 20.000,00 e IDP = 0,80."
+      },
+      {
+        "letter": "D",
+        "text": "O projeto está atrasado e acima do orçamento (IDC = 0,80 e IDP = 0,80), com Estimativa no Término (ENT) de R$ 250.000,00 e Estimativa para Terminar (EPT) de R$ 150.000,00.",
+        "explanation": "Correta. VP = 50% × 200.000 = 100.000; VA = 40% × 200.000 = 80.000; CR = 100.000. Logo, IDC = 80.000/100.000 = 0,80 e IDP = 80.000/100.000 = 0,80. Na tendência típica, ENT = ONT / IDC = 200.000 / 0,80 = R$ 250.000,00, restando gastar EPT = ENT - CR = 250.000 - 100.000 = R$ 150.000,00."
+      },
+      {
+        "letter": "E",
+        "text": "O projeto está atrasado (IDP = 0,80), mas dentro da eficiência de custos esperada, exigindo EPT de R$ 100.000,00 para concluir dentro do ONT original.",
+        "explanation": "Incorreta. Para concluir no ONT de R$ 200.000 já tendo gasto R$ 100.000, restariam R$ 100.000, mas com eficiência de custo IDC = 0,80 (mantendo a tendência típica), o custo restante projetado é R$ 150.000,00."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Calculando os três parâmetros do EVM no 3º mês: VP = 50% × R$ 200.000 = R$ 100.000; VA = 40% × R$ 200.000 = R$ 80.000; CR = R$ 100.000. Assim: VC = VA - CR = -R$ 20.000; VPr = VA - VP = -R$ 20.000; IDC = VA / CR = 0,80; IDP = VA / VP = 0,80. Como ambos os índices são menores que 1, o projeto está acima do orçamento e atrasado. Mantida a eficiência atual, ENT = ONT / IDC = 200.000 / 0,80 = R$ 250.000,00 e EPT = ENT - CR = R$ 150.000,00.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Gerenciamento de Valor Agregado (EVM)",
+      "Custos e Finanças em Projetos",
+      "Indicadores IDC, IDP, ENT e EPT"
+    ]
+  },
+  {
+    "id": "gp-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "A equipe de planejamento de um projeto de migração de banco de dados em nuvem elaborou a rede de precedências (PDM, dependências Término-para-Início) e aplicou a técnica PERT de três pontos (Otimista O, Mais Provável M e Pessimista P, em dias) conforme a tabela abaixo:\n\n- Atividade A (Predecessoras: nenhuma): O = 2, M = 4, P = 6\n- Atividade B (Predecessoras: A): O = 3, M = 6, P = 9\n- Atividade C (Predecessoras: A): O = 2, M = 3, P = 10\n- Atividade D (Predecessoras: B): O = 4, M = 5, P = 6\n- Atividade E (Predecessoras: C): O = 3, M = 4, P = 11\n- Atividade F (Predecessoras: D, E): O = 1, M = 2, P = 3\n\nCom base no cálculo da duração esperada PERT (distribuição Beta) e do Método do Caminho Crítico (CPM), avalie as afirmações a seguir:\n\nI. O caminho crítico do projeto é A → B → D → F, com duração esperada total de 17 dias.\nII. A atividade C apresenta duração esperada de 4 dias e possui folga total de 2 dias, podendo atrasar até 2 dias sem comprometer a data de término do projeto.\nIII. Para obter a duração esperada de uma atividade na distribuição Beta do PERT, calcula-se (O + M + P) / 3, e o desvio-padrão do caminho crítico é a soma direta dos desvios-padrão individuais das atividades críticas.\nIV. Caso a empresa deseje reduzir a duração total do projeto executando parte da atividade D em paralelo com a atividade B (fast tracking), essa decisão tende a aumentar o risco e a probabilidade de retrabalho.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e III.",
+        "explanation": "Incorreta. III está errada pois a fórmula Beta do PERT é (O + 4M + P) / 6 (a média simples é da distribuição triangular), e o desvio-padrão do caminho é a raiz quadrada da soma das variâncias, não a soma direta dos desvios."
+      },
+      {
+        "letter": "B",
+        "text": "II e III.",
+        "explanation": "Incorreta. III apresenta fórmulas incorretas para distribuição Beta e combinação de desvios-padrão, além de omitir I e IV que são verdadeiras."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. A afirmação III contém dois erros conceituais graves sobre PERT (fórmula Beta e soma direta de desvios-padrão)."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. I está correta e III está incorreta."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e IV.",
+        "explanation": "Correta. Usando Te = (O + 4M + P)/6: A=4, B=6, C=4, D=5, E=5, F=2. Caminho A-B-D-F = 4+6+5+2 = 17 dias (crítico); Caminho A-C-E-F = 4+4+5+2 = 15 dias (folga total = 17-15 = 2 dias para C e E). Fast tracking paraleliza atividades sequenciais elevando riscos e retrabalho."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Aplicando Te = (O + 4M + P) / 6: Te(A) = (2+16+6)/6 = 4; Te(B) = (3+24+9)/6 = 6; Te(C) = (2+12+10)/6 = 4; Te(D) = (4+20+6)/6 = 5; Te(E) = (3+16+11)/6 = 5; Te(F) = (1+8+3)/6 = 2. O caminho A-B-D-F soma 17 dias (caminho crítico, afirmativa I correta). O caminho paralelo A-C-E-F soma 15 dias, conferindo folga total de 2 dias às atividades C e E (afirmativa II correta). A afirmativa III erra ao citar média triangular em vez de (O+4M+P)/6 e ao somar desvios diretamente em vez de somar variâncias. A afirmativa IV descreve corretamente o efeito do paralelismo (fast tracking).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "PERT (Estimativa de Três Pontos)",
+      "Método do Caminho Crítico (CPM)",
+      "Diagrama de Precedência (PDM)",
+      "Compressão de Cronograma (Fast Tracking)"
+    ]
+  },
+  {
+    "id": "gp-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "O Guia PMBOK evoluiu de uma estrutura prescritiva centrada em processos (6ª edição) para uma abordagem baseada em princípios e domínios de desempenho (7ª edição) e, na sua 8ª edição (2026), consolidou um modelo híbrido equilibrado orientado a valor, mantendo flexibilidade ágil ao mesmo tempo em que reintroduz 40 processos com entradas, ferramentas e saídas (ITTOs). A respeito da reorganização estrutural promovida pelo PMBOK 8ª edição em comparação com o modelo clássico de 10 Áreas de Conhecimento e 49 processos, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As 10 Áreas de Conhecimento formais foram substituídas por 7 Domínios de Desempenho; a antiga área de Qualidade foi absorvida pelo domínio de Escopo, Comunicações foi integrada ao domínio de Partes Interessadas e Aquisições foi consolidada no processo Plan Sourcing Strategy dentro do domínio de Governança.",
+        "explanation": "Correta. O PMBOK 8 substituiu as 10 Áreas de Conhecimento por 7 Domínios de Desempenho (Governança, Escopo, Cronograma, Finanças, Partes Interessadas, Recursos e Riscos), incorporando Qualidade em Escopo, Comunicações em Partes Interessadas e Aquisições em Governança (Plan Sourcing Strategy)."
+      },
+      {
+        "letter": "B",
+        "text": "O PMBOK 8 eliminou completamente o conceito de processos e ITTOs, adotando exclusivamente 12 princípios abstratos e proibindo o uso de diagramas de rede e cronogramas preditivos.",
+        "explanation": "Incorreta. Essa ruptura radical ocorreu na 7ª edição; a 8ª edição justamente resgata 40 processos práticos com ITTOs dentro de um modelo híbrido que aceita ciclos ágeis, preditivos ou híbridos."
+      },
+      {
+        "letter": "C",
+        "text": "A antiga área de Integração foi extinta sem substituto e o domínio de Aquisições tornou-se o maior domínio do PMBOK 8, concentrando sozinho os processos de contratação, finanças e qualidade.",
+        "explanation": "Incorreta. A antiga Integração foi substituída pelo domínio de Governança (que também absorveu Aquisições em um único processo), enquanto Custos evoluiu para Finanças e Qualidade foi absorvida por Escopo."
+      },
+      {
+        "letter": "D",
+        "text": "Os 5 Grupos de Processos foram expandidos para 10 Grupos estritamente sequenciais, tornando obrigatório concluir toda a execução antes de iniciar qualquer atividade de monitoramento.",
+        "explanation": "Incorreta. Os 5 grupos tradicionais passaram a ser tratados como 5 Áreas de Foco de caráter não sequencial e adaptável."
+      },
+      {
+        "letter": "E",
+        "text": "A redução de 49 para 40 processos decorreu da exclusão definitiva das práticas de gestão de riscos e gestão de recursos humanos do escopo de atuação do gerente de projetos.",
+        "explanation": "Incorreta. Riscos e Recursos permanecem como Domínios de Desempenho próprios no PMBOK 8; a redução de processos veio da fusão de tarefas microgerenciais (como unir Desenvolver Equipe e Gerenciar Equipe em Lead the Team, ou os processos de cronograma em Develop Schedule)."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Na 8ª edição do PMBOK, o PMI adotou um modelo híbrido equilibrado com 6 princípios norteadores, 7 Domínios de Desempenho (Governança, Escopo, Cronograma, Finanças, Partes Interessadas, Recursos e Riscos), 5 Áreas de Foco não sequenciais e 40 processos. Nesse rearranjo, Governança substituiu Integração e absorveu Aquisições (Plan Sourcing Strategy), Escopo absorveu Qualidade, Partes Interessadas absorveu Comunicações e Custos evoluiu para Finanças.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "PMBOK 8ª Edição",
+      "Domínios de Desempenho",
+      "Evolução da Gestão de Projetos"
+    ]
+  },
+  {
+    "id": "gp-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Durante a execução de um sistema de prontuário eletrônico para uma rede de clínicas, um desenvolvedor sênior decidiu implementar, por conta própria e sem solicitação do cliente nem registro de mudança, um módulo extra de geração de gráficos 3D. Na mesma semana, a equipe de auditoria interna constatou que os desenvolvedores não estavam seguindo o checklist definido para revisão de código em pull requests, enquanto a equipe de testes realizava inspeções nos módulos concluídos antes da homologação. À luz das boas práticas de gerenciamento de escopo e qualidade, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A inclusão do módulo de gráficos 3D exemplifica a Regra dos 100% da EAP, pois demonstra proatividade da equipe para enriquecer o pacote de trabalho sem alterar a linha de base.",
+        "explanation": "Incorreta. Adicionar funcionalidades não solicitadas e fora da EAP caracteriza Gold Plating (banho de ouro), prática indesejada que introduz riscos e custos de manutenção não autorizados e viola a Regra dos 100% da EAP."
+      },
+      {
+        "letter": "B",
+        "text": "A verificação do cumprimento do checklist de revisão de código no processo de desenvolvimento pertence ao Controle da Qualidade, enquanto os testes das entregas funcionais pertencem ao Planejamento de Custos.",
+        "explanation": "Incorreta. Auditar a aderência aos processos definidos é função da Garantia da Qualidade (Gerenciar a Qualidade), ao passo que inspecionar/testar as entregas produzidas é função do Controle da Qualidade."
+      },
+      {
+        "letter": "C",
+        "text": "A inclusão não autorizada do módulo 3D configura gold plating (que deve ser evitado por gerar riscos e custos ocultos não validados), enquanto a auditoria de aderência ao checklist de revisão pertence à Garantia da Qualidade e a inspeção dos módulos entregues pertence ao Controle da Qualidade.",
+        "explanation": "Correta. Gold plating é entregar extras não solicitados além do escopo aprovado; Garantia da Qualidade foca em assegurar que os processos estejam sendo seguidos adequadamente; e Controle da Qualidade foca em verificar/inspecionar os entregáveis específicos contra os requisitos."
+      },
+      {
+        "letter": "D",
+        "text": "Qualidade e Grau (Grade) são conceitos sinônimos; portanto, um sistema simples com poucas funcionalidades avançadas sempre possui baixa qualidade de software.",
+        "explanation": "Incorreta. Qualidade mede o atendimento aos requisitos e ausência de defeitos, enquanto Grau classifica entregas com funcionalidades diferentes. Um software simples (grau baixo) e livre de defeitos possui alta qualidade."
+      },
+      {
+        "letter": "E",
+        "text": "Para evitar scope creep, o dicionário da EAP deve omitir critérios de aceitação dos pacotes de trabalho, deixando-os implícitos para negociação informal durante o encerramento.",
+        "explanation": "Incorreta. O Dicionário da EAP deve explicitar detalhadamente a descrição e os critérios de aceitação de cada pacote de trabalho justamente para prevenir ambiguidades e scope creep."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Entregar funcionalidades extras não solicitadas pela equipe técnica denomina-se gold plating e deve ser evitado porque não passou por controle de mudanças e gera esforço, risco e manutenção sem valor validado. Na qualidade, a Garantia da Qualidade avalia e audita os processos (checklist de pull requests), enquanto o Controle da Qualidade inspeciona e testa as entregas/produtos finais.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Gerenciamento de Escopo e EAP",
+      "Gold Plating vs. Scope Creep",
+      "Garantia vs. Controle da Qualidade"
+    ]
+  },
+  {
+    "id": "gp-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em um projeto de desenvolvimento de plataforma de pagamentos digitais, o escopo inicial ainda apresenta elevada incerteza técnica e regulatória, exigindo contratação de consultoria especializada externa e plano formal de tratamento de riscos para falhas de integração bancária.\n\nConsiderando o gerenciamento de riscos e aquisições, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Ao contratar um fornecedor por meio de contrato de Preço Fixo Garantido (FFP) quando o escopo ainda é instável e sujeito a mudanças constantes, o comprador reduz o risco financeiro sobre o próprio orçamento, mas tende a pagar prêmios de risco elevados ou enfrentar aditivos contratuais frequentes\n\nPORQUE\n\nII. Nos contratos de Preço Fixo, o risco financeiro de variação de custos recai principalmente sobre o fornecedor (vendedor), diferentemente dos contratos de Custos Reembolsáveis, nos quais o risco de custos recai sobre o comprador.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Incorreta? Espere: vamos verificar cuidadosamente! Na I: em escopo instável, FFP protege o orçamento base do comprador, mas gera prêmios de risco no preço inicial e aditivos/disputas a cada mudança; na II: no Preço Fixo o risco de custo recai sobre o fornecedor, e no Custo Reembolsável sobre o comprador. Isso justifica por que o fornecedor embute margem/prêmio de risco ou cobra aditivos em escopo incerto! Logo A vs B — atenção à letra correta planejada."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta. A alocação do risco de custo sobre o fornecedor nos contratos de Preço Fixo (II) explica diretamente por que o fornecedor cobra prêmios de risco altos ou exige aditivos quando o escopo é instável (I)."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II, uma proposição falsa.",
+        "explanation": "Incorreta. A asserção II está correta quanto à distribuição de risco entre contratos de Preço Fixo e Custos Reembolsáveis."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II, uma proposição verdadeira.",
+        "explanation": "Incorreta. A asserção I descreve corretamente o efeito adverso de usar FFP em escopo indefinido."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. Ambas as proposições são verdadeiras e mantêm relação causal direta."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Ambas as asserções são verdadeiras e a segunda justifica a primeira. Como nos contratos de Preço Fixo (FFP) o risco financeiro por desvios de custo pertence ao fornecedor (Asserção II), quando o comprador tenta utilizá-lo em cenários de escopo incerto e volátil, o fornecedor protege-se embutindo margens de contingência elevadas na proposta inicial e negociando aditivos a cada alteração (Asserção I). Por isso, para escopos de alta incerteza e P&D, contratos de Custos Reembolsáveis ou Tempo e Material com teto são mais indicados.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Gerenciamento de Aquisições e Contratos",
+      "Gerenciamento de Riscos",
+      "Alocação de Risco Financeiro"
+    ]
+  },
+  {
+    "id": "gp-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma instituição financeira brasileira está estruturando seu programa de implantação de sistemas baseados em Inteligência Artificial e precisa escolher os frameworks adequados para três frentes distintas: (1) garantir que o conselho de administração direcione os investimentos em IA e assegure conformidade com a LGPD, ISO/IEC 42001 e EU AI Act; (2) avaliar formalmente o nível de maturidade e capacidade dos processos organizacionais de IA; e (3) gerenciar o ciclo de vida completo de produtos e serviços digitais habilitados por IA, incluindo restauração rápida diante de falhas operacionais.\n\nConsiderando as atualizações do COBIT 2019 para IA, o CMMI AIM e o ITIL 5, assinale a associação correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Na frente (1), deve-se aplicar o ITIL 5 exclusivamente por meio da prática de Gerenciamento de Incidentes; na frente (2), o COBIT 2019 por meio dos 4 estágios Chaos & Risk a Value & Growth; e na frente (3), o CMMI AIM.",
+        "explanation": "Incorreta. Os 4 estágios (Chaos & Risk até Value & Growth) pertencem ao CMMI AIM, e a governança corporativa com conformidade regulatória e alinhamento estratégico é o foco do COBIT 2019."
+      },
+      {
+        "letter": "B",
+        "text": "O COBIT 2019 prescreve detalhadamente o fluxo passo a passo ('como fazer') de implementação de algoritmos de IA no domínio EDM, tornando desnecessária a separação entre governança e gerenciamento.",
+        "explanation": "Incorreta. O COBIT diz 'o quê' governar/gerenciar (e não 'como'), e um de seus princípios centrais é justamente separar Governança (domínio EDM, conselho) de Gerenciamento (APO, BAI, DSS, MEA, executivos)."
+      },
+      {
+        "letter": "C",
+        "text": "No ITIL 5, o objetivo principal do Gerenciamento de Incidentes é investigar a causa raiz definitiva de longo prazo antes de restabelecer o serviço, e a Service Value Chain foi substituída pelos 40 objetivos do COBIT.",
+        "explanation": "Incorreta. Restaurar o serviço normal o mais rápido possível é o propósito do Gerenciamento de Incidentes (causa raiz pertence a Problemas). Além disso, no ITIL 5 a Service Value Chain foi substituída pelo Product and Service Lifecycle Model (PSLM) de 8 atividades."
+      },
+      {
+        "letter": "D",
+        "text": "A frente (1) é atendida pelo COBIT 2019 aplicado à IA (separando governança em EDM de gerenciamento em APO, BAI, DSS e MEA, com processos como APO14, BAI03 e MEA03); a frente (2) é atendida pelo CMMI AIM (modelo dedicado de maturidade com 4 estágios, 8 domínios e appraisals obrigatórios em Data, Security e Development/Services); e a frente (3) é atendida pelo ITIL 5 (DPSM, PSLM, AI Capability Model 6C e restauração rápida em incidentes).",
+        "explanation": "Correta. Cada frente corresponde exatamente à vocação de cada framework atualizado: COBIT 2019 + IA para governança corporativa, alinhamento e compliance; CMMI AIM para avaliação formal (appraisal) de maturidade em IA; e ITIL 5 para gestão de produtos e serviços digitais AI-native."
+      },
+      {
+        "letter": "E",
+        "text": "As certificações CGAIS e CMAIS pertencem ao CMMI AIM, enquanto o AI Capability Model (6C) pertence ao Balanced Scorecard (BSC) para mensurar indicadores históricos (KGIs).",
+        "explanation": "Incorreta. CGAIS e CMAIS são certificações da ISACA para COBIT 2019 aplicado à IA, e o AI Capability Model (6C) é uma introdução do ITIL 5."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Nos materiais de governança e gestão de TI atualizados para IA: (1) o COBIT 2019 mapeia seus 5 domínios (EDM para governança; APO, BAI, DSS, MEA para gerenciamento) e objetivos como APO14 (dados), BAI03 (soluções/dados de treino) e MEA03 (conformidade com LGPD/EU AI Act/ISO 42001); (2) o CMMI AIM oferece um modelo dedicado de maturidade de IA com 4 estágios (Chaos & Risk -> Structure & Cohesion -> Validation & Trust -> Value & Growth), 8 domínios e 31 Practice Areas, exigindo Data, Security e Development e/ou Services em appraisals; (3) o ITIL 5 amplia ITSM para Gestão de Produtos e Serviços Digitais (DPSM) com o PSLM (8 atividades) e o AI Capability Model 6C.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Governança de TI (COBIT 2019 + IA)",
+      "Gestão de Serviços e Produtos Digitais (ITIL 5)",
+      "Maturidade em IA (CMMI AIM)"
+    ]
+  },
+  {
+    "id": "gp-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma equipe de desenvolvimento de software utiliza uma abordagem híbrida em um projeto de e-commerce: os marcos contratuais com fornecedores de pagamento seguem um cronograma macro preditivo, enquanto a construção das funcionalidades do aplicativo ocorre em Sprints de duas semanas com Scrum e um quadro visual com limite de trabalho em progresso (WIP) inspirado no Kanban. Nesse contexto, assinale a alternativa que apresenta uma prática ou responsabilidade correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O Product Owner (PO) é responsável por maximizar o valor do produto e gerenciar a priorização do Product Backlog, enquanto limitar o WIP no quadro ajuda a expor gargalos e reduzir o Lead Time e o Cycle Time.",
+        "explanation": "Correta. No Scrum, o PO é o responsável único por priorizar o Product Backlog e maximizar o valor entregue; no Kanban, limitar o WIP (Work in Progress) evita sobrecarga de tarefas iniciadas e não terminadas, reduzindo Lead Time/Cycle Time e evidenciando gargalos."
+      },
+      {
+        "letter": "B",
+        "text": "O Scrum Master atua como chefe funcional da equipe de desenvolvedores, devendo distribuir tarefas individuais diariamente na Daily Scrum e alterar o escopo da Sprint em andamento sempre que o cliente solicitar.",
+        "explanation": "Incorreta. O Scrum Master é um líder servidor/facilitador que remove impedimentos e zela pelo processo, não um chefe que distribui tarefas; a equipe (Developers) é autogerenciável e a Daily Scrum serve para inspeção e adaptação dos próprios desenvolvedores."
+      },
+      {
+        "letter": "C",
+        "text": "Na Sprint Retrospective, o foco exclusivo é demonstrar o incremento de software funcionando aos stakeholders externos para colher feedback sobre requisitos de negócio.",
+        "explanation": "Incorreta. A demonstração do incremento aos stakeholders ocorre na Sprint Review; a Sprint Retrospective foca em inspecionar o processo, as interações e ferramentas da equipe para planejar melhorias contínuas."
+      },
+      {
+        "letter": "D",
+        "text": "De acordo com o Manifesto Ágil, documentação, contratos, processos e planos não possuem nenhum valor e devem ser totalmente banidos em projetos híbridos.",
+        "explanation": "Incorreta. O Manifesto Ágil afirma que embora os itens à direita tenham valor, valorizam-se mais os itens à esquerda (indivíduos, software funcionando, colaboração e resposta a mudanças)."
+      },
+      {
+        "letter": "E",
+        "text": "Na prática de Extreme Programming (XP), a programação em pares e o Desenvolvimento Orientado a Testes (TDD) substituem a necessidade de integração contínua e refatoração.",
+        "explanation": "Incorreta. Programação em pares, TDD, integração contínua e refatoração são práticas complementares do XP que trabalham em conjunto para manter a qualidade e a adaptabilidade do código."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A alternativa A sintetiza corretamente a divisão de responsabilidades no Scrum (PO focado em valor e Product Backlog) e o mecanismo central do Kanban (controle explícito de WIP para otimizar fluxo e reduzir Lead/Cycle Time). As demais invertem eventos do Scrum (Review vs. Retrospective), papel do Scrum Master, princípios do Manifesto Ágil e práticas do XP.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Gestão Ágil (Scrum, Kanban, XP)",
+      "Abordagem Híbrida",
+      "Manifesto Ágil"
+    ]
+  },
+  {
+    "id": "gp-inedita-09",
+    "label": "Inédita 2026 • Discursiva 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma empresa de tecnologia firmou contrato para desenvolver um sistema de gestão hospitalar com Orçamento no Término (ONT/BAC) de R$ 400.000,00 e duração prevista de 8 meses. Ao final do 4º mês, quando o planejamento previa a entrega de 50% do escopo, o gerente de projetos consolidou os dados de desempenho e apurou: Valor Agregado (VA) = R$ 160.000,00 e Custo Real (CR) = R$ 200.000,00. Além disso, o patrocinador pressiona para entregar o sistema no prazo original, e parte da equipe técnica sugere paralelizar testes de integração com o desenvolvimento de módulos ainda inacabados, enquanto outra parte sugere contratar dois desenvolvedores adicionais para as atividades do caminho crítico.\n\nConsiderando o cenário apresentado e os fundamentos do Gerenciamento de Projetos, faça o que se pede nos itens a seguir.\n\na) Calcule os indicadores VC, VPr, IDC, IDP e a Estimativa no Término (ENT) considerando que a eficiência de custos atual se manterá até o fim do projeto, interpretando objetivamente a situação de prazo e custo no 4º mês. (valor: 5,0 pontos)\nb) Compare tecnicamente as duas alternativas de compressão de cronograma sugeridas pela equipe (paralelismo/fast tracking vs. compressão/crashing), apontando seus impactos sobre custo, risco e qualidade, e recomende como o gerente de projetos deve conduzir a decisão junto ao patrocinador por meio do controle integrado de mudanças. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "a) VP = 50% de R$ 400.000 = R$ 200.000,00; VA = R$ 160.000,00; CR = R$ 200.000,00. VC = VA - CR = -R$ 40.000,00; VPr = VA - VP = -R$ 40.000,00; IDC = VA / CR = 0,80; IDP = VA / VP = 0,80; ENT = ONT / IDC = 400.000 / 0,80 = R$ 500.000,00. O projeto encontra-se simultaneamente atrasado e acima do orçamento.\nb) Fast tracking (paralelizar testes e desenvolvimento) tende a não elevar custo direto imediato, mas aumenta significativamente riscos técnicos e retrabalho caso os módulos sofram alterações. Crashing (alocar mais dois devs no caminho crítico) reduz duração mantendo a sequência lógica, mas aumenta os custos (agravando um IDC já desfavorável de 0,80) e exige atenção à curva de aprendizado (Lei de Brooks). O GP deve submeter análise de impacto (custo, prazo, risco, qualidade) ao Comitê/Patrocinador via controle integrado de mudanças antes de alterar linhas de base ou usar reserva gerencial.",
+    "discursiveRubric": "a) (5,0 pontos)\n- Identificação correta de VP = R$ 200.000,00 (0,5 ponto).\n- Cálculos corretos de VC = -R$ 40.000,00 (0,75 ponto) e VPr = -R$ 40.000,00 (0,75 ponto).\n- Cálculos corretos de IDC = 0,80 (0,75 ponto) e IDP = 0,80 (0,75 ponto).\n- Cálculo correto de ENT = R$ 500.000,00 (0,75 ponto).\n- Interpretação coerente indicando atraso no cronograma (40% executados vs. 50% planejados) e estouro de custos, com projeção de gasto adicional de R$ 100.000,00 além do ONT se não houver ação corretiva (0,75 ponto).\n\nb) (5,0 pontos)\n- Identificação e análise correta do paralelismo (fast tracking): execução simultânea de atividades originalmente sequenciais, sem aumento direto imediato de mão de obra, mas com aumento elevado de risco, defeitos e retrabalho (1,5 ponto).\n- Identificação e análise correta da compressão (crashing): adição de recursos às atividades do caminho crítico, reduzindo tempo às custas de elevação do orçamento (impactando negativamente o IDC já de 0,80) e possível perda temporária de produtividade na integração dos novos membros (1,5 ponto).\n- Recomendação de governança/processo: avaliar trade-offs junto ao patrocinador, não executar alterações informais nas linhas de base, registrar solicitação formal no controle integrado de mudanças (avaliando impacto em escopo, prazo, custo, risco e qualidade/escopo no PMBOK 8) e validar eventual aporte financeiro ou ajuste de escopo/MVP (2,0 pontos).",
+    "imageUrls": [],
+    "topics": [
+      "Gerenciamento de Valor Agregado (EVM)",
+      "Compressão de Cronograma (Crashing e Fast Tracking)",
+      "Controle Integrado de Mudanças"
+    ]
+  },
+  {
+    "id": "gp-inedita-10",
+    "label": "Inédita 2026 • Discursiva 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "04-gerencia-de-projetos",
+    "areaName": "Gerência de Projetos",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma operadora de saúde pública e suplementar decidiu criar uma diretoria de transformação digital para desenvolver e operar um sistema de triagem clínica apoiado por Inteligência Artificial. Embora a equipe técnica já desenvolva protótipos de modelos preditivos, a alta administração constatou três problemas críticos: (1) falta de definição clara de quem aprova políticas éticas, apetite a risco e alinhamento estratégico dos projetos de IA; (2) ausência de processos estruturados de qualidade de dados de treinamento, controle de mudanças em modelos em produção e conformidade com a LGPD; e (3) desconhecimento do nível real de maturidade organizacional para escalar soluções de IA entre diferentes unidades.\n\nConsiderando os frameworks de Governança, Gestão de TI e Maturidade (COBIT 2019 adaptado para IA e CMMI AIM) e sua integração com a Gerência de Projetos (incluindo o domínio de Governança do PMBOK 8), responda aos itens a seguir.\n\na) Explique como o COBIT 2019 diferencia Governança de Gerenciamento e indique três objetivos/processos específicos do COBIT aplicados à IA que endereçam os problemas (1) e (2) relatados no cenário. (valor: 5,0 pontos)\nb) Justifique por que a adoção do CMMI AIM é mais adequada que apenas o COBIT para responder ao problema (3), descrevendo os quatro estágios de maturidade desse modelo e os três domínios obrigatórios em um appraisal. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "a) No COBIT 2019, Governança (domínio EDM - Evaluate, Direct and Monitor) cabe ao Conselho/alta direção para avaliar necessidades das partes interessadas, direcionar objetivos e monitorar resultados; Gerenciamento (domínios APO, BAI, DSS e MEA) cabe aos executivos/gestores para planejar, construir, operar e monitorar atividades conforme diretrizes da governança. Processos aplicáveis aos problemas (1) e (2): EDM01/EDM03 (direcionamento estratégico e otimização de riscos de IA), APO01 (padrões éticos), APO11 (QA e segurança de IA/dados), APO14 (governança, qualidade e privacidade de dados), BAI03 (qualidade/segurança dos dados de treinamento), BAI06 (gestão de mudanças em modelos/algoritmos) e MEA03 (conformidade com LGPD, EU AI Act e normas).\nb) Enquanto o COBIT 2019 adapta processos para governança e compliance sem um caminho progressivo dedicado exclusivamente à maturidade em IA, o CMMI AIM é um modelo de maturidade independente específico para IA, com avaliação formal (appraisal) e crosswalk com normas como ISO/IEC 42001. Seus 4 estágios são: Chaos & Risk -> Structure & Cohesion -> Validation & Trust -> Value & Growth. Em appraisals formais, os três domínios obrigatórios são Data, Security e Development e/ou Services.",
+    "discursiveRubric": "a) (5,0 pontos)\n- Distinção clara entre Governança (EDM: avaliar, direcionar e monitorar, responsabilidade do conselho/alta direção) e Gerenciamento (APO, BAI, DSS, MEA: planejar, construir, entregar e monitorar execução, responsabilidade executiva/gerencial) (2,0 pontos).\n- Indicação e justificativa correta de pelo menos três objetivos/processos do COBIT 2019 aplicados à IA (ex.: EDM01/EDM03 para diretrizes e riscos; APO01 para padrões éticos; APO11/APO14 para qualidade e governança de dados; BAI03 para dados de treinamento; BAI06 para gestão de mudanças de modelos; MEA03 para conformidade legal/LGPD) (3,0 pontos).\n\nb) (5,0 pontos)\n- Justificativa comparativa: COBIT foca em governança e controles corporativos, mas não oferece um modelo progressivo específico de maturidade de IA; o CMMI AIM é uma extensão dedicada para avaliar e evoluir capacidades de IA em escala (com 8 domínios, 31 Practice Areas e crosswalk com ISO 42001/23053/23894) (2,0 pontos).\n- Citação correta dos 4 estágios de maturidade em ordem progressiva: Chaos & Risk -> Structure & Cohesion -> Validation & Trust -> Value & Growth (1,5 ponto).\n- Citação correta dos 3 domínios obrigatórios para appraisals: Data, Security e Development e/ou Services (1,5 ponto).",
+    "imageUrls": [],
+    "topics": [
+      "COBIT 2019 e Governança de IA",
+      "CMMI AIM (Maturidade em IA)",
+      "Conformidade (LGPD e ISO/IEC 42001)"
+    ]
+  }
+]

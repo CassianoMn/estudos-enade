@@ -1,0 +1,460 @@
+[
+  {
+    "id": "ed-inedita-01",
+    "label": "Inédita ENADE • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma equipe de engenharia de dados precisa processar diariamente um vetor `transacoes` de tamanho `n` (onde `n` pode chegar a 10 milhões de registros) em um sistema antifraude. Foram propostas duas rotinas em pseudocódigo para etapas distintas do processamento:\n\n```text\nAlgoritmo A(v, n):\n    passo <- n\n    enquanto passo >= 1 faça\n        // operação constante O(1)\n        passo <- piso(passo / 2)\n    fim-enquanto\n\nAlgoritmo B(v, n):\n    para i <- 0 até n - 1 faça\n        para j <- i + 1 até n - 1 faça\n            se v[i] == v[j] então\n                retorne verdadeiro\n            fim-se\n        fim-para\n    fim-para\n    retorne falso\n```\n\nConsiderando a análise assintótica de pior caso pela Notação Big-O (`O`), assinale a opção que apresenta corretamente as classes de complexidade de tempo dos Algoritmos A e B, respectivamente.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O(1) e O(n).",
+        "explanation": "Incorreta. O Algoritmo A executa aproximadamente log₂(n) iterações (não é constante), e o Algoritmo B executa n(n-1)/2 comparações no pior caso (quadrático, não linear)."
+      },
+      {
+        "letter": "B",
+        "text": "O(log n) e O(n log n).",
+        "explanation": "Incorreta. O Algoritmo A é de fato O(log n), porém o Algoritmo B realiza dois laços aninhados dependentes de n, resultando em O(n²), não O(n log n)."
+      },
+      {
+        "letter": "C",
+        "text": "O(log n) e O(n²).",
+        "explanation": "Correta. No Algoritmo A, a variável `passo` é dividida por 2 a cada iteração até atingir 1, totalizando ⌊log₂ n⌋ + 1 passos, logo O(log n). No Algoritmo B, quando não há duplicatas, o laço interno executa (n-1) + (n-2) + ... + 1 = n(n-1)/2 vezes, caracterizando complexidade quadrática O(n²)."
+      },
+      {
+        "letter": "D",
+        "text": "O(n) e O(n²).",
+        "explanation": "Incorreta. O Algoritmo A reduz o espaço restante pela metade a cada passo, crescendo logaritmicamente O(log n), e não linearmente."
+      },
+      {
+        "letter": "E",
+        "text": "O(n log n) e O(2ⁿ).",
+        "explanation": "Incorreta. Nenhum dos algoritmos tem complexidade linearítmica ou exponencial; o Algoritmo B é polinomial quadrático O(n²)."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Sempre que uma variável de controle é reduzida por um fator constante (dividida por 2) a cada iteração com trabalho O(1) por passo, a complexidade é O(log n). Já dois laços aninhados percorrendo pares distintos (i, j) somam n(n-1)/2 iterações, cujo termo dominante é O(n²).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Complexidade de Algoritmos",
+      "Notação Big-O",
+      "Análise Assintótica"
+    ]
+  },
+  {
+    "id": "ed-inedita-02",
+    "label": "Inédita ENADE • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Um sistema de atendimento médico e edição de laudos digitais necessita de duas estruturas de dados em memória:\n1) Um módulo de triagem que deve chamar os pacientes estritamente na ordem em que chegaram à recepção;\n2) Um editor de textos de laudos que precisa manter o histórico de edições para implementar a função 'Desfazer' (Ctrl+Z), revertendo sempre a alteração mais recente.\n\nConsiderando os Tipos Abstratos de Dados (TADs) Listas Lineares, Pilhas e Filas e suas implementações, avalie as afirmações a seguir.\n\nI. Para o módulo de triagem, o TAD mais adequado é a Fila, que segue a política FIFO (First-In, First-Out), realizando inserções em uma extremidade e remoções na extremidade oposta.\nII. Para o histórico de ações 'Desfazer', o TAD mais adequado é a Pilha, que segue a política LIFO (Last-In, First-Out), realizando inserções (empilha) e remoções (desempilha) na mesma extremidade (topo).\nIII. Ao implementar uma Fila por meio de arranjo estático (vetor), o uso de índices circulares com aritmética modular evita o problema do 'caminhamento' da fila até o limite físico do vetor mesmo quando há posições livres no início.\nIV. Em uma lista simplesmente encadeada com célula cabeça e ponteiro para o primeiro nó, a inserção de um novo elemento no início da lista exige o deslocamento de todos os elementos seguintes, tendo complexidade O(n).\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. Embora I e II estejam corretas, a afirmação III sobre fila circular em arranjo estático também é verdadeira."
+      },
+      {
+        "letter": "B",
+        "text": "III e IV.",
+        "explanation": "Incorreta. A afirmação IV é falsa (em lista encadeada, a inserção no início é O(1) ajustando ponteiros, sem deslocamentos), e I e II são verdadeiras."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Correta. (I) Triagem por ordem de chegada usa Fila (FIFO); (II) Desfazer a ação mais recente usa Pilha (LIFO); (III) Fila circular resolve o caminhamento em vetor em O(1). (IV) é falsa porque o deslocamento em O(n) na inserção no início ocorre em arranjos contíguos, e não em listas encadeadas por apontadores (onde é O(1))."
+      },
+      {
+        "letter": "D",
+        "text": "I, II e IV.",
+        "explanation": "Incorreta. A afirmação IV confunde lista por arranjo (onde inserir no início é O(n)) com lista encadeada por ponteiros (onde inserir no início é O(1))."
+      },
+      {
+        "letter": "E",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. A afirmação I é verdadeira e a IV é falsa."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Filas (FIFO) preservam a ordem de chegada e, quando baseadas em vetor, utilizam indexação circular para reaproveitar posições liberadas em O(1). Pilhas (LIFO) invertem a ordem de entrada, sendo ideais para desfazer ações recentes. Em listas encadeadas, não há deslocamento de memória na inserção no início (complexidade O(1)).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Tipos Abstratos de Dados",
+      "Pilhas (LIFO)",
+      "Filas (FIFO)",
+      "Fila Circular",
+      "Listas Encadeadas"
+    ]
+  },
+  {
+    "id": "ed-inedita-03",
+    "label": "Inédita ENADE • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Um sistema de comércio eletrônico em tempo real recebe milhares de inserções e exclusões de códigos de cupons promocionais por minuto, além de precisar verificar instantaneamente se um código digitado pelo cliente existe. Inicialmente, um desenvolvedor sugeriu armazenar os cupons em um vetor mantido sempre ordenado para utilizar o algoritmo de Pesquisa Binária.\n\nConsiderando o desempenho dos algoritmos de pesquisa em estruturas lineares, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Embora a Pesquisa Binária localize um cupom em complexidade O(log n) no pior caso, o uso de um vetor ordenado não é a escolha mais recomendada para essa aplicação altamente dinâmica.\n\nPORQUE\n\nII. Em um vetor armazenado em posições contíguas de memória, cada inserção ou remoção de elemento para manter a ordenação exige deslocamento de registros com custo de até O(n), tornando estruturas como Tabelas Hash ou Árvores Balanceadas mais adequadas para alta taxa de atualização.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Correta. A asserção I aponta corretamente a inadequação do vetor ordenado para cenários com muitas inserções e remoções; a asserção II explica exatamente o motivo técnico: o custo O(n) de deslocamentos em memória contígua para preservar a ordenação."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta. O custo O(n) de manutenção da ordenação em vetor contíguo é precisamente a causa que torna o vetor ordenado inadequado para aplicações muito dinâmicas."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Incorreta. A asserção II está tecnicamente correta: deslocar elementos em array custa O(n), enquanto tabelas hash ou árvores balanceadas evitam esses deslocamentos."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta. A asserção I é verdadeira: a pesquisa binária em vetor é indicada para tabelas relativamente estáticas (poucas atualizações e muitas consultas)."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. Ambas as asserções são verdadeiras e mantêm relação causal direta."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A busca binária em vetor reduz o intervalo pela metade a cada passo (O(log n)), mas pressupõe ordenação contígua. Em sistemas com alta frequência de inserções e remoções, o custo de manter o vetor ordenado por deslocamentos O(n) compromete a vazão, sendo preferíveis Tabelas Hash (média O(1)) ou Árvores Balanceadas como AVL/Rubro-Negra (O(log n) em todas as operações).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Pesquisa Binária",
+      "Vetores",
+      "Análise de Complexidade",
+      "Estruturas Dinâmicas"
+    ]
+  },
+  {
+    "id": "ed-inedita-04",
+    "label": "Inédita ENADE • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma equipe de sistemas embarcados precisa escolher algoritmos de ordenação adequados para três cenários distintos de processamento de dados em memória:\n- Cenário 1: Um conjunto de 500.000 registros precisa ser ordenado com garantia estrita de tempo O(n log n) mesmo no pior caso e preservando a estabilidade (ordem relativa de chaves iguais), havendo memória RAM extra disponível para um vetor auxiliar de mesmo tamanho.\n- Cenário 2: Um vetor pequeno de sensores chega quase completamente ordenado, e deseja-se simplicidade de código com desempenho linear O(n) quando já estiver ordenado e O(1) de espaço auxiliar.\n- Cenário 3: Um sistema legado precisa ordenar registros muito pesados (estruturas de vários kilobytes armazenadas diretamente no vetor), sendo crítico minimizar a quantidade total de trocas físicas na memória para no máximo n - 1 trocas.\n\nAssinale a opção que associa corretamente os algoritmos aos Cenários 1, 2 e 3, respectivamente.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Quick Sort, Bubble Sort e Merge Sort.",
+        "explanation": "Incorreta. Quick Sort tem pior caso O(n²) e não é estável na forma padrão; Merge Sort faz muitas movimentações e usa O(n) de memória extra, não atendendo ao Cenário 3."
+      },
+      {
+        "letter": "B",
+        "text": "Merge Sort, Insertion Sort e Selection Sort.",
+        "explanation": "Correta. Cenário 1: Merge Sort garante O(n log n) no pior caso e é estável, usando O(n) de memória auxiliar. Cenário 2: Insertion Sort executa em O(n) para entradas já ou quase ordenadas, é simples e in-place O(1). Cenário 3: Selection Sort realiza sempre O(n²) comparações, mas no máximo n - 1 trocas físicas (O(n) trocas)."
+      },
+      {
+        "letter": "C",
+        "text": "Selection Sort, Shell Sort e Quick Sort.",
+        "explanation": "Incorreta. Selection Sort é O(n²) e não atende ao Cenário 1; Quick Sort não limita trocas a n - 1 no Cenário 3."
+      },
+      {
+        "letter": "D",
+        "text": "Merge Sort, Selection Sort e Insertion Sort.",
+        "explanation": "Incorreta. Os Cenários 2 e 3 estão invertidos: Selection Sort faz O(n²) mesmo em vetor já ordenado, e Insertion Sort pode fazer até O(n²) deslocamentos/cópias."
+      },
+      {
+        "letter": "E",
+        "text": "Shell Sort, Insertion Sort e Bubble Sort.",
+        "explanation": "Incorreta. Shell Sort não é estável nem garante O(n log n) no pior caso clássico, e Bubble Sort pode realizar até n(n-1)/2 trocas no pior caso."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cada algoritmo clássico possui trade-offs específicos: Merge Sort oferece pior caso O(n log n) e estabilidade ao custo de O(n) espaço auxiliar; Insertion Sort é adaptativo (O(n) em vetores quase ordenados) e O(1) espaço; Selection Sort minimiza movimentações físicas limitando trocas a no máximo n - 1.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Algoritmos de Ordenação",
+      "Merge Sort",
+      "Insertion Sort",
+      "Selection Sort"
+    ]
+  },
+  {
+    "id": "ed-inedita-05",
+    "label": "Inédita ENADE • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Considere uma Árvore Binária de Busca (ABB) inicialmente vazia na qual são inseridas, exatamente nesta ordem, as chaves inteiras: `50, 30, 70, 20, 40, 60, 80`.\n\nApós todas as inserções, avalie as afirmações a seguir sobre caminhamentos e remoção nessa ABB:\n\nI. O caminhamento em Pré-Ordem (raiz-esquerda-direita) visita os nós na sequência `50, 30, 20, 40, 70, 60, 80`.\nII. O caminhamento em Pós-Ordem (esquerda-direita-raiz) visita os nós na sequência `20, 40, 30, 60, 80, 70, 50`.\nIII. O caminhamento Em-Ordem (central) produz a sequência ordenada `20, 30, 40, 50, 60, 70, 80`.\nIV. Se removermos a chave `30` utilizando a convenção de substituição pelo nó mais à direita da subárvore esquerda, o nó `40` assumirá a posição do nó `30` como filho esquerdo de `50`.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. A afirmação III também está correta, pois o caminhamento Em-Ordem em qualquer ABB sempre resulta nas chaves em ordem crescente."
+      },
+      {
+        "letter": "B",
+        "text": "II e IV.",
+        "explanation": "Incorreta. A afirmação IV é falsa: o nó mais à direita da subárvore esquerda de 30 é o 20 (antecessor imediato), e não o 40 (que está na subárvore direita de 30). Além disso, I e III são verdadeiras."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Correta. A ABB construída tem raiz 50, subárvore esquerda (30 com filhos 20 e 40) e subárvore direita (70 com filhos 60 e 80). Pré-ordem: 50, 30, 20, 40, 70, 60, 80 (I verdadeira); Pós-ordem: 20, 40, 30, 60, 80, 70, 50 (II verdadeira); Em-ordem: 20, 30, 40, 50, 60, 70, 80 (III verdadeira). Na IV, o maior da subárvore esquerda de 30 é 20 (não 40, que é o sucessor na subárvore direita)."
+      },
+      {
+        "letter": "D",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. A afirmação IV confunde o antecessor imediato (20, na subárvore esquerda) com o sucessor imediato (40, na subárvore direita)."
+      },
+      {
+        "letter": "E",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. I é verdadeira e IV é falsa."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na ABB formada por [50, 30, 70, 20, 40, 60, 80], os três percursos clássicos produzem as sequências descritas em I, II e III. Na remoção de um nó com dois filhos (chave 30), a substituição pelo elemento mais à direita da subárvore esquerda escolhe o valor 20 (maior chave menor que 30), enquanto 40 seria o escolhido pela convenção alternativa (menor da subárvore direita).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Árvore Binária de Busca",
+      "Caminhamentos em Árvores",
+      "Remoção em ABB"
+    ]
+  },
+  {
+    "id": "ed-inedita-06",
+    "label": "Inédita ENADE • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Um sensor agrícola monitora um talhão representado por uma matriz bidimensional `solo[L][C]` de `L` linhas e `C` colunas. Para analisar recursivamente segmentos lineares de uma linha da matriz, o programador escreveu a função abaixo em C:\n\n```c\nint contarZeros(int linha[], int inicio, int fim) {\n    if (inicio > fim) {\n        return 0;\n    }\n    if (inicio == fim) {\n        return (linha[inicio] == 0) ? 1 : 0;\n    }\n    int meio = (inicio + fim) / 2;\n    return contarZeros(linha, inicio, meio) + contarZeros(linha, meio + 1, fim);\n}\n```\n\nConsiderando o funcionamento da recursividade e o uso de vetores e matrizes, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A condição `if (inicio == fim)` atua como caso base, garantindo que subvetores unitários não disparem novas chamadas recursivas infinitas.",
+        "explanation": "Correta. Tanto `inicio > fim` (intervalo vazio) quanto `inicio == fim` (subvetor com 1 elemento) são casos base que interrompem a recursão. A função divide o vetor ao meio recursivamente (Divisão e Conquista) somando as ocorrências de zero."
+      },
+      {
+        "letter": "B",
+        "text": "Como a função divide o intervalo ao meio a cada chamada, a complexidade de tempo total para percorrer um vetor de tamanho `n` é O(log n).",
+        "explanation": "Incorreta. Apesar de dividir ao meio, a função chama recursivamente *ambas* as metades (esquerda e direita), visitando todos os n elementos; logo, o tempo total é O(n) e a altura da pilha recursiva é O(log n)."
+      },
+      {
+        "letter": "C",
+        "text": "A função apresenta consumo de espaço auxiliar O(1) na pilha de execução do sistema operacional, independentemente do tamanho do vetor.",
+        "explanation": "Incorreta. Cada chamada recursiva ativa empilha um registro de ativação (stack frame); como a árvore de recursão tem profundidade log₂(n), o espaço auxiliar na pilha é O(log n)."
+      },
+      {
+        "letter": "D",
+        "text": "Para contar todos os zeros da matriz completa `solo[L][C]` executando `contarZeros` para cada uma das `L` linhas, a complexidade total será O(L + log C).",
+        "explanation": "Incorreta. Como cada linha de tamanho C custa O(C) na função `contarZeros`, percorrer L linhas custará O(L · C)."
+      },
+      {
+        "letter": "E",
+        "text": "Caso a linha `if (inicio == fim)` fosse removida mantendo apenas `if (inicio > fim)`, a função retornaria o resultado correto com a mesma profundidade de pilha.",
+        "explanation": "Incorreta. Sem `inicio == fim`, quando `inicio == fim` o valor `meio` seria igual a `inicio`, gerando uma chamada `contarZeros(linha, inicio, inicio)` infinita até estourar a pilha (Stack Overflow)."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Na recursão por divisão e conquista que explora ambas as metades, o caso base `inicio == fim` é indispensável para encerrar subproblemas unitários sem entrar em loop infinito (pois `(k + k) / 2 == k`). Como todos os n elementos são visitados exatamente uma vez nas folhas da árvore de recursão, o tempo total é O(n) e o espaço na pilha é O(log n).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Recursividade",
+      "Vetores e Matrizes",
+      "Divisão e Conquista",
+      "Pilha de Execução"
+    ]
+  },
+  {
+    "id": "ed-inedita-07",
+    "label": "Inédita ENADE • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Considere uma Árvore AVL inicialmente vazia na qual as chaves inteiras `10, 30, 20, 5, 2` são inseridas, uma a uma, nesta exata ordem. Adota-se a convenção de Fator de Balanceamento `FB(no) = altura(subarvore_esquerda) - altura(subarvore_direita)`, considerando `altura(NULL) = 0` e `altura(folha) = 1`.\n\nAcompanhe passo a passo as inserções e eventuais rotações necessárias para manter a propriedade AVL (`|FB| <= 1` para todo nó) e assinale a opção correta sobre o processo e a árvore resultante.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Ao inserir a chave `20`, ocorre desequilíbrio no nó `10` (FB = -2) resolvido por uma rotação simples à esquerda; ao final das cinco inserções, a raiz da árvore é `10`.",
+        "explanation": "Incorreta. Após inserir 10, 30, 20, o nó 30 (filho direito de 10) tem FB = +1 e o nó 10 tem FB = -2 (sinais opostos -> caso Direita-Esquerda), exigindo rotação dupla Direita-Esquerda, elevando 20 para a raiz."
+      },
+      {
+        "letter": "B",
+        "text": "Ao inserir a chave `20`, ocorre uma rotação dupla Direita-Esquerda tornando `20` a raiz; posteriormente, ao inserir a chave `2`, ocorre uma rotação simples à direita no nó `10`, resultando em `20` como raiz, `5` como filho esquerdo de `20` (com filhos `2` e `10`) e `30` como filho direito de `20`.",
+        "explanation": "Correta. Passo a passo: (1) insere 10; (2) insere 30 à direita de 10; (3) insere 20 à esquerda de 30 -> FB(10) = 0 - 2 = -2 e FB(30) = 1 - 0 = +1 -> rotação dupla Direita-Esquerda: 20 vira raiz com 10 à esquerda e 30 à direita; (4) insere 5 à esquerda de 10 -> FB(10) = +1, FB(20) = 2 - 1 = +1 (balanceada); (5) insere 2 à esquerda de 5 -> FB(5) = +1, FB(10) = 2 - 0 = +2 (caso Esquerda-Esquerda) -> rotação simples à direita em 10, colocando 5 como filho esquerdo de 20, com 2 à esquerda e 10 à direita de 5. Todos os nós ficam com FB = 0."
+      },
+      {
+        "letter": "C",
+        "text": "Não ocorre nenhuma rotação durante as inserções de `10, 30, 20`, pois as alturas das subárvores só excedem o limite após a inserção da chave `5`.",
+        "explanation": "Incorreta. Três nós em zigue-zague (10 -> 30 -> 20) já produzem altura 2 à direita de 10 e 0 à esquerda (|FB| = 2), disparando rotação imediatamente ao inserir 20."
+      },
+      {
+        "letter": "D",
+        "text": "Ao inserir a chave `2`, o desequilíbrio ocorre diretamente na raiz `20` e é resolvido por uma rotação dupla Esquerda-Direita, tornando `5` a nova raiz da árvore inteira.",
+        "explanation": "Incorreta. O primeiro ancestral desbalanceado ao subir a partir do nó `2` é o nó `10` (FB = +2), e seu filho esquerdo `5` tem FB = +1 (mesmo sinal), logo aplica-se rotação simples à direita apenas na subárvore enraizada em `10`, mantendo `20` como raiz."
+      },
+      {
+        "letter": "E",
+        "text": "Ao final das cinco inserções, a árvore resultante possui altura 4 e permanece com FB = +1 na raiz `20`.",
+        "explanation": "Incorreta. Após a rotação simples à direita na subárvore esquerda, a subárvore esquerda de 20 (raiz 5, filhos 2 e 10) tem altura 2 e a subárvore direita (30) tem altura 1, logo a árvore total tem altura 3 e FB(20) = 2 - 1 = +1 (não altura 4)."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Na inserção de [10, 30, 20], forma-se o padrão Direita-Esquerda em torno do nó 10 (FB = -2, filho direito 30 com FB = +1), exigindo rotação dupla Direita-Esquerda que promove 20 à raiz. Ao inserir 5 e depois 2, o nó 10 atinge FB = +2 com filho esquerdo 5 tendo FB = +1 (padrão Esquerda-Esquerda), corrigido por rotação simples à direita em 10, resultando na árvore final com raiz 20, filho esquerdo 5 (filhos 2 e 10) e filho direito 30.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Árvore AVL",
+      "Fator de Balanceamento",
+      "Rotações Simples e Duplas"
+    ]
+  },
+  {
+    "id": "ed-inedita-08",
+    "label": "Inédita ENADE • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma tabela de espalhamento (Tabela Hash) utiliza um vetor `tabela[0..6]` de tamanho `T = 7`, inicialmente com todas as posições vazias (representadas por `-1`). A função hash utilizada é `h(chave) = chave mod 7` (resto da divisão inteira por 7) e o tratamento de colisões adotado é o **endereçamento aberto com sondagem linear**, definido por `pos(chave, i) = (h(chave) + i) mod 7`, para `i = 0, 1, 2, ...` até encontrar a primeira posição vazia.\n\nSupondo que sejam inseridas, exatamente nesta ordem, as chaves `19, 26, 13, 48, 17`, assinale a opção que apresenta corretamente o conteúdo final do vetor `tabela` nos índices de `0` a `6` e o fator de carga aproximado.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "`[13, 48, -1, 17, -1, 19, 26]`, com fator de carga aproximado de 0,71.",
+        "explanation": "Correta. Rastreando: 19 mod 7 = 5 -> tabela[5]=19; 26 mod 7 = 5 (colisão) -> tabela[6]=26; 13 mod 7 = 6 (colisão) -> (6+1) mod 7 = 0 -> tabela[0]=13; 48 mod 7 = 6 (colisões em 6 e 0) -> (6+2) mod 7 = 1 -> tabela[1]=48; 17 mod 7 = 3 -> tabela[3]=17. Restam vazios os índices 2 e 4. Fator de carga α = 5/7 ≈ 0,71."
+      },
+      {
+        "letter": "B",
+        "text": "`[-1, -1, 17, 13, 48, 19, 26]`, com fator de carga aproximado de 0,71.",
+        "explanation": "Incorreta. A sondagem linear é circular com `mod 7`; portanto, após o índice 6, a próxima posição testada é o índice 0 (não há erro ou deslocamento para trás no índice 3/4)."
+      },
+      {
+        "letter": "C",
+        "text": "`[48, 13, -1, 17, -1, 19, 26]`, com fator de carga aproximado de 0,71.",
+        "explanation": "Incorreta. A chave 13 é inserida antes de 48, ocupando primeiro o índice 0, de modo que 48 avança até o índice 1."
+      },
+      {
+        "letter": "D",
+        "text": "`[13, 48, -1, 17, -1, 26, 19]`, com fator de carga aproximado de 1,40.",
+        "explanation": "Incorreta. 19 é inserido antes de 26 (logo 19 fica no índice 5 e 26 vai para o 6), além de o fator de carga ser n/T = 5/7 ≈ 0,71 (e não T/n = 7/5 = 1,40)."
+      },
+      {
+        "letter": "E",
+        "text": "`[13, -1, 48, 17, -1, 19, 26]`, com fator de carga aproximado de 0,57.",
+        "explanation": "Incorreta. Na sondagem linear, 48 testa índice 6 (ocupado), índice 0 (ocupado) e encontra índice 1 livre (não pula para o 2). Além disso, α = 5/7 ≈ 0,71."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Calculando `k mod 7` com sondagem linear circular: 19 -> 5; 26 -> 5 (ocupado) -> 6; 13 -> 6 (ocupado) -> 0; 48 -> 6 (ocupado) -> 0 (ocupado) -> 1; 17 -> 3. O estado final de `tabela[0..6]` é `[13, 48, -1, 17, -1, 19, 26]`, com 5 elementos em 7 posições (`α = 5/7 ≈ 0,71`).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Tabela Hash",
+      "Tratamento de Colisões",
+      "Sondagem Linear",
+      "Fator de Carga"
+    ]
+  },
+  {
+    "id": "ed-inedita-09",
+    "label": "Inédita ENADE • Discursiva 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma empresa de logística urbana está desenvolvendo um roteirizador para entregas de bicicletas em uma cidade com `50.000` cruzamentos (vértices) e aproximadamente `120.000` trechos de vias (arestas). Cada trecho possui um tempo estimado de deslocamento (em minutos, sempre positivo), embora o módulo inicial de mapeamento também precise descobrir quais cruzamentos são alcançáveis a partir de um depósito central e calcular o menor número de cruzamentos intermediários (saltos) até cada ponto de entrega.\n\nConsiderando os conceitos de Grafos, suas representações computacionais e algoritmos de caminhamento e caminho mínimo, faça o que se pede nos itens a seguir.\n\na) Compare as duas principais representações de grafos em memória — **Matriz de Adjacência** e **Lista de Adjacência** — quanto ao consumo de memória em notação Big-O e indique, justificando numericamente ou assintoticamente para o cenário descrito (`|V| = 50.000` e `|E| = 120.000`), qual representação é mais adequada. (valor: 4,0 pontos)\n\nb) Explique qual algoritmo de caminhamento (**BFS** ou **DFS**) é mais adequado para encontrar o caminho com o **menor número de saltos (arestas)** a partir do depósito, citando qual TAD auxiliar esse algoritmo utiliza e sua complexidade na representação escolhida. Em seguida, justifique por que, ao considerar os **tempos estimados positivos** dos trechos de vias, deve-se substituir a BFS pelo algoritmo de **Dijkstra**, indicando também uma limitação de Dijkstra caso existissem pesos negativos. (valor: 6,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o espelho de correção detalhado abaixo, avaliando a comparação de complexidade de espaço entre matriz e lista de adjacência e o domínio de BFS, Dijkstra e seus requisitos.",
+    "discursiveRubric": "a) Matriz de Adjacência vs. Lista de Adjacência (4,0 pontos):\n- Complexidade de espaço:\n  • Matriz de Adjacência: `O(|V|²)` (armazena todas as combinações possíveis de pares de vértices).\n  • Lista de Adjacência: `O(|V| + |E|)` (armazena apenas os vértices e as arestas efetivamente existentes).\n- Escolha e justificativa para o cenário:\n  • Para `|V| = 50.000` e `|E| = 120.000`, trata-se de um **grafo esparso** (`|E| << |V|²`, já que `50.000² = 2,5 × 10⁹` células na matriz, consumindo gigabytes de memória desperdiçada com zeros).\n  • A **Lista de Adjacência** é a escolha mais adequada, consumindo memória proporcional a `50.000 + 120.000` (ou `2 × 120.000` se não dirigido), ordens de grandeza menor.\n\nb) BFS vs. Dijkstra e Limitação de Pesos Negativos (6,0 pontos):\n- Menor número de saltos (grafo não ponderado): utiliza-se a **Busca em Largura (BFS — Breadth-First Search)**, pois ela explora os vértices por camadas crescentes de distância em arestas a partir da origem. A BFS utiliza uma **Fila (FIFO)** como estrutura auxiliar e possui complexidade **`O(|V| + |E|)`** em Lista de Adjacência.\n- Menor tempo estimado (grafo ponderado com pesos positivos): a BFS minimiza apenas a quantidade de arestas, ignorando os pesos (um caminho com 4 arestas rápidas pode ser mais curto em minutos que 1 aresta muito lenta). Por isso, utiliza-se o **Algoritmo de Dijkstra** (estratégia gulosa com Fila de Prioridade / Min-Heap, complexidade `O((|V| + |E|) log |V|)`).\n- Limitação com pesos negativos: o algoritmo de Dijkstra pressupõe que adicionar novas arestas ao caminho nunca reduz o custo acumulado; na presença de **arestas com peso negativo**, o critério guloso pode encerrar/fixar um vértice prematuramente com um custo subótimo (exigindo algoritmos como Bellman-Ford nesse caso).",
+    "imageUrls": [],
+    "topics": [
+      "Grafos",
+      "Matriz e Lista de Adjacência",
+      "BFS",
+      "Algoritmo de Dijkstra",
+      "Complexidade de Algoritmos"
+    ]
+  },
+  {
+    "id": "ed-inedita-10",
+    "label": "Inédita ENADE • Discursiva 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "03-estrutura-de-dados",
+    "areaName": "Estrutura de Dados e Algoritmos",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma universidade pública precisa cruzar duas grandes listas de códigos inteiros de matrícula armazenadas nos vetores não ordenados `disciplinaA` (de tamanho `m`) e `disciplinaB` (de tamanho `n`) para identificar e exibir os alunos matriculados simultaneamente em ambas as disciplinas. Na versão legada do sistema, a equipe utilizou dois laços aninhados comparando cada elemento de `disciplinaA` com todos os elementos de `disciplinaB`, o que tornou o processamento muito lento quando `m` e `n` passaram para dezenas de milhares de registros.\n\nConsiderando os conceitos de algoritmos de ordenação, pesquisa binária, tabelas hash e análise de complexidade, faça o que se pede nos itens a seguir.\n\na) Apresente a complexidade assintótica no pior caso da solução legada com dois laços aninhados e escreva um **algoritmo melhorado** (em pseudocódigo estruturado ou em linguagem C, Java ou Python) que resolva o problema ordenando apenas o vetor menor (`disciplinaB`, supondo `n <= m`) com um algoritmo `O(n log n)` e realizando **Pesquisa Binária** para cada elemento de `disciplinaA` (ou ordenando ambos e intercalando com dois ponteiros). (valor: 6,0 pontos)\n\nb) Analise a complexidade de tempo total no pior caso do seu algoritmo proposto no item (a) em função de `m` e `n`, e explique como uma **Tabela Hash** permitiria alcançar complexidade média ainda menor, indicando o trade-off de espaço auxiliar envolvido. (valor: 4,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o espelho de correção abaixo, verificando a análise da solução legada, a corretude do algoritmo proposto (ordenação + busca binária ou dois ponteiros) e o comparativo com Tabela Hash.",
+    "discursiveRubric": "a) Complexidade Legada e Algoritmo Melhorado (6,0 pontos):\n- Complexidade da solução legada: dois laços aninhados percorrendo `m` e `n` elementos têm complexidade **`O(m · n)`** (ou `O(n²)` quando `m ≈ n`).\n- Algoritmo melhorado (abordagem Ordenação + Busca Binária):\n  ```text\n  procedimento imprimirIntersecao(disciplinaA[0..m-1], m, disciplinaB[0..n-1], n)\n      ordenarEfficiente(disciplinaB, n) // ex.: MergeSort em O(n log n)\n      para i <- 0 até m - 1 faça\n          se buscaBinaria(disciplinaA[i], disciplinaB, n) != -1 então\n              escreva(disciplinaA[i])\n          fim-se\n      fim-para\n  fimprocedimento\n  ```\n  (Deve incluir também a implementação explícita da função `buscaBinaria` com `inicio`, `fim` e `meio`, retornando índice ou `-1`. Também é aceita a solução ordenando os dois vetores em `O(m log m + n log n)` e percorrendo ambos simultaneamente com dois ponteiros em `O(m + n)`.)\n\nb) Análise de Complexidade da Solução Proposta e Alternativa com Tabela Hash (4,0 pontos):\n- Complexidade da solução Ordenação + Busca Binária:\n  • Ordenar `disciplinaB` com Merge Sort (ou Heap Sort): `O(n log n)` no pior caso.\n  • Executar `m` buscas binárias em `disciplinaB`: `O(m log n)` no pior caso.\n  • Complexidade total: **`O((m + n) log n)`** (muito inferior a `O(m · n)` para valores grandes).\n- Alternativa com Tabela Hash:\n  • Inserir os `n` elementos de `disciplinaB` em uma Tabela Hash tem custo médio `O(n)`; em seguida, consultar cada um dos `m` elementos de `disciplinaA` na tabela tem custo médio `O(1)` por consulta (`O(m)` no total).\n  • Complexidade média total cai para **`O(m + n)`** (linear), ao custo de **espaço auxiliar adicional `O(n)`** para armazenar a tabela hash na memória (além de o pior caso degenerado de colisões poder atingir `O(m · n)` se a função hash for mal dimensionada).",
+    "imageUrls": [],
+    "topics": [
+      "Busca Binária",
+      "Algoritmos de Ordenação",
+      "Tabela Hash",
+      "Análise de Complexidade",
+      "Vetores"
+    ]
+  }
+]

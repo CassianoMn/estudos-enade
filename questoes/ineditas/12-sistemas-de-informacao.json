@@ -1,0 +1,440 @@
+[
+  {
+    "id": "si-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "À luz da Teoria Geral de Sistemas (TGS), uma organização empresarial e seus sistemas de informação são compreendidos como sistemas abertos que interagem continuamente com clientes, fornecedores, órgãos reguladores e mercados.\n\nConsiderando os conceitos fundamentais da TGS, avalie as afirmações a seguir.\n\nI. Um subsistema é uma parte constituinte do sistema maior que possui identidade e função própria, contribuindo para resolver parte do problema global.\nII. As relações estabelecidas entre os subsistemas geram sinergia, fazendo com que o comportamento do sistema integrado seja superior à simples soma das partes isoladas.\nIII. A entropia representa a capacidade de o sistema aberto autorregular-se automaticamente por meio de retroalimentação negativa, mantendo seu equilíbrio interno constante.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação II também está correta."
+      },
+      {
+        "letter": "B",
+        "text": "III, apenas.",
+        "explanation": "Incorreta. A capacidade de autorregulação e manutenção do equilíbrio dinâmico chama-se homeostase, e não entropia (que é a tendência natural à desordem/degradação)."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. Subsistema é uma unidade funcional componente (I) e as relações dinâmicas entre subsistemas geram sinergia para cumprir o propósito do sistema (II). O item III confunde homeostase com entropia."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois III troca os conceitos de entropia e homeostase."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois o item III é falso."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na TGS: subsistema é um componente com função definida; relação é a interação dinâmica entre subsistemas que produz sinergia; propósito é o objetivo global do sistema; homeostase é a autorregulação via feedback para manter equilíbrio; entropia é a tendência à desorganização/perda de ordem.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Teoria Geral de Sistemas"
+    ]
+  },
+  {
+    "id": "si-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma empresa de desenvolvimento de software busca reduzir a dependência de poucos colaboradores experientes por meio de práticas de Gestão do Conhecimento baseadas no modelo SECI de Nonaka e Takeuchi. Para isso, instituiu sessões de programação em pares (pair programming) e passou a exigir o registro formal de decisões arquiteturais em uma base documental interna.\n\nConsiderando a distinção entre dado, informação e conhecimento (tácito e explícito), assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O conhecimento tácito é facilmente codificável em manuais e bancos de dados, enquanto o conhecimento explícito é estritamente pessoal e impossível de formalizar.",
+        "explanation": "Incorreta, pois inverte exatamente as definições de conhecimento tácito (pessoal, experiencial, difícil de formalizar) e explícito (codificado e formal)."
+      },
+      {
+        "letter": "B",
+        "text": "A prática de registrar decisões arquiteturais individuais em documentos formais exemplifica o processo de Externalização (conversão de conhecimento tácito em explícito).",
+        "explanation": "Correta. Na espiral SECI de Nonaka e Takeuchi, Externalização converte conhecimento tácito em explícito (documentação), enquanto Socialização compartilha conhecimento tácito diretamente (como no pair programming)."
+      },
+      {
+        "letter": "C",
+        "text": "Durante um projeto de software, o conhecimento explícito restringe-se à fase de levantamento de requisitos, e o conhecimento tácito restringe-se à fase de codificação.",
+        "explanation": "Incorreta. Tanto o conhecimento tácito quanto o explícito são utilizados em todas as fases do desenvolvimento de software."
+      },
+      {
+        "letter": "D",
+        "text": "Dados diferenciam-se de informações por já possuírem interpretação contextualizada e regras de decisão acumuladas pela experiência do usuário.",
+        "explanation": "Incorreta. Dados são registros brutos e isolados sem significado específico; informação é o dado processado/contextualizado; conhecimento envolve aplicação prática e experiência."
+      },
+      {
+        "letter": "E",
+        "text": "A programação em pares (pair programming) corresponde ao modo de Combinação, pois integra exclusivamente documentos textuais padronizados.",
+        "explanation": "Incorreta. Pair programming promove troca direta de experiência prática (tácito → tácito), caracterizando Socialização."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No modelo SECI: Socialização (tácito → tácito, ex.: pair programming), Externalização (tácito → explícito, ex.: documentar arquitetura), Combinação (explícito → explícito, ex.: integrar relatórios/wikis) e Internalização (explícito → tácito, ex.: aprender aplicando manuais).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Dado, Informação e Conhecimento",
+      "Gestão do Conhecimento (SECI)"
+    ]
+  },
+  {
+    "id": "si-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Um hospital universitário utiliza diversos sistemas de informação: um módulo de prontuário eletrônico que registra cada atendimento e prescrição em tempo real; um painel para a superintendência acompanhar taxas mensais de ocupação de leitos e metas anuais; e um software de apoio clínico que recebe sintomas e exames do paciente e aplica regras médicas para sugerir hipóteses diagnósticas.\n\nConsiderando a classificação funcional e estrutural dos Sistemas de Informação, avalie as afirmações a seguir.\n\nI. O módulo de registro de atendimentos e prescrições diárias caracteriza um Sistema de Processamento de Transações (SPT), voltado ao nível operacional.\nII. O painel da superintendência com indicadores consolidados e metas estratégicas corresponde a um Sistema de Informação Executiva (SIE / EIS).\nIII. No software de apoio clínico baseado em regras (Sistema Especialista), o componente responsável por aplicar heurísticas e raciocínio lógico sobre os fatos para derivar conclusões é denominado Motor de Inferência.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois as afirmações II e III também estão corretas."
+      },
+      {
+        "letter": "B",
+        "text": "II, apenas.",
+        "explanation": "Incorreta, pois as afirmações I e III também estão corretas."
+      },
+      {
+        "letter": "C",
+        "text": "I e III, apenas.",
+        "explanation": "Incorreta, pois a afirmação II descreve corretamente o papel de um SIE/EIS para a alta direção."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois a afirmação I descreve corretamente um SPT operacional."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Correta. O registro diário de transações é um SPT (I); o painel estratégico consolidado para a alta gestão é um SIE (II); e em Sistemas Especialistas, a Base de Conhecimento armazena fatos/regras enquanto o Motor de Inferência executa as heurísticas de raciocínio (III)."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Todas as três afirmações estão corretas: SPTs suportam transações operacionais diárias; SIEs oferecem painéis executivos estratégicos; e Sistemas Especialistas combinam Base de Conhecimento com Motor de Inferência (mecanismo heurístico de dedução).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Classificação de SI",
+      "SPT, SIE e Sistemas Especialistas"
+    ]
+  },
+  {
+    "id": "si-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma indústria de autopeças decidiu substituir seus sistemas legados departamentais isolados por uma suíte integrada composta por módulos de ERP (incluindo gestão de estoques WMS), CRM e SCM. Durante a implantação do ERP, a equipe de TI precisou ajustar regras fiscais padrão já previstas no sistema e também desenvolver uma rotina específica no código para cálculo de comissões não contemplada nativamente pelo fornecedor.\n\nConsiderando a implantação de sistemas empresariais integrados, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Enquanto o ajuste das regras fiscais por meio de variáveis internas disponibilizadas pelo fornecedor caracteriza a parametrização do ERP, a alteração ou extensão do código para atender à regra específica de comissões caracteriza a customização.\n\nPORQUE\n\nII. A customização deve ser priorizada sempre em detrimento da parametrização durante a implantação de um ERP, pois reduz os custos de projeto e facilita a aplicação automática de futuras atualizações do fabricante.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Incorreta, pois a asserção II inverte completamente a boa prática de implantação de ERPs."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta, pois a asserção II é falsa."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Correta. A asserção I distingue com precisão parametrização (configuração de variáveis nativas) de customização (modificação/extensão de código). A asserção II é falsa porque deve-se priorizar a parametrização e evitar customizações excessivas, já que customizar eleva custos, prazos e dificulta atualizações futuras do ERP."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta, pois I é verdadeira e II é falsa."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta, pois a asserção I está correta."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Em ERPs: parametrização configura parâmetros/variáveis já existentes sem tocar no código; customização altera ou cria código para requisitos não suportados pelos parâmetros. Boas práticas recomendam parametrizar sempre que possível para reduzir custo, risco e esforço de upgrade.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Sistemas Integrados",
+      "ERP: Parametrização vs Customização"
+    ]
+  },
+  {
+    "id": "si-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em uma seguradora, o processo de 'Análise e Aprovação de Sinistro' envolve sequencialmente o setor de Atendimento (recepção de documentos), a área de Perícia Técnica (avaliação de danos) e o setor Financeiro (liberação de pagamento). Atualmente, as solicitações tramitam por planilhas e e-mails departamentais, gerando atrasos de dias entre as etapas e falta de visibilidade do andamento.\n\nA diretoria decidiu modelar o processo em notação BPMN e automatizar sua orquestração em uma plataforma BPMS (Business Process Management System). Considerando os conceitos de BPM e o impacto do BPMS nesse cenário, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A implantação de um BPMS reforça uma arquitetura estritamente vertical por departamentos isolados, impedindo a integração interfuncional.",
+        "explanation": "Incorreta. BPM e BPMS promovem visão horizontal orientada a processos colaborativos ponta a ponta, superando silos departamentais verticais."
+      },
+      {
+        "letter": "B",
+        "text": "O principal impacto direto do BPMS sobre o fluxo descrito será a redução do tempo de envio, tramitação e recebimento de dados entre os setores envolvidos.",
+        "explanation": "Correta. Ao automatizar a passagem de tarefas e dados entre os participantes das raias (lanes) do processo, o BPMS elimina esperas manuais de e-mail/planilha e reduz significativamente o tempo de tramitação entre níveis e setores."
+      },
+      {
+        "letter": "C",
+        "text": "Na notação BPMN, o processo completo de uma organização deve ser modelado sem divisões em raias (lanes), para evitar atribuir responsabilidade aos setores.",
+        "explanation": "Incorreta. As raias (lanes) dentro de um pool servem justamente para identificar papéis, cargos ou departamentos responsáveis por cada atividade."
+      },
+      {
+        "letter": "D",
+        "text": "Em um projeto de melhoria de processos (BPM), tarefas atômicas como 'Preencher campo de CPF' devem ser escolhidas como processos de negócio principais.",
+        "explanation": "Incorreta. Processos de negócio são conjuntos coordenados de atividades ponta a ponta que entregam valor (ex.: 'Analisar e aprovar sinistro'), e não ações atômicas isoladas."
+      },
+      {
+        "letter": "E",
+        "text": "Um BPMS elimina automaticamente a necessidade de bancos de dados transacionais ou sistemas legados na empresa, substituindo integralmente o ERP.",
+        "explanation": "Incorreta. O BPMS orquestra o fluxo do processo e integra-se aos sistemas existentes (ERP, CRM, APIs), não substituindo necessariamente todo o ERP."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A adoção de BPM/BPMS alinha a organização de forma horizontal/colaborativa por processos ponta a ponta e traz como impacto operacional imediato a redução do tempo de envio, fila e recebimento de informações entre setores e níveis organizacionais, além de rastreabilidade.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "BPM, BPMN e BPMS",
+      "Processos de Negócio"
+    ]
+  },
+  {
+    "id": "si-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma instituição financeira de capital aberto precisa atender a exigências regulatórias rígidas de auditoria contábil e proteção de dados (como a Lei Sarbanes-Oxley e a LGPD), além de assegurar que a alta administração direcione e monitore os investimentos em TI de forma alinhada ao negócio.\n\nPara estruturar sua Governança de TI, o conselho de administração avaliou diferentes frameworks e normas de mercado:\n\nI. Norma ABNT NBR ISO/IEC 38500\nII. COBIT (Control Objectives for Information and Related Technology)\nIII. CMMI (Capability Maturity Model Integration)\nIV. BSC (Balanced Scorecard)\n\nAssinale a opção que indica os modelos específicos de referência para Governança de TI nos quais se define o ciclo de avaliar, dirigir e monitorar a gestão de TI.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. A ISO/IEC 38500 é a norma internacional específica para governança corporativa de TI (modelo Avaliar, Dirigir e Monitorar — EDM) e o COBIT é o principal framework de governança e gestão corporativa de TI (também estruturado com domínio EDM de governança). CMMI foca maturidade de processos de software/engenharia e BSC é metodologia de gestão estratégica por indicadores."
+      },
+      {
+        "letter": "B",
+        "text": "I e III, apenas.",
+        "explanation": "Incorreta, pois o CMMI é um modelo de melhoria e maturidade de processos de desenvolvimento e serviços, não um framework de governança corporativa de TI."
+      },
+      {
+        "letter": "C",
+        "text": "II e IV, apenas.",
+        "explanation": "Incorreta, pois o BSC é uma ferramenta de gestão estratégica organizacional, e a ISO/IEC 38500 é norma central de governança de TI."
+      },
+      {
+        "letter": "D",
+        "text": "I, II e IV, apenas.",
+        "explanation": "Incorreta, pois o BSC não é um framework prescritivo de governança de TI com ciclo de direcionamento e monitoramento da gestão de TI como ISO 38500 e COBIT."
+      },
+      {
+        "letter": "E",
+        "text": "II, III e IV, apenas.",
+        "explanation": "Incorreta, pois exclui a ISO/IEC 38500 e inclui CMMI e BSC."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Na Governança de TI, a norma ISO/IEC 38500 estabelece os seis princípios e o ciclo EDM (Evaluate, Direct, Monitor) para o conselho governar a TI; e o COBIT (ISACA) separa o domínio de Governança (EDM) dos domínios de Gestão (APO, BAI, DSS, MEA), ligando objetivos de negócio a controles e compliance. CMMI e BSC têm outros propósitos.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Governança de TI",
+      "COBIT e ISO/IEC 38500"
+    ]
+  },
+  {
+    "id": "si-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma operadora de planos de saúde adotou as boas práticas da biblioteca ITIL para estruturar seu Gerenciamento de Serviços de TI (ITSM), após registrar reclamações recorrentes sobre lentidão no atendimento a chamados e falta de clareza quanto aos prazos de resposta.\n\nConsiderando os conceitos e processos da ITIL, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A Central de Serviços (Service Desk) tem como função primordial negociar metas financeiras com fornecedores externos, não atuando como ponto único de contato com os usuários.",
+        "explanation": "Incorreta. A Central de Serviços é exatamente o ponto único de contato (SPOC) entre os usuários/áreas de negócio e a TI."
+      },
+      {
+        "letter": "B",
+        "text": "O Gerenciamento de Incidentes tem como foco investigar exaustivamente a causa raiz estrutural de falhas antes de restaurar o serviço aos usuários.",
+        "explanation": "Incorreta. O foco do Gerenciamento de Incidentes é restaurar a operação normal do serviço o mais rápido possível; a investigação da causa raiz pertence ao Gerenciamento de Problemas."
+      },
+      {
+        "letter": "C",
+        "text": "A manutenção de uma Base de Erros Conhecidos (KEDB), vinculada ao Gerenciamento de Problemas, agiliza o atendimento ao registrar falhas já diagnosticadas e suas soluções de contorno ou definitivas.",
+        "explanation": "Correta. O Gerenciamento de Problemas identifica causas raízes e alimenta a Base de Erros Conhecidos (KEDB) com soluções de contorno (workarounds) e definitivas, elevando a eficiência da Central de Serviços e do suporte."
+      },
+      {
+        "letter": "D",
+        "text": "O Acordo de Nível de Serviço (SLA) é um documento estritamente interno da equipe de programação que dispensa o monitoramento de indicadores de disponibilidade.",
+        "explanation": "Incorreta. O SLA é um acordo formal entre provedor de TI e cliente definindo serviços, metas de prazo e disponibilidade que devem ser continuamente monitorados."
+      },
+      {
+        "letter": "E",
+        "text": "Incidentes que não podem ser resolvidos pelo primeiro nível da Central de Serviços devem ser encerrados automaticamente sem escalonamento a equipes especializadas.",
+        "explanation": "Incorreta. Incidentes não resolvidos no 1º nível devem ser escalados para níveis avançados (2º/3º nível) mantendo o acompanhamento até a restauração."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na ITIL: Central de Serviços é o ponto único de contato (SPOC); SLA formaliza prazos e níveis de disponibilidade monitorados entre TI e clientes; Gerenciamento de Incidentes restaura o serviço rapidamente (escalando se necessário); e Gerenciamento de Problemas investiga causas raízes e mantém a Base de Erros Conhecidos (KEDB).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "ITIL",
+      "Service Desk, SLA, Incidentes e Problemas"
+    ]
+  },
+  {
+    "id": "si-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Nos últimos anos, a sustentabilidade ambiental e a proteção de dados pessoais tornaram-se pilares estratégicos nas organizações. Iniciativas de TI Verde buscam reduzir a pegada ecológica da computação, enquanto a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018) estabelece regras rígidas para o tratamento de dados pessoais no Brasil.\n\nConsiderando os conceitos de TI Verde e LGPD, avalie as afirmações a seguir.\n\nI. A virtualização de servidores em data centers contribui para a TI Verde ao consolidar múltiplas cargas de trabalho em menos máquinas físicas, reduzindo consumo elétrico e demanda por refrigeração.\nII. A destinação ambientalmente adequada do lixo eletrônico (e-lixo) faz parte da governança corporativa de TI Verde das organizações, não devendo ser ignorada como responsabilidade externa.\nIII. Na LGPD, o Encarregado (DPO) é o agente indicado para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD).\nIV. Dados referentes à saúde ou à biometria de um cidadão são classificados pela LGPD como dados públicos irrestritos, dispensando cuidados adicionais de segurança.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e IV.",
+        "explanation": "Incorreta, pois dados de saúde e biometria são dados pessoais sensíveis na LGPD."
+      },
+      {
+        "letter": "B",
+        "text": "II e III.",
+        "explanation": "Incorreta, pois I também está correta."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Correta. Virtualização para eficiência energética (I) e gestão/descarte responsável de e-lixo (II) são práticas legítimas de TI Verde; na LGPD, o Encarregado (DPO) faz a ponte entre controlador, titulares e ANPD (III). O item IV é falso porque dados de saúde e biométricos são dados pessoais sensíveis."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta, pois IV está errada."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta, pois IV classifica erroneamente dados pessoais sensíveis."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A TI Verde abrange eficiência energética (data centers verdes e virtualização), conscientização de usuários (menos impressões/desperdício) e gestão de lixo eletrônico dentro da governança. Na LGPD, o Encarregado (DPO) comunica-se com titulares e ANPD, e dados sobre saúde e biometria são dados pessoais sensíveis que exigem proteção reforçada.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "TI Verde",
+      "LGPD"
+    ]
+  },
+  {
+    "id": "si-inedita-09",
+    "label": "Inédita 2026 • Questão 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma rede de varejo com 40 lojas enfrenta insatisfação crescente das áreas de negócio em relação à área de TI. Os gerentes de loja relatam que precisam telefonar diretamente para desenvolvedores conhecidos para resolver quedas no sistema de vendas, não existe controle sobre quais falhas se repetem toda semana e não há metas claras de tempo de retorno quando o sistema fica indisponível.\n\nA nova gerência propôs implementar práticas da ITIL e diretrizes de Governança de TI baseadas na norma ISO/IEC 38500.\n\nConsiderando o cenário descrito, faça o que se pede:\n\na) Explique como a implantação da Central de Serviços (Service Desk), associada à distinção entre Gerenciamento de Incidentes e Gerenciamento de Problemas (com uso de Base de Erros Conhecidos), resolveria a desorganização no atendimento e a recorrência das falhas. (valor: 5,0 pontos)\nb) Explique o papel dos Acordos de Nível de Serviço (SLAs) e dos três processos do ciclo de Governança da ISO/IEC 38500 (Avaliar, Dirigir e Monitorar) para alinhar a TI às expectativas estratégicas da diretoria. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Verifique na rubrica se a resposta diferenciou claramente Central de Serviços (SPOC), Incidentes (restauração rápida) vs. Problemas (causa raiz + KEDB), além de conectar SLAs ao ciclo EDM da ISO/IEC 38500.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve explicar que:\n- A Central de Serviços (Service Desk) atua como ponto único de contato (SPOC) entre usuários/lojas e TI, eliminando ligações informais a desenvolvedores, registrando, categorizando e acompanhando todos os chamados (1,5 pt);\n- O Gerenciamento de Incidentes visa restaurar a operação normal do sistema de vendas o mais rápido possível (inclusive escalando para níveis técnicos avançados quando necessário), minimizando o impacto nas lojas (1,5 pt);\n- O Gerenciamento de Problemas investiga a causa raiz dos incidentes recorrentes para eliminá-los definitivamente e registra soluções de contorno na Base de Erros Conhecidos (KEDB), acelerando futuros atendimentos (2,0 pts).\n\nb) (5,0 pontos) O respondente deve explicar que:\n- Os SLAs estabelecem um contrato formal entre a TI e as áreas de negócio, definindo serviços no catálogo, prazos máximos de atendimento/solução e metas mensuráveis de disponibilidade, uniformizando expectativas e dando transparência (2,5 pts);\n- Pela norma ISO/IEC 38500, a alta direção governa a TI por meio do ciclo EDM: Avaliar (analisar demandas atuais/futuras e riscos do varejo), Dirigir (definir políticas, planos e priorização de investimentos em TI alinhados ao negócio) e Monitorar (acompanhar o desempenho da TI e o cumprimento dos SLAs e conformidade) (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "ITIL (Service Desk, Incidentes, Problemas, SLA)",
+      "Governança de TI (ISO/IEC 38500)"
+    ]
+  },
+  {
+    "id": "si-inedita-10",
+    "label": "Inédita 2026 • Questão 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "12-sistemas-de-informacao",
+    "areaName": "Sistemas de Informação",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma clínica médica regional modernizou seu atendimento adotando um sistema de prontuário eletrônico hospedado em um provedor de nuvem contratado para armazenar e processar os históricos clínicos, exames laboratoriais e dados cadastrais dos pacientes. Recentemente, a clínica sofreu uma tentativa de ataque de ransomware e uma auditoria apontou ausência de testes de restauração de cópias de segurança e desconhecimento de papéis legais previstos na LGPD.\n\nConsiderando a LGPD (Lei nº 13.709/2018), a norma ABNT NBR ISO/IEC 27002 e os princípios de auditoria de continuidade de negócios, responda:\n\na) Identifique os papéis previstos na LGPD assumidos pela clínica, pelo provedor de nuvem e pelo profissional responsável pela interface com titulares e ANPD, classificando o tipo de dado tratado nos prontuários e indicando dois princípios da lei aplicáveis ao caso. (valor: 5,0 pontos)\nb) Apresente três ações ou controles concretos — envolvendo tecnologia, processos de continuidade/recuperação de desastres e pessoas — que a clínica deve implementar para proteger a confidencialidade, integridade e disponibilidade dos prontuários. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Confira na rubrica a atribuição exata dos agentes de tratamento da LGPD (Controlador = clínica, Operador = provedor se atuar sob ordens da clínica, DPO = Encarregado), classificação de dado pessoal sensível e medidas abrangentes de tecnologia, backup/contingência e pessoas.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve identificar:\n- Clínica médica: Controlador (toma as decisões sobre finalidade e tratamento dos dados dos pacientes) (1,0 pt);\n- Provedor de nuvem (quando processa/armazena sob instruções da clínica): Operador (1,0 pt);\n- Profissional indicado para comunicação com pacientes e ANPD: Encarregado pelo Tratamento de Dados Pessoais (DPO) (1,0 pt);\n- Classificação: os prontuários e exames constituem dados pessoais sensíveis (dados referentes à saúde), exigindo proteção e bases legais específicas (1,0 pt);\n- Citar ao menos dois princípios da LGPD aplicáveis, como finalidade, necessidade (minimização), segurança, prevenção, transparência ou responsabilização e prestação de contas (1,0 pt).\n\nb) (5,0 pontos) O respondente deve apresentar três ações integrando tecnologia, continuidade/recuperação e pessoas (aprox. 1,6–1,7 pt cada):\n- Tecnologia/Acesso: criptografia em repouso e em trânsito, autenticação multifator (MFA), controle de acesso baseado em papéis (menor privilégio) e registros de auditoria/logs;\n- Continuidade de Negócios e Recuperação de Desastres (Auditoria de Contingência): política de backups imutáveis/isolados (regra 3-2-1) com testes periódicos de restauração e definição de metas RPO/RTO para recuperar os sistemas após um ransomware;\n- Pessoas e Governança: política formal de segurança da informação, treinamento/conscientização dos profissionais contra phishing/engenharia social e acordos de confidencialidade (pois segurança da informação não é restrita apenas à TI).",
+    "imageUrls": [],
+    "topics": [
+      "LGPD",
+      "Segurança da Informação (ISO 27002)",
+      "Continuidade de Negócios e Recuperação de Desastres"
+    ]
+  }
+]

@@ -1,0 +1,450 @@
+[
+  {
+    "id": "fg-inedita-01",
+    "label": "Inédita ENADE 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "TEXTO I\nA ampliação do acesso à internet móvel democratizou a busca por orientações sobre prevenção de doenças, vacinação e alimentação saudável. Contudo, pesquisas de saúde coletiva mostram que conteúdos enganosos sobre tratamentos sem comprovação científica circulam com velocidade superior à das notas técnicas de órgãos sanitários, sobretudo em aplicativos de mensagens privadas.\n\nTEXTO II\nDe acordo com a Organização Mundial da Saúde (OMS), o fenômeno da infodemia — excesso de informações, algumas precisas e outras não, que dificulta encontrar fontes idôneas quando necessário — compromete a adesão da população a campanhas preventivas e sobrecarrega os serviços de atenção primária.\n\nConsiderando os textos apresentados, avalie as afirmações a seguir.\n\nI. O combate à infodemia na área da saúde requer ações de letramento informacional que capacitem os cidadãos a distinguir evidências científicas de boatos.\nII. O acesso facilitado à internet elimina os riscos de automedicação, pois o usuário compara automaticamente múltiplas fontes oficiais antes de agir.\nIII. A circulação acelerada de desinformação sanitária em redes e aplicativos pode reduzir a efetividade de políticas públicas preventivas, como campanhas de vacinação.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta. A afirmação III também está correta, pois o Texto II destaca explicitamente que a infodemia compromete a adesão da população a campanhas preventivas."
+      },
+      {
+        "letter": "B",
+        "text": "II, apenas.",
+        "explanation": "Incorreta. A afirmação II contraria os textos: o excesso de informações sem critério dificulta a identificação de fontes idôneas e não elimina riscos de automedicação."
+      },
+      {
+        "letter": "C",
+        "text": "I e III, apenas.",
+        "explanation": "Correta. As afirmações I e III sintetizam adequadamente os desafios da infodemia e a necessidade de educação informacional para proteger políticas de saúde pública."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta. A afirmação II é falsa ao supor que o acesso à internet garante comparação automática e crítica de fontes oficiais."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. A afirmação II apresenta uma generalização otimista que contradiz o conceito de infodemia descrito no Texto II."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A alternativa C é a correta. O item I decorre da necessidade de critérios para identificar fontes idôneas diante da infodemia; o item II é falso porque a facilidade de acesso sem letramento midiático não impede, mas muitas vezes agrava, práticas arriscadas como a automedicação; o item III reflete diretamente o Texto II ao apontar os prejuízos às campanhas preventivas.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Saúde Pública e Infodemia",
+      "Letramento Midiático",
+      "Comunicação e Sociedade Digital"
+    ]
+  },
+  {
+    "id": "fg-inedita-02",
+    "label": "Inédita ENADE 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Sistemas baseados em inteligência artificial têm sido progressivamente adotados para apoiar decisões em recrutamento profissional, concessão de crédito e policiamento preditivo. Embora frequentemente apresentados como neutros por operarem por meio de cálculos estatísticos, diversos estudos auditáveis demonstram que esses modelos podem reproduzir e até amplificar discriminações raciais, de gênero e socioeconômicas.\n\nConsiderando a relação entre tecnologia, ética e direitos humanos, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. A adoção de sistemas algorítmicos de tomada de decisão exige auditoria contínua e governança transparente para evitar violações a direitos fundamentais de grupos historicamente vulnerabilizados.\n\nPORQUE\n\nII. Os modelos de aprendizado de máquina são treinados com bases de dados históricas que frequentemente incorporam desigualdades e preconceitos presentes na estrutura social.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Correta. Como os algoritmos aprendem padrões presentes em dados históricos marcados por desigualdades sociais (II), sua aplicação sem transparência e auditoria tende a reproduzir discriminações, justificando a necessidade de governança ética (I)."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta. Há nexo causal direto entre a presença de vieses nas bases históricas de treinamento (II) e a necessidade de auditoria e governança para proteger direitos fundamentais (I)."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Incorreta. A asserção II é verdadeira, pois dados históricos refletem desigualdades reais de acesso a crédito, emprego e segurança."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta. A asserção I é verdadeira: sistemas de alto impacto social demandam transparência, auditabilidade e supervisão humana."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. Ambas as proposições estão corretas e articuladas causalmente."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A alternativa A é a correta. A suposta neutralidade matemática dos algoritmos cai por terra quando as bases de treinamento reproduzem assimetrias sociais históricas (II). Por isso, a governança transparente e a auditoria algorítmica são indispensáveis para assegurar equidade e direitos fundamentais (I).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Ética Algorítmica",
+      "Direitos Humanos e Diversidade",
+      "Tecnologia e Sociedade"
+    ]
+  },
+  {
+    "id": "fg-inedita-03",
+    "label": "Inédita ENADE 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "O crescimento acelerado do consumo de dispositivos eletrônicos, impulsionado por ciclos curtos de atualização tecnológica e pela obsolescência programada, elevou a geração global de resíduos de equipamentos eletroeletrônicos (REEE). Segundo relatórios da ONU, menos de um quarto desse volume recebe destinação ambientalmente adequada, resultando em contaminação de solos e lençóis freáticos por metais pesados, além do desperdício de minerais estratégicos que poderiam retornar à cadeia produtiva.\n\nNesse contexto, considerando os Objetivos de Desenvolvimento Sustentável (ODS) e a economia circular, avalie as afirmações a seguir.\n\nI. A extensão da vida útil dos equipamentos por meio de projetos modulares e políticas de direito ao reparo reduz a pressão sobre a extração de recursos naturais.\nII. A logística reversa responsabiliza exclusivamente o consumidor final pela triagem química dos metais pesados presentes em placas e baterias.\nIII. A recuperação formal de resíduos eletrônicos articula preservação ambiental, geração de trabalho digno e reaproveitamento econômico de insumos.\nIV. A substituição constante de aparelhos funcionais apenas por apelo estético é compatível com a redução da pegada ecológica global.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. O item II é falso, pois a logística reversa baseia-se na responsabilidade compartilhada (fabricantes, importadores, distribuidores, comerciantes e poder público), não cabendo ao consumidor a triagem química."
+      },
+      {
+        "letter": "B",
+        "text": "II e IV.",
+        "explanation": "Incorreta. Tanto o item II quanto o IV contradizem os princípios da sustentabilidade e da economia circular."
+      },
+      {
+        "letter": "C",
+        "text": "III e IV.",
+        "explanation": "Incorreta. O item IV é falso porque o descarte prematuro de aparelhos funcionais amplia o consumo de energia, matérias-primas e a pegada ecológica."
+      },
+      {
+        "letter": "D",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. O item II invalida esta opção ao atribuir responsabilidade exclusiva e técnica inadequada ao consumidor final."
+      },
+      {
+        "letter": "E",
+        "text": "I e III.",
+        "explanation": "Correta. O direito ao reparo e o design modular (I) diminuem a geração de resíduos na origem, e a reciclagem/logística reversa formal (III) integra as dimensões ambiental, social e econômica dos ODS."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "A alternativa E é a correta. Os itens I e III representam pilares da economia circular e da Agenda 2030 (produção/consumo responsáveis e trabalho decente). O item II distorce o conceito de logística reversa (responsabilidade compartilhada pelo ciclo de vida do produto) e o item IV ignora o impacto ambiental do hiperconsumo.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Sustentabilidade e Meio Ambiente",
+      "Economia Circular e Lixo Eletrônico",
+      "Agenda 2030 e ODS"
+    ]
+  },
+  {
+    "id": "fg-inedita-04",
+    "label": "Inédita ENADE 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Nas grandes regiões metropolitanas brasileiras, a concentração de empregos formais, hospitais e equipamentos culturais nos núcleos centrais contrasta com a expansão habitacional da população de baixa renda em áreas periféricas, muitas vezes desprovidas de saneamento básico e transporte de alta capacidade. Como consequência, milhões de trabalhadores enfrentam deslocamentos diários superiores a duas horas entre casa e trabalho.\n\nA partir dessa realidade urbana, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. O modelo de expansão periférica das metrópoles brasileiras reforça a desigualdade socioespacial ao impor maiores custos de tempo e dinheiro aos trabalhadores de menor renda.\n\nPORQUE\n\nII. A implantação de sistemas de integração tarifária e corredores exclusivos de ônibus coletivo contribui para diminuir o tempo médio de viagem e ampliar a acessibilidade urbana.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Incorreta. A asserção II apresenta uma política pública mitigadora do problema, e não a causa pela qual a expansão periférica reforça a desigualdade (I)."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Correta. Ambas as asserções são verdadeiras, mas possuem relação de problema (I) e possível solução/política pública (II), e não de causa explicativa."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Incorreta. A asserção II é verdadeira, pois integração tarifária e faixas exclusivas reduzem custos e tempo de deslocamento no transporte coletivo."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta. A asserção I descreve corretamente a segregação socioespacial apontada no texto-base."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. Ambas as afirmações são factualmente corretas."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A alternativa B é a correta. Em questões de Asserção–Razão do INEP, é essencial checar o nexo lógico do 'PORQUE': a desigualdade socioespacial (I) não ocorre 'porque' existem corredores de ônibus e integração tarifária (II); ao contrário, estas são medidas públicas para mitigar aquela desigualdade.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Urbanização e Mobilidade Urbana",
+      "Desigualdade Socioespacial",
+      "Políticas Públicas"
+    ]
+  },
+  {
+    "id": "fg-inedita-05",
+    "label": "Inédita ENADE 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma pesquisa nacional hipotética sobre conectividade e educação básica levantou a proporção de domicílios com acesso exclusivo à internet por telefone celular (sem computador ou tablet) e sem acesso à rede, distribuída por faixa de renda familiar mensal em salários mínimos (SM), conforme a tabela a seguir.\n\n| Faixa de renda domiciliar | Total de domicílios (milhões) | Acesso com computador + banda larga (%) | Acesso exclusivo por celular (%) | Sem acesso à internet (%) |\n| :--- | :---: | :---: | :---: | :---: |\n| Até 1 SM | 20 | 15% | 60% | 25% |\n| Mais de 1 a 3 SM | 30 | 40% | 50% | 10% |\n| Mais de 3 a 5 SM | 15 | 70% | 26% | 4% |\n| Mais de 5 SM | 10 | 90% | 9% | 1% |\n\nConsiderando os dados apresentados na tabela e o debate sobre inclusão digital educacional, avalie as afirmações a seguir.\n\nI. Considerando o conjunto dos domicílios das duas primeiras faixas de renda (até 3 SM), mais de dois terços dos lares dependem exclusivamente do celular ou não possuem acesso à internet.\nII. O número absoluto de domicílios sem acesso à internet na faixa de até 1 SM é igual ao dobro do número de domicílios sem acesso na faixa de mais de 1 a 3 SM.\nIII. Na faixa de mais de 1 a 3 SM, a quantidade de domicílios com acesso via computador e banda larga é inferior à quantidade de domicílios que acessam exclusivamente pelo celular nessa mesma faixa.\nIV. A desigualdade de acesso a equipamentos adequados ao estudo remoto (computador e banda larga) varia menos de 30 pontos percentuais entre as faixas extremas de renda.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. O item II é falso: na faixa de até 1 SM são 5 milhões sem acesso (25% de 20M) e na faixa de 1 a 3 SM são 3 milhões (10% de 30M); portanto, 5 milhões não é o dobro de 3 milhões."
+      },
+      {
+        "letter": "B",
+        "text": "II e IV.",
+        "explanation": "Incorreta. Tanto II quanto IV apresentam erros de cálculo e interpretação dos dados da tabela."
+      },
+      {
+        "letter": "C",
+        "text": "III e IV.",
+        "explanation": "Incorreta. O item IV é falso porque a diferença entre os extremos é de 75 pontos percentuais (90% contra 15%)."
+      },
+      {
+        "letter": "D",
+        "text": "I e III.",
+        "explanation": "Correta. Nas duas faixas de até 3 SM (50M de domicílios), 17M (até 1 SM) + 18M (1 a 3 SM) = 35M não têm computador+banda larga (70%, acima de dois terços = 66,7%). Na faixa de 1 a 3 SM, 40% (12M) usam computador+banda larga contra 50% (15M) exclusivamente por celular."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. O item II é matematicamente falso (5 milhões vs. 3 milhões)."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "A alternativa D é a correta. No item I: 85% de 20M = 17M e 60% de 30M = 18M; somados, 35M de 50M correspondem a 70% (> 66,7%). No item II: 25% de 20M = 5M e 10% de 30M = 3M (não é o dobro). No item III: 40% < 50% na faixa de 1 a 3 SM. No item IV: 90% - 15% = 75 pontos percentuais de diferença.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Inclusão Digital e Educação",
+      "Interpretação de Tabelas e Dados",
+      "Desigualdade Social"
+    ]
+  },
+  {
+    "id": "fg-inedita-06",
+    "label": "Inédita ENADE 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "A expansão do trabalho mediado por plataformas digitais consolidou um modelo de organização produtiva em que algoritmos distribuem tarefas, avaliam desempenho em tempo real e definem tarifas dinâmicas. Para defensores desse modelo, a flexibilidade de horários amplia oportunidades de geração de renda; para pesquisadores do trabalho, entretanto, a ausência de vínculo formal transfere integralmente os riscos econômicos e previdenciários para o trabalhador, além de estimular jornadas exaustivas por meio de metas gamificadas.\n\nConsiderando as transformações contemporâneas no mundo do trabalho, avalie as afirmações a seguir.\n\nI. O gerenciamento algorítmico pode exercer controle efetivo sobre ritmo e disponibilidade do trabalhador, tensionando a ideia de autonomia plena.\nII. A informalidade previdenciária associada às plataformas digitais tende a gerar vulnerabilidade futura em situações de adoecimento, acidente ou aposentadoria.\nIII. A regulação estatal desse setor torna-se desnecessária, visto que a remuneração por tarefa assegura automaticamente direitos equivalentes aos do emprego formal.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. O item I identifica a tensão entre discurso de autonomia e controle algorítmico; o item II aponta corretamente a desproteção previdenciária decorrente da informalidade."
+      },
+      {
+        "letter": "B",
+        "text": "I, apenas.",
+        "explanation": "Incorreta. O item II também é verdadeiro, pois a ausência de contribuição e vínculo reduz a cobertura previdenciária."
+      },
+      {
+        "letter": "C",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta. O item III é falso, pois o pagamento por produção/tarefa não garante por si só previdência, férias ou proteção acidentária."
+      },
+      {
+        "letter": "D",
+        "text": "III, apenas.",
+        "explanation": "Incorreta. O item III contraria diretamente a análise exposta no texto-base."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. O item III é falso ao dispensar qualquer regulação e afirmar equivalência automática com o emprego formal."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A alternativa A é a correta. O texto mostra o paradoxo entre flexibilidade formal e subordinação algorítmica (gamificação e tarifas dinâmicas — item I), bem como a transferência de riscos previdenciários ao trabalhador (item II). O item III erra ao afirmar que o modelo garante automaticamente os direitos do emprego formal.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Mundo do Trabalho e Gig Economy",
+      "Plataformização e Algoritmos",
+      "Direitos Trabalhistas e Previdenciários"
+    ]
+  },
+  {
+    "id": "fg-inedita-07",
+    "label": "Inédita ENADE 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "A Constituição Federal de 1988 consagra a livre manifestação do pensamento e veda a censura prévia de natureza política, ideológica ou artística. Ao mesmo tempo, o texto constitucional estabelece como objetivos fundamentais da República promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação, tipificando o racismo como crime inafiançável e imprescritível.\n\nÀ luz dos princípios democráticos e constitucionais brasileiros, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Em um Estado Democrático de Direito, o exercício da liberdade de expressão encontra limites éticos e jurídicos na preservação da dignidade da pessoa humana e na proteção contra discursos de ódio.\n\nPORQUE\n\nII. A democracia majoritária pressupõe que os direitos fundamentais das minorias possam ser suprimidos sempre que houver concordância da maioria simples dos cidadãos em uma consulta popular.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Incorreta. A asserção II é falsa: o Estado Democrático de Direito impede a supressão de direitos fundamentais das minorias mesmo por decisão majoritária."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta. A asserção II é falsa, pois confunde democracia com 'tirania da maioria'."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Correta. A liberdade de expressão não é absoluta para violar a dignidade humana ou incitar ódio (I verdadeira), e direitos fundamentais não podem ser abolidos pela maioria simples (II falsa)."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta. Há inversão completa dos valores de verdade das duas proposições."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. A asserção I expressa corretamente a harmonização constitucional entre liberdade de expressão e dignidade humana."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A alternativa C é a correta. Direitos fundamentais são interdependentes e não absolutos: a liberdade de expressão (sem censura prévia) coexiste com a responsabilização posterior por discursos discriminatórios que ferem a dignidade humana (asserção I verdadeira). Já a asserção II é falsa porque a democracia constitucional protege cláusulas pétreas e direitos das minorias contra eventuais maiorias ocasionais.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Democracia e Constituição Federal",
+      "Liberdade de Expressão e Direitos Humanos",
+      "Minorias e Estado de Direito"
+    ]
+  },
+  {
+    "id": "fg-inedita-08",
+    "label": "Inédita ENADE 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "A bioeconomia baseada na sociobiodiversidade amazônica propõe valorizar cadeias produtivas de frutos nativos, óleos essenciais e plantas medicinais associadas aos conhecimentos tradicionais de comunidades indígenas, quilombolas e ribeirinhas. Ao remunerar a floresta em pé, esse modelo busca criar alternativa econômica ao desmatamento e à grilagem de terras. Especialistas alertam, contudo, que sem regras justas de repartição de benefícios e reconhecimento da propriedade intelectual coletiva, grandes conglomerados podem se apropriar desses saberes sem retorno efetivo às comunidades guardiãs.\n\nA partir das informações apresentadas no texto, conclui-se que",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a exploração comercial da biodiversidade amazônica dispensa o envolvimento de povos tradicionais quando mediada por laboratórios de biotecnologia.",
+        "explanation": "Incorreta. O texto enfatiza que a bioeconomia da sociobiodiversidade está associada aos conhecimentos tradicionais e deve garantir retorno justo às comunidades guardiãs."
+      },
+      {
+        "letter": "B",
+        "text": "a preservação florestal é incompatível com qualquer forma de geração de renda para populações locais da região amazônica.",
+        "explanation": "Incorreta. O texto apresenta exatamente a remuneração da 'floresta em pé' como alternativa econômica sustentável ao desmatamento."
+      },
+      {
+        "letter": "C",
+        "text": "o reconhecimento jurídico da propriedade intelectual coletiva dificulta a inovação tecnológica e impede parcerias científicas na região.",
+        "explanation": "Incorreta. Pelo contrário, regras de repartição de benefícios e proteção coletiva são apontadas como necessárias para evitar apropriação injusta."
+      },
+      {
+        "letter": "D",
+        "text": "a simples inserção de produtos extrativistas no mercado internacional garante automaticamente a equidade social nas comunidades produtoras.",
+        "explanation": "Incorreta. O texto alerta que, sem regras justas de repartição de benefícios, conglomerados podem concentrar ganhos sem retorno às comunidades."
+      },
+      {
+        "letter": "E",
+        "text": "a consolidação de uma bioeconomia sustentável depende tanto da conservação ambiental quanto de marcos legais que protejam os saberes tradicionais.",
+        "explanation": "Correta. Sintetiza com precisão os dois pilares destacados no texto: valorização sustentável da floresta em pé e proteção jurídica com repartição justa de benefícios."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "A alternativa E é a correta, pois reflete fielmente a tese central do texto: unir conservação ambiental ('floresta em pé') à justiça social e jurídica (repartição de benefícios e reconhecimento dos saberes tradicionais).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Patrimônio Cultural e Saberes Tradicionais",
+      "Bioeconomia e Sustentabilidade",
+      "Justiça Socioambiental"
+    ]
+  },
+  {
+    "id": "fg-inedita-09",
+    "label": "Inédita ENADE 2026 • Discursiva 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "TEXTO I\nO Brasil atravessa um processo acelerado de transição demográfica. Segundo projeções do IBGE, a parcela da população com 60 anos ou mais deverá superar um quarto dos habitantes nas próximas décadas, tornando o envelhecimento populacional um dos principais desafios para o planejamento das cidades, da saúde pública e da previdência.\n\nTEXTO II\nO conceito de Cidade Inteligente e Amiga da Pessoa Idosa associa soluções tecnológicas — como semáforos adaptativos, telemedicina e aplicativos de serviços públicos — a melhorias na infraestrutura física (calçadas acessíveis, iluminação e bancos de descanso) e na inclusão digital. Sem acessibilidade comunicacional e usabilidade adequada, porém, a digitalização de serviços essenciais pode transformar-se em barreira de exclusão para cidadãos idosos.\n\nA partir das informações apresentadas nos textos I e II, faça o que se pede nos itens a seguir.\n\na) Explique dois impactos negativos que a digitalização excludente de serviços públicos e bancários pode gerar na cidadania da população idosa. (valor: 5,0 pontos)\nb) Apresente duas propostas integradas (uma no campo tecnológico e outra no campo urbano ou educativo) para promover cidades mais inteligentes, acessíveis e inclusivas para pessoas idosas. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão de correção abaixo, verificando se atendeu integralmente aos dois itens (a e b), se apresentou exatamente dois impactos e duas propostas detalhadas e se utilizou a norma padrão da língua portuguesa.",
+    "discursiveRubric": "Padrão de Resposta Esperado (Valor total: 10,0 pontos):\n\na) Impactos negativos da digitalização excludente (5,0 pontos — 2,5 por impacto bem fundamentado):\nO estudante deve explicar dois impactos concretos sobre a cidadania e autonomia da pessoa idosa, tais como:\n1. Restrição ao acesso a direitos e serviços essenciais (agendamento de consultas no SUS, emissão de benefícios previdenciários, pagamentos e serviços municipais), gerando dependência de terceiros.\n2. Maior vulnerabilidade a fraudes e golpes digitais (engenharia social, interfaces confusas), decorrente da ausência de letramento digital e de mecanismos seguros simplificados.\n3. Isolamento social e perda de autonomia no espaço urbano quando mobilidade, atendimento e informação passam a exigir exclusivamente aplicativos pouco acessíveis.\n\nb) Duas propostas integradas (5,0 pontos — 2,5 por proposta consistente e viável):\n1. Proposta tecnológica: desenvolvimento de plataformas públicas seguindo diretrizes de acessibilidade (WCAG), com interfaces simplificadas, contraste adequado, comandos de voz, autenticação facilitada e manutenção obrigatória de canais híbridos (presencial/telefônico humanizado).\n2. Proposta urbana ou educativa: criação de programas municipais de letramento digital intergeracional em centros comunitários e escolas/universidades, aliados à requalificação física de calçadas, sinalização tátil/sonora e ampliação de tempo de travessia em semáforos.",
+    "imageUrls": [],
+    "topics": [
+      "Cidades Inteligentes",
+      "Envelhecimento Populacional e Acessibilidade",
+      "Inclusão Digital e Cidadania"
+    ]
+  },
+  {
+    "id": "fg-inedita-10",
+    "label": "Inédita ENADE 2026 • Discursiva 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "formacao_geral",
+    "areaId": "00-formacao-geral",
+    "areaName": "Formação Geral",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "TEXTO I\nEventos climáticos extremos — como ondas de calor intensas, estiagens prolongadas e enxurradas severas — tornaram-se mais frequentes nas cidades brasileiras. Embora o fenômeno atmosférico atinja municípios inteiros, seus efeitos mais letais recaem de maneira desproporcional sobre moradores de encostas, áreas alagadiças e periferias com infraestrutura precária.\n\nTEXTO II\nEspecialistas denominam 'racismo ambiental' ou injustiça socioambiental a situação em que populações vulnerabilizadas — frequentemente negras, indígenas ou de baixa renda — ficam mais expostas a desastres climáticos, contaminação hídrica e ausência de áreas verdes, ao mesmo tempo em que têm menor poder de influência sobre as decisões de planejamento urbano.\n\nCom base nos textos I e II, redija um texto dissertativo contemplando os seguintes aspectos:\n\na) Relacione os conceitos de crise climática e desigualdade socioespacial para explicar por que eventos extremos afetam mais gravemente determinados grupos populacionais. (valor: 4,0 pontos)\nb) Proponha duas ações de política pública integradas (envolvendo planejamento urbano/ambiental e participação social ou tecnologia de monitoramento) voltadas à mitigação desses impactos. (valor: 6,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão de correção abaixo, avaliando a articulação conceitual no item (a) e a concretude/viabilidade das duas políticas públicas no item (b).",
+    "discursiveRubric": "Padrão de Resposta Esperado (Valor total: 10,0 pontos):\n\na) Relação entre crise climática e desigualdade socioespacial (4,0 pontos):\nO estudante deve articular que, embora eventos climáticos extremos tenham causas ambientais globais/locais, seu impacto é socialmente produzido: populações de baixa renda e grupos racializados são historicamente empurrados para áreas de risco geológico ou hidrológico (encostas, várzeas), com déficit de drenagem, saneamento, arborização (ilhas de calor) e moradias resilientes, configurando injustiça/racismo ambiental e agravando perdas humanas e materiais.\n\nb) Duas ações de política pública integradas (6,0 pontos — 3,0 por ação detalhada com agente, meio e finalidade):\nExemplos válidos incluem:\n1. Infraestrutura verde e habitação segura: execução de obras de drenagem sustentável (parques lineares, recuperação de matas ciliares, pavimentos permeáveis) e regularização fundiária/reassentamento digno de famílias em áreas de alto risco, priorizando territórios periféricos.\n2. Monitoramento participativo e alerta precoce: implantação de redes de sensores meteorológicos/hidrológicos integradas à Defesa Civil com sistemas de alerta multicanal em tempo real (SMS, rádio comunitária, aplicativos acessíveis), somadas à capacitação de núcleos comunitários locais e inclusão dessas comunidades nos conselhos de planejamento urbano (Plano Diretor).",
+    "imageUrls": [],
+    "topics": [
+      "Crise Climática e Sustentabilidade",
+      "Racismo Ambiental e Justiça Social",
+      "Planejamento Urbano e Políticas Públicas"
+    ]
+  }
+]

@@ -1,0 +1,410 @@
+[
+  {
+    "id": "md-inedita-01",
+    "label": "Inédita ENADE 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Em um levantamento técnico realizado com 120 estudantes de Sistemas de Informação sobre o domínio de linguagens de programação e consulta, obtiveram-se os seguintes dados:\n\n• 60 dominam Python;\n• 50 dominam Java;\n• 45 dominam SQL;\n• 22 dominam Python e Java;\n• 18 dominam Python e SQL;\n• 14 dominam Java e SQL;\n• 8 dominam as três tecnologias simultaneamente.\n\nConsiderando o Princípio da Inclusão-Exclusão, o número de estudantes que dominam exatamente uma dessas tecnologias e o número de estudantes que não dominam nenhuma delas são, respectivamente,",
+    "options": [
+      {
+        "letter": "A",
+        "text": "63 e 11.",
+        "explanation": "Incorreta. A soma das áreas exclusivas resulta em 28 + 22 + 21 = 71 estudantes, não 63."
+      },
+      {
+        "letter": "B",
+        "text": "71 e 11.",
+        "explanation": "Correta. Pelo Princípio da Inclusão-Exclusão: |P ∪ J ∪ S| = 60 + 50 + 45 − 22 − 18 − 14 + 8 = 109 estudantes que dominam pelo menos uma tecnologia, restando 120 − 109 = 11 que não dominam nenhuma. Apenas Python = 60 − (14 + 10 + 8) = 28; apenas Java = 50 − (14 + 6 + 8) = 22; apenas SQL = 45 − (10 + 6 + 8) = 21; total de exatamente uma = 28 + 22 + 21 = 71."
+      },
+      {
+        "letter": "C",
+        "text": "71 e 19.",
+        "explanation": "Incorreta. Esquece de somar de volta a interseção tripla (+8) na fórmula de Inclusão-Exclusão, subestimando a união em 101 e superestimando o complementar em 19."
+      },
+      {
+        "letter": "D",
+        "text": "79 e 11.",
+        "explanation": "Incorreta. Soma novamente os 8 estudantes da interseção tripla aos 71 que dominam apenas uma."
+      },
+      {
+        "letter": "E",
+        "text": "109 e 11.",
+        "explanation": "Incorreta. 109 representa os estudantes que dominam pelo menos uma tecnologia (união), e não os que dominam exatamente uma."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Preenchendo o Diagrama de Venn de dentro para fora: 8 dominam as três; apenas Python e Java = 22 − 8 = 14; apenas Python e SQL = 18 − 8 = 10; apenas Java e SQL = 14 − 8 = 6. Logo, apenas Python = 60 − (14 + 10 + 8) = 28; apenas Java = 50 − (14 + 6 + 8) = 22; apenas SQL = 45 − (10 + 6 + 8) = 21. Somando apenas uma: 28 + 22 + 21 = 71. A união é 71 + 14 + 10 + 6 + 8 = 109, restando 120 − 109 = 11 que não dominam nenhuma.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Teoria dos Conjuntos", "Princípio da Inclusão-Exclusão", "Diagrama de Venn"]
+  },
+  {
+    "id": "md-inedita-02",
+    "label": "Inédita ENADE 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Considere o conjunto A = {1, 2, 3, 4} e as relações binárias definidas sobre A × A:\n\n• R₁ = {(x, y) ∈ A × A ∣ x divide y}\n• R₂ = {(x, y) ∈ A × A ∣ x ≡ y (mod 2)}\n• R₃ = {(1, 2), (2, 3), (3, 4), (4, 1)}\n\nAcerca das propriedades dessas relações e do conceito formal de função de A em A, avalie as afirmações a seguir.\n\nI. A relação R₁ é uma relação de ordem parcial sobre A, pois é reflexiva, antissimétrica e transitiva.\nII. A relação R₂ é uma relação de equivalência sobre A, particionando A nas classes {1, 3} e {2, 4}.\nIII. A relação R₃ é uma função bijetora de A em A.\nIV. Na matriz booleana de R₁, a diagonal principal contém zeros nos elementos em que x é primo.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. A afirmação III também é correta, pois cada elemento de A aparece exatamente uma vez como primeira coordenada em R₃ e todas as imagens em A são distintas."
+      },
+      {
+        "letter": "B",
+        "text": "I, II e III.",
+        "explanation": "Correta. I: divisibilidade nos positivos é reflexiva (x|x), antissimétrica (x|y ∧ y|x → x=y) e transitiva (x|y ∧ y|z → x|z). II: congruência mod 2 é relação de equivalência, separando ímpares {1,3} e pares {2,4}. III: R₃ associa 1→2, 2→3, 3→4, 4→1, sendo injetora e sobrejetora (bijetora)."
+      },
+      {
+        "letter": "C",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. II é verdadeira e IV é falsa, pois todo número positivo divide a si mesmo (diagonal principal da matriz de R₁ é toda igual a 1)."
+      },
+      {
+        "letter": "D",
+        "text": "II e IV.",
+        "explanation": "Incorreta. IV é falsa porque R₁ é reflexiva, tendo apenas uns na diagonal principal; além disso, I e III são verdadeiras."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta. A afirmação IV é falsa: sendo R₁ reflexiva, todos os elementos da diagonal principal (1,1), (2,2), (3,3) e (4,4) valem 1."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "R₁ (divisibilidade em inteiros positivos) é reflexiva, antissimétrica e transitiva, caracterizando uma ordem parcial (I verdadeira) e sua matriz tem 1 em toda a diagonal principal (IV falsa). R₂ (mesma paridade) é reflexiva, simétrica e transitiva, sendo uma relação de equivalência com classes {1, 3} e {2, 4} (II verdadeira). R₃ = {(1,2), (2,3), (3,4), (4,1)} mapeia cada elemento de A a um único elemento distinto de A, formando uma bijeção (III verdadeira).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Relações Binárias", "Ordem Parcial e Equivalência", "Funções Bijetoras"]
+  },
+  {
+    "id": "md-inedita-03",
+    "label": "Inédita ENADE 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Na análise de algoritmos recursivos, a indução matemática é empregada para provar fórmulas fechadas de relações de recorrência. Considere um algoritmo que resolve um problema de tamanho n ≥ 1 por meio da recorrência:\n\nT(1) = 1\nT(n) = 2·T(n − 1) + 3, para n ≥ 2\n\nUm estudante conjecturou a fórmula fechada T(n) = 2^(n+1) − 3 para todo n ≥ 1 e iniciou a demonstração por indução.\n\nSobre a validade dessa fórmula e o desenvolvimento correto do passo indutivo, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A fórmula falha já no caso base n = 1, pois 2^(1+1) − 3 = 1 ≠ T(1).",
+        "explanation": "Incorreta. Para n = 1, 2^(1+1) − 3 = 4 − 3 = 1 = T(1); o caso base é verdadeiro."
+      },
+      {
+        "letter": "B",
+        "text": "A fórmula falha para n = 2, pois a recorrência fornece T(2) = 5 enquanto 2^(2+1) − 3 = 3.",
+        "explanation": "Incorreta. 2^(2+1) − 3 = 8 − 3 = 5, que coincide exatamente com T(2) = 2·1 + 3 = 5."
+      },
+      {
+        "letter": "C",
+        "text": "A fórmula é verdadeira apenas se substituída por T(n) = 2ⁿ + 1, pois 2·(2^k + 1) + 3 = 2^(k+1) + 1.",
+        "explanation": "Incorreta. 2·(2^k + 1) + 3 = 2^(k+1) + 5 ≠ 2^(k+1) + 1, além de T(1) = 1 ≠ 2¹ + 1 = 3."
+      },
+      {
+        "letter": "D",
+        "text": "A fórmula é válida para todo n ≥ 1; assumindo T(k) = 2^(k+1) − 3, obtém-se T(k + 1) = 2·(2^(k+1) − 3) + 3 = 2^(k+2) − 3.",
+        "explanation": "Correta. Caso base n = 1: 2² − 3 = 1 = T(1). Assumindo T(k) = 2^(k+1) − 3 (HI), tem-se T(k+1) = 2·(2^(k+1) − 3) + 3 = 2^(k+2) − 6 + 3 = 2^((k+1)+1) − 3, fechando o passo indutivo."
+      },
+      {
+        "letter": "E",
+        "text": "A indução fraca não se aplica a recorrências lineares de primeira ordem, exigindo obrigatoriamente indução forte para k e k − 1.",
+        "explanation": "Incorreta. Como T(k + 1) depende apenas de T(k), a indução fraca é plenamente suficiente."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Verificando o caso base (n = 1): 2^(1+1) − 3 = 4 − 3 = 1 = T(1). Pela Hipótese de Indução, supõe-se T(k) = 2^(k+1) − 3 para k ≥ 1. No passo indutivo: T(k + 1) = 2·T(k) + 3 = 2·(2^(k+1) − 3) + 3 = 2^(k+2) − 6 + 3 = 2^((k+1)+1) − 3. Logo, a fórmula é verdadeira para todo n ≥ 1.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Indução Matemática", "Relações de Recorrência", "Análise de Algoritmos"]
+  },
+  {
+    "id": "md-inedita-04",
+    "label": "Inédita ENADE 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma empresa de desenvolvimento de software precisa formar um comitê técnico de resposta a incidentes composto por 4 profissionais escolhidos entre 6 desenvolvedores back-end e 5 desenvolvedores front-end. Por diretriz da diretoria de engenharia, o comitê deve contar com pelo menos 2 desenvolvedores back-end e pelo menos 1 desenvolvedor front-end.\n\nDe quantas maneiras distintas esse comitê pode ser formado?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "150.",
+        "explanation": "Incorreta. 150 = C(6,2)·C(5,2) considera apenas a configuração com 2 back-end e 2 front-end, esquecendo o caso (3 back-end, 1 front-end)."
+      },
+      {
+        "letter": "B",
+        "text": "250.",
+        "explanation": "Correta. Os casos válidos são: (2 back-end e 2 front-end) ou (3 back-end e 1 front-end). Logo, C(6,2)·C(5,2) + C(6,3)·C(5,1) = 15·10 + 20·5 = 150 + 100 = 250 comitês."
+      },
+      {
+        "letter": "C",
+        "text": "265.",
+        "explanation": "Incorreta. 265 inclui erroneamente o caso com 4 back-end e 0 front-end (+ C(6,4) = 15), violando a exigência de pelo menos 1 front-end."
+      },
+      {
+        "letter": "D",
+        "text": "330.",
+        "explanation": "Incorreta. 330 = C(11,4) representa o total de comitês de 4 pessoas sem nenhuma restrição."
+      },
+      {
+        "letter": "E",
+        "text": "1 200.",
+        "explanation": "Incorreta. Esse valor trata comitês não ordenados como arranjos ordenados."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Como a ordem de escolha dos membros no comitê não importa, aplicamos combinações simples somando os cenários disjuntos que atendem às restrições (≥ 2 back-end e ≥ 1 front-end, totalizando 4 membros): Caso 1 (2B, 2F) = C(6,2) · C(5,2) = 15 · 10 = 150; Caso 2 (3B, 1F) = C(6,3) · C(5,1) = 20 · 5 = 100. Total = 150 + 100 = 250.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Análise Combinatória", "Combinação Simples", "Princípio Aditivo e Multiplicativo"]
+  },
+  {
+    "id": "md-inedita-05",
+    "label": "Inédita ENADE 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma equipe de operações (DevOps) registrou 200 incidentes de produção ocorridos no último trimestre, classificando-os quanto à severidade e ao ambiente de hospedagem (Nuvem ou Local), conforme a tabela a seguir.\n\n| Severidade \\ Ambiente | Nuvem | Local | Total |\n| :--- | :---: | :---: | :---: |\n| Crítico | 24 | 16 | 40 |\n| Alto | 36 | 44 | 80 |\n| Médio | 40 | 40 | 80 |\n| Total | 100 | 100 | 200 |\n\nSelecionando-se aleatoriamente um incidente que ocorreu no ambiente em Nuvem, qual é a probabilidade de que ele tenha severidade Crítica ou Alta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "24%.",
+        "explanation": "Incorreta. 24% corresponde apenas aos incidentes críticos na Nuvem (24/100), ignorando os de severidade Alta."
+      },
+      {
+        "letter": "B",
+        "text": "30%.",
+        "explanation": "Incorreta. 30% = (24 + 36) / 200 calcula P((Crítico ∪ Alto) ∩ Nuvem) no espaço total de 200 incidentes, ignorando o condicionamento ao ambiente Nuvem."
+      },
+      {
+        "letter": "C",
+        "text": "50%.",
+        "explanation": "Incorreta. 50% corresponde à proporção de incidentes ocorridos em Nuvem no total geral (100/200)."
+      },
+      {
+        "letter": "D",
+        "text": "60%.",
+        "explanation": "Correta. Como sabemos que o incidente ocorreu em Nuvem, o espaço amostral reduz-se a 100 incidentes. Desses, 24 são Críticos e 36 são Altos (mutuamente exclusivos). Logo, P = (24 + 36) / 100 = 60/100 = 60%."
+      },
+      {
+        "letter": "E",
+        "text": "80%.",
+        "explanation": "Incorreta. 80% corresponde a (40 + 40)/100, somando incidentes de outros ambientes ou níveis."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Trata-se de probabilidade condicional: P(Crítico ou Alto | Nuvem) = |{(Crítico ∪ Alto) ∩ Nuvem}| / |Nuvem| = (24 + 36) / 100 = 60 / 100 = 60%.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Probabilidade Discreta", "Probabilidade Condicional", "Tabelas de Contingência"]
+  },
+  {
+    "id": "md-inedita-06",
+    "label": "Inédita ENADE 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Um serviço de armazenamento em bloco aloca contêineres de dados exclusivamente em dois formatos fixos: blocos do Tipo X (7 GB) e blocos do Tipo Y (11 GB). Um cliente contratou exatamente 250 GB de capacidade total, que deve ser preenchida integralmente por x blocos do Tipo X e y blocos do Tipo Y, com x ≥ 1 e y ≥ 1.\n\nConsiderando a teoria das equações diofantinas lineares e da aritmética modular, quantas combinações distintas (x, y) satisfazem exatamente essa alocação?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Nenhuma combinação, pois 7 e 11 não dividem 250.",
+        "explanation": "Incorreta. A condição de existência de solução inteira é que mdc(7, 11) divida 250. Como mdc(7, 11) = 1 e 1 | 250, existem soluções."
+      },
+      {
+        "letter": "B",
+        "text": "1 combinação apenas: (20, 10).",
+        "explanation": "Incorreta. (20, 10) é uma das soluções (7·20 + 11·10 = 250), mas não a única."
+      },
+      {
+        "letter": "C",
+        "text": "2 combinações: (9, 17) e (20, 10).",
+        "explanation": "Incorreta. Omite a terceira solução válida (31, 3), pois 7·31 + 11·3 = 217 + 33 = 250."
+      },
+      {
+        "letter": "D",
+        "text": "3 combinações: (9, 17), (20, 10) e (31, 3).",
+        "explanation": "Correta. A equação 7x + 11y = 250 possui solução particular (x₀, y₀) = (9, 17), pois 7·9 + 11·17 = 63 + 187 = 250. A solução geral é x = 9 + 11t e y = 17 − 7t. Para x ≥ 1 e y ≥ 1, tem-se t ∈ {0, 1, 2}, gerando exatamente 3 pares: (9, 17), (20, 10) e (31, 3)."
+      },
+      {
+        "letter": "E",
+        "text": "4 combinações, variando t de 0 a 3.",
+        "explanation": "Incorreta. Para t = 3, y = 17 − 21 = −4 < 0, o que é impossível para quantidade de blocos."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Modelando como 7x + 11y = 250, temos 7x ≡ 250 ≡ 8 (mod 11). Multiplicando ambos os lados por 8 (inverso modular de 7 mod 11, pois 7·8 = 56 ≡ 1 mod 11), obtemos x ≡ 64 ≡ 9 (mod 11). Assim, x = 9 + 11t e y = (250 − 7(9 + 11t))/11 = 17 − 7t. Como x ≥ 1 ⇒ t ≥ 0 e y ≥ 1 ⇒ 17 − 7t ≥ 1 ⇒ t ≤ 2, os valores válidos são t = 0 → (9, 17), t = 1 → (20, 10) e t = 2 → (31, 3).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Equações Diofantinas Lineares", "Aritmética Modular", "Inverso Modular"]
+  },
+  {
+    "id": "md-inedita-07",
+    "label": "Inédita ENADE 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma rede de comunicação entre cinco datacenters é modelada por um grafo simples não direcionado G = (V, E), em que V = {A, B, C, D, E} e o conjunto de enlaces diretos é E = {{A, B}, {A, C}, {B, C}, {B, D}, {C, D}, {D, E}}.\n\nCom base na Teoria dos Grafos, avalie as afirmações a seguir.\n\nI. Os vértices A e D são adjacentes em G.\nII. A soma dos graus (valências) de todos os vértices de G é igual a 12.\nIII. O vértice D possui grau 3 e é incidente às arestas {B, D}, {C, D} e {D, E}.\nIV. O grafo G admite um ciclo euleriano que percorre todas as arestas exatamente uma vez e retorna ao vértice inicial.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e IV.",
+        "explanation": "Incorreta. Não há aresta {A, D} em E (I falsa), e há vértices de grau ímpar (C tem grau 3, D tem grau 3, E tem grau 1), impossibilitando ciclo euleriano (IV falsa)."
+      },
+      {
+        "letter": "B",
+        "text": "II e III.",
+        "explanation": "Correta. II: |E| = 6 arestas, logo pelo Teorema do Aperto de Mãos ∑deg(v) = 2·6 = 12 (graus: deg(A)=2, deg(B)=3, deg(C)=3, deg(D)=3, deg(E)=1; soma = 12). III: D conecta-se a B, C e E, tendo grau 3."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. A afirmação I é falsa porque {A, D} ∉ E."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. A afirmação IV é falsa: um grafo conexo possui ciclo euleriano se e somente se todos os vértices tiverem grau par; aqui, B, C, D e E têm grau ímpar."
+      },
+      {
+        "letter": "E",
+        "text": "III e IV.",
+        "explanation": "Incorreta. II é verdadeira pelo Teorema do Aperto de Mãos e IV é falsa pois há 4 vértices de grau ímpar."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Os graus dos vértices são: deg(A) = 2, deg(B) = 3, deg(C) = 3, deg(D) = 3 e deg(E) = 1. A soma é 2 + 3 + 3 + 3 + 1 = 12 = 2|E| (II verdadeira). D incide em {B,D}, {C,D} e {D,E}, tendo grau 3 (III verdadeira). Não há aresta {A, D}, logo A e D não são adjacentes (I falsa). Como há 4 vértices de grau ímpar (B, C, D, E), não existe nem ciclo nem caminho euleriano (IV falsa).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Teoria dos Grafos", "Adjacência, Incidência e Grau", "Ciclo Euleriano"]
+  },
+  {
+    "id": "md-inedita-08",
+    "label": "Inédita ENADE 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "No desenvolvimento de um sistema de roteamento para redes com 5 000 vértices e topologia em árvore (grafo conexo e acíclico), um engenheiro precisa escolher a estrutura de dados para representar o grafo em memória.\n\nConsiderando as propriedades das árvores e das representações computacionais de grafos, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Para representar essa rede em memória visando economia de espaço e eficiência ao percorrer os vizinhos de cada vértice, a lista de adjacência é preferível à matriz de adjacência.\n\nPORQUE\n\nII. Toda árvore com |V| vértices possui exatamente |V| − 1 arestas, configurando um grafo esparso cujo armazenamento por lista de adjacência consome espaço O(|V|), enquanto a matriz de adjacência exige espaço O(|V|²).\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Correta. Uma árvore com 5 000 vértices possui apenas 4 999 arestas (grafo esparso). Assim, a lista de adjacência ocupa O(|V| + |E|) = O(|V|) e percorre vizinhos em O(deg(v)), superando a matriz O(|V|²) em espaço e na iteração de vizinhos."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta. A esparsidade da árvore (|E| = |V| − 1) e a diferença assintótica de espaço O(|V|) vs O(|V|²) justificam diretamente por que a lista de adjacência é preferível."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Incorreta. A asserção II também é verdadeira: toda árvore de n vértices tem exatamente n − 1 arestas, logo |V| + |E| = 2|V| − 1 = O(|V|)."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta. Ambas são verdadeiras; a matriz de 5 000 × 5 000 teria 25 milhões de entradas para guardar menos de 10 mil incidências."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. Ambas as afirmações refletem resultados clássicos de grafos e estruturas de dados."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Toda árvore com n vértices é um grafo conexo acíclico com exatamente n − 1 arestas. Para n = 5 000, há apenas 4 999 arestas — um grafo fortemente esparso. A lista de adjacência usa memória O(|V| + |E|) = O(|V|) e itera apenas sobre os vizinhos existentes em O(deg(v)), enquanto a matriz de adjacência requer O(|V|²) de espaço (~25 milhões de células) e O(|V|) para listar os vizinhos de um vértice.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": ["Árvores", "Representação de Grafos", "Complexidade Espacial"]
+  },
+  {
+    "id": "md-inedita-09",
+    "label": "Inédita ENADE 2026 • Discursiva 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em protocolos de escalonamento e criptografia assimétrica baseados em aritmética inteira, frequentemente é necessário calcular coeficientes inteiros de combinações lineares e resolver equações diofantinas.\n\nConsiderando os conceitos de divisibilidade, Máximo Divisor Comum (MDC) e Algoritmo de Euclides Estendido, faça o que se pede nos itens a seguir.\na) Utilizando o Algoritmo de Euclides Estendido, determine d = mdc(378, 132) e encontre um par de inteiros (x, y) que satisfaça a Identidade de Bézout 378x + 132y = d, apresentando todas as divisões sucessivas e a substituição reversa. (valor: 5,0 pontos)\nb) Uma fábrica de hardware monta kits usando placas do tipo A (R$ 70,00 cada) e módulos do tipo B (R$ 90,00 cada), tendo faturado exatamente R$ 1.000,00 em um pedido em que foram vendidos ao menos 1 item de cada tipo. Modele o problema como uma equação diofantina linear simplificada (7x + 9y = 100) e determine todas as soluções inteiras positivas possíveis (x, y). (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
+    "discursiveRubric": "a) Algoritmo de Euclides Estendido para mdc(378, 132) (5,0 pontos):\nDivisões sucessivas (2,0 pontos):\n- 378 = 2 · 132 + 114  ⇒  114 = 378 − 2 · 132\n- 132 = 1 · 114 + 18   ⇒  18 = 132 − 1 · 114\n- 114 = 6 · 18 + 6     ⇒  6 = 114 − 6 · 18\n- 18 = 3 · 6 + 0       ⇒  Logo, d = mdc(378, 132) = 6.\nSubstituição reversa (3,0 pontos):\n- 6 = 114 − 6 · (132 − 114) = 7 · 114 − 6 · 132\n- 6 = 7 · (378 − 2 · 132) − 6 · 132 = 7 · 378 − 20 · 132\n- Conferência: 378·7 + 132·(−20) = 2646 − 2640 = 6. Portanto, x = 7 e y = −20 (ou qualquer par da forma x = 7 + 22k, y = −20 − 63k).\n\nb) Equação Diofantina 7x + 9y = 100 com x ≥ 1, y ≥ 1 (5,0 pontos):\n- mdc(7, 9) = 1 | 100 (existe solução). Como 7·(4) + 9·(−3) = 1, uma solução particular para 100 é x' = 400, y' = −300 (ou diretamente x₀ = 4, y₀ = 8, pois 7·4 + 9·8 = 28 + 72 = 100). (2,0 pontos)\n- Solução geral a partir de (4, 8): x = 4 + 9t e y = 8 − 7t, t ∈ ℤ. (1,5 ponto)\n- Restrições x ≥ 1 e y ≥ 1: 4 + 9t ≥ 1 ⇒ t ≥ 0; e 8 − 7t ≥ 1 ⇒ t ≤ 1. (0,5 ponto)\n- Soluções válidas: para t = 0 → (4, 8); para t = 1 → (13, 1). Resposta final: (4 placas A, 8 módulos B) ou (13 placas A, 1 módulo B). (1,0 ponto)",
+    "imageUrls": [],
+    "topics": ["Algoritmo de Euclides Estendido", "Identidade de Bézout", "Equações Diofantinas Lineares"]
+  },
+  {
+    "id": "md-inedita-10",
+    "label": "Inédita ENADE 2026 • Discursiva 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "08-matematica-discreta",
+    "areaName": "Matemática Discreta",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Considere uma rede hierárquica de sensores ambientais modelada como uma árvore enraizada T = (V, E), isto é, um grafo conexo e acíclico com n = |V| ≥ 1 vértices.\n\nCom base nos fundamentos de Indução Matemática e Teoria dos Grafos, faça o que se pede nos itens a seguir.\na) Demonstre, por Indução Matemática (forte ou fraca sobre o número de vértices n), que toda árvore com n ≥ 1 vértices possui exatamente n − 1 arestas. (valor: 6,0 pontos)\nb) Um projeto prevê interligar 18 sensores de forma que exista exatamente um único caminho simples entre qualquer par de sensores, garantindo custo mínimo sem redundância cíclica. Determine quantos cabos de ligação (arestas) serão necessários e qual será a soma dos graus de todos os sensores nessa topologia, justificando com base nos teoremas da Teoria dos Grafos. (valor: 4,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão oficial de correção abaixo.",
+    "discursiveRubric": "a) Demonstração por Indução Matemática (6,0 pontos):\n- Caso base (n = 1): Uma árvore com 1 único vértice e sem laços (acíclica) possui 0 arestas; como n − 1 = 1 − 1 = 0, a propriedade vale para n = 1. (1,5 ponto)\n- Hipótese de Indução (HI): Suponha (indução forte) que toda árvore com m vértices (1 ≤ m ≤ k) possua exatamente m − 1 arestas (ou, na indução fraca usando existência de folha, toda árvore com k vértices possua k − 1 arestas). (1,5 ponto)\n- Passo indutivo (n = k + 1 ≥ 2): Considere uma árvore T com k + 1 vértices. Como T é finita, conexa e acíclica com k + 1 ≥ 2 vértices, T possui ao menos uma folha (vértice v de grau 1) — ou, alternativamente, removendo uma aresta e = {u, w}, T divide-se em duas subárvores conexas e acíclicas T₁ e T₂ com n₁ e n₂ vértices (n₁ + n₂ = k + 1, 1 ≤ n₁, n₂ ≤ k). Pela HI, |E(T₁)| = n₁ − 1 e |E(T₂)| = n₂ − 1. Somando a aresta removida: |E(T)| = (n₁ − 1) + (n₂ − 1) + 1 = (n₁ + n₂) − 1 = (k + 1) − 1 = k. (3,0 pontos)\n\nb) Aplicação à rede de 18 sensores (4,0 pontos):\n- Um grafo conexo em que existe um único caminho simples entre qualquer par de vértices é, por definição, uma árvore (se houvesse ciclo, haveria ao menos dois caminhos). (1,0 ponto)\n- Número de cabos (arestas): |E| = n − 1 = 18 − 1 = 17 cabos. (1,5 ponto)\n- Soma dos graus: Pelo Teorema do Aperto de Mãos, ∑deg(v) = 2 · |E| = 2 · 17 = 34. (1,5 ponto)",
+    "imageUrls": [],
+    "topics": ["Indução Matemática", "Árvores", "Teorema do Aperto de Mãos"]
+  }
+]

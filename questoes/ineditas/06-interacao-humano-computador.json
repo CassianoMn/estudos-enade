@@ -1,0 +1,450 @@
+[
+  {
+    "id": "ihc-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Ao utilizar um novo sistema de gestão acadêmica, uma estudante notou dois problemas recorrentes: (1) o título principal de cada seção estava formatado em azul e sublinhado, levando vários usuários a clicarem repetidamente nele esperando abrir um link inexistente; e (2) durante a exportação de um relatório longo, havia um botão 'Interromper', mas nenhuma mensagem esclarecia se os dados parcialmente gerados seriam descartados ou mantidos no dispositivo. À luz dos conceitos fundamentais de Interação Humano-Computador (IHC), os problemas (1) e (2) exemplificam falhas relacionadas, respectivamente, a",
+    "options": [
+      {
+        "letter": "A",
+        "text": "teste de compatibilidade e usabilidade somativa.",
+        "explanation": "Incorreta. Teste de compatibilidade verifica plataformas/navegadores no cliente, e avaliação somativa mede qualidade ao final do projeto; nenhum dos dois descreve os problemas semióticos da interface."
+      },
+      {
+        "letter": "B",
+        "text": "memória sensorial e Lei de Fitts.",
+        "explanation": "Incorreta. Memória sensorial retém estímulos físicos por milissegundos e a Lei de Fitts trata do tempo de apontamento em função de distância e tamanho do alvo."
+      },
+      {
+        "letter": "C",
+        "text": "acessibilidade motora e design responsivo.",
+        "explanation": "Incorreta. O problema (1) decorre de falsa pista visual de clicabilidade (affordance) e o problema (2) decorre de diálogo obscuro sobre consequências da ação (comunicabilidade)."
+      },
+      {
+        "letter": "D",
+        "text": "affordance (falsa affordance percebida) e baixa comunicabilidade.",
+        "explanation": "Correta. O sublinhado azul cria a falsa impressão (affordance confusa) de que o título é um hiperlink clicável; já a ausência de comunicação clara sobre o efeito de 'Interromper' compromete a comunicabilidade, impedindo o usuário de compreender a lógica do designer."
+      },
+      {
+        "letter": "E",
+        "text": "prototipação de alta fidelidade e arquitetura de informação.",
+        "explanation": "Incorreta. Os fenômenos observados em uso referem-se às propriedades perceptivas de ação (affordance) e à clareza do diálogo entre designer e usuário (comunicabilidade)."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Segundo Norman (1988), affordance refere-se às características perceptíveis de um objeto que indicam como ele pode ser manipulado; texto azul sublinhado que não é link gera falsa affordance. Já a comunicabilidade (Barbosa & Silva) exige que a interface comunique bem a intenção de design e responda de forma útil — quando o usuário não sabe se cancelar/interromper apaga ou preserva dados parciais, há baixa comunicabilidade.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Affordance",
+      "Comunicabilidade",
+      "Conceitos Fundamentais de IHC"
+    ]
+  },
+  {
+    "id": "ihc-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma equipe de IHC está otimizando a tela de confirmação de pedidos de um terminal de autoatendimento (totem) utilizando a Lei de Fitts, modelada por T = k × log2(D / S + 0,5), considerando k = 100 ms. Na versão atual, o botão 'Finalizar' possui largura S = 20 px e está posicionado a uma distância D = 310 px do último campo preenchido pelo usuário. Na versão redesenhada, a equipe dobrou a largura do botão para S = 40 px e o aproximou para D = 140 px.\n\nConsiderando a Lei de Fitts e os fatores cognitivos humanos (Modelo do Processador Humano de Informações e memória de trabalho), assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O tempo de apontamento passou de 400 ms para 200 ms, porém reduzir a distância D sempre piora a carga na memória de trabalho do usuário.",
+        "explanation": "Incorreta. Os cálculos estão certos (400 ms para 200 ms), mas aproximar o botão de ação da área de foco reduz o deslocamento motor e não prejudica a memória de trabalho."
+      },
+      {
+        "letter": "B",
+        "text": "O tempo estimado de apontamento caiu pela metade, passando de 400 ms na versão atual para 200 ms na versão redesenhada, e técnicas como agrupamento visual (chunking) de códigos numéricos complementam o design ao reduzir a sobrecarga da memória de trabalho.",
+        "explanation": "Correta. Na versão atual: T1 = 100 × log2(310/20 + 0,5) = 100 × log2(16) = 100 × 4 = 400 ms. Na redesenhada: T2 = 100 × log2(140/40 + 0,5) = 100 × log2(4) = 100 × 2 = 200 ms. Além disso, chunking facilita a retenção temporária na memória de trabalho (capacidade ~7 ± 2 itens)."
+      },
+      {
+        "letter": "C",
+        "text": "Na versão redesenhada, o tempo de apontamento caiu para 100 ms, e o subsistema perceptivo humano processa estímulos visuais em cerca de 50 ms — mais rápido do que estímulos auditivos.",
+        "explanation": "Incorreta. O tempo na versão redesenhada é 200 ms (log2(4) = 2), e no Processador Humano de Informações estímulos auditivos (~130-150 ms) são percebidos mais rapidamente que estímulos visuais (~170-200 ms)."
+      },
+      {
+        "letter": "D",
+        "text": "De acordo com a Lei de Fitts, aumentar o tamanho S do botão eleva o tempo T de movimento, motivo pelo qual botões críticos devem ser mantidos pequenos e distantes das bordas da tela.",
+        "explanation": "Incorreta. Como S está no denominador de D/S, aumentar o tamanho S reduz o tempo T. Além disso, bordas da tela possuem altura/largura efetiva muito grande para ponteiros, facilitando o apontamento."
+      },
+      {
+        "letter": "E",
+        "text": "A capacidade da memória de trabalho humana é ilimitada, enquanto a memória permanente exige obrigatoriamente que códigos de protocolo tenham 12 dígitos contínuos sem separadores.",
+        "explanation": "Incorreta. A memória de trabalho tem capacidade limitada (~7 ± 2 blocos), ao contrário da memória permanente (longa duração), e separadores/chunking justamente ajudam a reduzir erros na memória de trabalho."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Aplicando T = k × log2(D/S + 0,5) com k = 100 ms: antes, T1 = 100 × log2(310/20 + 0,5) = 100 × log2(16) = 400 ms; depois, T2 = 100 × log2(140/40 + 0,5) = 100 × log2(4) = 200 ms (redução de 50%). Em fatores cognitivos, a memória de trabalho possui capacidade reduzida, sendo beneficiada pelo chunking (agrupamento de sequências em blocos menores).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Lei de Fitts",
+      "Processador Humano de Informações",
+      "Memória de Trabalho e Chunking"
+    ]
+  },
+  {
+    "id": "ihc-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma empresa de logística desenvolveu um sistema web para expedição de cargas que oferece dezenas de atalhos avançados de teclado, acelerando drasticamente o trabalho de operadores experientes, mas provocando confusão e dificuldade de recordação em funcionários temporários que utilizam o sistema apenas em datas sazonais. Sobre os conceitos de Usabilidade (ISO 9241-11 e critérios de Nielsen) e Experiência do Usuário (UX), assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O caso ilustra um trade-off clássico entre critérios de usabilidade — alta eficiência para usuários experientes versus facilidade de aprendizado e memorização para usuários ocasionais —, e a norma ISO 9241-11 avalia a usabilidade pela eficácia, eficiência e satisfação em um contexto específico de uso.",
+        "explanation": "Correta. Dificilmente um sistema maximiza simultaneamente todos os critérios de usabilidade para perfis opostos (novatos/ocasionais vs. experientes), exigindo equilíbrio no projeto. A ISO 9241-11 define exatamente eficácia, eficiência e satisfação considerando usuários, tarefas e contexto específico."
+      },
+      {
+        "letter": "B",
+        "text": "Usabilidade e Experiência do Usuário (UX) são termos estritamente idênticos, limitando-se ambos apenas ao tempo de resposta do servidor e à estética visual da tela inicial.",
+        "explanation": "Incorreta. Usabilidade é uma qualidade intrínseca projetada no sistema (eficácia, eficiência, satisfação no uso), enquanto UX é mais abrangente e longitudinal, envolvendo percepções emocionais e cognitivas em todos os pontos de contato (antes, durante e após o uso)."
+      },
+      {
+        "letter": "C",
+        "text": "Na norma ISO/IEC 25010, a usabilidade é classificada exclusivamente como um requisito funcional de negócio, sem relação com proteção contra erros do usuário ou acessibilidade.",
+        "explanation": "Incorreta. A usabilidade é um requisito não funcional (de qualidade), e na ISO/IEC 25010 engloba subcaracterísticas como reconhecimento da adequação, apreensibilidade, operabilidade, proteção contra erro do usuário, estética da interface e acessibilidade."
+      },
+      {
+        "letter": "D",
+        "text": "A Experiência do Usuário (UX) é puramente objetiva e restrita ao primeiro minuto de uso da interface gráfica, ignorando suporte técnico, manuais, instalação ou expectativas prévias.",
+        "explanation": "Incorreta. UX é subjetiva, abrangente e longitudinal, cobrindo antecipação de uso, primeiro uso, uso esporádico e uso continuado em múltiplos pontos de contato (marketing, loja, manual, suporte, interface)."
+      },
+      {
+        "letter": "E",
+        "text": "A 'facilidade de recordação' (memorability) mede apenas quantos megabytes de memória RAM o navegador consome durante a navegação entre três telas.",
+        "explanation": "Incorreta. Facilidade de recordação (memorability) refere-se à capacidade de um usuário ocasional lembrar como operar o sistema após um período sem utilizá-lo."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Como destaca o material do Prof. Raphael, dificilmente um sistema atinge excelência absoluta em todos os critérios de usabilidade ao mesmo tempo: recursos que otimizam a eficiência de especialistas (muitos atalhos) podem prejudicar a facilidade de aprendizado e recordação de usuários ocasionais. Além disso, a ISO 9241-11 define usabilidade por eficácia, eficiência e satisfação em um contexto específico, enquanto a UX engloba toda a vivência subjetiva e longitudinal do usuário.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Usabilidade (ISO 9241-11 e ISO 25010)",
+      "Critérios de Usabilidade de Nielsen",
+      "Experiência do Usuário (UX)"
+    ]
+  },
+  {
+    "id": "ihc-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em uma inspeção de interface de um aplicativo de compras online, foram registrados quatro problemas:\n1. Ao clicar em 'Confirmar Pagamento', a tela congela por 8 segundos sem nenhum indicador visual de processamento, levando o usuário a clicar várias vezes e duplicar o pedido.\n2. Quando o cartão é recusado, o sistema exibe apenas um pop-up com o texto: 'Erro fatal: SQLSTATE[HY000] Code 409'.\n3. Após adicionar um item ao carrinho por engano durante o checkout rápido em janela modal, não existe botão 'Cancelar', 'Voltar' ou 'X' para fechar a janela sem concluir a etapa.\n4. Na tela de 'Meus Pedidos', o botão de remoção chama-se 'Excluir'; na tela de 'Favoritos', o mesmo ícone de lixeira chama-se 'Arquivar'.\n\nConsiderando as 10 Heurísticas de Usabilidade de Jakob Nielsen, os problemas 1, 2, 3 e 4 violam principalmente, respectivamente,",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1: Design estético e minimalista; 2: Flexibilidade e eficiência; 3: Prevenção de erros; 4: Ajuda e documentação.",
+        "explanation": "Incorreta. A ausência de indicador de carregamento viola Visibilidade do status do sistema (#1), e o erro técnico obscuro viola Reconhecimento/diagnóstico de erros (#9) e Sintonia com o mundo real (#2)."
+      },
+      {
+        "letter": "B",
+        "text": "1: Consistência e padronização; 2: Controle e liberdade do usuário; 3: Visibilidade do status do sistema; 4: Reconhecer mais do que lembrar.",
+        "explanation": "Incorreta. A ordem das heurísticas violadas está trocada em relação aos problemas numerados."
+      },
+      {
+        "letter": "C",
+        "text": "1: Ajuda e documentação; 2: Design estético e minimalista; 3: Visibilidade do status do sistema; 4: Flexibilidade e eficiência.",
+        "explanation": "Incorreta. Nenhuma das associações corresponde às heurísticas diretamente violadas nos itens 1 a 4."
+      },
+      {
+        "letter": "D",
+        "text": "1: Reconhecer mais do que lembrar; 2: Prevenção de erros; 3: Consistência e padronização; 4: Controle e liberdade do usuário.",
+        "explanation": "Incorreta. O modal preso sem saída viola Controle e liberdade do usuário (#3), e termos diferentes para a mesma ação/ícone violam Consistência e padronização (#4)."
+      },
+      {
+        "letter": "E",
+        "text": "1: Visibilidade do status do sistema; 2: Ajudar usuários a reconhecer, diagnosticar e recuperar-se de erros (e sintonia com o mundo real); 3: Controle e liberdade do usuário; 4: Consistência e padronização.",
+        "explanation": "Correta. (1) Falta feedback imediato do estado em andamento (#1); (2) Mensagem técnica críptica não explica o erro nem como corrigi-lo em linguagem do usuário (#9 e #2); (3) Falta 'saída de emergência' no modal (#3); (4) Mesma metáfora visual com rótulos divergentes quebra a padronização interna (#4)."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Cada situação mapeia diretamente uma heurística de Nielsen: (1) congelar sem feedback viola a Heurística 1 (Visibilidade do status do sistema); (2) código técnico sem diagnóstico claro nem solução viola a Heurística 9 (Reconhecer, diagnosticar e corrigir erros) e a Heurística 2 (Sintonia com o mundo real); (3) aprisionar o usuário em modal sem cancelamento viola a Heurística 3 (Controle e liberdade do usuário); (4) rotular de formas distintas o mesmo ícone viola a Heurística 4 (Consistência e padronização).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "10 Heurísticas de Nielsen",
+      "Projeto de Interface",
+      "Tratamento de Erros e Consistência"
+    ]
+  },
+  {
+    "id": "ihc-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma universidade pública está desenvolvendo um portal de serviços estudantis que precisa atender integralmente às diretrizes de acessibilidade da iniciativa WAI/W3C (WCAG) e à legislação brasileira vigente (Lei nº 10.098/2000 e Lei Brasileira de Inclusão nº 13.146/2015). Durante a revisão técnica do código front-end, avaliaram-se diversas decisões de implementação.\n\nNesse contexto, avalie as afirmações a seguir:\n\nI. A acessibilidade digital preconiza o design inclusivo, buscando flexibilidade para atender usuários com diversas necessidades motoras, sensoriais e cognitivas em uma mesma aplicação, em vez de criar uma versão segregada exclusiva para pessoas com deficiência.\nII. O fornecimento de textos alternativos descritivos (atributo alt) em imagens informativas, legendas em vídeos e contraste adequado entre texto e fundo atendem ao princípio Perceptível da WCAG.\nIII. Permitir que todos os menus, formulários e controles interativos sejam navegados e acionados exclusivamente por teclado, com foco visível, atende ao princípio Operável da WCAG.\nIV. Utilizar elementos genéricos <div> clicáveis sem semântica nem atributos WAI-ARIA melhora o princípio Robusto da WCAG, pois impede que leitores de tela interpretem a estrutura da página.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. A afirmação III também está correta ao relacionar navegação completa via teclado ao princípio Operável."
+      },
+      {
+        "letter": "B",
+        "text": "II e IV.",
+        "explanation": "Incorreta. IV é falsa: <div> sem semântica nem ARIA prejudica leitores de tela e viola o princípio Robusto."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Correta. I reflete o conceito de acessibilidade inclusiva (Barbosa & Silva); II alinha alt, legendas e contraste ao princípio Perceptível; III alinha navegação por teclado ao princípio Operável; e IV erra ao defender <div> não semântica contra tecnologias assistivas."
+      },
+      {
+        "letter": "D",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. II é verdadeira e IV é falsa."
+      },
+      {
+        "letter": "E",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. I é verdadeira e IV é falsa."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A acessibilidade em IHC visa eliminar barreiras para habilidades motoras, sensoriais e cognitivas de forma inclusiva, sem segregar usuários (I correta). Na WCAG (W3C/WAI), os 4 princípios são Perceptível (alt em imagens, legendas, contraste — II correta), Operável (operação via teclado, controle de tempo — III correta), Compreensível e Robusto (HTML semântico válido e WAI-ARIA para interoperar com tecnologias assistivas, o oposto do afirmado em IV).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Acessibilidade Digital e Design Inclusivo",
+      "Diretrizes WCAG (W3C/WAI)",
+      "Legislação Brasileira (LBI)"
+    ]
+  },
+  {
+    "id": "ihc-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "No início do projeto de um sistema de telemedicina, a equipe de design conduziu entrevistas, grupos de foco e investigação contextual com médicos, recepcionistas e pacientes para construir Mapas de Empatia, Personas e Cenários de interação antes de iniciar a prototipação.\n\nConsiderando o Design Centrado no Usuário (DCU) e os níveis de prototipação, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Nas etapas iniciais de ideação do DCU, é altamente recomendável utilizar protótipos de baixa fidelidade em papel (como esboços gerados na técnica Crazy Eights) antes de investir em protótipos executáveis de alta fidelidade\n\nPORQUE\n\nII. Protótipos de baixa fidelidade têm baixo custo, permitem explorar rapidamente designs alternativos e transmitem explicitamente a ideia de provisoriedade, encorajando usuários e stakeholders a criticarem livremente a estrutura da interação sem se prenderem a detalhes estéticos finais.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta. A proposição II explica diretamente os benefícios técnicos e psicológicos que tornam recomendável o uso inicial de protótipos de baixa fidelidade descritos em I."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Correta. Ambas as asserções são verdadeiras e mantêm relação causal direta: baixo custo, agilidade na exploração de alternativas (como Crazy Eights) e o senso de provisoriedade justificam começar por protótipos de baixa fidelidade antes de avançar para wireframes e alta fidelidade."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II, uma proposição falsa.",
+        "explanation": "Incorreta. A asserção II descreve exatamente as propriedades dos protótipos de baixa fidelidade."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II, uma proposição verdadeira.",
+        "explanation": "Incorreta. A asserção I está alinhada aos princípios iterativos e de métricas observáveis do DCU."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. Ambas são proposições verdadeiras."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No Design Centrado no Usuário (DCU), protótipos materializam ideias para testes antes da construção definitiva. Iniciar por protótipos de baixa fidelidade (papel, Crazy Eights) é recomendado porque custam pouco, são rápidos de modificar e transmitem provisoriedade — evitando que o usuário se intimide por um visual polido ou foque em cores/fontes em vez de avaliar o fluxo de interação.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Design Centrado no Usuário (DCU)",
+      "Prototipação (Baixa, Média e Alta Fidelidade)",
+      "Personas, Cenários e Mapa de Empatia"
+    ]
+  },
+  {
+    "id": "ihc-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma consultoria foi contratada para conduzir uma Avaliação Heurística em um aplicativo bancário antes do lançamento de uma nova versão. Quatro especialistas em usabilidade participaram do processo seguindo a metodologia proposta por Jakob Nielsen. Considerando as etapas de execução e a classificação de severidade na Avaliação Heurística, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Os avaliadores devem inspecionar a interface juntos na mesma sala desde o primeiro minuto, discutindo cada tela em grupo para garantir consenso imediato antes do registro individual de problemas.",
+        "explanation": "Incorreta. Na etapa de avaliação, cada avaliador deve examinar a interface separadamente (de forma independente) para evitar viés e ampliar a cobertura de problemas encontrados; a compilação ocorre somente depois."
+      },
+      {
+        "letter": "B",
+        "text": "Cada avaliador deve percorrer a interface em um único passo superficial, sendo dispensável associar os problemas encontrados a princípios específicos de usabilidade ou heurísticas violadas.",
+        "explanation": "Incorreta. Recomenda-se percorrer a interface em dois passos (1º: visão geral do fluxo de interação; 2º: foco em elementos específicos), anotando explicitamente qual princípio/heurística foi violado."
+      },
+      {
+        "letter": "C",
+        "text": "Um problema classificado com grau de severidade 1 (Cosmético) representa uma catástrofe de usabilidade que impede a liberação do produto, devendo paralisar imediatamente o cronograma de entregas.",
+        "explanation": "Incorreta. Na escala de Nielsen (0 a 4): 1 = Cosmético (corrigir apenas se houver tempo extra); 4 = Catástrofe (correção obrigatória e urgente antes do lançamento)."
+      },
+      {
+        "letter": "D",
+        "text": "Após a inspeção independente em dois passos e a compilação dos achados, a classificação de severidade (escala de 0 a 4) pondera três fatores — impacto, visibilidade (frequência de usuários afetados) e persistência —, sendo problemas de nível 4 (Catástrofe) de correção obrigatória antes do uso do produto.",
+        "explanation": "Correta. Descreve fielmente o fluxo de 5 etapas da Avaliação Heurística de Nielsen (treinamento/instruções, avaliação independente em dois passos, compilação, classificação de severidade por impacto/visibilidade/persistência na escala 0..4, e decisão de design)."
+      },
+      {
+        "letter": "E",
+        "text": "A Avaliação Heurística substitui integralmente os Testes de Usabilidade com usuários reais, por ser mais cara e exigir um laboratório completo de rastreamento ocular com pelo menos 30 participantes finais.",
+        "explanation": "Incorreta. A Avaliação Heurística é justamente um método de inspeção 'descontado' (econômico e rápido) com um pequeno grupo de especialistas, que complementa — mas não substitui — testes empíricos com usuários reais."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Na Avaliação Heurística (Nielsen): (1) realiza-se treinamento pré-avaliação sobre domínio e cenários; (2) cada avaliador inspeciona separadamente em dois passos (fluxo geral e elementos específicos), indicando a heurística violada; (3) compilam-se os problemas eliminando duplicatas; (4) classifica-se a severidade (0=não é problema, 1=cosmético, 2=menor, 3=maior, 4=catástrofe) considerando impacto, visibilidade e persistência; (5) tomam-se decisões de design considerando custo/benefício.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Avaliação Heurística",
+      "Escala de Severidade de Nielsen",
+      "Métodos de Inspeção em IHC"
+    ]
+  },
+  {
+    "id": "ihc-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma equipe ágil de desenvolvimento de software planeja validar o MVP (Minimum Viable Product) de um aplicativo de agendamentos médicos por meio de Testes de Usabilidade com participantes representativos do público-alvo, integrando práticas de Design Centrado no Usuário (DCU) ao ciclo de Sprints. A respeito do planejamento e condução de Testes de Usabilidade e da integração entre DCU e Engenharia de Software, assinale a alternativa correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O planejamento do teste de usabilidade deve definir objetivo, perfil dos participantes, cuidados éticos, cenários de tarefas, ambiente e um teste piloto prévio; na execução, conduz-se pré-teste, execução dos cenários e pós-teste para identificar rupturas da interação.",
+        "explanation": "Correta. Essa sequência corresponde exatamente às fases de Testes de Usabilidade apresentadas na disciplina: Objetivo -> Planejamento (Participantes, Ética, Cenários, Ambiente, Piloto) -> Execução (Pré-teste, Cenários, Pós-teste) -> Análise de Resultados (rupturas da interação e causas)."
+      },
+      {
+        "letter": "B",
+        "text": "As atividades de DCU e IHC são incompatíveis com métodos ágeis porque exigem concluir todas as telas de alta fidelidade do sistema inteiro antes de qualquer contato com o usuário.",
+        "explanation": "Incorreta. DCU e métodos ágeis são plenamente compatíveis e complementares: estudos de usuário e design ocorrem antes (ex.: Sprint 0/ideação), durante e depois do desenvolvimento iterativo de MVPs."
+      },
+      {
+        "letter": "C",
+        "text": "O teste piloto deve ser realizado apenas após o encerramento de todas as sessões com participantes reais, servindo exclusivamente para calcular o custo financeiro do projeto.",
+        "explanation": "Incorreta. O teste piloto ocorre antes da execução oficial com os participantes, justamente para validar o roteiro, clareza dos cenários, tempo e funcionamento de equipamentos de gravação."
+      },
+      {
+        "letter": "D",
+        "text": "Em testes de usabilidade, a participação de usuários representativos é dispensável quando os próprios programadores da equipe respondem ao questionário de satisfação no lugar do cliente.",
+        "explanation": "Incorreta. O teste de usabilidade é um método empírico de observação que exige participantes representativos dos usuários reais (programadores têm viés técnico e conhecimento interno do sistema)."
+      },
+      {
+        "letter": "E",
+        "text": "Durante a execução dos cenários, é proibido coletar áudio, vídeo ou falas explicativas do participante, limitando-se a análise a logs de erro de banco de dados.",
+        "explanation": "Incorreta. Com consentimento ético prévio (TCLE), áudio, vídeo, verbalizações (Think-Aloud) e registros de tela são fontes centrais para identificar rupturas de interação e explicar suas causas."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Os Testes de Usabilidade são experimentos empíricos com representantes reais dos usuários estruturados em quatro momentos: definição do objetivo; planejamento (participantes, ética, cenários, ambiente e teste piloto); execução (pré-teste para perfil/expectativas, realização de cenários com coleta de dados e pós-teste para impressões); e análise de resultados (rupturas da interação, severidade e redesign). O DCU integra-se naturalmente a métodos ágeis por meio de descoberta contínua e validação de MVPs.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Testes de Usabilidade",
+      "DCU em Métodos Ágeis",
+      "Verificação e Validação de Interface"
+    ]
+  },
+  {
+    "id": "ihc-inedita-09",
+    "label": "Inédita 2026 • Discursiva 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma prefeitura lançou um portal web de agendamento de atendimento presencial que recebeu diversas reclamações na primeira semana de operação:\n(i) No formulário de agendamento, o usuário precisa digitar manualmente o código numérico completo de 6 dígitos do órgão público desejado sem haver lista de opções ou autocompletar;\n(ii) Ao preencher a data de nascimento em formato inválido ou deixar o CPF incompleto, o formulário limpa todos os campos digitados e exibe no topo apenas a mensagem em vermelho: 'Erro na validação dos dados (422)';\n(iii) Os botões de confirmar e cancelar agendamento são representados apenas por ícones coloridos sem texto visível e sem atributo alt ou aria-label, além de não serem acessíveis pela tecla Tab.\n\nCom base nas 10 Heurísticas de Nielsen, nas 3 Regras de Ouro de Pressman e nas diretrizes de acessibilidade WCAG, faça o que se pede.\n\na) Identifique quais princípios/heurísticas de Nielsen e regras de ouro de Pressman foram violados pelos problemas (i) e (ii), propondo correções objetivas de interface para cada um. (valor: 5,0 pontos)\nb) Analise o problema (iii) sob a ótica da acessibilidade digital (WCAG e Lei Brasileira de Inclusão), indicando quais barreiras são impostas a diferentes perfis de usuários e propondo soluções técnicas de implementação. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "a) Problema (i) viola a Heurística 6 de Nielsen ('Reconhecer mais do que lembrar') e a Regra de Ouro 2 de Pressman ('Reduzir a carga de memória do usuário'), ao exigir memorização de códigos numéricos; solução: substituir por lista suspensa (select), busca com autocompletar ou seleção por nome do órgão. Problema (ii) viola as Heurísticas 9 ('Reconhecer, diagnosticar e corrigir erros'), 2 ('Sintonia com o mundo real') e 5 ('Prevenção de erros'), além da Regra de Ouro 1 ('Deixar o usuário no comando'); solução: preservar dados já preenchidos, usar máscaras/validação em tempo real para prevenir erros e exibir mensagens claras em linguagem natural apontando exatamente qual campo corrigir e como.\nb) Problema (iii) impõe barreiras sensoriais (usuários cegos/baixa visão usando leitores de tela não identificam botões sem texto/alt/aria-label; daltônicos sofrem se a diferenciação depender só da cor), cognitivas (ícones sem rótulo geram ambiguidade) e motoras (ausência de foco via Tab impede uso por quem não utiliza mouse). Viola principalmente os princípios Perceptível e Operável (além de Robusto) da WCAG e a LBI (Lei 13.146/2015). Soluções: usar elemento semântico <button> navegável por teclado com foco visível, adicionar rótulos textuais claros ao lado dos ícones (não depender apenas de cor) e fornecer aria-label/texto alternativo adequado.",
+    "discursiveRubric": "a) (5,0 pontos)\n- Problema (i): identificação correta da violação à Heurística 6 de Nielsen (Reconhecer mais que lembrar) e/ou Regra de Ouro 2 de Pressman (Reduzir carga de memória), com proposta coerente como menu/select ou campo com autocompletar por nome (2,5 pontos).\n- Problema (ii): identificação correta das violações às Heurísticas 9 (Reconhecer, diagnosticar e corrigir erros), 2 (Sintonia com o mundo real) e/ou 5 (Prevenção de erros), bem como perda de trabalho/controle, propondo preservação dos campos preenchidos, máscaras/validação preventiva e mensagens descritivas junto ao campo com orientação de correção (2,5 pontos).\n\nb) (5,0 pontos)\n- Análise das barreiras de acessibilidade: identificação do impacto para usuários com deficiência visual/leitores de tela, daltonismo (dependência exclusiva de cor) e restrições motoras (impossibilidade de navegação por teclado via Tab), relacionando aos princípios da WCAG (Perceptível, Operável e Robusto) e à LBI / Lei 10.098 (2,5 pontos).\n- Proposição de soluções técnicas adequadas: uso de HTML semântico (<button>), suporte integral à navegação por teclado com indicador de foco visível, adição de rótulos textuais visíveis (ou aria-label/alt quando aplicável) e contraste adequado independente de cor (2,5 pontos).",
+    "imageUrls": [],
+    "topics": [
+      "10 Heurísticas de Nielsen",
+      "Regras de Ouro de Pressman",
+      "Acessibilidade WCAG e LBI"
+    ]
+  },
+  {
+    "id": "ihc-inedita-10",
+    "label": "Inédita 2026 • Discursiva 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "06-interacao-humano-computador",
+    "areaName": "Interação Humano-Computador",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Um banco tradicional deseja lançar um aplicativo móvel simplificado voltado especialmente ao público idoso (acima de 65 anos), permitindo consultar extratos, pagar boletos e realizar transferências via Pix com segurança e autonomia. Sabe-se que parte desse público apresenta redução gradual de acuidade visual, sensibilidade tátil e destreza motora fina, além de receio de cometer erros irreversíveis em transações financeiras.\n\nConsiderando o ciclo completo do Design Centrado no Usuário (DCU), os níveis de prototipação e os métodos de avaliação em IHC (Avaliação Heurística e Testes de Usabilidade), elabore uma estratégia técnica respondendo aos itens a seguir.\n\na) Descreva como conduzir as etapas iniciais do DCU para compreender o contexto de uso e representar os requisitos desse público (indicando pelo menos duas técnicas de coleta de dados, dois artefatos de representação e a progressão adequada entre níveis de prototipação). (valor: 5,0 pontos)\nb) Explique como combinar de forma complementar uma Avaliação Heurística prévia (detalhando a inspeção independente em dois passos e a priorização pela escala de severidade 0 a 4) com um Teste de Usabilidade com idosos representativos (detalhando planejamento, cuidados éticos, teste piloto, execução e análise). (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "a) Nas etapas iniciais do DCU (compreender contexto de uso e especificar requisitos), coletam-se dados com entrevistas/investigação contextual (observando dificuldades reais com smartphones, telas de toque, tamanho de fonte e medos) e grupos de foco ou questionários assistidos. Os dados são representados por Mapas de Empatia (dores/desejos/medos de errar), Personas (papéis e perfis frequentes/novatos) e Cenários de interação (ex.: pagar boleto com confirmação clara). Na etapa de design, evolui-se iterativamente de protótipos de baixa fidelidade (papel/Crazy Eights para validar fluxo sem intimidar) para média fidelidade (wireframes de hierarquia e alvos maiores pela Lei de Fitts) e alta fidelidade clicável (testando contraste, fontes ampliadas e prevenção de erros).\nb) Primeiro realiza-se a Avaliação Heurística (método econômico com 3–5 especialistas) antes de expor usuários idosos a falhas óbvias: após instruções/cenários, cada avaliador inspeciona separadamente em dois passos (1º: fluxo geral; 2º: elementos individuais, checando alvos pequenos, affordances confusas, controle/desfazer e clareza de mensagens), compilando e classificando severidade de 0 a 4 (impacto, visibilidade, persistência) para corrigir problemas de nível 4 (Catástrofe) e 3 (Maior). Em seguida, conduz-se o Teste de Usabilidade empírico: define-se objetivo; planeja-se com participantes idosos representativos, ética (TCLE acessível, respeito ao ritmo sem constrangimento), cenários realistas (Pix/boleto), ambiente adequado e teste piloto prévio; na execução, aplica-se pré-teste (perfil), observação dos cenários e pós-teste (satisfação); na análise, investigam-se rupturas na interação e falas para gerar ajustes finais.",
+    "discursiveRubric": "a) (5,0 pontos)\n- Indicação de pelo menos duas técnicas válidas de coleta de dados adequadas ao contexto (ex.: entrevistas, investigação contextual/estudo de campo, grupos de foco, questionários, card sorting) (1,5 ponto).\n- Indicação e explicação contextualizada de pelo menos dois artefatos de representação (ex.: Mapa de Empatia, Personas, Cenários de interação), contemplando limitações motoras/visuais e receios do público idoso (1,5 ponto).\n- Progressão coerente dos níveis de prototipação (baixa fidelidade/papel -> média/wireframes -> alta fidelidade executável), justificando testes iterativos e adaptações de interface (ex.: alvos maiores pela Lei de Fitts, alto contraste, confirmações claras) (2,0 pontos).\n\nb) (5,0 pontos)\n- Avaliação Heurística: explicação do papel complementar prévio (inspeção descontada por especialistas antes do teste com usuários), inspeção independente em dois passos (fluxo geral e elementos específicos), compilação e uso da escala de severidade de 0 a 4 (ponderando impacto, visibilidade e persistência, priorizando níveis 3-Maior e 4-Catástrofe) (2,5 pontos).\n- Teste de Usabilidade: descrição articulada das etapas — Objetivo, Planejamento (participantes idosos representativos, ética/TCLE, cenários, ambiente, teste piloto), Execução (pré-teste, cenários e pós-teste) e Análise de Resultados (identificação de rupturas da interação, falas e causas para redesign) (2,5 pontos).",
+    "imageUrls": [],
+    "topics": [
+      "Design Centrado no Usuário (DCU)",
+      "Avaliação Heurística e Severidade",
+      "Testes de Usabilidade e Inclusão de Idosos"
+    ]
+  }
+]

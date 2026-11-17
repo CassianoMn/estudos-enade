@@ -1,0 +1,442 @@
+[
+  {
+    "id": "sad-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Em uma rede de supermercados, o caixa registra cada compra efetuada pelo código de barras; o gerente regional analisa relatórios semanais de margem por categoria e realiza simulações de descontos para o próximo mês; e a diretoria executiva acompanha indicadores globais de expansão e posicionamento frente à concorrência.\n\nConsiderando a pirâmide decisória organizacional e os tipos de decisão e sistemas de informação, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O registro no caixa corresponde ao nível operacional com decisões não estruturadas, apoiado por um Sistema de Informação Executiva (SIE).",
+        "explanation": "Incorreta. O registro no caixa é nível operacional com decisões estruturadas/rotineiras, apoiado por um Sistema de Processamento de Transações (SPT/OLTP)."
+      },
+      {
+        "letter": "B",
+        "text": "A análise e simulação de descontos pelo gerente regional pertence ao nível tático, envolvendo decisões semiestruturadas apoiadas por Sistemas de Apoio à Decisão (SAD).",
+        "explanation": "Correta. O nível tático/gerencial lida frequentemente com decisões semiestruturadas que combinam modelos analíticos e simulações (SAD/BI) com o julgamento do gestor."
+      },
+      {
+        "letter": "C",
+        "text": "As decisões da diretoria executiva são estritamente estruturadas, pois dependem exclusivamente de consultas em tempo real ao banco transacional do ponto de venda.",
+        "explanation": "Incorreta. Decisões estratégicas da alta direção são tipicamente não estruturadas e utilizam dados agregados/históricos e informações externas."
+      },
+      {
+        "letter": "D",
+        "text": "Sistemas de Processamento de Transações (SPT) têm como foco principal fornecer previsões de longo prazo para a alta administração com dados altamente resumidos.",
+        "explanation": "Incorreta. Os SPTs atuam no nível operacional registrando transações detalhadas diárias; a visão resumida de longo prazo cabe aos SIEs/SADs."
+      },
+      {
+        "letter": "E",
+        "text": "À medida que se sobe do nível operacional para o nível estratégico na pirâmide organizacional, aumenta a necessidade de detalhamento individual por transação.",
+        "explanation": "Incorreta. Quanto mais alto o nível decisório, maior a agregação/sumarização e menor o detalhamento transacional individual."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Na pirâmide decisória: (1) Nível operacional trata decisões estruturadas via SPT/OLTP com alta granularidade; (2) Nível tático trata decisões semiestruturadas com apoio de SIG e SAD (simulações what-if); (3) Nível estratégico trata decisões não estruturadas via SIE/BSC com dados sumarizados e externos.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Pirâmide Decisória",
+      "Tipos de Decisão"
+    ]
+  },
+  {
+    "id": "sad-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma instituição de ensino superior utiliza um sistema acadêmico para matrículas e lançamento de notas em tempo real e deseja implantar um ambiente de Business Intelligence (BI) para analisar a evasão estudantil ao longo dos últimos dez anos.\n\nA respeito da arquitetura de dados envolvendo ambientes OLTP e OLAP, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Enquanto o sistema acadêmico transacional (OLTP) adota modelagem relacional normalizada para assegurar integridade nas operações diárias de inserção e atualização, o ambiente analítico (OLAP) utiliza modelagem multidimensional voltada a consultas históricas agregadas.\n\nPORQUE\n\nII. A separação entre os bancos OLTP e OLAP garante que as consultas analíticas complexas não disputem recursos nem degradem o desempenho das transações operacionais em tempo real, sendo os dados periodicamente integrados via pipelines de ETL ou ELT.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Correta. Ambas as proposições são verdadeiras, e a necessidade de isolar a carga analítica pesada da transacional — interligando-as por ETL/ELT — justifica a adoção de arquiteturas e modelagens distintas (relacional normalizada no OLTP vs. multidimensional no OLAP)."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta, pois a asserção II explica diretamente a razão arquitetural da separação descrita na asserção I."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Incorreta, pois a asserção II é verdadeira: o isolamento entre cargas OLTP e OLAP e a alimentação por ETL/ELT são princípios centrais de Data Warehousing."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta, pois a asserção I descreve corretamente a modelagem típica de OLTP (normalizada) e OLAP (multidimensional)."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta, pois ambas as asserções são verdadeiras."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Sistemas OLTP usam modelagem relacional normalizada (geralmente 3FN) para otimizar escritas concorrentes ACID, enquanto sistemas OLAP adotam modelagem multidimensional (esquema estrela/floco de neve) para leituras agregadas em históricos longos. Separar esses ambientes e integrá-los via ETL/ELT evita contenção de disco/CPU/locks sobre as transações operacionais.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "OLTP vs OLAP",
+      "ETL e ELT"
+    ]
+  },
+  {
+    "id": "sad-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma equipe de engenharia de dados está modelando um Data Mart de controle de estoques e faturamento diário utilizando modelagem dimensional. Durante a especificação das tabelas Fato e Dimensão, surgiram dúvidas sobre tipos de medidas, normalização das dimensões e preservação de histórico de alterações cadastrais.\n\nConsiderando os conceitos de Data Warehouse e modelagem dimensional, avalie as afirmações a seguir.\n\nI. No Esquema Estrela (Star Schema), as tabelas dimensão permanecem desnormalizadas e ligadas diretamente à tabela fato central, reduzindo a quantidade de junções (JOINs) em consultas analíticas quando comparado ao Esquema Floco de Neve.\nII. A medida 'saldo_estoque_final_dia' é classificada como semiaditiva, pois pode ser somada entre diferentes lojas em uma mesma data, mas não deve ser somada ao longo dos dias do mês para obter o estoque mensal.\nIII. Para preservar todo o histórico de mudanças de categoria de um produto na tabela dimensão ao longo do tempo sem perder a associação correta com vendas passadas, aplica-se a técnica de Slowly Changing Dimension (SCD) Tipo 1.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação II também é verdadeira."
+      },
+      {
+        "letter": "B",
+        "text": "III, apenas.",
+        "explanation": "Incorreta. A SCD Tipo 1 sobrescreve o valor antigo e perde o histórico; a preservação completa de histórico exige SCD Tipo 2."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. O Esquema Estrela mantém dimensões desnormalizadas (menos JOINs que o Floco de Neve), e saldos instantâneos como estoque são medidas semiaditivas (não se somam na dimensão Tempo). A SCD que preserva histórico completo criando novas linhas com chave substituta e vigência é a Tipo 2, e não a Tipo 1."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois o item III confunde SCD Tipo 1 com SCD Tipo 2."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois o item III é falso."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "No Star Schema as dimensões são desnormalizadas para privilegiar desempenho de leitura com menos JOINs. Medidas como saldo de estoque ou saldo bancário são semiaditivas (somam-se entre filiais/contas em um instante, mas no tempo usa-se média ou último valor). Para manter histórico completo de alterações dimensionais usa-se SCD Tipo 2 (nova linha + surrogate key + datas de início/fim), enquanto a Tipo 1 apenas sobrescreve.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Modelagem Dimensional",
+      "Esquema Estrela e Floco de Neve",
+      "SCD e Medidas"
+    ]
+  },
+  {
+    "id": "sad-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Um analista de negócios explora um cubo OLAP de vendas corporativas estruturado em três dimensões com suas respectivas hierarquias: Tempo (Ano → Trimestre → Mês → Dia), Geografia (País → Região → Estado → Cidade) e Produto (Departamento → Categoria → Item).\n\nInicialmente, o analista visualiza o faturamento total por Região e Departamento no ano de 2025. Em seguida, ele executa três ações sequenciais:\n1) Restringe o cubo exclusivamente ao Departamento de 'Eletrônicos';\n2) Detalha a dimensão Geografia de 'Região' para 'Estado';\n3) Rotaciona os eixos da tabela dinâmica trocando linhas por colunas.\n\nAs três operações OLAP executadas pelo analista correspondem, respectivamente, a",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Dice, Roll-up e Slice.",
+        "explanation": "Incorreta. A ação 1 fixa um único valor em uma dimensão (Slice), a 2 desce na hierarquia (Drill-down) e a 3 gira os eixos (Pivot)."
+      },
+      {
+        "letter": "B",
+        "text": "Slice, Drill-down e Pivot.",
+        "explanation": "Correta. Fixar um valor específico em uma única dimensão é Slice; descer na hierarquia de Região para Estado é Drill-down; e inverter linhas e colunas para outra perspectiva é Pivot."
+      },
+      {
+        "letter": "C",
+        "text": "Slice, Roll-up e Pivot.",
+        "explanation": "Incorreta, pois passar de Região para Estado aumenta o nível de detalhe (desce na hierarquia), caracterizando Drill-down, e não Roll-up."
+      },
+      {
+        "letter": "D",
+        "text": "Dice, Drill-down e Roll-up.",
+        "explanation": "Incorreta. Dice filtra subcubos em duas ou mais dimensões, e a rotação de eixos chama-se Pivot."
+      },
+      {
+        "letter": "E",
+        "text": "Drill-down, Slice e Dice.",
+        "explanation": "Incorreta, pois a ordem e a definição das operações não correspondem às ações descritas."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Nas operações OLAP: Slice recorta uma fatia fixando um valor em uma única dimensão ('Eletrônicos'); Dice seleciona subconjuntos em múltiplas dimensões; Drill-down desce para níveis mais detalhados da hierarquia (Região → Estado); Roll-up sobe agregando (Estado → Região); e Pivot rotaciona os eixos da visualização.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Cubos e Operações OLAP"
+    ]
+  },
+  {
+    "id": "sad-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma loja virtual de informática aplicou técnicas de Mineração de Dados (Data Mining) sobre 500 pedidos registrados no último trimestre para gerar recomendações automáticas de venda cruzada no carrinho de compras. O levantamento identificou que o item 'Notebook' esteve presente em 200 pedidos, o item 'Mouse sem fio' esteve presente em 150 pedidos, e ambos os itens apareceram juntos em 120 pedidos.\n\nConsiderando a regra de associação {Notebook} → {Mouse sem fio}, os valores de suporte e confiança dessa regra são, respectivamente,",
+    "options": [
+      {
+        "letter": "A",
+        "text": "24% e 60%.",
+        "explanation": "Correta. O suporte mede a frequência conjunta no total de transações: 120 / 500 = 0,24 (24%). A confiança mede a probabilidade condicional P(Mouse | Notebook): 120 / 200 = 0,60 (60%)."
+      },
+      {
+        "letter": "B",
+        "text": "24% e 80%.",
+        "explanation": "Incorreta. O valor 80% (120 / 150) corresponde à confiança da regra inversa {Mouse sem fio} → {Notebook}."
+      },
+      {
+        "letter": "C",
+        "text": "40% e 60%.",
+        "explanation": "Incorreta. O valor 40% (200 / 500) corresponde apenas ao suporte individual de {Notebook}, e não da regra conjunta."
+      },
+      {
+        "letter": "D",
+        "text": "30% e 80%.",
+        "explanation": "Incorreta. 30% (150 / 500) é o suporte individual de {Mouse sem fio}, e 80% é a confiança da regra inversa."
+      },
+      {
+        "letter": "E",
+        "text": "60% e 24%.",
+        "explanation": "Incorreta, pois inverte os conceitos de suporte e confiança."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Em regras de associação A → B sobre N transações: Suporte(A → B) = count(A ∪ B) / N = 120 / 500 = 24%. Confiança(A → B) = count(A ∪ B) / count(A) = 120 / 200 = 60%.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "KDD e Mineração de Dados",
+      "Regras de Associação"
+    ]
+  },
+  {
+    "id": "sad-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma prefeitura implantou uma plataforma de monitoramento urbano baseada em Big Data que recebe continuamente dados de catracas do transporte público armazenados em tabelas relacionais, mensagens em formato JSON enviadas por sensores semafóricos e fluxos de vídeo capturados por câmeras de monitoramento viário, com o objetivo de ajustar sinais de trânsito e emitir alertas em tempo real.\n\nConsiderando as características fundamentais do Big Data, avalie as afirmações a seguir.\n\nI. A característica de Variedade manifesta-se na coexistência de dados estruturados (tabelas das catracas), semiestruturados (JSON dos sensores) e não estruturados (vídeos das câmeras).\nII. A característica de Velocidade exige que a ingestão e o processamento desses fluxos ocorram em condições de alta latência, permitindo acumular todos os vídeos por vários dias antes de tomar decisões no trânsito.\nIII. A característica de Veracidade diz respeito à confiabilidade e qualidade dos dados coletados de múltiplas fontes, prevenindo análises distorcidas por leituras inconsistentes ou sensores defeituosos.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação III também está correta."
+      },
+      {
+        "letter": "B",
+        "text": "II, apenas.",
+        "explanation": "Incorreta, pois Velocidade em tempo real requer baixa latência (processamento rápido), e não alta latência."
+      },
+      {
+        "letter": "C",
+        "text": "I e III, apenas.",
+        "explanation": "Correta. O item I classifica corretamente dados estruturados, semiestruturados e não estruturados (Variedade) e o item III define corretamente Veracidade. O item II é falso porque decisões em tempo real exigem baixa latência."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois o item II está errado quanto à latência e o item I está correto."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois o item II contém erro conceitual sobre velocidade e latência."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Nos 4 Vs clássicos de Big Data: Volume (escala massiva), Variedade (dados estruturados, semiestruturados como JSON/XML e não estruturados como vídeo/áudio/texto livre), Velocidade (geração e processamento rápido com baixa latência para evitar perda de utilidade) e Veracidade (confiabilidade e consistência das fontes).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Big Data",
+      "Os Vs do Big Data"
+    ]
+  },
+  {
+    "id": "sad-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma cooperativa agrícola precisa transportar, ao final da colheita, pelo menos 20 toneladas do grão P1 e pelo menos 18 toneladas do grão P2 até um porto exportador, contratando viagens de dois tipos de caminhão: Tipo A e Tipo B.\n\nCada viagem do caminhão Tipo A custa R$ 1.200,00 e transporta 4 toneladas de P1 e 2 toneladas de P2. Cada viagem do caminhão Tipo B custa R$ 1.500,00 e transporta 2 toneladas de P1 e 3 toneladas de P2.\n\nConsiderando x a quantidade de viagens do caminhão Tipo A e y a quantidade de viagens do caminhão Tipo B (x >= 0, y >= 0), assinale a opção que apresenta o modelo de Programação Linear adequado e o custo mínimo total para atender à demanda.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Min Z = 1200x + 1500y; sujeito a 4x + 2y <= 20 e 2x + 3y <= 18; custo mínimo de R$ 9.600,00.",
+        "explanation": "Incorreta. Como é necessário entregar 'pelo menos' as quantidades demandadas, as restrições devem usar o sinal '>=', e não '<='."
+      },
+      {
+        "letter": "B",
+        "text": "Min Z = 1200x + 1500y; sujeito a 4x + 2y >= 20 e 2x + 3y >= 18; custo mínimo de R$ 9.600,00.",
+        "explanation": "Correta. As restrições de demanda mínima exigem '>='. Resolvendo a interseção 4x + 2y = 20 e 2x + 3y = 18 obtém-se x = 3 e y = 4, cujo custo é 1200(3) + 1500(4) = 3600 + 6000 = R$ 9.600,00 (menor que os vértices extremos (0,10) = R$ 15.000,00 e (9,0) = R$ 10.800,00)."
+      },
+      {
+        "letter": "C",
+        "text": "Min Z = 1200x + 1500y; sujeito a 4x + 2y >= 20 e 2x + 3y >= 18; custo mínimo de R$ 10.800,00.",
+        "explanation": "Incorreta. O custo R$ 10.800,00 corresponde ao vértice (x = 9, y = 0), que não é o ótimo pois (3, 4) produz custo menor (R$ 9.600,00)."
+      },
+      {
+        "letter": "D",
+        "text": "Max Z = 1200x + 1500y; sujeito a 4x + 3y >= 20 e 2x + 2y >= 18; custo mínimo de R$ 9.600,00.",
+        "explanation": "Incorreta. O objetivo é minimizar custos (Min Z), além de trocar os coeficientes das restrições."
+      },
+      {
+        "letter": "E",
+        "text": "Min Z = 1200x + 1500y; sujeito a 4x + 2y = 20 e 2x + 3y = 18; custo mínimo de R$ 15.000,00.",
+        "explanation": "Incorreta. Restrições de atendimento mínimo de demanda são desigualdades ('>='), e R$ 15.000,00 refere-se ao vértice não ótimo (0, 10)."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Sejam x (viagens de A) e y (viagens de B). Deseja-se minimizar Z = 1200x + 1500y, atendendo no mínimo 20t de P1 (4x + 2y >= 20) e 18t de P2 (2x + 3y >= 18), com x, y >= 0. Os vértices da região viável são: (0, 10) → Z = 15.000; (9, 0) → Z = 10.800; e a interseção das retas (x = 3, y = 4) → Z = 1200(3) + 1500(4) = R$ 9.600,00.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Pesquisa Operacional",
+      "Programação Linear"
+    ]
+  },
+  {
+    "id": "sad-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Na modernização de plataformas de dados corporativas e gestão estratégica por indicadores, organizações combinam arquiteturas como Data Warehouse, Data Lake, Data Lakehouse e frameworks de acompanhamento como o Balanced Scorecard (BSC).\n\nConsiderando esses conceitos, avalie as afirmações a seguir.\n\nI. Enquanto o Data Warehouse tradicional aplica schema-on-write sobre dados estruturados já limpos e transformados, o Data Lake armazena dados brutos heterogêneos em modelo schema-on-read.\nII. A arquitetura Data Lakehouse busca unir o armazenamento escalável e multi-formato do Data Lake com recursos transacionais (ACID), governança de esquema e desempenho analítico típicos de Data Warehouses.\nIII. Na abordagem ELT moderna em nuvem, os dados são primeiramente transformados em um servidor intermediário antes de serem extraídos dos sistemas de origem.\nIV. O Balanced Scorecard (BSC) organiza indicadores estratégicos (KPIs) em quatro perspectivas equilibradas: Financeira, Clientes, Processos Internos e Aprendizado e Crescimento.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e III.",
+        "explanation": "Incorreta, pois III descreve incorretamente o fluxo ELT."
+      },
+      {
+        "letter": "B",
+        "text": "II e IV.",
+        "explanation": "Incorreta, pois I também está correta."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e IV.",
+        "explanation": "Correta. As afirmações I (DW schema-on-write vs. Data Lake schema-on-read), II (conceito de Lakehouse) e IV (as quatro perspectivas do BSC) são verdadeiras. O item III é falso porque, no ELT, os dados são extraídos, carregados brutos no destino (Load) e só então transformados dentro do motor analítico (Transform)."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta, pois III é falsa."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta, pois III inverte a ordem do ELT."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Data Warehouse trabalha com dados modelados e estruturados (schema-on-write); Data Lake guarda dados brutos de variados formatos (schema-on-read); Data Lakehouse agrega ACID e governança sobre o Data Lake; e o BSC contempla as 4 perspectivas (Financeira, Clientes, Processos Internos, Aprendizado e Crescimento). No ELT, a transformação ocorre após a carga no repositório analítico de destino.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Data Lake e Lakehouse",
+      "ELT vs ETL",
+      "Business Intelligence e BSC"
+    ]
+  },
+  {
+    "id": "sad-inedita-09",
+    "label": "Inédita 2026 • Questão 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma rede de farmácias com 80 filiais possui um sistema de frente de caixa e estoque altamente normalizado que atende às operações diárias de vendas. A diretoria comercial solicitou a construção de um ambiente de Business Intelligence para analisar a evolução de vendas por região, mês e categoria de medicamento ao longo dos últimos cinco anos. Entretanto, verificou-se que os produtos mudam periodicamente de categoria comercial e que a equipe deseja navegar dinamicamente entre diferentes níveis de detalhe nos relatórios.\n\nConsiderando o cenário apresentado, responda ao que se pede:\n\na) Diferencie o ambiente transacional existente (OLTP) do novo ambiente analítico (OLAP) quanto ao modelo de dados e tipo de carga, e justifique a escolha entre Esquema Estrela e Esquema Floco de Neve para o Data Mart de vendas. (valor: 5,0 pontos)\nb) Explique como preservar o histórico correto das mudanças de categoria de produto na dimensão correspondente usando Slowly Changing Dimension (SCD) e exemplifique duas operações OLAP que os gerentes poderão utilizar na exploração do cubo. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Confira na rubrica se abordou modelagem normalizada vs. multidimensional, justificativa de desempenho do Esquema Estrela, uso de SCD Tipo 2 (chave substituta + vigência) e duas operações OLAP bem exemplificadas.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve explicar que:\n- O ambiente OLTP atual é modelado de forma relacional normalizada (3FN) para suportar alta concorrência de escritas curtas e integridade transacional (ACID) com dados correntes; já o ambiente OLAP adota modelagem multidimensional sobre dados históricos consolidados (alimentados via ETL/ELT), otimizada para leituras agregadas sem impactar o sistema dos caixas (2,5 pts);\n- O Esquema Estrela (Star Schema) é em geral o mais indicado para o Data Mart por manter tabelas dimensão desnormalizadas ligadas diretamente à tabela fato central (Fato_Vendas), reduzindo o número de JOINs e acelerando as consultas de BI em comparação ao Floco de Neve (que normaliza dimensões em sub-tabelas) (2,5 pts).\n\nb) (5,0 pontos) O respondente deve explicar que:\n- Deve-se utilizar a estratégia SCD Tipo 2 na dimensão Produto: ao mudar a categoria de um produto, cria-se um novo registro na dimensão com uma nova chave substituta (surrogate key) e atributos de vigência (data_inicio, data_fim, flag_atual), mantendo o registro antigo intacto para que vendas passadas continuem associadas à categoria vigente à época (2,5 pts);\n- Exemplificar duas operações OLAP corretas no contexto, tais como: Drill-down (descer de Ano para Mês ou de Região para Filial), Roll-up (agregar de Filial para Região/Estado), Slice (filtrar apenas uma Região ou um Ano específico), Dice (filtrar subconjunto de várias dimensões) ou Pivot (rotacionar eixos de linhas/colunas) (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "OLTP vs OLAP",
+      "Modelagem Dimensional e SCD",
+      "Operações OLAP"
+    ]
+  },
+  {
+    "id": "sad-inedita-10",
+    "label": "Inédita 2026 • Questão 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "11-sistemas-de-apoio-a-decisao",
+    "areaName": "Sistemas de Apoio à Decisão",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "A secretaria de mobilidade de uma metrópole implantou um sistema inteligente de apoio à decisão para reduzir congestionamentos e planejar novas linhas de ônibus. A plataforma coleta diariamente registros de bilhetagem eletrônica, coordenadas GPS em formato JSON enviadas a cada 5 segundos pelos ônibus e imagens de câmeras de tráfego, além de informações meteorológicas.\n\nConsiderando os conceitos de Big Data, KDD (Knowledge Discovery in Databases) e Mineração de Dados, faça o que se pede:\n\na) Explique como as quatro características clássicas do Big Data (Volume, Variedade, Velocidade e Veracidade) manifestam-se nesse projeto, destacando o requisito de latência necessário para ações em tempo real no tráfego. (valor: 5,0 pontos)\nb) Descreva o fluxo das etapas do processo KDD aplicável a essa base e indique duas tarefas distintas de Mineração de Dados (com exemplo prático para cada uma) que apoiariam as decisões da secretaria. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com a rubrica verificando a caracterização precisa dos 4 Vs (ênfase em baixa latência na Velocidade e distinção de dados estruturados/semiestruturados/não estruturados na Variedade) e a ligação correta entre etapas do KDD e tarefas de Mineração de Dados.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve caracterizar os 4 Vs no cenário:\n- Volume: grande quantidade massiva de dados gerados diariamente por milhares de viagens, GPS contínuo e vídeos (1,0 pt);\n- Variedade: coexistência de dados estruturados (bilhetagem), semiestruturados (mensagens JSON de GPS) e não estruturados (imagens/vídeos das câmeras) (1,5 pt);\n- Velocidade: fluxo contínuo de eventos que exige ingestão e processamento em baixa latência (tempo real ou quase real) para ajustar semáforos e emitir alertas antes que os dados percam utilidade (1,5 pt);\n- Veracidade: necessidade de tratar ruídos, falhas de GPS, leituras duplicadas ou inconsistentes para não gerar decisões erradas (1,0 pt).\n\nb) (5,0 pontos) O respondente deve apresentar:\n- As etapas do KDD aplicadas ao cenário: Seleção (recorte dos dados relevantes), Pré-processamento/Limpeza (remoção de ruídos de GPS e nulos), Transformação (extração de atributos como velocidade média e faixa horária), Mineração de Dados (execução dos algoritmos) e Interpretação/Avaliação dos padrões para apoiar a decisão (2,5 pts);\n- Duas tarefas distintas de Mineração de Dados com aplicação clara, por exemplo: Classificação (prever se um corredor viário entrará em nível crítico de congestionamento 'Alto/Médio/Baixo') ou Regressão (estimar tempo de viagem em minutos), e Clusterização/Agrupamento (segmentar rotas ou perfis de deslocamento de passageiros sem rótulos prévios para redesenhar linhas de ônibus) (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "Big Data",
+      "KDD e Mineração de Dados"
+    ]
+  }
+]

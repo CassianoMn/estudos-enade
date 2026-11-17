@@ -1,0 +1,176 @@
+{
+  "00-formacao-geral": {
+    "title": "Formação Geral (ENADE)",
+    "shortTitle": "Formação Geral",
+    "component": "formacao_geral",
+    "hasDriveMaterial": false,
+    "sourceFiles": [
+      "Provas Oficiais ENADE 2014, 2017 e 2021 (D1–D2 e Q01–Q08)"
+    ],
+    "videoRefs": []
+  },
+  "01-banco-de-dados": {
+    "title": "Banco de Dados",
+    "shortTitle": "Banco de Dados",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "01. Banco de Dados - Parte Teórica e Modelagem (01 a 07)",
+      "02. Banco de Dados - SQL (03 a 11)",
+      "03. Banco de Dados - Questões (Questoes 01 + Respostas)"
+    ],
+    "videoRefs": [
+      { "label": "Enade 2017 Q11 — DER", "exam": "2017 Q11" },
+      { "label": "Enade 2014 Q30 — Chaves e Dependências", "exam": "2014 Q30" }
+    ]
+  },
+  "02-engenharia-de-software": {
+    "title": "Engenharia de Software",
+    "shortTitle": "Eng. de Software",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "Engenharia de Software para o ENADE.ppt"
+    ],
+    "videoRefs": [
+      { "label": "Enade 2021 Q09 — Diagrama de Classes", "exam": "2021 Q09" },
+      { "label": "Enade 2021 Q32 — Diagrama de Sequência", "exam": "2021 Q32" },
+      { "label": "Enade 2017 Q09 — Requisitos", "exam": "2017 Q09" },
+      { "label": "Enade 2017 Q17 — Processos de Software", "exam": "2017 Q17" },
+      { "label": "Enade 2017 Q21 — Processos de Negócio", "exam": "2017 Q21" }
+    ]
+  },
+  "03-estrutura-de-dados": {
+    "title": "Estrutura de Dados e Algoritmos",
+    "shortTitle": "Estrutura de Dados",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "ENADE - ESTUDOS - ESTRUTURA DE DADOS - Prof. Alcides.pdf"
+    ],
+    "videoRefs": [
+      { "label": "Enade 2014 Q03 — Busca Binária", "exam": "2014 D03" },
+      { "label": "Enade 2014 Q09 — Arrays e Matrizes", "exam": "2014 Q09" }
+    ]
+  },
+  "04-gerencia-de-projetos": {
+    "title": "Gerência de Projetos",
+    "shortTitle": "Gerência de Projetos",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "enadeMethanias.pdf",
+      "AtualizaçõesMethanias_ENADE.pdf",
+      "Pmbok 8.pdf"
+    ],
+    "videoRefs": []
+  },
+  "05-inteligencia-artificial": {
+    "title": "Inteligência Artificial",
+    "shortTitle": "Inteligência Artificial",
+    "component": "especifico",
+    "hasDriveMaterial": false,
+    "sourceFiles": [
+      "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+    ],
+    "videoRefs": []
+  },
+  "06-interacao-humano-computador": {
+    "title": "Interação Humano-Computador",
+    "shortTitle": "IHC / UX",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "IHC - Prof Raphael - Parte 01.pdf",
+      "IHC - Prof Raphael - Parte 02.pdf"
+    ],
+    "videoRefs": [
+      { "label": "Enade 2017 Q16 — UX Design", "exam": "2017 Q16" }
+    ]
+  },
+  "07-logica-matematica": {
+    "title": "Lógica Matemática",
+    "shortTitle": "Lógica Matemática",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "LM - NA01 a NA13 (14 notas de aula + 2 folhas-resumo)"
+    ],
+    "videoRefs": []
+  },
+  "08-matematica-discreta": {
+    "title": "Matemática Discreta",
+    "shortTitle": "Mat. Discreta",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "MD_exercicio_enade.pdf",
+      "Base Teórica ENADE SI"
+    ],
+    "videoRefs": []
+  },
+  "09-oac": {
+    "title": "Organização e Arquitetura de Computadores",
+    "shortTitle": "OAC",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "2026 -Enade - OAC.pdf"
+    ],
+    "videoRefs": []
+  },
+  "10-redes-de-computadores": {
+    "title": "Redes de Computadores",
+    "shortTitle": "Redes",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "Enade-Redes.docx"
+    ],
+    "videoRefs": []
+  },
+  "11-sistemas-de-apoio-a-decisao": {
+    "title": "Sistemas de Apoio à Decisão",
+    "shortTitle": "SAD / BI",
+    "component": "especifico",
+    "hasDriveMaterial": false,
+    "sourceFiles": [
+      "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+    ],
+    "videoRefs": []
+  },
+  "12-sistemas-de-informacao": {
+    "title": "Sistemas de Informação",
+    "shortTitle": "Sistemas de Info.",
+    "component": "especifico",
+    "hasDriveMaterial": false,
+    "sourceFiles": [
+      "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+    ],
+    "videoRefs": []
+  },
+  "13-sistemas-distribuidos": {
+    "title": "Sistemas Distribuídos",
+    "shortTitle": "Sist. Distribuídos",
+    "component": "especifico",
+    "hasDriveMaterial": false,
+    "sourceFiles": [
+      "Ementa ENADE Sistemas de Informação + Questões Oficiais"
+    ],
+    "videoRefs": [
+      { "label": "Enade 2021 Q16 — Computação em Nuvem (IaaS/PaaS/SaaS)", "exam": "2021 Q16" }
+    ]
+  },
+  "14-sistemas-operacionais": {
+    "title": "Sistemas Operacionais",
+    "shortTitle": "Sist. Operacionais",
+    "component": "especifico",
+    "hasDriveMaterial": true,
+    "sourceFiles": [
+      "2026 -Enade - SO.pdf"
+    ],
+    "videoRefs": [
+      { "label": "Enade 2021 Q11 — Virtualização e VMs", "exam": "2021 Q11" }
+    ]
+  }
+}

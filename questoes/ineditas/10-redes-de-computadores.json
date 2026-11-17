@@ -1,0 +1,443 @@
+[
+  {
+    "id": "rc-inedita-01",
+    "label": "Inédita 2026 • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma universidade está reestruturando a infraestrutura de rede de seu campus para isolar o tráfego entre laboratórios e interligar sua rede local ao provedor de acesso à Internet. Durante o projeto, a equipe de redes analisou a atuação dos dispositivos de interconexão em relação às camadas do modelo de referência OSI.\n\nConsiderando as camadas do modelo OSI e os equipamentos de rede, avalie as afirmações a seguir.\n\nI. Um switch tradicional de camada 2 segmenta os domínios de colisão por porta e encaminha quadros seletivamente com base nos endereços MAC aprendidos em sua tabela.\nII. Um roteador atua na camada de rede e utiliza endereços IP para encaminhar pacotes entre redes distintas, isolando domínios de broadcast entre suas interfaces.\nIII. Um hub (concentrador) atua na camada de enlace, criando um domínio de colisão independente para cada porta conectada.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação II também está correta: roteadores operam na camada 3 (rede) e separam domínios de broadcast."
+      },
+      {
+        "letter": "B",
+        "text": "III, apenas.",
+        "explanation": "Incorreta, pois hubs operam na camada 1 (física) e compartilham um único domínio de colisão entre todas as portas."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. Switches L2 operam na camada de enlace usando endereços MAC (separando domínios de colisão), e roteadores operam na camada de rede usando IP (separando domínios de broadcast). Hubs pertencem à camada física."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois a afirmação III é falsa (hub é camada física e não segmenta domínio de colisão) e a I é verdadeira."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, porque a afirmação III atribui ao hub características de switch de camada 2."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Switches L2 atuam na camada de enlace (MAC), isolando domínios de colisão por porta, mas mantendo o mesmo domínio de broadcast (sem VLANs). Roteadores atuam na camada de rede (IP) e isolam domínios de broadcast. Hubs operam apenas na camada física, replicando sinais para todas as portas em um único domínio de colisão.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Modelo OSI e TCP/IP",
+      "Dispositivos de Interconexão"
+    ]
+  },
+  {
+    "id": "rc-inedita-02",
+    "label": "Inédita 2026 • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Em redes locais corporativas convivem estações cabeadas no padrão Ethernet (IEEE 802.3) e dispositivos móveis conectados via Wi-Fi (IEEE 802.11). Embora ambos pertençam à camada de enlace de dados e utilizem endereços MAC de 48 bits, seus mecanismos de controle de acesso ao meio possuem diferenças essenciais.\n\nAcerca dos protocolos Ethernet e Wi-Fi na camada de enlace, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Em segmentos Ethernet compartilhados com hubs, o protocolo CSMA/CD detecta colisões durante a transmissão e exige que o receptor envie um quadro ACK de enlace para cada quadro recebido.",
+        "explanation": "Incorreta. A Ethernet clássica (IEEE 802.3) utiliza CSMA/CD e verificação por FCS/CRC, mas não envia quadros de confirmação (ACK) na camada de enlace."
+      },
+      {
+        "letter": "B",
+        "text": "Redes Wi-Fi (IEEE 802.11) utilizam CSMA/CA para evitar colisões e empregam quadros de confirmação (ACK) na camada de enlace, devido à dificuldade de detectar colisões no meio sem fio.",
+        "explanation": "Correta. No padrão IEEE 802.11, o CSMA/CA busca prevenir colisões (com backoff e opcionalmente RTS/CTS) e utiliza ACKs na camada de enlace, pois o rádio não consegue ouvir colisões enquanto transmite."
+      },
+      {
+        "letter": "C",
+        "text": "O protocolo ARP tem como função traduzir endereços MAC de 48 bits em endereços IPv4 antes do envio do quadro ao switch.",
+        "explanation": "Incorreta. O ARP faz o caminho inverso: resolve um endereço IPv4 conhecido na sub-rede local para descobrir o endereço MAC correspondente."
+      },
+      {
+        "letter": "D",
+        "text": "Em uma rede local Ethernet com switches full-duplex, as colisões continuam ocorrendo com frequência equivalente às redes com hubs, exigindo retransmissão contínua pelo CSMA/CD.",
+        "explanation": "Incorreta. Em switches operando em modo full-duplex, cada porta forma um enlace ponto a ponto dedicado com canais separados de envio e recepção, eliminando colisões."
+      },
+      {
+        "letter": "E",
+        "text": "Quadros Ethernet destinados ao endereço de broadcast FF:FF:FF:FF:FF:FF são descartados pelos switches de camada 2 para evitar sobrecarga na rede local.",
+        "explanation": "Incorreta. Switches L2 encaminham quadros de broadcast para todas as portas do mesmo domínio de broadcast (exceto a porta de origem)."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Redes IEEE 802.11 (Wi-Fi) adotam CSMA/CA (prevenção de colisão) e confirmações ACK no enlace por causa do problema do terminal oculto e da impossibilidade prática de detectar colisões durante a transmissão em rádio. Já Ethernet clássica usa CSMA/CD sem ACK de enlace.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Camada de Enlace",
+      "Ethernet e Wi-Fi",
+      "CSMA/CD e CSMA/CA"
+    ]
+  },
+  {
+    "id": "rc-inedita-03",
+    "label": "Inédita 2026 • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Um administrador de redes recebeu o bloco de endereços IPv4 192.168.50.0/24 e precisa dividi-lo em exatamente 8 sub-redes de igual tamanho para atender a diferentes departamentos de uma empresa. Após aplicar o endereçamento CIDR, duas estações receberam os endereços 192.168.50.30 e 192.168.50.35 com a nova máscara calculada.\n\nCom base nesse cenário, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A nova máscara é 255.255.255.192 (/26), oferecendo 62 hosts válidos por sub-rede, e as duas estações pertencem à mesma sub-rede.",
+        "explanation": "Incorreta. O prefixo /26 cria apenas 4 sub-redes dentro de um /24, e não 8."
+      },
+      {
+        "letter": "B",
+        "text": "A nova máscara é 255.255.255.224 (/27), oferecendo 32 hosts válidos por sub-rede, e as duas estações pertencem à mesma sub-rede.",
+        "explanation": "Incorreta. O /27 possui 32 endereços totais, porém apenas 30 são utilizáveis por hosts (subtraindo rede e broadcast), e as estações estão em sub-redes diferentes."
+      },
+      {
+        "letter": "C",
+        "text": "A nova máscara é 255.255.255.224 (/27), oferecendo 30 hosts válidos por sub-rede, e as duas estações pertencem a sub-redes distintas.",
+        "explanation": "Correta. Para 8 = 2^3 sub-redes, emprestam-se 3 bits (/24 + 3 = /27), cuja máscara é 255.255.255.224, com 2^5 - 2 = 30 hosts válidos. A 1ª sub-rede vai de .0 a .31 (.30 é host válido) e a 2ª vai de .32 a .63 (.35 é host válido), logo estão em sub-redes distintas."
+      },
+      {
+        "letter": "D",
+        "text": "A nova máscara é 255.255.255.240 (/28), oferecendo 14 hosts válidos por sub-rede, e o endereço 192.168.50.30 é um endereço de broadcast.",
+        "explanation": "Incorreta. O prefixo /28 gera 16 sub-redes dentro de um /24; além disso, para 8 sub-redes o correto é /27."
+      },
+      {
+        "letter": "E",
+        "text": "A nova máscara é 255.255.255.224 (/27), oferecendo 30 hosts válidos por sub-rede, e o endereço 192.168.50.35 é o endereço de rede da segunda sub-rede.",
+        "explanation": "Incorreta. O endereço de rede da segunda sub-rede /27 é 192.168.50.32, e não .35."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Para dividir um bloco /24 em 8 sub-redes iguais (2^3 = 8), emprestam-se 3 bits de host, resultando no prefixo /27 (máscara 255.255.255.224). Restam 5 bits de host: 2^5 - 2 = 30 endereços válidos por sub-rede. Os blocos têm tamanho 32: 192.168.50.0/27 (hosts .1 a .30, broadcast .31) e 192.168.50.32/27 (hosts .33 a .62, broadcast .63). Portanto, .30 e .35 estão em sub-redes diferentes.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "IPv4 e CIDR",
+      "Cálculo de Sub-redes"
+    ]
+  },
+  {
+    "id": "rc-inedita-04",
+    "label": "Inédita 2026 • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Em uma rede corporativa IPv4, dezenas de estações utilizam endereços privados da faixa 10.10.0.0/16 e acessam simultaneamente aplicações Web na Internet por meio de um único roteador de borda configurado com NAPT (Network Address Port Translation) e apenas um endereço IPv4 público válido (200.18.42.10) em sua interface externa.\n\nConsiderando esse cenário e a evolução para o protocolo IPv6, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. Os pacotes originados por diferentes estações internas que alcançam o servidor Web externo carregam o mesmo endereço IP de origem (200.18.42.10), cabendo ao roteador NAPT desambiguar os fluxos de retorno por meio dos números de porta.\n\nPORQUE\n\nII. No protocolo IPv6, o espaço de endereçamento de 128 bits e a presença obrigatória do campo de checksum no cabeçalho básico permitem que os roteadores intermediários realizem fragmentação e tradução NAPT de maneira mais veloz que no IPv4.\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Incorreta, pois a asserção II contém múltiplos erros sobre o IPv6."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta, pois a asserção II é falsa."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Correta. A asserção I descreve exatamente o funcionamento do NAPT (um único IP público compartilhado, diferenciado por portas na tabela de tradução). Já a asserção II é falsa: o cabeçalho básico do IPv6 removeu o campo de checksum, os roteadores intermediários não realizam fragmentação (apenas o nó de origem fragmenta) e os 128 bits visam justamente eliminar a necessidade de NAT/NAPT."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta, pois I é verdadeira e II é falsa."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta, pois a asserção I descreve corretamente o NAPT."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "No NAPT, o roteador traduz os IPs privados internos para o mesmo IP público da interface externa, usando portas distintas na tabela NAT para rotear as respostas de volta a cada estação. No IPv6 (128 bits), o cabeçalho fixo de 40 bytes não possui checksum (para acelerar o encaminhamento), roteadores não fragmentam pacotes e não há necessidade prática de NAT para economia de endereços.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "NAT e NAPT",
+      "IPv4 vs IPv6"
+    ]
+  },
+  {
+    "id": "rc-inedita-05",
+    "label": "Inédita 2026 • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma operadora regional de telecomunicações opera sua própria infraestrutura como um Sistema Autônomo (AS 65100), composto por 45 roteadores interconectados por enlaces de fibra óptica de diferentes capacidades (1 Gbps, 10 Gbps e 40 Gbps). Para oferecer conectividade global aos seus clientes, esse AS troca rotas diretamente com dois provedores de trânsito distintos (AS 65200 e AS 65300), aplicando políticas comerciais de preferência de tráfego.\n\nConsiderando os protocolos de roteamento na Internet, avalie as afirmações a seguir.\n\nI. Para o roteamento interno dentro do AS 65100 levando em consideração a largura de banda dos enlaces como métrica de custo, o protocolo OSPF é adequado por adotar o algoritmo de estado de enlace (Dijkstra).\nII. Para estabelecer políticas comerciais e trocar anúncios de alcançabilidade entre os Sistemas Autônomos AS 65100, AS 65200 e AS 65300, deve-se utilizar o protocolo BGP.\nIII. O protocolo RIP é o mais indicado para o cenário inter-AS descrito, pois utiliza vetor de caminho sem limite de saltos e opera sobre TCP.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação II também está correta (BGP é o protocolo inter-AS)."
+      },
+      {
+        "letter": "B",
+        "text": "II, apenas.",
+        "explanation": "Incorreta, pois a afirmação I também está correta (OSPF é IGP de estado de enlace que considera custo baseado em banda)."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. OSPF é um protocolo IGP (intra-AS) baseado em estado de enlace (Dijkstra) cujo custo reflete a largura de banda, enquanto o BGP é o protocolo EGP (inter-AS) baseado em vetor de caminho orientado a políticas. O item III erra ao descrever o RIP (que é intra-AS, usa vetor de distância sobre UDP com limite de 15 saltos)."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois o item III confunde RIP com BGP."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, porque o item III é falso."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Dentro de um Sistema Autônomo (intra-AS), protocolos IGP como o OSPF (estado de enlace / Dijkstra) calculam rotas de menor custo considerando a capacidade dos enlaces (ao contrário do RIP, limitado a 15 saltos por vetor de distância). Entre Sistemas Autônomos distintos (inter-AS), o protocolo padrão é o BGP (vetor de caminho sobre TCP, orientado a políticas).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Roteamento Intra-AS e Inter-AS",
+      "OSPF e BGP"
+    ]
+  },
+  {
+    "id": "rc-inedita-06",
+    "label": "Inédita 2026 • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Em uma conexão TCP estabelecida entre o processo cliente A e o processo servidor B, o primeiro byte de dados de aplicação enviado por A tem número de sequência 100. O processo A transmite, em rajada, quatro segmentos consecutivos contendo exatamente 50 bytes de carga útil (dados de aplicação) cada um.\n\nSuponha que o 1º, o 3º e o 4º segmentos alcancem o destino B íntegros, mas o 2º segmento seja perdido na rede antes de chegar a B. Considerando o mecanismo padrão de confirmação cumulativa (ACK) do TCP, qual número de confirmação (ACK) o servidor B enviará para A após receber o 4º segmento?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "149",
+        "explanation": "Incorreta. O byte 149 foi o último byte do 1º segmento; o ACK do TCP indica o próximo byte esperado em sequência contínua."
+      },
+      {
+        "letter": "B",
+        "text": "150",
+        "explanation": "Correta. O 1º segmento transporta os bytes 100 a 149 (50 bytes), logo B confirma esperando o byte 150 (ACK = 150). Como o 2º segmento (bytes 150 a 199) foi perdido, ao receber o 3º (200 a 249) e o 4º (250 a 299) fora de ordem, B mantém o ACK cumulativo em 150."
+      },
+      {
+        "letter": "C",
+        "text": "200",
+        "explanation": "Incorreta. O número 200 corresponde ao primeiro byte do 3º segmento, mas os bytes 150 a 199 ainda não foram recebidos."
+      },
+      {
+        "letter": "D",
+        "text": "250",
+        "explanation": "Incorreta. O valor 250 é o início do 4º segmento e ignora a lacuna do 2º segmento perdido."
+      },
+      {
+        "letter": "E",
+        "text": "300",
+        "explanation": "Incorreta. O valor 300 só seria enviado caso todos os quatro segmentos (bytes 100 a 299) tivessem sido recebidos sem perdas."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No TCP, o campo ACK é cumulativo e aponta o próximo número de sequência esperado em fluxo contínuo. 1º segmento: bytes [100..149] → próximo esperado = 150. 2º segmento: [150..199] (perdido). 3º segmento: [200..249] e 4º segmento: [250..299] chegam fora de ordem, sendo armazenados no buffer, mas B continua respondendo ACK = 150 até que o 2º segmento seja retransmitido.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Camada de Transporte",
+      "TCP Números de Sequência e ACK"
+    ]
+  },
+  {
+    "id": "rc-inedita-07",
+    "label": "Inédita 2026 • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Ao conectar um computador recém-formatado a uma rede corporativa e acessar um portal de e-mail institucional, diversos protocolos da camada de aplicação entram em operação de forma encadeada para viabilizar a configuração automática da estação, a resolução de nomes e a troca de mensagens.\n\nA respeito desses protocolos da camada de aplicação na arquitetura TCP/IP, avalie as afirmações a seguir.\n\nI. O protocolo DHCP permite que o cliente obtenha automaticamente endereço IP, máscara de sub-rede, gateway padrão e servidor DNS por meio da troca de mensagens Discover, Offer, Request e Ack.\nII. O protocolo DNS opera de maneira hierárquica e distribuída para traduzir nomes de domínio em endereços IP, utilizando registros como A (IPv4), AAAA (IPv6) e MX (servidor de correio eletrônico).\nIII. O protocolo SMTP é utilizado pelos clientes de e-mail exclusivamente para baixar mensagens do servidor mantendo as pastas sincronizadas remotamente, enquanto o IMAP realiza o envio entre servidores.\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta, pois a afirmação II também está correta."
+      },
+      {
+        "letter": "B",
+        "text": "III, apenas.",
+        "explanation": "Incorreta, pois o item III inverte exatamente os papéis de SMTP e IMAP."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Correta. O DHCP executa o ciclo DORA para configuração automática de rede, e o DNS realiza tradução hierárquica de nomes com registros A, AAAA, MX etc. O item III é falso porque SMTP é usado para envio/retransmissão, enquanto IMAP (ou POP3) é usado para recuperação/sincronização de mensagens."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta, pois o item III está errado e o item I está correto."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Incorreta, pois o item III inverte SMTP e IMAP."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O DHCP realiza o processo DORA (Discover, Offer, Request, Ack) sobre UDP (67/68). O DNS resolve nomes hierarquicamente (Raiz → TLD → Autoritativo) usando registros A, AAAA, CNAME, MX, NS. Já no correio eletrônico, o SMTP envia e retransmite mensagens (push), enquanto IMAP (sincronizado no servidor) e POP3 (download local) recuperam mensagens (pull).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Protocolos de Aplicação",
+      "DHCP, DNS, SMTP e IMAP"
+    ]
+  },
+  {
+    "id": "rc-inedita-08",
+    "label": "Inédita 2026 • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma instituição financeira disponibiliza serviços de Internet Banking e também conecta suas agências regionais à matriz por meio da Internet pública. Para mitigar riscos de interceptação, adulteração e acesso indevido, a arquitetura de segurança combina criptografia, certificação digital, firewalls, DMZ e VPN.\n\nConsiderando os mecanismos de segurança de redes e seus conceitos, avalie as afirmações a seguir.\n\nI. Na assinatura digital, o emissor calcula um resumo criptográfico (hash) da mensagem e o cifra com sua chave privada, permitindo que o receptor verifique autenticidade, integridade e não repúdio por meio da chave pública do emissor.\nII. Um certificado digital X.509 é emitido e assinado por uma Autoridade Certificadora (AC) confiável para vincular legitimamente a identidade de uma entidade à sua chave pública.\nIII. A zona desmilitarizada (DMZ) é uma sub-rede isolada por firewall para hospedar servidores acessíveis publicamente (como portais Web e DNS externo), impedindo acesso direto da Internet à rede interna corporativa.\nIV. Uma VPN (Virtual Private Network) consiste em um dispositivo de hardware dedicado posicionado na borda da rede exclusivamente para filtrar pacotes TCP/UDP por número de porta.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e IV.",
+        "explanation": "Incorreta, pois IV descreve um firewall filtro de pacotes, e não uma VPN."
+      },
+      {
+        "letter": "B",
+        "text": "II e III.",
+        "explanation": "Incorreta, pois I também está correta."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Correta. As afirmações I (assinatura digital com hash + chave privada), II (certificado digital assinado por AC) e III (DMZ para serviços expostos) estão exatas. A afirmação IV é falsa porque VPN é uma tecnologia de tunelamento lógico criptografado sobre rede pública, e não um dispositivo de filtragem de portas (papel do firewall)."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta, pois IV confunde VPN com firewall."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta, pois IV está incorreta."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Assinatura digital usa hash + chave privada do emissor (verificada com a chave pública), garantindo autenticidade, integridade e não repúdio. Certificados digitais associam identidade e chave pública via AC. A DMZ isola serviços públicos da rede interna. Já a VPN cria um túnel criptografado seguro sobre a Internet (IPsec, WireGuard, OpenVPN), não sendo um simples filtro de pacotes.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Segurança de Redes",
+      "Criptografia e Certificação Digital",
+      "Firewalls, DMZ e VPN"
+    ]
+  },
+  {
+    "id": "rc-inedita-09",
+    "label": "Inédita 2026 • Questão 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma empresa de comércio eletrônico possui 120 estações de trabalho distribuídas entre os setores Administrativo e Engenharia em sua sede, além de um servidor Web de atendimento ao público externo. Atualmente, toda a rede local está conectada por equipamentos sem segmentação de tráfego, sem filtro de acesso externo e com configuração manual de endereços IP em cada computador, gerando colisões de endereçamento e exposição indevida da rede interna.\n\nConsiderando os fundamentos de projeto de redes TCP/IP e segurança de perímetro, responda ao que se pede:\n\na) Explique como devem ser empregados switches gerenciáveis (VLANs), roteador de borda e zona desmilitarizada (DMZ) para segmentar o tráfego interno e proteger o servidor Web público e a rede corporativa. (valor: 5,0 pontos)\nb) Descreva como os serviços DHCP e DNS devem ser configurados e integrados para eliminar o endereçamento manual nas estações e viabilizar o acesso por nomes aos sistemas internos e externos. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o padrão esperado de correção na rubrica abaixo, verificando se abordou a segmentação em camada 2/3, a função da DMZ e o fluxo operacional de DHCP e DNS.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve explicar que:\n- Switches gerenciáveis com VLANs (camada 2) separam os domínios de broadcast entre os setores Administrativo e Engenharia (e isolam o servidor público), reduzindo tráfego desnecessário e aumentando a segurança interna (2,0 pts);\n- O roteador de borda / firewall (camada 3 e políticas de filtragem) interliga as VLANs/sub-redes distintas, realiza NAPT se necessário para saída à Internet e aplica regras de controle de acesso (1,5 pt);\n- O servidor Web público deve ser posicionado em uma DMZ (sub-rede isolada entre interfaces do firewall), permitindo conexões externas HTTP/HTTPS apenas às portas estritamente necessárias e bloqueando conexões diretas da Internet ou da DMZ para a rede interna corporativa (1,5 pt).\n\nb) (5,0 pontos) O respondente deve descrever que:\n- Servidores DHCP (com escopos separados por sub-rede/VLAN e uso de DHCP relay quando centralizado) distribuem dinamicamente endereço IP, máscara de sub-rede, gateway padrão e endereço do servidor DNS por meio das etapas DORA (Discover, Offer, Request, Ack), evitando conflitos de IP manual (2,5 pts);\n- O serviço DNS deve atuar hierarquicamente: um resolvedor/servidor interno responde por nomes da intranet (registros A/AAAA/CNAME privados) e encaminha consultas de domínios públicos para a Internet, enquanto o DNS autoritativo externo publica apenas os registros dos serviços da DMZ (ex.: portal Web) (2,5 pts).",
+    "imageUrls": [],
+    "topics": [
+      "Projeto de Redes Corporativas",
+      "VLANs, Roteamento e DMZ",
+      "DHCP e DNS"
+    ]
+  },
+  {
+    "id": "rc-inedita-10",
+    "label": "Inédita 2026 • Questão 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "10-redes-de-computadores",
+    "areaName": "Redes de Computadores",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma plataforma de telemedicina oferece duas funcionalidades principais pela Internet: (1) envio de prontuários eletrônicos e exames clínicos via API REST sobre HTTPS; e (2) teleconsultas por vídeo e áudio em tempo real entre médicos e pacientes.\n\nConsiderando a arquitetura da camada de transporte e os mecanismos de segurança na comunicação em rede, faça o que se pede:\n\na) Justifique a escolha adequada do protocolo de transporte (TCP ou UDP) para cada uma das duas funcionalidades da plataforma, relacionando sua resposta à confiabilidade, ao controle de congestionamento/fluxo e ao esforço exigido do programador de aplicações. (valor: 5,0 pontos)\nb) Explique como o protocolo TLS (utilizado no HTTPS) combina criptografia assimétrica, criptografia simétrica, certificado digital e funções hash para garantir confidencialidade, integridade e autenticidade no envio dos prontuários. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Verifique se a resposta contrapõe corretamente TCP (confiabilidade, ordem, janela deslizante e redução de complexidade para a aplicação) e UDP (baixa latência sem bloqueio por retransmissão) e detalha o papel híbrido do TLS.",
+    "discursiveRubric": "a) (5,0 pontos) O respondente deve justificar que:\n- Para o envio de prontuários e exames via HTTPS/REST, deve-se utilizar o TCP, pois é orientado a conexão e garante entrega confiável, ordenada e sem perdas, além de prover controle de fluxo (janela deslizante) e controle de congestionamento; isso libera o programador de implementar detecção e retransmissão manual de erros na aplicação (2,5 pts);\n- Para teleconsultas de áudio e vídeo em tempo real, o UDP é tradicionalmente preferível na camada de transporte por ser sem conexão, possuir menor cabeçalho (8 bytes) e não pausar o fluxo aguardando retransmissões (evitando atrasos e jitter excessivos), transferindo à aplicação o tratamento tolerante de eventuais perdas de pacotes (2,5 pts).\n\nb) (5,0 pontos) O respondente deve explicar que o TLS emprega criptografia híbrida:\n- Durante o handshake inicial, o servidor apresenta seu certificado digital X.509 (assinado por uma Autoridade Certificadora) para comprovar autenticidade ao cliente, e utiliza criptografia assimétrica (ou troca de chaves como ECDHE/RSA) para autenticar e estabelecer com segurança uma chave de sessão compartilhada (2,0 pts);\n- Na transferência dos dados da sessão (prontuários), utiliza-se criptografia simétrica (ex.: AES, ChaCha20) com a chave de sessão negociada, garantindo confidencialidade com alto desempenho (1,5 pt);\n- Funções hash / MAC / cifras autenticadas (AEAD) geram códigos de autenticação para verificar a integridade de cada registro transmitido, impedindo adulterações em trânsito (1,5 pt).",
+    "imageUrls": [],
+    "topics": [
+      "TCP vs UDP",
+      "TLS/HTTPS e Criptografia Híbrida"
+    ]
+  }
+]

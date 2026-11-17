@@ -1,0 +1,464 @@
+[
+  {
+    "id": "es-inedita-01",
+    "label": "Inédita ENADE • Questão 01",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 1,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma healthtech brasileira está desenvolvendo uma plataforma web e móvel de telemedicina para atendimento ambulatorial. Embora as normas de prontuário eletrônico e sigilo médico estejam claramente regulamentadas desde o início, a diretoria ainda está validando hipóteses sobre o fluxo de triagem digital e as funcionalidades de acompanhamento pós-consulta junto a pacientes e médicos. Para reduzir riscos de construir recursos que não geram valor e permitir entregas frequentes em produção, a equipe decidiu adotar um processo ágil combinando Scrum e práticas de Extreme Programming (XP).\n\nConsiderando os modelos de processo de software e os valores ágeis nesse contexto, avalie as afirmações a seguir.\n\nI. A escolha pelo modelo em cascata seria mais adequada do que a abordagem iterativa e incremental, pois a existência de normas médicas impede qualquer entrega parcial antes da conclusão integral do sistema.\nII. No Scrum, o Product Owner é responsável por gerenciar o Product Backlog e maximizar o valor do produto entregue pela equipe a cada Sprint.\nIII. Práticas de XP, como Desenvolvimento Orientado a Testes (TDD), Integração Contínua e Refatoração, contribuem para sustentar a qualidade técnica do código diante de mudanças frequentes de requisitos.\nIV. De acordo com o Manifesto Ágil, prioriza-se responder a mudanças mais do que seguir um plano, sem que isso signifique eliminar totalmente o planejamento.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. A afirmação I é falsa: o modelo em cascata não é adequado quando há incerteza nos requisitos de experiência do usuário, e entregas incrementais podem cumprir requisitos regulatórios em cada incremento; além disso, III e IV também são verdadeiras."
+      },
+      {
+        "letter": "B",
+        "text": "I e IV.",
+        "explanation": "Incorreta. A afirmação I está incorreta ao defender o modelo em cascata como obrigatório por conta de normas médicas e por desconsiderar II e III, que são corretas."
+      },
+      {
+        "letter": "C",
+        "text": "II e III.",
+        "explanation": "Incorreta. Embora II e III estejam corretas, a afirmação IV também está correta segundo o quarto valor do Manifesto Ágil."
+      },
+      {
+        "letter": "D",
+        "text": "II, III e IV.",
+        "explanation": "Correta. II descreve corretamente o papel do Product Owner no Scrum; III lista práticas centrais de engenharia do XP que protegem o código contra regressões em cenários dinâmicos; IV reflete fielmente o Manifesto Ágil ('responder a mudanças mais que seguir um plano', mantendo o valor do planejamento adaptativo). I é falsa porque a incerteza no fluxo de triagem favorece o desenvolvimento iterativo/incremental."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta. A afirmação I é falsa, pois o modelo em cascata concentra a validação apenas ao final do projeto e tem baixa tolerância a mudanças."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Em projetos com requisitos de negócio em validação (como fluxos de triagem e acompanhamento), processos iterativos e incrementais como Scrum + XP mitigam riscos ao entregar incrementos funcionais testados a cada Sprint. As afirmações II, III e IV estão corretas, enquanto a I é falsa ao impor o modelo em cascata.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Processos de Software",
+      "Scrum",
+      "Extreme Programming (XP)",
+      "Manifesto Ágil"
+    ]
+  },
+  {
+    "id": "es-inedita-02",
+    "label": "Inédita ENADE • Questão 02",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 2,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Durante a fase de Engenharia de Requisitos de um sistema de gestão de estacionamento inteligente para um shopping center, o analista de requisitos acompanhou presencialmente a rotina dos operadores das cancelas durante um fim de semana de grande movimento para identificar procedimentos informais não descritos nos manuais. Em seguida, classificou os levantamentos obtidos em Requisitos Funcionais (RF), Requisitos Não Funcionais (RNF) e Regras de Negócio (RN).\n\nConsiderando a técnica de elicitação empregada e a correta classificação dos requisitos na Engenharia de Software, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A técnica utilizada foi a prototipagem descartável; 'emitir comprovante de entrada com QR Code' é uma Regra de Negócio e 'tolerância de 15 minutos sem cobrança' é um Requisito Funcional.",
+        "explanation": "Incorreta. Observar os usuários em seu ambiente real de trabalho caracteriza etnografia, não prototipagem. Além disso, as classificações estão invertidas: emitir comprovante é RF e a política de tolerância de 15 minutos é RN."
+      },
+      {
+        "letter": "B",
+        "text": "A técnica utilizada foi a etnografia; 'calcular e registrar o valor da tarifa na saída do veículo' é um Requisito Funcional, 'tempo de resposta da leitura da placa inferior a 1 segundo' é um Requisito Não Funcional e 'isentar da tarifa clientes com notas fiscais acima de R$ 300,00' é uma Regra de Negócio.",
+        "explanation": "Correta. A observação imersiva no ambiente operacional do usuário é a etnografia. Calcular/registrar a tarifa descreve um serviço do sistema (RF); a restrição temporal de leitura < 1s é um atributo de qualidade de desempenho (RNF); a política de isenção vinculada a compras é uma norma organizacional (RN)."
+      },
+      {
+        "letter": "C",
+        "text": "A técnica utilizada foi o workshop de requisitos (JAD); 'exibir relatório diário de faturamento por turno' é um Requisito Não Funcional e 'garantir disponibilidade de 99,9% no serviço de pagamento' é uma Regra de Negócio.",
+        "explanation": "Incorreta. Não houve sessão conjunta facilitada (JAD), mas observação em campo (etnografia). Exibir relatório é Requisito Funcional e disponibilidade de 99,9% é Requisito Não Funcional."
+      },
+      {
+        "letter": "D",
+        "text": "A técnica utilizada foi a etnografia; 'criptografar os dados de pagamento conforme padrão PCI-DSS' é um Requisito Funcional e 'registrar a placa do veículo na entrada' é um Requisito Não Funcional.",
+        "explanation": "Incorreta. Segurança/criptografia é um Requisito Não Funcional (restrição de segurança), enquanto registrar a placa do veículo na entrada é uma ação/serviço do sistema (Requisito Funcional)."
+      },
+      {
+        "letter": "E",
+        "text": "A técnica utilizada foi o brainstorming; 'operar offline em caso de queda da internet local' é uma Regra de Negócio e 'conceder 50% de desconto para mensalistas cadastrados' é um Requisito Não Funcional.",
+        "explanation": "Incorreta. A técnica foi etnografia, não brainstorming. Operar offline (tolerância a falhas/confiabilidade) é RNF, e a política de desconto para mensalistas é Regra de Negócio."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A etnografia consiste na observação direta do trabalho no ambiente real, revelando práticas implícitas. Na classificação: Requisitos Funcionais definem o que o sistema faz (serviços); Requisitos Não Funcionais especificam restrições e atributos de qualidade (desempenho, segurança, disponibilidade); Regras de Negócio expressam políticas e normas da organização.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Engenharia de Requisitos",
+      "Etnografia",
+      "Requisitos Funcionais",
+      "Requisitos Não Funcionais",
+      "Regras de Negócio"
+    ]
+  },
+  {
+    "id": "es-inedita-03",
+    "label": "Inédita ENADE • Questão 03",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 3,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma empresa de consultoria modelou em BPMN (Business Process Modeling and Notation) o processo de solicitação de reembolso de despesas de viagem utilizando dois Pools: 'Colaborador' e 'Empresa'. O Pool 'Empresa' possui duas raias (Lanes): 'Gestor Imediato' e 'Financeiro'. A sequência modelada ocorre conforme descrito a seguir:\n\n1. O processo inicia no Pool 'Colaborador' com o envio do formulário de despesas (Fluxo de Mensagem para a raia 'Gestor Imediato').\n2. Na raia 'Gestor Imediato', após a tarefa 'Avaliar despesas', há um Gateway Exclusivo (X) com a condição 'Despesa aprovada?'. Se 'Não', dispara-se um Fluxo de Mensagem notificando a recusa ao Colaborador e encerra-se o processo.\n3. Se 'Sim', o fluxo segue para um Gateway Paralelo (+) na raia 'Financeiro', que dispara simultaneamente as tarefas 'Agendar depósito bancário' e 'Registrar lançamento contábil'.\n4. Após a conclusão de ambas as tarefas, um segundo Gateway Paralelo (+) converge os fluxos antes da tarefa final 'Enviar comprovante de pagamento', seguida do Evento de Fim.\n\nConsiderando a semântica e as boas práticas da notação BPMN, avalie as afirmações a seguir.\n\nI. O uso do Fluxo de Mensagem entre o Pool 'Colaborador' e o Pool 'Empresa' está correto, pois a comunicação entre participantes distintos deve ser representada por fluxos de mensagem e não por fluxos de sequência.\nII. O segundo Gateway Paralelo (+) atua como ponto de sincronização (join), garantindo que 'Enviar comprovante de pagamento' só seja iniciada depois que tanto o agendamento do depósito quanto o registro contábil tiverem sido concluídos.\nIII. Se a empresa desejasse que, no passo 3, apenas uma ou eventualmente ambas as tarefas pudessem ser executadas dependendo de regras de alçada financeira, o Gateway Paralelo (+) deveria ser substituído por um Gateway Inclusivo (O).\n\nÉ correto o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I, apenas.",
+        "explanation": "Incorreta. Além da afirmação I, as afirmações II e III também estão corretas quanto ao papel de sincronização do gateway paralelo e à semântica do gateway inclusivo."
+      },
+      {
+        "letter": "B",
+        "text": "II, apenas.",
+        "explanation": "Incorreta. I e III também estão corretas conforme a especificação BPMN."
+      },
+      {
+        "letter": "C",
+        "text": "I e II, apenas.",
+        "explanation": "Incorreta. A afirmação III também está correta, pois o Gateway Inclusivo (OR) permite ativar um, vários ou todos os caminhos cujas condições sejam verdadeiras."
+      },
+      {
+        "letter": "D",
+        "text": "II e III, apenas.",
+        "explanation": "Incorreta. A afirmação I também está correta, já que fluxos de sequência não podem atravessar fronteiras de Pools distintos."
+      },
+      {
+        "letter": "E",
+        "text": "I, II e III.",
+        "explanation": "Correta. Em BPMN: (I) a comunicação entre Pools diferentes usa obrigatoriamente Fluxo de Mensagem; (II) a convergência de um Gateway Paralelo (+) sincroniza todos os ramos ativos antes de prosseguir; (III) um Gateway Inclusivo (O) habilita um ou mais caminhos condicionalmente, diferenciando-se do XOR (exatamente um) e do AND (sempre todos)."
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Todas as três afirmações aplicam corretamente a especificação BPMN: fluxos de mensagem conectam Pools distintos, gateways paralelos convergem sincronizando todos os fluxos de entrada e gateways inclusivos modelam ativações de um ou múltiplos caminhos condicionais.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Modelagem de Negócios",
+      "BPMN",
+      "Gateways",
+      "Pools e Lanes"
+    ]
+  },
+  {
+    "id": "es-inedita-04",
+    "label": "Inédita ENADE • Questão 04",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 4,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Na modelagem de requisitos de uma plataforma de Educação a Distância (EAD) utilizando Diagrama de Casos de Uso da UML, o analista identificou as seguintes necessidades:\n- Todo aluno que executa o caso de uso 'Efetuar Matrícula' deve, obrigatoriamente, ter seus dados validados pelo caso de uso 'Validar Pré-Requisitos Acadêmicos'.\n- Opcionalmente, caso o aluno já possua graduação anterior, ele pode acionar o fluxo complementar 'Solicitar Aproveitamento de Disciplinas' a partir de um ponto de extensão definido em 'Efetuar Matrícula'.\n- Além de alunos regulares, bolsistas também realizam matrícula, mas possuem acesso adicional a 'Enviar Termo de Bolsa'.\n\nCom base nesse cenário e na notação oficial da UML para Diagramas de Casos de Uso, avalie as asserções a seguir e a relação proposta entre elas.\n\nI. No diagrama, deve-se modelar um relacionamento <<include>> partindo de 'Efetuar Matrícula' para 'Validar Pré-Requisitos Acadêmicos' e um relacionamento <<extend>> partindo de 'Solicitar Aproveitamento de Disciplinas' para 'Efetuar Matrícula'.\n\nPORQUE\n\nII. Na UML, a dependência <<include>> indica que o caso de uso base incorpora obrigatoriamente o comportamento do caso de uso incluído (seta do base para o incluído), ao passo que <<extend>> indica um comportamento opcional ou condicional que estende o caso de uso base (seta do extensor para o base).\n\nA respeito dessas asserções, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "explanation": "Correta. Tanto a modelagem descrita na asserção I quanto a definição formal da direção e semântica das setas <<include>> e <<extend>> na asserção II são verdadeiras, sendo II a justificativa exata de I."
+      },
+      {
+        "letter": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "explanation": "Incorreta. A asserção II fundamenta diretamente a direção e o tipo dos relacionamentos definidos na asserção I."
+      },
+      {
+        "letter": "C",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "explanation": "Incorreta. A asserção II descreve exatamente a regra oficial da UML para <<include>> e <<extend>>."
+      },
+      {
+        "letter": "D",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "explanation": "Incorreta. A asserção I aplica corretamente a direção das setas para o cenário descrito."
+      },
+      {
+        "letter": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "explanation": "Incorreta. Ambas as asserções são verdadeiras e consistentes com a UML."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Em UML, '<<include>>' representa inclusão obrigatória com a seta tracejada apontando do caso de uso base ('Efetuar Matrícula') para o caso incluído ('Validar Pré-Requisitos Acadêmicos'). Já '<<extend>>' representa extensão opcional/condicional com a seta tracejada apontando do caso extensor ('Solicitar Aproveitamento de Disciplinas') para o caso base ('Efetuar Matrícula'). Além disso, o ator 'Bolsista' poderia herdar do ator 'Aluno' por generalização.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "UML",
+      "Diagrama de Casos de Uso",
+      "Include e Extend"
+    ]
+  },
+  {
+    "id": "es-inedita-05",
+    "label": "Inédita ENADE • Questão 05",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 5,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma rede de hotéis está projetando seu sistema de reservas em UML. No Diagrama de Classes preliminar, definiu-se que:\n- A classe 'Reserva' possui relacionamento com 'Hospede' (cada Reserva pertence a exatamente 1 Hospede, e um Hospede pode realizar de 0 a muitas Reservas).\n- A classe 'Reserva' possui um losango preenchido (preto) junto a 'Reserva' ligado à classe 'ItemDiaria' com multiplicidade 1..* do lado de 'ItemDiaria' e 1 do lado de 'Reserva'.\n- 'PagamentoPix' e 'PagamentoCartao' possuem setas com triângulo vazio apontando para a classe abstrata 'Pagamento'.\n\nNo Diagrama de Sequência do caso de uso 'Confirmar Reserva', o objeto ':ReservaController' envia uma mensagem síncrona 'autorizar()' para ':GatewayPagamento', aguarda a mensagem de retorno 'aprovado' e, em seguida, dispara uma mensagem assíncrona 'enviarEmailConfirmacao()' para ':ServicoNotificacao' antes de concluir o fluxo.\n\nConsiderando os conceitos de UML presentes nos diagramas descritos, avalie as afirmações a seguir.\n\nI. O relacionamento entre 'Reserva' e 'ItemDiaria' é uma composição, indicando dependência de ciclo de vida, ou seja, caso uma instância de 'Reserva' seja excluída, seus respectivos objetos 'ItemDiaria' deixam de existir.\nII. Entre 'PagamentoPix', 'PagamentoCartao' e 'Pagamento' há um relacionamento de generalização/especialização (herança), no qual 'Pagamento' é a superclasse e as demais são subclasses.\nIII. Como ':ReservaController' envia a mensagem 'enviarEmailConfirmacao()' de forma assíncrona, ele precisa ficar bloqueado aguardando o término completo do envio do e-mail pelo ':ServicoNotificacao' para finalizar a execução.\nIV. A multiplicidade entre 'Hospede' e 'Reserva' permite que um hóspede cadastrado no sistema ainda não possua nenhuma reserva associada.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e II.",
+        "explanation": "Incorreta. A afirmação IV também está correta, pois a multiplicidade 0..* do lado de Reserva permite que um Hospede tenha zero reservas."
+      },
+      {
+        "letter": "B",
+        "text": "II e III.",
+        "explanation": "Incorreta. A afirmação III é falsa (mensagens assíncronas não bloqueiam o remetente) e I e IV são verdadeiras."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e IV.",
+        "explanation": "Correta. (I) O losango preenchido representa composição (dependência existencial); (II) o triângulo vazio representa generalização/herança para a superclasse Pagamento; (IV) a multiplicidade 0..* em Reserva admite zero reservas por hóspede. Já III é falsa porque uma mensagem assíncrona permite ao remetente prosseguir sem aguardar o processamento do destinatário."
+      },
+      {
+        "letter": "D",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. A afirmação III está errada sobre o comportamento de mensagens assíncronas, e II está correta."
+      },
+      {
+        "letter": "E",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. A afirmação I está correta e a III está incorreta."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na UML: losango preenchido = composição (ciclo de vida acoplado); triângulo vazio = generalização/herança; multiplicidade 0..* permite ausência de instâncias associadas; mensagem assíncrona (seta aberta) não bloqueia o objeto chamador, diferentemente da mensagem síncrona (seta preenchida).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "UML",
+      "Diagrama de Classes",
+      "Diagrama de Sequência",
+      "Composição e Herança"
+    ]
+  },
+  {
+    "id": "es-inedita-06",
+    "label": "Inédita ENADE • Questão 06",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 6,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "facil",
+    "annulled": false,
+    "stem": "Uma equipe de desenvolvimento implantou um módulo de cálculo de juros compostos em uma cooperativa de crédito. Antes de executar os casos de teste automatizados, dois desenvolvedores realizaram uma inspeção formal do código-fonte e identificaram que a fórmula implementada usava juros simples no lugar de juros compostos, divergindo da especificação de requisitos. Durante a bateria posterior de testes dinâmicos em ambiente de homologação, constatou-se ainda que, quando o usuário digitava uma taxa igual a zero, o sistema encerrava abruptamente por divisão por zero em um cálculo auxiliar.\n\nConsiderando os conceitos de Verificação e Validação (V&V), análise estática e testes de software segundo a Engenharia de Software, assinale a opção correta.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A inspeção formal de código é uma técnica de análise dinâmica que substitui completamente a necessidade de testes unitários e de sistema.",
+        "explanation": "Incorreta. A inspeção é uma técnica de análise estática (sem execução do código) e complementa — nunca substitui completamente — os testes dinâmicos."
+      },
+      {
+        "letter": "B",
+        "text": "A detecção de que o código diverge da especificação documentada corresponde à atividade de verificação, enquanto o encerramento abrupto com taxa zero representa uma falha revelada em teste cuja causa raiz no código deve ser corrigida via depuração.",
+        "explanation": "Correta. Verificação avalia se o software atende corretamente às especificações ('construir o produto corretamente'). A inspeção é análise estática e reduz retrabalho antes dos testes. Já o encerramento abrupto durante a execução é uma falha (failure) causada por um defeito/falta (fault) no código, cuja localização e correção pertencem ao processo de depuração."
+      },
+      {
+        "letter": "C",
+        "text": "O encerramento abrupto do sistema durante a execução do teste deve ser classificado como análise estática, pois ocorre antes da entrega final ao cliente em produção.",
+        "explanation": "Incorreta. Qualquer execução do programa para observar comportamento é análise dinâmica (teste de software), independentemente de ocorrer antes da produção."
+      },
+      {
+        "letter": "D",
+        "text": "A validação de software tem como objetivo exclusivo conferir a sintaxe do código-fonte por meio de ferramentas automatizadas de compilação.",
+        "explanation": "Incorreta. Validação verifica se o sistema atende às necessidades reais do cliente/usuário ('construir o produto certo'), não se resumindo à checagem sintática."
+      },
+      {
+        "letter": "E",
+        "text": "Os testes de unidade devem ser conduzidos exclusivamente por usuários finais em ambiente de produção para caracterizar o chamado teste alfa.",
+        "explanation": "Incorreta. Testes de unidade são conduzidos por desenvolvedores sobre componentes isolados; testes com usuários finais em ambiente real correspondem ao teste de aceitação beta (e alfa ocorre no ambiente do desenvolvedor)."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Verificação garante conformidade com a especificação; Validação garante atendimento às necessidades do usuário. Análise estática (revisões, inspeções, linters) busca defeitos sem executar o código. Testes (análise dinâmica) executam o código para revelar falhas, enquanto a depuração localiza e corrige o defeito originador.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Verificação e Validação",
+      "Análise Estática",
+      "Testes de Software",
+      "Defeito, Falha e Depuração"
+    ]
+  },
+  {
+    "id": "es-inedita-07",
+    "label": "Inédita ENADE • Questão 07",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 7,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Considere o trecho de código em Java/C# simplificado de um serviço de processamento de pedidos de um sistema de comércio eletrônico:\n\n```text\nclass ProcessadorPedido {\n    void finalizar(Pedido p, String tipoFrete) {\n        double frete = 0;\n        if (tipoFrete.equals(\"CORREIOS\")) {\n            frete = p.peso * 2.5;\n        } else if (tipoFrete.equals(\"TRANSPORTADORA\")) {\n            frete = p.peso * 1.8 + 15.0;\n        }\n        p.total += frete;\n        MySqlRepository repo = new MySqlRepository();\n        repo.salvar(p);\n        EmailSmtpClient email = new EmailSmtpClient();\n        email.enviar(p.clienteEmail, \"Pedido confirmado\");\n    }\n}\n```\n\nAo analisar esse código durante uma revisão arquitetural visando facilitar a inclusão de novos cálculos de frete (como retirada em loja e entrega expressa por drone), permitir o envio simultâneo de notificações por SMS/Push sem alterar `ProcessadorPedido` e possibilitar testes unitários com dublês (mocks) de banco de dados, avalie as recomendações a seguir.\n\nI. A classe `ProcessadorPedido` viola o Princípio da Responsabilidade Única (SRP) ao acumular cálculo de frete, persistência direta e envio de notificações, além de violar o Princípio Aberto-Fechado (OCP) pela cadeia de `if/else` de fretes.\nII. A extração de uma interface `CalculoFreteStrategy` com implementações específicas por modalidade aplica o padrão de projeto comportamental Strategy e respeita o Princípio Aberto-Fechado (OCP).\nIII. A substituição da instanciação direta `new MySqlRepository()` por uma interface `PedidoRepository` recebida via construtor (injeção de dependência) aplica o Princípio da Inversão de Dependência (DIP), reduzindo o acoplamento e viabilizando testes unitários isolados.\nIV. Para notificar múltiplos canais independentes (E-mail, SMS e Push) sempre que um pedido for finalizado sem acoplar os canais à classe `ProcessadorPedido`, o padrão de projeto mais indicado é o Singleton.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e IV.",
+        "explanation": "Incorreta. A afirmação IV está errada (o padrão adequado para notificação reativa um-para-muitos é o Observer, não o Singleton), e II e III são verdadeiras."
+      },
+      {
+        "letter": "B",
+        "text": "II e III.",
+        "explanation": "Incorreta. Embora II e III estejam corretas, a afirmação I também descreve corretamente as violações de SRP e OCP presentes no código."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Correta. I identifica corretamente a violação de SRP (múltiplos motivos de mudança) e OCP (necessidade de editar o if/else para cada novo frete); II aplica Strategy para tornar o cálculo extensível sem modificar ProcessadorPedido; III aplica DIP ao depender de abstrações em vez de implementações concretas. IV é falsa porque o padrão adequado para notificar múltiplos assinantes é Observer (e não Singleton)."
+      },
+      {
+        "letter": "D",
+        "text": "I, III e IV.",
+        "explanation": "Incorreta. A afirmação IV confunde Observer com Singleton, além de omitir II."
+      },
+      {
+        "letter": "E",
+        "text": "I, II, III e IV.",
+        "explanation": "Incorreta. Singleton garante instância única global e não resolve o desacoplamento de notificações orientadas a eventos (papel do Observer)."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A refatoração orientada a SOLID e GoF combina: SRP (separar cálculo de frete, persistência e notificação), OCP + Strategy (encapsular algoritmos intercambiáveis de frete sob uma interface), DIP (injetar abstração de repositório para desacoplar do MySQL e facilitar testes) e Observer (notificar dinamicamente múltiplos canais interessados na mudança de estado do pedido, não Singleton).",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Princípios SOLID",
+      "Padrões de Projeto (GoF)",
+      "Arquitetura de Software",
+      "Manutenibilidade"
+    ]
+  },
+  {
+    "id": "es-inedita-08",
+    "label": "Inédita ENADE • Questão 08",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 8,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "objetiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma fábrica de software nacional que presta serviços ao setor público está implantando melhorias de processo e governança técnica. Atualmente, a empresa já possui processos padronizados e documentados no nível organizacional, adaptados para cada projeto, além de ferramentas e métodos estabelecidos de engenharia e gerenciamento; contudo, ainda não controla seus processos por meio de técnicas estatísticas e quantitativas. Paralelamente, a diretoria decidiu implantar um programa de medições usando o método GQM (Goal-Question-Metric) com o objetivo de aumentar a confiabilidade das versões entregues e reduzir conflitos de código causados pelo desenvolvimento paralelo entre equipes.\n\nConsiderando os modelos de maturidade CMMI-Dev e MPS-SW (MPS.BR), o método GQM e a Gerência de Configuração de Software, avalie as afirmações a seguir.\n\nI. Na representação por estágios do CMMI-Dev, a descrição do estado atual da empresa corresponde ao Nível de Maturidade 3 (Definido), e a evolução para controle estatístico de desempenho de processos caracterizaria o Nível 4 (Gerenciado Quantitativamente).\nII. O modelo brasileiro MPS-SW possui sete níveis de maturidade (de G a A), oferecendo uma granularidade maior de degraus evolutivos do que os cinco níveis do CMMI-Dev, e tanto o CMMI-Dev quanto o MPS-SW exigem alinhamento com os objetivos estratégicos da organização.\nIII. No método GQM, primeiro selecionam-se métricas aleatórias disponíveis nas ferramentas da equipe para, somente depois, descobrir quais objetivos organizacionais poderiam ser justificados por esses números.\nIV. A adoção de Gerenciamento de Versões (como Git com fluxo estruturado de branches), Gerenciamento de Mudanças (análise de impacto e rastreabilidade) e Gerenciamento de Builds automatizadas (Integração Contínua) combate problemas como sobrescrita de código, perda de histórico e geração de versões inconsistentes.\n\nÉ correto apenas o que se afirma em",
+    "options": [
+      {
+        "letter": "A",
+        "text": "I e III.",
+        "explanation": "Incorreta. A afirmação III inverte a lógica top-down do método GQM, que parte dos Objetivos (Goals) para as Questões (Questions) e só então define as Métricas (Metrics)."
+      },
+      {
+        "letter": "B",
+        "text": "II e IV.",
+        "explanation": "Incorreta. Além de II e IV, a afirmação I também está correta quanto aos níveis 3 e 4 do CMMI-Dev."
+      },
+      {
+        "letter": "C",
+        "text": "I, II e III.",
+        "explanation": "Incorreta. A afirmação III é falsa (o GQM é orientado a objetivos, nunca bottom-up a partir de métricas aleatórias) e IV é verdadeira."
+      },
+      {
+        "letter": "D",
+        "text": "I, II e IV.",
+        "explanation": "Correta. (I) Processos padronizados organizacionalmente definem o CMMI Nível 3 (Definido), enquanto controle estatístico caracteriza o Nível 4 (Gerenciado Quantitativamente); (II) MPS-SW tem 7 níveis (G a A) contra 5 do CMMI-Dev (1 a 5), ambos alinhados ao planejamento estratégico; (IV) descreve exatamente os três pilares da Gerência de Configuração de Software. III é falsa por inverter o GQM."
+      },
+      {
+        "letter": "E",
+        "text": "II, III e IV.",
+        "explanation": "Incorreta. A afirmação I é verdadeira e a III é falsa."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "No CMMI por estágios, o Nível 3 (Definido) estabelece processos organizacionais padronizados, e o Nível 4 (Gerenciado Quantitativamente) introduz controle estatístico. O MPS-SW divide a jornada em 7 níveis (G, F, E, D, C, B, A). O GQM segue estritamente a ordem Objetivo -> Questões -> Métricas. Por fim, Gerência de Configuração integra mudanças, versões e builds contínuas.",
+    "discursiveRubric": null,
+    "imageUrls": [],
+    "topics": [
+      "Qualidade de Software",
+      "CMMI e MPS.BR",
+      "Método GQM",
+      "Gerência de Configuração"
+    ]
+  },
+  {
+    "id": "es-inedita-09",
+    "label": "Inédita ENADE • Discursiva 09",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 9,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "discursiva",
+    "difficulty": "media",
+    "annulled": false,
+    "stem": "Uma concessionária de energia elétrica implementou a função abaixo em C para calcular a alíquota adicional de bandeira tarifária aplicada a consumidores residenciais cujo consumo mensal (`kwh`, número inteiro) esteja na faixa válida de `0` a `1000` kWh (inclusive):\n\n```c\nint calcularAdicional(int kwh, int baixaRenda) {\n    if (kwh < 0 || kwh > 1000) {\n        return -1; // Erro: consumo fora da faixa válida\n    }\n    int adicional = 0;\n    if (kwh > 200) {\n        if (baixaRenda == 1) {\n            adicional = 10;\n        } else {\n            adicional = 25;\n        }\n    }\n    return adicional;\n}\n```\n\nPara assegurar a confiabilidade desse módulo crítico antes da entrada em produção, a equipe de QA precisa combinar testes estruturais (caixa branca) e testes funcionais (caixa preta).\n\nCom base no código e nos requisitos apresentados, faça o que se pede nos itens a seguir.\n\na) Calcule a Complexidade Ciclomática de McCabe `V(G)` da função `calcularAdicional` (considerando cada condição atômica ou explicando explicitamente os nós de decisão adotados) e especifique um conjunto mínimo de casos de teste (`(kwh, baixaRenda) -> retorno esperado`) que alcance 100% de cobertura de ramos (decisões) da função. (valor: 5,0 pontos)\n\nb) Aplicando as técnicas de caixa preta Particionamento de Equivalência e Análise do Valor Limite apenas sobre a variável de entrada `kwh` (considerando a faixa válida `[0, 1000]` e o limiar de cobrança em `200`), liste as classes de equivalência (válidas e inválidas) e os valores de fronteira recomendados para teste. (valor: 5,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o espelho de correção detalhado abaixo, verificando o cálculo correto da complexidade ciclomática, a cobertura completa dos ramos e a identificação das classes de equivalência e fronteiras.",
+    "discursiveRubric": "a) Complexidade Ciclomática e Cobertura de Ramos (5,0 pontos):\n- Análise de decisões / predicados:\n  • Considerando condições compostas por comando de decisão (`if` 1, `if` 2, `if` 3): há 3 nós de decisão binários (P = 3), resultando em `V(G) = P + 1 = 4` caminhos independentes.\n  • (Também deve ser aceito se o candidato decompor o operador lógico `||` em duas decisões atômicas: `kwh < 0`, `kwh > 1000`, `kwh > 200`, `baixaRenda == 1`, obtendo P = 4 e `V(G) = 5` — desde que consistente com os casos listados.)\n- Conjunto mínimo de casos de teste para 100% de cobertura de ramos (4 ou 5 casos):\n  1. `kwh = -1, baixaRenda = 0` -> retorno `-1` (cobre ramo verdadeiro de `kwh < 0` / primeiro `if`)\n  2. `kwh = 1001, baixaRenda = 0` -> retorno `-1` (cobre ramo verdadeiro de `kwh > 1000` se avaliado separadamente)\n  3. `kwh = 150, baixaRenda = 0` -> retorno `0` (cobre ramo falso do primeiro `if` e ramo falso de `kwh > 200`)\n  4. `kwh = 250, baixaRenda = 1` -> retorno `10` (cobre ramo verdadeiro de `kwh > 200` e ramo verdadeiro de `baixaRenda == 1`)\n  5. `kwh = 250, baixaRenda = 0` -> retorno `25` (cobre ramo verdadeiro de `kwh > 200` e ramo falso de `baixaRenda == 1`)\n\nb) Particionamento de Equivalência e Valor Limite para `kwh` (5,0 pontos):\n- Classes de Equivalência para `kwh`:\n  • Inválida inferior: `kwh < 0` (retorno `-1`)\n  • Válida sem adicional: `0 <= kwh <= 200` (retorno `0`)\n  • Válida com adicional: `201 <= kwh <= 1000` (retorno `10` ou `25`)\n  • Inválida superior: `kwh > 1000` (retorno `-1`)\n- Valores de fronteira (Análise do Valor Limite):\n  • Fronteira inferior (em torno de 0): `-1`, `0`, `1`\n  • Fronteira do limiar de cobrança (em torno de 200): `199`, `200`, `201`\n  • Fronteira superior (em torno de 1000): `999`, `1000`, `1001`",
+    "imageUrls": [],
+    "topics": [
+      "Testes de Software",
+      "Caixa Branca",
+      "Complexidade Ciclomática",
+      "Caixa Preta",
+      "Particionamento de Equivalência",
+      "Valor Limite"
+    ]
+  },
+  {
+    "id": "es-inedita-10",
+    "label": "Inédita ENADE • Discursiva 10",
+    "source": "inedita",
+    "year": 2026,
+    "examNumber": 10,
+    "component": "especifico",
+    "areaId": "02-engenharia-de-software",
+    "areaName": "Engenharia de Software",
+    "type": "discursiva",
+    "difficulty": "dificil",
+    "annulled": false,
+    "stem": "Uma rede de clínicas médicas deseja desenvolver um sistema de gestão de atendimentos ambulatoriais. No levantamento de requisitos, foram identificadas as seguintes regras de negócio e necessidades estruturais:\n\n- Os usuários do sistema possuem dados comuns (nome, CPF e telefone), porém dividem-se em Pacientes (que possuem número de prontuário e plano de saúde) e Médicos (que possuem registro no CRM e especialidade).\n- Um Paciente pode realizar vários Agendamentos ao longo do tempo, e cada Agendamento está associado a exatamente um Paciente e a exatamente um Médico.\n- Cada Atendimento clínico gerado a partir de um Agendamento é composto por um ou mais ProcedimentosRealizados (descrição, valorCobrado e observação clínica), os quais não possuem existência independente caso o Atendimento seja cancelado/excluído do histórico. Além disso, cada ProcedimentoRealizado referencia um Procedimento do catálogo padrão da clínica (código TUSS, nome e valorBase), garantindo que alterações futuras no `valorBase` do catálogo não modifiquem o `valorCobrado` registrado nos atendimentos históricos.\n- Ao encerrar o Atendimento, é calculado o pagamento, cuja regra de desconto varia conforme o convênio (particular, plano básico ou plano empresarial), havendo previsão de inclusão frequente de novos convênios nos próximos meses.\n\nConsiderando o cenário apresentado e os princípios de Análise e Projeto Orientado a Objetos, faça o que se pede nos itens a seguir.\n\na) Descreva textualmente (ou em notação de classes UML) um Diagrama de Classes para o domínio apresentado, identificando explicitamente as classes, seus principais atributos, os relacionamentos entre elas com suas respectivas multiplicidades, garantindo a presença de pelo menos um relacionamento de **generalização** e um relacionamento de **composição**. (valor: 6,0 pontos)\n\nb) Explique como aplicar o Princípio Aberto-Fechado (OCP — Open-Closed Principle) em conjunto com o padrão de projeto **Strategy** para modelar o cálculo de desconto por convênio, justificando os benefícios dessa decisão para a **manutenção evolutiva** do sistema. (valor: 4,0 pontos)",
+    "options": [],
+    "correctAnswer": null,
+    "explanation": "Compare sua resposta com o espelho de correção abaixo, verificando a presença de todas as classes exigidas, multiplicidades corretas, generalização, composição, snapshot histórico de preço e aplicação correta de OCP + Strategy.",
+    "discursiveRubric": "a) Modelagem do Diagrama de Classes UML (6,0 pontos):\n- Generalização (Herança):\n  • Superclasse `Pessoa` (ou `Usuario`) com atributos `nome`, `cpf`, `telefone`.\n  • Subclasses `Paciente` (atributos `numeroProntuario`, `planoSaude`) e `Medico` (atributos `crm`, `especialidade`) especializando `Pessoa` (relação de generalização).\n- Associações e Multiplicidades:\n  • `Paciente` (1) —— (0..*) `Agendamento` —— (1) `Medico` (contendo `dataHora`, `status`).\n  • `Agendamento` (1) —— (0..1) `Atendimento` (contendo `dataRealizacao`, `valorTotal`).\n- Composição (Todo-Parte com dependência de ciclo de vida):\n  • `Atendimento` (1) ◆—— (1..*) `ProcedimentoRealizado` (atributos `descricao`, `valorCobrado`, `observacaoClinica`), utilizando losango preenchido junto a `Atendimento`, pois `ProcedimentoRealizado` não existe sem o `Atendimento`.\n- Associação ao Catálogo (Preservação Histórica):\n  • `ProcedimentoRealizado` (0..*) —— (1) `ProcedimentoCatalogo` (atributos `codigoTuss`, `nome`, `valorBase`), preservando `valorCobrado` em `ProcedimentoRealizado` para que reajustes em `valorBase` não alterem atendimentos passados.\n\nb) Aplicação do Princípio OCP + Padrão Strategy e Impacto na Manutenção (4,0 pontos):\n- Estrutura proposta:\n  • Definir uma abstração/interface `PoliticaDescontoStrategy` (ou `CalculoDescontoConvenio`) com método `calcularDesconto(Atendimento)`.\n  • Implementar classes concretas independentes para cada modalidade (`DescontoParticular`, `DescontoPlanoBasico`, `DescontoPlanoEmpresarial`), injetando/associando a estratégia escolhida à classe `Atendimento` (ou `CalculadorPagamento`).\n- Justificativa pelo OCP e Manutenção Evolutiva:\n  • O código de `Atendimento` fica fechado para modificação (não precisa de estruturas condicionais `if/switch` modificadas a cada novo convênio) e aberto para extensão (basta criar uma nova classe implementando a interface).\n  • Na manutenção evolutiva (adição frequente de novos convênios), reduz-se o risco de introduzir defeitos de regressão em regras já testadas, melhora-se a testabilidade unitária e mantém-se baixo acoplamento entre o núcleo financeiro e as regras comerciais variáveis.",
+    "imageUrls": [],
+    "topics": [
+      "UML",
+      "Diagrama de Classes",
+      "Generalização e Composição",
+      "Princípios SOLID",
+      "Padrão Strategy",
+      "Manutenção Evolutiva"
+    ]
+  }
+]
