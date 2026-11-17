@@ -57,7 +57,6 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Cabeçalho utilitário */}
       <div className="flex flex-col justify-between gap-4 border-b border-[var(--border-subtle)] pb-5 sm:flex-row sm:items-end">
         <div>
           <div className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
@@ -115,7 +114,6 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
         </div>
       </div>
 
-      {/* Faixa compacta de métricas (grid unido por divisórias 1px) */}
       <section
         aria-label="Indicadores principais"
         className="grid grid-cols-2 divide-y divide-[var(--border-subtle)] overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] sm:divide-y-0 sm:divide-x lg:grid-cols-4"
@@ -188,9 +186,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
         </div>
       </section>
 
-      {/* Conteúdo principal: Tabela de Áreas + Coluna lateral */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        {/* Tabela densa das 15 áreas */}
         <section className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] lg:col-span-8">
           <div className="flex items-center justify-between border-b border-[var(--border-subtle)] px-4 py-3">
             <div>
@@ -274,7 +270,6 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           </div>
         </section>
 
-        {/* Rail lateral: Fila de prioridade e Simulados recentes */}
         <aside className="space-y-6 lg:col-span-4">
           <section className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
             <div className="border-b border-[var(--border-subtle)] px-4 py-3">

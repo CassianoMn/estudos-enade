@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -136,24 +136,25 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
   }, [selectedReviewRecordId, progress.simulados]);
 
   const active = progress.activeSimulado;
+  const onTickTimerRef = useRef(onTickTimer);
+  onTickTimerRef.current = onTickTimer;
+
+  const handleSubmitRef = useRef<(snapshot: ActiveSimulado) => void>(() => {});
 
   useEffect(() => {
     if (!active?.id) return;
     const timer = window.setInterval(() => {
-      onTickTimer();
+      onTickTimerRef.current();
     }, 1000);
     return () => window.clearInterval(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active?.id]);
 
   useEffect(() => {
     if (active && active.remainingSeconds <= 0) {
-      handleSubmitActive(active);
+      handleSubmitRef.current(active);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active?.remainingSeconds]);
+  }, [active]);
 
-  // Atalhos de teclado durante prova ativa ou revisão
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey || isTypingTarget(e.target)) return;
@@ -283,7 +284,8 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     onFinishSimulado(record, attempts);
   };
 
-  // Tela 1: Revisão pós-entrega ou histórica
+  handleSubmitRef.current = handleSubmitActive;
+
   if (reviewRecord && !active) {
     const simQuestions = reviewRecord.questionIds
       .map((id) => questionsById.get(id))
@@ -434,7 +436,6 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     );
   }
 
-  // Tela 2: Simulado em andamento (Modo Foco)
   if (active) {
     const simQuestions = active.questionIds
       .map((id) => questionsById.get(id))
@@ -467,7 +468,6 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
 
     return (
       <div className="space-y-5">
-        {/* Barra de controle da prova */}
         <header className="sticky top-2 z-20 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]/95 px-4 py-3 backdrop-blur">
           <div className="min-w-0">
             <div className="flex items-center gap-2">
@@ -506,7 +506,6 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
         </header>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-          {/* Cartão de respostas lateral */}
           <aside className="lg:col-span-4 xl:col-span-3">
             <div className="sticky top-20 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-4">
               <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
@@ -579,7 +578,6 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
             </div>
           </aside>
 
-          {/* Questão atual */}
           {activeQ && (
             <div className="space-y-4 lg:col-span-8 xl:col-span-9">
               <div className="flex flex-wrap items-center justify-between gap-2">
@@ -678,7 +676,6 @@ export const SimuladoPage: React.FC<SimuladoPageProps> = ({
     );
   }
 
-  // Tela 3: Escolha de modo do simulado
   return (
     <div className="space-y-6">
       <div className="border-b border-[var(--border-subtle)] pb-4">

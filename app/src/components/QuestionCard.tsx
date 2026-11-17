@@ -69,7 +69,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
   return (
     <article className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
-      {/* Barra superior de metadados */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border-subtle)] px-5 py-3">
         <div className="flex flex-wrap items-center gap-2 text-xs">
           <Tag tone={question.source === "oficial" ? "accent" : "success"} mono>
@@ -139,7 +138,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
       </div>
 
-      {/* Corpo da questão */}
       <div className="p-5 sm:p-6">
         <div className="mb-2 font-mono text-[11px] font-medium uppercase tracking-wider text-[var(--text-muted)]">
           {question.label}
@@ -149,7 +147,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           {question.stem}
         </div>
 
-        {/* Imagens / Diagramas da prova original */}
         {question.imageUrls.length > 0 && (
           <div className="mb-6 space-y-3">
             {question.imageUrls.map((url) => (
@@ -171,7 +168,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           </div>
         )}
 
-        {/* Alternativas (Objetivas) */}
         {question.type === "objetiva" && (
           <div className="space-y-2" role="radiogroup" aria-label="Alternativas da questão">
             {question.options.map((opt) => {
@@ -247,7 +243,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           </div>
         )}
 
-        {/* Área de resposta (Discursivas) */}
         {question.type === "discursiva" && (
           <div className="space-y-4">
             <div>
@@ -331,7 +326,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           </div>
         )}
 
-        {/* Comentário / Gabarito */}
         {isRevealed && question.type === "objetiva" && (
           <div className="mt-5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-subtle)] p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">

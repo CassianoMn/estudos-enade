@@ -66,7 +66,6 @@ export const MetricasPage: React.FC<MetricasPageProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Cabeçalho e ações de backup */}
       <div className="flex flex-col justify-between gap-4 border-b border-[var(--border-subtle)] pb-5 sm:flex-row sm:items-end">
         <div>
           <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
@@ -129,7 +128,6 @@ export const MetricasPage: React.FC<MetricasPageProps> = ({
         </div>
       )}
 
-      {/* Matriz por Área */}
       <section className="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
         <div className="border-b border-[var(--border-subtle)] px-4 py-3">
           <h2 className="text-sm font-semibold text-[var(--text-primary)]">
@@ -197,7 +195,6 @@ export const MetricasPage: React.FC<MetricasPageProps> = ({
         </div>
       </section>
 
-      {/* Histórico de Simulados */}
       <section className="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
         <div className="flex items-center justify-between border-b border-[var(--border-subtle)] px-4 py-3">
           <h2 className="text-sm font-semibold text-[var(--text-primary)]">

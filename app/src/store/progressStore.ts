@@ -53,7 +53,7 @@ export function saveProgress(progress: StudyProgress): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   } catch {
-    // Ignora caso armazenamento esteja indisponível ou cheio
+    return;
   }
 }
 

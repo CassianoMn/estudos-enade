@@ -192,7 +192,6 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)]">
-      {/* Modo foco automático durante simulado ativo */}
       {isFocusMode && (
         <div className="border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] px-4 py-2 sm:px-6">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3">
@@ -225,7 +224,6 @@ export const App: React.FC = () => {
       )}
 
       <div className={isFocusMode ? "" : "md:flex md:min-h-screen"}>
-        {/* Sidebar esquerda colapsável (Desktop) */}
         {!isFocusMode && (
           <aside
             aria-label="Menu principal"
@@ -233,7 +231,6 @@ export const App: React.FC = () => {
               sidebarCollapsed ? "md:w-[60px]" : "md:w-60"
             }`}
           >
-            {/* Marca + Botão colapsar */}
             <div
               className={`flex h-13 items-center border-b border-[var(--border-subtle)] px-3 ${
                 sidebarCollapsed ? "justify-center" : "justify-between"
@@ -274,7 +271,6 @@ export const App: React.FC = () => {
               </button>
             </div>
 
-            {/* Atalho Busca Rápida */}
             <div className="p-2.5">
               <button
                 type="button"
@@ -296,7 +292,6 @@ export const App: React.FC = () => {
               </button>
             </div>
 
-            {/* Navegação */}
             <nav className="flex-1 space-y-0.5 px-2.5 py-1" aria-label="Seções do sistema">
               {navItems.map((item) => {
                 const active = activeTab === item.id;
@@ -339,7 +334,6 @@ export const App: React.FC = () => {
               })}
             </nav>
 
-            {/* Rodapé da Sidebar */}
             <div className="border-t border-[var(--border-subtle)] p-2.5">
               {!sidebarCollapsed && (
                 <div className="mb-2 flex items-center justify-between px-2 text-[11px] text-[var(--text-muted)] tabular-nums">
@@ -374,7 +368,6 @@ export const App: React.FC = () => {
           </aside>
         )}
 
-        {/* Topbar compacta mobile */}
         {!isFocusMode && (
           <header className="sticky top-0 z-30 flex items-center justify-between border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]/95 px-4 py-2.5 backdrop-blur md:hidden">
             <button
@@ -415,7 +408,6 @@ export const App: React.FC = () => {
           </header>
         )}
 
-        {/* Área principal de conteúdo */}
         <main
           className={`min-w-0 flex-1 ${
             isFocusMode
@@ -491,7 +483,6 @@ export const App: React.FC = () => {
         </main>
       </div>
 
-      {/* Barra inferior mobile */}
       {!isFocusMode && (
         <nav
           aria-label="Navegação inferior"

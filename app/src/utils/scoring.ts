@@ -201,7 +201,6 @@ export function buildSimuladoQuestions(
     };
   }
 
-  // simulado-rapido: 15 questões balanceadas (3 FG + 12 CE)
   const fg = shuffleArray(allQuestions.filter((q) => q.component === "formacao_geral")).slice(0, 3);
   const ce = shuffleArray(allQuestions.filter((q) => q.component === "especifico")).slice(0, 12);
   return {

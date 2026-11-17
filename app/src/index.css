@@ -61,7 +61,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Tipografia editorial para leitura das apostilas */
 .markdown-body {
   color: var(--text-primary);
   line-height: 1.72;

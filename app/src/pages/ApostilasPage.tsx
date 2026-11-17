@@ -93,7 +93,6 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
 
   return (
     <div className="space-y-5">
-      {/* Barra superior do leitor: Seletor de apostila + controles de leitura */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-subtle)] pb-4">
         <div className="relative" ref={dropdownRef}>
           <button
@@ -194,7 +193,6 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
           )}
         </div>
 
-        {/* Controles tipográficos + ações */}
         <div className="flex flex-wrap items-center gap-2">
           <div
             className="inline-flex items-center rounded-md border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-0.5"
@@ -264,15 +262,12 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
         </div>
       </div>
 
-      {/* Layout de leitura: Documento central + Sumário lateral direito */}
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-12">
-        {/* Coluna do documento */}
         <div
           className={`space-y-5 ${
             wideMode ? "xl:col-span-9" : "xl:col-span-8 xl:col-start-1"
           }`}
         >
-          {/* Cabeçalho editorial do documento */}
           <header className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6">
             <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--text-muted)]">
               <Tag tone="accent">
@@ -301,7 +296,6 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
               Fontes: {activeArea.sourceFiles.join(" · ")}
             </p>
 
-            {/* Barra de busca interna */}
             <div className="mt-4 border-t border-[var(--border-subtle)] pt-4">
               <div className="relative">
                 <Search
@@ -345,7 +339,6 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
               )}
             </div>
 
-            {/* Vídeos de referência */}
             {activeArea.videoRefs.length > 0 && (
               <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-[var(--border-subtle)] pt-3 text-xs">
                 <span className="inline-flex items-center gap-1 font-medium text-[var(--text-secondary)]">
@@ -367,7 +360,6 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
             )}
           </header>
 
-          {/* Checklist compacto em telas < xl */}
           <details className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] xl:hidden">
             <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-xs font-semibold text-[var(--text-primary)]">
               <span>
@@ -408,7 +400,6 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
             </div>
           </details>
 
-          {/* Conteúdo principal Markdown */}
           <article className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-5 py-6 sm:px-8 sm:py-8">
             <div className={wideMode ? "max-w-none" : "mx-auto max-w-[68ch]"}>
               <MarkdownViewer
@@ -420,7 +411,6 @@ export const ApostilasPage: React.FC<ApostilasPageProps> = ({
           </article>
         </div>
 
-        {/* Sumário lateral direito (sticky em telas xl+) */}
         <aside className={`hidden xl:block ${wideMode ? "xl:col-span-3" : "xl:col-span-4"}`}>
           <div className="sticky top-6 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
             <div className="border-b border-[var(--border-subtle)] px-4 py-3">

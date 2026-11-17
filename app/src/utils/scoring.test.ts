@@ -121,7 +121,7 @@ describe("scoring utilities", () => {
       }
     );
 
-    expect(rec.correctCount).toBe(2); // q-fg-1 + q-bd-anul
+    expect(rec.correctCount).toBe(2);
     expect(rec.scorePercent).toBe(67);
     expect(rec.areaBreakdown["00-formacao-geral"]).toEqual({ total: 1, correct: 1 });
     expect(rec.areaBreakdown["01-banco-de-dados"]).toEqual({ total: 2, correct: 1 });

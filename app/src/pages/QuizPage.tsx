@@ -133,7 +133,6 @@ export const QuizPage: React.FC<QuizPageProps> = ({
     });
   };
 
-  // Atalhos de teclado: A-E/1-5 respondem, setas navegam, F favorita
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey || isTypingTarget(e.target)) return;
@@ -190,7 +189,6 @@ export const QuizPage: React.FC<QuizPageProps> = ({
 
   return (
     <div className="space-y-5">
-      {/* Cabeçalho e filtros */}
       <div className="flex flex-col justify-between gap-3 border-b border-[var(--border-subtle)] pb-4 sm:flex-row sm:items-end">
         <div>
           <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
@@ -223,7 +221,6 @@ export const QuizPage: React.FC<QuizPageProps> = ({
         </div>
       </div>
 
-      {/* Barra de filtros compacta */}
       <section
         aria-label="Filtros de questões"
         className="grid grid-cols-1 gap-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-3 sm:grid-cols-2 lg:grid-cols-4"
@@ -323,7 +320,6 @@ export const QuizPage: React.FC<QuizPageProps> = ({
         </div>
       </section>
 
-      {/* Questão ativa ou estado vazio */}
       {!activeQuestion ? (
         <div className="rounded-xl border border-dashed border-[var(--border-strong)] bg-[var(--bg-surface)] px-6 py-12 text-center">
           <p className="text-sm font-medium text-[var(--text-primary)]">

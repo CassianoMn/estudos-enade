@@ -137,5 +137,5 @@ export interface StudyProgress {
   attemptHistory: QuestionAttempt[];
   simulados: SimuladoRecord[];
   activeSimulado: ActiveSimulado | null;
-  studyDates: string[]; // YYYY-MM-DD
+  studyDates: string[];
 }
